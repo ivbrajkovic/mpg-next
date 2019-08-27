@@ -1,0 +1,21 @@
+.container {
+    border: 1px solid black;
+}
+
+article {
+    border: 1px solid red;
+}
+
+nav > div > div {
+    border: 1px solid green;
+}
+
+.w3-card,
+.w3-card-2 {
+    // box-shadow: 0 4px 10px 0 red, 0 4px 20px 0 red;
+}
+
+.w3-card-4,
+.w3-hover-shadow:hover {
+    // box-shadow: 0 4px 10px 0 red, 0 4px 20px 0 red;
+}

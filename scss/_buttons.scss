@@ -1,0 +1,42 @@
+// .btn-container {
+//     // position: relative;
+//     // height: 60px;
+//     text-align: right;
+//     background: #ffbaba;
+// }
+
+.btn {
+    // position: fixed;
+    // display: inline-block;
+    // bottom: 0;
+    // right: 0;
+    // margin-right: -15px;
+    padding: 10px 50px;
+    // font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
+    font-weight: 400;
+    font-size: 16px;
+    // letter-spacing: 4px;
+    font-weight: 400;
+    border: none;
+    border-radius: 0;
+    transition: $nav-transation-fnc;
+}
+
+.btn-dark {
+    color: #fff;
+    background: $primary-back;
+}
+
+.btn-dark:hover {
+    color: #fff;
+    background: $primary-back-lighter-10;
+}
+
+.btn-light {
+    color: #fff;
+    background: $primary-back-lighter-05;
+}
+
+.btn-light:hover {
+    background: $primary-back-lighter-10;
+}

@@ -1,0 +1,53 @@
+{
+    "menu": [
+        {
+            "title": "O nama",
+            "href": "/",
+            "hasSubmenu": true,
+            "submenu": [
+                "Pazinski kaštel",
+                "Povjest MGP",
+                "Djelatnici",
+                "Dokumenti",
+                "Usluge",
+                "Kontakt"
+            ]
+        },
+        {
+            "title": "Odjeli i zbirke",
+            "href": "/odjeli",
+            "hasSubmenu": true,
+            "submenu": ["Kultutrno-povjesni odjel", "Povjesni odjel", "Galerijski odjel"]
+        },
+        {
+            "title": "Aktivnosti",
+            "href": "/aktivnosti",
+            "hasSubmenu": false,
+            "submenu": []
+        },
+        {
+            "title": "Stalni postav",
+            "href": "/stalni-postav",
+            "hasSubmenu": false,
+            "submenu": []
+        },
+        {
+            "title": "Edukacija",
+            "href": "/edukacije",
+            "hasSubmenu": false,
+            "submenu": []
+        },
+        {
+            "title": "Knjižnica",
+            "href": "/knjiznica",
+            "hasSubmenu": false,
+            "submenu": []
+        },
+        {
+            "title": "Izdanja",
+            "href": "/izdanja",
+            "hasSubmenu": false,
+            "submenu": []
+        }
+    ]
+}

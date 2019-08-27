@@ -1,0 +1,125 @@
+/*
+ * _navbar.scss
+ */
+
+.nav {
+    position: relative;
+    font-size: 18px;
+    text-align: right;
+    color: inherit;
+    z-index: 999;
+
+    .nav__menu-lists {
+        margin-top: 40px;
+        list-style: none;
+        display: inline-flex;
+    }
+
+    .nav__menu-items {
+        position: relative;
+        display: block;
+        padding: 20px 0px;
+        margin-left: 25px;
+
+        &.active {
+            // border-bottom: 10px solid $color-4;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-bottom: 10px solid $color-4;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 50%;
+            height: 10px;
+            width: 100%;
+            opacity: 0;
+            background: $color-4;
+            // background: red;
+            transform: translate(-50%, 0) scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover:not(.active):after {
+            transform: translate(-50%, 0) scaleX(1);
+            opacity: 1;
+        }
+
+        &:hover .nav__submenu-lists {
+            display: block;
+        }
+
+        // @for $i from 1 through 6 {
+        //     &:hover > .nav__submenu--1-list div:nth-child(#{$i}) {
+        //         animation: menu-animation ease-in-out forwards;
+        //         animation-duration: $menu1AnimSpeed;
+        //         animation-delay: ($menu5AnimSpeed / 2) * ($i - 1);
+        //     }
+
+        // }
+
+        // Submenu 1
+        @include on-hover-submenu-animation(6, '&', '.nav__submenu--1-list', 300ms, 300ms);
+
+        // Submenu 2
+        @include on-hover-submenu-animation(3, '&', '.nav__submenu--2-list', 200ms, 300ms);
+    }
+
+    .nav__submenu-lists {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        width: -webkit-max-content;
+        text-align: left;
+        & .nav_submenu-items {
+            padding: 0 15px;
+            @include text-center(35px);
+            color: $color-3;
+            background: $primary-back;
+        }
+
+        // & .nav_submenu-items:nth-of-type(even) {
+        //     background: $background-4;
+        // }
+    }
+
+    .nav__logo {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+    }
+
+    .nav__language {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: #b9b9b9;
+        > div {
+            display: inline-block;
+        }
+        .active {
+            color: #3d3d3d;
+        }
+    }
+}
+
+@keyframes menu-animation {
+    from {
+        opacity: 0;
+        transform: rotateX(-180deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}

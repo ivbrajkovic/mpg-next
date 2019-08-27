@@ -1,0 +1,38 @@
+.section-6 {
+    // background: #f99;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    text-align: center;
+
+    & > .menu-item:first-child {
+        display: flex;
+    }
+
+    .menu-item {
+        padding: 10px;
+        height: 140px;
+        display: none;
+        // display: flex;
+        justify-content: center;
+        align-items: center;
+        // align-content: center;
+        background: $odjeli-menu-back;
+        transition: $nav-transation-fnc;
+    }
+
+    .menu-item:hover {
+        color: $color-5;
+        background: $primary-back;
+    }
+
+    .active {
+        color: $color-5;
+        background: $primary-back;
+    }
+
+    .header-3 {
+        line-height: 1.2;
+    }
+}

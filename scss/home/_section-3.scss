@@ -1,0 +1,33 @@
+.section-3 {
+    // text-align: center;
+    // padding: 10px 0;
+    // padding-top: 32px;
+    // padding-bottom: 16px;
+    background: $background-5;
+
+    .d-grid {
+        // display: grid;
+        // grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+    // .post-info {
+    //     color: $color-5;
+    // }
+    // h1,
+    // h2 {
+    //     font-weight: 400;
+    // }
+    h1 {
+        margin: 0 0 0 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    img {
+        height: 35px;
+        width: 40px;
+    }
+    span {
+        display: block;
+    }
+}

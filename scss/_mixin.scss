@@ -1,0 +1,23 @@
+@mixin img-flex() {
+    img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+@mixin text-center($height) {
+    height: $height;
+    line-height: $height;
+    vertical-align: middle;
+}
+
+@mixin on-hover-submenu-animation($count, $selector, $class, $duration, $delay) {
+    @for $i from 1 through $count {
+        #{$selector}:hover > #{$class} div:nth-child(#{$i}) {
+            opacity: 0;
+            animation: menu-animation ease-in-out forwards;
+            animation-duration: $duration;
+            animation-delay: ($delay / 2) * ($i - 1);
+        }
+    }
+}

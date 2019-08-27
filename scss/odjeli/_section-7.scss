@@ -1,0 +1,39 @@
+.section-7 {
+    // background: #f99;
+
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    grid-template-columns: 350px;
+    grid-gap: 20px;
+    justify-content: center;
+    text-align: center;
+
+    .menu-item {
+        position: relative;
+        // height: 350px;
+        // width: 350px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        //background: $odjeli-menu-back;
+        //transition: $nav-transation-fnc;
+    }
+
+    .header-3 {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $color-5;
+        line-height: 1.2;
+    }
+    // & > div {
+    //     color: $color-5;
+    //     background: $primary-back;
+    // }
+
+    // .active {
+    //     color: $color-5;
+    //     background: $primary-back;
+    // }
+}

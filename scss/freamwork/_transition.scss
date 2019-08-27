@@ -1,0 +1,49 @@
+/*
+ * FadeIn transition
+ */
+
+.fadeInOut {
+    transition-duration: 0, 200ms;
+    transition-property: visibility, opacity;
+    transition-delay: 0;
+
+    &.hidden {
+        visibility: hidden;
+        opacity: 0;
+        transition-duration: 200ms, 0;
+        transition-property: opacity, visibility;
+        transition-delay: 0;
+    }
+}
+
+// .fadeInOut {
+//     .transition-duration(0, 200ms);
+//     .transition-property(visibility, opacity);
+//     .transition-delay(0);
+
+//     &.hidden {
+//         visibility: hidden;
+//         .opacity(0);
+//         .transition-duration(200ms, 0);
+//         .transition-property(opacity, visibility);
+//         .transition-delay(0, 200ms);
+//     }
+// }
+
+/*
+ * Scale transition
+ */
+
+.scale {
+    transition-delay: 0;
+    transition-duration: 0, 200ms;
+    transition-property: height, width;
+    transition-timing-function: ease-in-out;
+    &.shrink {
+        transition-delay: 0;
+        transition-duration: 200ms, 0;
+        transition-property: height, width;
+        transition-timing-function: ease-in-out;
+        transform: scale(0.8);
+    }
+}

@@ -1,0 +1,128 @@
+.navbar {
+    font-size: 20px;
+}
+
+.header-1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 42px;
+    font-style: normal;
+    // font-weight: normal;
+    font-weight: 400;
+    //letter-spacing: -0.5px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: $header-1;
+    margin-bottom: 22px;
+}
+.header-1-light {
+    @extend .header-1;
+    color: $color-5;
+}
+.header-2 {
+    @extend .header-1;
+    font-size: 34px;
+    line-height: 42px;
+}
+.header-2-light {
+    @extend .header-2;
+    color: $color-5;
+}
+.header-3 {
+    @extend .header-2;
+    font-size: 28px;
+}
+.header-4 {
+    @extend .header-1;
+    color: $color-5;
+    font-weight: 300;
+    font-size: 26px;
+}
+
+.content-1 {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 24px;
+    // margin: 24px 0;
+    color: content-1;
+    // color: red;
+}
+.content-1-light {
+    @extend .content-1;
+    color: $color-5;
+}
+.content-2 {
+    @extend .content-1;
+    line-height: 20px;
+}
+.content-3 {
+    @extend .content-2;
+    color: $color-5;
+}
+.content-3-footer {
+    @extend .content-3;
+    color: $footer-1;
+}
+.content-4 {
+    @extend .content-3;
+    line-height: 18px;
+}
+
+@media (max-width: 1199.99px) {
+    .navbar {
+        font-size: 16px;
+    }
+    .header-1,
+    .header-1-light,
+    .header-2,
+    .header-2-light {
+        font-size: 34px;
+        line-height: 40px;
+        margin-bottom: 8px;
+    }
+    .header-3 {
+        font-size: 28px;
+        line-height: 34px;
+        // color: red;
+    }
+    .header-4 {
+        font-size: 22px;
+        line-height: 34px;
+        // color: red;
+    }
+
+    .content-1,
+    .content-1-light,
+    .content-2,
+    .content-3,
+    .content-3-footer {
+        font-size: 15px;
+    }
+    .content-4 {
+        font-size: 14px;
+    }
+}
+
+// .header-4 {
+//     font-family: Montserrat;
+//     font-size: 18px;
+//     font-style: normal;
+//     font-weight: normal;
+//     letter-spacing: -0.36000001430511475px;
+//     line-height: 20px;
+//     text-transform: none;
+//     color: #505656;
+// }
+
+// .header-4 {
+//     font-family: Montserrat;
+//     font-size: 18px;
+//     font-style: normal;
+//     font-weight: normal;
+//     letter-spacing: -0.36000001430511475px;
+//     line-height: 20px;
+//     text-transform: none;
+//     color: #505656;
+// }

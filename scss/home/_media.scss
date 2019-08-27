@@ -1,0 +1,163 @@
+@media (min-width: 576px) {
+    .banner {
+        height: 360px;
+    }
+    footer {
+        .d-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+        .item-1 {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+        }
+        .item-2 {
+            grid-column: 1 / span 1;
+            grid-row: 2 / span 1;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .banner {
+        height: 400px;
+    }
+    .section-1 {
+        text-align: left;
+        .d-grid {
+            grid-template-columns: 1fr 1fr;
+            // margin-left: 0;
+            // margin-right: 0;
+        }
+        .item-1 {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+    }
+    .section-2 {
+        text-align: left;
+        grid-template-columns: 1fr 1fr 1fr;
+        .post {
+            // max-width: 400px;
+            max-width: 348px;
+        }
+    }
+    .section-3 {
+        text-align: left;
+        .d-grid {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
+    }
+    .section-4 {
+        text-align: left;
+        .d-grid {
+            grid-template-columns: 40% 60%;
+            .item-1 {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 1;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                }
+            }
+            .item-2 {
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
+                padding-bottom: 40px; // Because of floating
+            }
+        }
+        .btn-container {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    .section-5 {
+        text-align: left;
+        .banner {
+            max-width: 100%;
+        }
+        .item-2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            // max-width: 450px;
+            // height: 100%;
+            opacity: 0.95;
+        }
+        .float-right {
+            height: 100%;
+            max-width: 350px;
+            margin-left: auto;
+            padding-bottom: 40px; // Because of floating
+        }
+        .btn-container {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    footer {
+        .d-grid {
+            text-align: left;
+            grid-template-columns: repeat(3, 1fr) auto;
+        }
+        .item-1 {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+        }
+        .item-2 {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .banner {
+        height: 450px;
+    }
+    .section-1 {
+        h2 {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        section {
+            padding: 40px;
+        }
+    }
+    .section-5 {
+        .float-right {
+            max-width: 400px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner {
+        height: 500px;
+    }
+    .section-3 {
+        padding: 40 0;
+        img {
+            height: auto;
+            width: auto;
+        }
+        .d-grid {
+            grid-gap: 20px;
+        }
+    }
+    .section-5 {
+        .float-right {
+            width: 450px;
+        }
+    }
+}
