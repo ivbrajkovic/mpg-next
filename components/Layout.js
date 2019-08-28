@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import Head from 'next/head';
 import Navbar from './Navbar';
-import Footer from '../components/Footer';
+import Footer from './Footer';
 // import Hero from './Hero';
 
 export default class Layout extends Component {
@@ -14,18 +14,12 @@ export default class Layout extends Component {
     // };
 
     render() {
+        // console.log('TCL: Layout -> render -> this.props.content', this.props.content);
         return (
             <div>
-                {/* <Head>
-                    <title>Muzej Grada Pazina</title>
-                    <meta
-                        name="viewport"
-                        content="initial-scale=1.0, width=device-width"
-                        key="viewport"
-                    />
-                </Head> */}
-
                 {/* <Navbar OnClickedHandler={this.onClick} /> */}
+                {/* <Navbar contentData={this.props.contentData}/> */}
+
                 <Navbar />
 
                 {/* <Hero title={this.state.heroTitle}></Hero> */}

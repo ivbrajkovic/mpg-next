@@ -11,6 +11,7 @@
 const Hero = props => {
     const banner = props.banner;
     // console.log('TCL: banner', banner);
+
     return (
         <section className="w3-card-4 banner hero">
             {/* <picture>

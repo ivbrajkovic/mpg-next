@@ -13,11 +13,12 @@ export default class MyDocument extends Document {
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     {/* Import CSS for nprogress */}
                     <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
+                    {/* Button ripple effect */}
+                    <script src="https://cdn.jsdelivr.net/npm/ripplet.js@0.1.14"></script>
                 </Head>
                 <body>
                     <Main />
                     <NextScript />
-                    <script src="https://cdn.jsdelivr.net/npm/ripplet.js@0.1.14"></script>
                     {/* <script src="/static/js/waves.min.js"></script> */}
                     <script src="/static/js/main.js"></script>
                 </body>

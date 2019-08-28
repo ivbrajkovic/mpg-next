@@ -26,6 +26,7 @@ nav {
         position: absolute;
         top: 10px;
         right: 15px;
+        font-size: 16px;
         color: #b9b9b9;
 
         transition-delay: 200ms;
@@ -35,7 +36,13 @@ nav {
 
         > div {
             display: inline-block;
+            cursor: pointer;
         }
+
+        > div:hover {
+            color: #3d3d3d;
+        }
+
         .active {
             color: #3d3d3d;
         }
@@ -121,6 +128,7 @@ nav {
     .nav_submenu-items {
         padding: 0 15px;
         @include text-center(35px);
+        cursor: pointer;
         color: $color-3;
         background: $primary-back;
         transition: background 0.3s ease 0s;

@@ -16,28 +16,28 @@
     "section1": {
         "src": "/static/img/post/post-big.png",
         "title": "Izložba, 07. 05. do 15. 09. 2019.",
-        "header": "definiraj nedefinirano",
+        "header": "english",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
     },
     "section2": [
         {
             "src": "/static/img/post/post-1.png",
             "title": "Lorem ipsum dolor",
-            "header": "Lorem ipsum dolor",
+            "header": "english",
             "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
             "content2": ""
         },
         {
             "src": "/static/img/post/post-1.png",
             "title": "Lorem ipsum dolor",
-            "header": "Lorem ipsum dolor",
+            "header": "english",
             "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
             "content2": ""
         },
         {
             "src": "/static/img/post/post-1.png",
             "title": "Lorem ipsum dolor",
-            "header": "Lorem ipsum dolor",
+            "header": "english",
             "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
             "content2": ""
         }

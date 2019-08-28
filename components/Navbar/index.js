@@ -1,57 +1,81 @@
 import React, { Component } from 'react';
-// import Link from 'next/link';
-// import './navbar.scss';
-import json from './menu.json';
-import Menu from './menu';
+// import fetch from 'isomorphic-unfetch';
 
-const menu = json.menu;
+import { LanguageContext } from '../../contexts';
+
+import Menu from './Menu';
+
+import json from './menu.json';
+// const menu = json.menu;
 
 export default class Navbar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isShrinked: false,
-            ticking: false
-        };
-        this.scrollBreakPoint = 250;
-        this.handleScroll = this.handleScroll.bind(this);
-        this.shrinkNavbar = this.shrinkNavbar.bind(this);
-    }
+    state = {
+        isShrinked: false,
+        language: 'hr'
+    };
+    static contextType = LanguageContext;
+    ticking = false;
+    scrollBreakPoint = 250;
 
-    shrinkNavbar(position) {
+    componentDidMount = () => {
+        // Shrink navbar on scroll
+        this.shrinkNavbar(window.scrollY);
+        window.addEventListener('scroll', this.handleScroll);
+    };
+
+    // componentDidUpdate(prevProps) {
+    //     console.log(
+    //         'TCL: Navbar -> getDerivedStateFromProps -> this.state.language === this.context.language',
+    //         this.state.language === this.context.language
+    //     );
+    //     if (!this.state.language === this.context.language) {
+    //     }
+    // }
+
+    componentWillUnmount = () => window.removeEventListener('scroll', this.handleScroll);
+
+    shrinkNavbar = position => {
         const { isShrinked } = this.state;
-
         if (!isShrinked && position > this.scrollBreakPoint) {
             this.setState({ isShrinked: true });
         } else if (isShrinked && position < this.scrollBreakPoint) {
             this.setState({ isShrinked: false });
         }
-    }
+    };
 
-    handleScroll() {
-        const { isShrinked, ticking } = this.state;
-        // console.log('TCL: Navbar -> handleScroll -> isShrinked', isShrinked);
-        // console.log('TCL: Navbar -> handleScroll -> ticking', ticking);
-
-        if (!ticking) {
+    handleScroll = () => {
+        // if (!this.state.ticking) {
+        if (!this.ticking) {
             window.requestAnimationFrame(() => {
                 this.shrinkNavbar(window.scrollY);
-                this.setState({ ticking: false });
+                // this.setState({ ticking: false });
+                this.ticking = false;
             });
         }
-        this.setState({ ticking: true });
-    }
+        // this.setState({ ticking: true });
+        this.ticking = true;
+    };
 
-    componentDidMount() {
-        this.shrinkNavbar(window.scrollY);
-        window.addEventListener('scroll', this.handleScroll);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
+    // lngUpdate = lng => this.setState({ lng: lng });
 
     render() {
-        return <Menu menu={menu} shrink={this.state.isShrinked}></Menu>;
+        // const lngUpdate = this.lngUpdate;
+        // const lng = this.state.lng;
+
+        console.log('TCL: Navbar -> render -> this.context.language', this.context.language);
+
+        if (!json[this.context.language]) {
+        }
+
+        return (
+            // <LanguageContext.Provider value={{ lng, lngUpdate }}>
+            <Menu
+                content={json ? json[this.context.language] : []}
+                shrink={this.state.isShrinked}
+            />
+            // <Menu content={json ? json[this.state.lng] : []} shrink={this.state.isShrinked} />
+            // </LanguageContext.Provider>
+        );
+        // return <h1>Hello from menu</h1>;
     }
 }

@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const fs = require('fs');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -10,6 +11,18 @@ app.prepare().then(() => {
     const server = express();
 
     server.use('/api', require('./api'));
+
+    // server.get('/', (req, res) => {
+    //     console.log('TCL: server - > req.url', req.url);
+
+    //     fs.readFile(`db/menu.json`, (error, data) => {
+    //         if (error) {
+    //             console.error('readFile error:', error);
+    //             return app.render(req, res, '/', { success: false, data: error });
+    //         }
+    //         return app.render(req, res, '/', { data: JSON.parse(data) });
+    //     });
+    // });
 
     server.get('*', (req, res) => {
         return handle(req, res);
