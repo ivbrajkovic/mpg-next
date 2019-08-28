@@ -1,6 +1,9 @@
+import React, { Component } from 'react';
 import fetch from 'isomorphic-unfetch';
 // import Layout from '../components/Layout.js';
 import Hero from '../components/Hero';
+import fetchDataAsync from '../lib/fetchDataAsync';
+
 import Section1 from '../components/Section-1';
 import Section2 from '../components/Section-2';
 import Section3 from '../components/Section-3';
@@ -23,33 +26,28 @@ import Section5 from '../components/Section-5';
 //     xlarge: 'https://via.placeholder.com/1600x500'
 // };
 
-import React, { Component } from 'react';
-
 // let textData = {};
-async function fetchDataAsync(language) {
-    try {
-        const res = await fetch(`http://127.0.0.1:3000/api/index/${language}`);
-        const data = await res.json();
-        return { data: data };
-        // this.setState({ data: data });
-    } catch (err) {
-        return { err };
-        // this.setState({ data: { error: `rror in fetching data ${err}` } });
-    }
-}
+// async function fetchDataAsync(language) {
+//     try {
+//         const res = await fetch(`http://127.0.0.1:3000/api/index/${language}`);
+//         const data = await res.json();
+//         return { data: data };
+//         // this.setState({ data: data });
+//     } catch (err) {
+//         return { err };
+//         // this.setState({ data: { error: `rror in fetching data ${err}` } });
+//     }
+// }
 
 export default class index extends Component {
     state = {
         loading: false,
-        language: 'hr',
-        data: {}
+        language: 'hr'
     };
-    textData = {};
     btns = [];
 
-    static async getInitialProps() {
-        let data = await fetchDataAsync('en');
-        console.log('TCL: index -> getInitialProps -> data', data);
+    static async getInitialProps({ req }) {
+        let data = await fetchDataAsync(req, 'en');
         return data;
     }
 
@@ -89,17 +87,15 @@ export default class index extends Component {
 
     render() {
         // let loading = this.state.loading;
-        console.log('TCL: index -> render -> loading', this.state.loading);
-        console.log('TCL: index -> render -> this.props.data', this.props.data);
-        console.log('TCL: index -> render -> this.props.error', this.props.error ? true : false);
+        console.log('TCL: pages -> index -> render');
 
         // if (loading) return <h2>Loading...</h2>;
         // return <h2>{this.state.loading ? 'loading...' : 'not loading'}</h2>;
         // else
-        let banner = this.props.data.banner.first;
+        // let banner = this.props.data.banner.first;
         return (
             <div>
-                <Hero title={'ggggg'} banner={this.props.data.banner.first} />
+                <Hero title={'test'} banner={this.props.data.banner.first} />
                 <Section1 content={this.props.data.section1} />
                 <Section2 />
                 <Section3 />

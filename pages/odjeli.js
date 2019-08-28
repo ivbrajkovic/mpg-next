@@ -13,7 +13,7 @@ const banner = {
 
 const Index = props => {
     // console.log('TCL: props', props);
-    console.log('odjeli.html');
+    console.log('TCL: pages -> odjeli -> render');
 
     return (
         <div>
