@@ -7,7 +7,7 @@
         "dev": "next",
         "build": "next build",
         "node": "nodemon server/index.js",
-        "start": "next start -p $PORT"
+        "start": "node server/index.js -p $PORT"
     },
     "keywords": [],
     "author": "",
