@@ -23,19 +23,24 @@ export default class MyApp extends App {
         // console.log('TCL: MyApp -> constructor -> props', props);
         this.state = {
             // language: 'hr',
-            language: MyApp.staticLang,
+            language: MyApp.lang
             // language: this.props.language,
             // updateLanguage: value => {
             //     this.setState({ language: value });
             //     MyApp.myLang = value;
             // }
-            data: this.props.data.data,
-            page: this.props.data.page,
-            success: this.props.data.success
+            // data: this.props.data.data,
+            // page: this.props.data.page,
+            // success: this.props.data.success,
+            // lastError: this.props.data.lastError
         };
     }
 
-    static staticLang = 'hr';
+    static success = true;
+    static lang = 'hr';
+    static page = 'index';
+    static data = null;
+    static lastError = null;
 
     // constructor(props) {
     //     super(props);
@@ -56,16 +61,17 @@ export default class MyApp extends App {
     //         };
     //     })
 
-    static async getInitialProps({ Component, router, ctx }) {
+    static async getInitialProps1({ Component, router, ctx }) {
         let pageProps = {};
-        let data = { success: false, page: null, data: 'Invalid page.' };
+        // let data = { success: false, page: null, data: null, lastError: 'Invalid page.' };
 
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx);
         }
 
         if (pageProps && pageProps.page) {
-            // data.data = await fetchDataAsync(ctx.req, null, pageProps.page, 'hr');
+            console.log('TCL: MyApp -> getInitialProps -> MyApp.staticLang', MyApp.staticLang);
+
             data = await fetchDataAsync(ctx.req, null, pageProps.page, MyApp.staticLang);
             data.page = pageProps.page;
         }
@@ -73,50 +79,169 @@ export default class MyApp extends App {
         return { pageProps, data };
     }
 
-    // static getDerivedStateFromProps(props, state) {
-    //     // console.log('TCL: MyApp -> getDerivedStateFromProps -> state', state);
-    //     // console.log('TCL: MyApp -> getDerivedStateFromProps -> props', props);
+    static async getInitialProps({ Component, router, ctx }) {
+        let pageProps = {};
+        if (Component.getInitialProps) {
+            pageProps = await Component.getInitialProps(ctx);
+        }
 
-    //     if (props.data.success !== state.text.success) {
-    //         console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 1');
-    //         return {
-    //             text: props.data
-    //         };
-    //     } else if (state.page && state.text && state.text.data) {
-    //         let newState = state;
-    //         let language = state.language;
-    //         let page = props.page;
-    //         page = page.substr(1);
+        if (pageProps && pageProps.page) {
+            console.log('TCL: getInitialProps -> pageProps.page', pageProps.page);
+            console.log('TCL: getInitialProps -> MyApp (data, page, lang):', data, page, lang);
 
-    //         if (!state.text.data[page]) {
-    //             console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 2');
-    //             newState.text.data[page] = props.data.data[page];
-    //             return newState;
-    //         } else if (!state.text.data[page][language]) {
-    //             console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 3');
-    //             newState.text.data[page][language] = props.data.data[page][language];
-    //             return newState;
-    //         }
-    //     }
-    //     console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: FALSE');
-    //     return null;
-    // }
+            const { data, lang } = MyApp;
+            const page = pageProps.page;
 
-    changeLanguage = async lang => {
-        // try {
-        // let page = window.location.pathname.substr(1);
-        let { success: prevSuccess, data: prevData, page } = this.state;
-
-        if (prevData && (!prevData[page] || !prevData[page][lang])) {
-            const { success: nextSuccess, data: nextData } = await fetchDataAsync(
-                null,
-                null,
-                page,
-                lang
+            console.log(
+                'TCL: getInitialProps -> (!data || !data[page] || !data[page][lang])',
+                !data || !data[page] || !data[page][lang]
             );
 
-            if (!prevSuccess || !nextSuccess) {
-                prevData = nextData;
+            if (!data || !data[page] || !data[page][lang]) {
+                const nextData = await fetchDataAsync(ctx.req, null, pageProps.page, lang);
+
+                if (!nextData.success) {
+                    MyApp.lastError = nextData.lastError;
+                    console.log('TCL: getInitialProps -> MyApp.lastError', MyApp.lastError);
+                } else {
+                    if (!data) {
+                        console.log('TCL: getInitialProps -> data');
+                        MyApp.data = nextData.data;
+                    } else if (!data[page]) {
+                        console.log('TCL: getInitialProps -> page');
+                        MyApp.data[page] = nextData.data[page];
+                    } else if (!data[page]) {
+                        console.log('TCL: getInitialProps -> lang');
+                        MyApp.data[page][lang] = nextData.data[page][lang];
+                    }
+                }
+                MyApp.success = nextData.success;
+            }
+            // data.page = pageProps.page;
+        }
+
+        return { pageProps };
+    }
+
+    static getDerivedStateFromProps1(props, state) {
+        console.log('TCL: MyApp -> getDerivedStateFromProps -> state', state);
+        console.log('TCL: MyApp -> getDerivedStateFromProps -> props', props);
+
+        const {
+            success: propsSuccess,
+            page: propsPage,
+            data: propsData,
+            lastError: propsLastError
+        } = props.data;
+
+        if (!propsSuccess) {
+            console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: LAST ERROR');
+            return {
+                success: propsSuccess,
+                lastError: propsLastError
+            };
+        }
+
+        let {
+            language: stateLanguage,
+            success: stateSuccess,
+            // page: statePage,
+            data: stateData
+            // lastError: stateLastError
+        } = state;
+
+        if (propsData && propsPage && propsData[propsPage] && propsData[propsPage][stateLanguage]) {
+            let isChanged = false;
+            if (!stateData) {
+                stateData = propsData;
+                isChanged = true;
+            } else if (!stateData[propsPage]) {
+                stateData[propsPage] = propsData[propsPage];
+                isChanged = true;
+            } else if (!stateData[propsPage][stateLanguage]) {
+                stateData[propsPage][stateLanguage] = propsData[propsPage][stateLanguage];
+                isChanged = true;
+            }
+            if (isChanged) {
+                console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE');
+                return {
+                    success: propsSuccess,
+                    data: stateData,
+                    page: propsPage
+                };
+            } else if (stateSuccess != propsSuccess) {
+                console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: SUCCESS');
+                return {
+                    success: propsSuccess
+                };
+            }
+        }
+        //         console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 1');
+        //         return {
+        //             text: props.data
+        //         };
+        //     } else if (state.page && state.text && state.text.data) {
+        //         let newState = state;
+        //         let language = state.language;
+        //         let page = props.page;
+        //         page = page.substr(1);
+
+        //         if (!state.text.data[page]) {
+        //             console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 2');
+        //             newState.text.data[page] = props.data.data[page];
+        //             return newState;
+        //         } else if (!state.text.data[page][language]) {
+        //             console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 3');
+        //             newState.text.data[page][language] = props.data.data[page][language];
+        //             return newState;
+        //         }
+        console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: FALSE');
+        return null;
+    }
+
+    changeLanguage = async lang => {
+        this.setState({
+            language: lang
+        });
+        MyApp.staticLang = lang;
+    };
+
+    changeLanguage1 = async lang => {
+        // try {
+        // let page = window.location.pathname.substr(1);
+
+        if (this.state.language === lang) {
+            console.log('TCL: MyApp -> changeLanguage -> changed: FALSE');
+            return;
+        }
+
+        let { lastError: prevLastError, success: prevSuccess, data: prevData, page } = this.state;
+
+        if (!prevData) {
+            const {
+                success: nextSuccess,
+                data: nextData,
+                lastError: nextLastError
+            } = await fetchDataAsync(null, null, page, lang);
+            this.setState({
+                language: lang,
+                data: nextData,
+                success: nextSuccess,
+                lastError: nextLastError
+            });
+            console.log('TCL: MyApp -> changeLanguage -> added: TRUE');
+            return;
+        }
+
+        if (/*prevData && (*/ !prevData[page] || !prevData[page][lang] /*)*/) {
+            const {
+                success: nextSuccess,
+                data: nextData,
+                lastError: nextLastError
+            } = await fetchDataAsync(null, null, page, lang);
+
+            if (!nextSuccess) {
+                prevLastError = nextLastError;
             } else {
                 if (!prevData[page]) {
                     prevData[page] = nextData[page];
@@ -129,16 +254,19 @@ export default class MyApp extends App {
             this.setState({
                 language: lang,
                 data: prevData,
-                success: prevSuccess
+                success: prevSuccess,
+                lastError: prevLastError
             });
             console.log('TCL: MyApp -> changeLanguage -> added: TRUE');
-        } else {
-            this.setState({
-                language: lang
-            });
-            console.log('TCL: MyApp -> changeLanguage -> added: FALSE');
+            return;
         }
+        // console.log('TCL: MyApp -> changeLanguage -> added: FALSE');
+
+        this.setState({
+            language: lang
+        });
         MyApp.staticLang = lang;
+        console.log('TCL: MyApp -> changeLanguage -> changed: TRUE');
         // } catch (err) {
         //     console.log('TCL: TCL: MyApp -> changeLanguage -> ERROR:', err);
         // }

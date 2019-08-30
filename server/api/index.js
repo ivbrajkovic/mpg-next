@@ -7,7 +7,7 @@ router.get('/:cmp/:lng', function(req, res, next) {
 
     if (!req.params.cmp || !req.params.lng) {
         console.error('readFile error: Invalid argument');
-        res.json({ success: false, data: 'Invalid argument' });
+        res.json({ success: false, lastError: 'Invalid params' });
         return;
     }
 
@@ -29,7 +29,7 @@ router.get('/:cmp/:lng', function(req, res, next) {
     fs.readFile(`db/${req.params.cmp}-${req.params.lng.toUpperCase()}.json`, (error, data) => {
         if (error) {
             console.error('readFile error:', error);
-            res.json({ success: false, data: error });
+            res.json({ success: false, lastError: error });
             return;
         }
         res.json({ success: true, data: JSON.parse(data) });
