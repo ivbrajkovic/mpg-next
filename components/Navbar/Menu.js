@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import Link from './Link';
 import Language from './Language';
 
-export default class Nav extends Component {
+export default class Menu extends Component {
+    changeLanguage = data => {
+        console.log('TCL: Nav -> data', data);
+    };
+
     render() {
         const menuContent = this.props.content;
+        // console.log('TCL: Nav -> render -> menuContent', menuContent);
         return (
             <nav className="w3-card-4">
                 <div
@@ -13,7 +18,10 @@ export default class Nav extends Component {
                         this.props.shrink ? `navbar-shrink` : ``
                     }`}
                 >
-                    <Language />
+                    <Language
+                        language={this.props.language}
+                        onChangeLanguage={data => this.props.onChangeLanguage(data)}
+                    />
 
                     <div className="logo">
                         <img src="static/img/logo/logo.png" alt="MGP logo" />

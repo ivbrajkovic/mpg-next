@@ -32,7 +32,7 @@ router.get('/:cmp/:lng', function(req, res, next) {
             res.json({ success: false, data: error });
             return;
         }
-        res.json(JSON.parse(data));
+        res.json({ success: true, data: JSON.parse(data) });
     });
 });
 
