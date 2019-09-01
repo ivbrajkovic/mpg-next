@@ -1,76 +1,132 @@
 {
     "odjeli": {
         "en": {
-            "banner": {
-                "first": {
-                    "title": "english",
-                    "small": "https://via.placeholder.com/575x500",
-                    "medium": "https://via.placeholder.com/991x500",
-                    "large": "https://via.placeholder.com/1199x500",
-                    "xlarge": "https://via.placeholder.com/1600x500"
-                }
-            },
-            "section1": {
-                "src": "/static/img/post/post-big.png",
-                "title": "Izložba, 07. 05. do 15. 09. 2019.",
-                "header": "definiraj nedefinirano",
-                "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
-            },
-            "section2": [
+            "banner": [
                 {
-                    "src": "/static/img/post/post-1.png",
-                    "title": "Lorem ipsum dolor",
-                    "header": "Lorem ipsum dolor",
-                    "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                    "content2": ""
-                },
-                {
-                    "src": "/static/img/post/post-1.png",
-                    "title": "Lorem ipsum dolor",
-                    "header": "Lorem ipsum dolor",
-                    "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                    "content2": ""
-                },
-                {
-                    "src": "/static/img/post/post-1.png",
-                    "title": "Lorem ipsum dolor",
-                    "header": "Lorem ipsum dolor",
-                    "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                    "content2": ""
+                    "title": "hrvatski",
+                    "small": "static/img/banner/baner-odjeli-768px.jpg",
+                    "medium": "static/img/banner/baner-odjeli-1200px.jpg",
+                    "large": "static/img/banner/baner-odjeli-1200px.jpg",
+                    "xlarge": "static/img/banner/baner-odjeli.jpg"
                 }
             ],
-            "section3": [
-                {
-                    "src": "/static/img/info/info-lokacija.png",
-                    "title": "",
-                    "header": "lokacija",
-                    "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                    "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-                },
-                {
-                    "src": "/static/img/info/info-rvrijeme.png",
-                    "title": "",
-                    "header": "radno vrijeme",
-                    "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                    "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-                },
-                {
-                    "src": "/static/img/info/info-ulaznice.png",
-                    "title": "",
-                    "header": "ulaznice",
-                    "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                    "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-                }
-            ],
-            "section4": {
-                "src": ["/static/img/slider/slider-pocetna-zbirke-1.jpg"],
-                "header": "zbirke",
-                "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
-            },
-            "section5": {
-                "title": "o pazinskom kaštelu",
-                "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
-            }
+            "section1": ["kulturno-povjesni odjel", "povjesni odjel", "galerijski odjel"],
+            "odjeli": [
+                [
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "glazbena zbirka"
+                    }
+                ],
+                [
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "povjesni odjel"
+                    }
+                ],
+                [
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    },
+                    {
+                        "src": "https://via.placeholder.com/350x350",
+                        "title": "galserijski odjel"
+                    }
+                ]
+            ]
         }
     }
 }

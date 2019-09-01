@@ -1,11 +1,13 @@
 // import ActiveLink from './ActiveLink';
-import Link from './Link';
+import ActiveLink from './Link';
 import Language from './Language';
 
 import { withRouter } from 'next/router';
 
 const Menu = ({ router, ...props }) => {
-    const { shrink, content: menu, onChangeLanguage, onChangeRoute, onTest } = props;
+    const { shrink, content: menu, onChangeLanguage, onTest } = props;
+
+    const setLanguage = value => onChangeLanguage(value);
 
     return (
         <nav className="w3-card-4">
@@ -15,7 +17,7 @@ const Menu = ({ router, ...props }) => {
             >
                 <Language
                     language={props.language}
-                    onChangeLanguage={data => onChangeLanguage(data)}
+                    onChangeLanguage={setLanguage}
                     onTest={onTest}
                 />
 
@@ -32,7 +34,7 @@ const Menu = ({ router, ...props }) => {
                 <div className="menu-lists">
                     {menu.map((menuItem, index) => {
                         return (
-                            <Link activeClassName="active" href={menuItem.href} key={index}>
+                            <ActiveLink activeClassName="active" href={menuItem.href} key={index}>
                                 <a className="menu-items">
                                     {/* <ActiveLink
                                     route={menuItem.href}
@@ -60,7 +62,7 @@ const Menu = ({ router, ...props }) => {
                                     )}
                                     {/* </ActiveLink> */}
                                 </a>
-                            </Link>
+                            </ActiveLink>
                         );
                     })}
                 </div>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 // import fetch from 'isomorphic-unfetch';
-
 // import { LanguageContext } from '../../contexts';
 
+import json from './menu.json';
 import Menu from './Menu';
 
-import json from './menu.json';
 // const menu = json.menu;
 
 export default class Navbar extends Component {
@@ -16,33 +15,20 @@ export default class Navbar extends Component {
     // static contextType = LanguageContext;
     ticking = false;
     scrollBreakPoint = 250;
+    widthBreakPoint = 1200;
 
     componentDidMount = () => {
-        // Shrink navbar on scroll
         this.shrinkNavbar(window.scrollY);
         window.addEventListener('scroll', this.handleScroll);
     };
 
-    componentDidUpdate(prevProps) {
-        // console.log(
-        //     'TCL: Navbar -> componentDidUpdate -> this.state.language',
-        //     this.state.language
-        // );
-        // console.log(
-        //     'TCL: Navbar -> componentDidUpdate -> this.context.language',
-        //     this.context.language
-        // );
-        // if (!this.state.language === this.context.language) {
-        // }
-    }
-
     componentWillUnmount = () => window.removeEventListener('scroll', this.handleScroll);
 
-    shrinkNavbar = position => {
+    shrinkNavbar = (posY, width) => {
         const { isShrinked } = this.state;
-        if (!isShrinked && position > this.scrollBreakPoint) {
+        if (!isShrinked && posY > this.scrollBreakPoint && width < this.widthBreakPoint) {
             this.setState({ isShrinked: true });
-        } else if (isShrinked && position < this.scrollBreakPoint) {
+        } else if (isShrinked && posY < this.scrollBreakPoint) {
             this.setState({ isShrinked: false });
         }
     };
@@ -51,7 +37,7 @@ export default class Navbar extends Component {
         // if (!this.state.ticking) {
         if (!this.ticking) {
             window.requestAnimationFrame(() => {
-                this.shrinkNavbar(window.scrollY);
+                this.shrinkNavbar(window.scrollY, window.innerWidth);
                 // this.setState({ ticking: false });
                 this.ticking = false;
             });
@@ -60,22 +46,12 @@ export default class Navbar extends Component {
         this.ticking = true;
     };
 
-    // lngUpdate = lng => this.setState({ lng: lng });
-
-    changeLanguage = data => {
-        console.log('TCL: Navbar -> changeLanguage -> data', data);
-    };
+    setLanguage = value => this.props.onChangeLanguage(value);
 
     i = 0;
     render() {
-        // const lngUpdate = this.lngUpdate;
-        // const lng = this.state.lng;
-
         console.log('TCL: Navbar -> render: ', ++this.i);
         // console.log('TCL: Navbar -> render -> this.context', this.context);
-
-        // if (!json[this.context.language]) {
-        // }
 
         return (
             // <LanguageContext.Provider value={{ lng, lngUpdate }}>
@@ -83,10 +59,8 @@ export default class Navbar extends Component {
                 // content={json ? json[this.context.language] : []}
                 language={this.props.language}
                 content={json ? json[this.props.language] : []}
-                // content={json ? json[this.context.language] : []}
-                onChangeLanguage={value => this.props.onChangeLanguage(value)}
+                onChangeLanguage={this.setLanguage}
                 shrink={this.state.isShrinked}
-                onChangeRoute={value => this.props.onChangeRoute(value)}
                 onTest={this.props.onTest}
             />
             // <Menu

@@ -65,22 +65,6 @@ export default class MyApp extends App {
     //     return { pageProps, data };
     // }
 
-    pausecompAsync(millis) {
-        return new Promise((resolve, reject) => {
-            // var date = new Date();
-            // var curDate = null;
-            // do {
-            //     curDate = new Date();
-            // } while (curDate - date < millis);
-            // resolve("ok");
-            console.log('TCL: pausecompAsync -> timer: START');
-            setTimeout(function() {
-                resolve('Success!'); // Yay! Everything went well!
-            }, millis);
-            console.log('TCL: pausecompAsync -> timer: STOP');
-        });
-    }
-
     componentDidMount() {
         if (!this.data) {
             this.setData(Router.pathname, this.state.lang);
@@ -165,6 +149,12 @@ export default class MyApp extends App {
         return true;
     };
 
+    setRoute = async route => {
+        // route = route === '/' ? '/index' : route;
+        // Router.push(route);
+        await this.setData(route, this.state.lang);
+    };
+
     setLanguage = async lang => {
         // if (this.state.lang === lang || !this.state.page) {
         if (this.state.lang === lang) {
@@ -182,19 +172,6 @@ export default class MyApp extends App {
             });
         }
     };
-
-    setRoute = async route => {
-        // route = route === '/' ? '/index' : route;
-        // Router.push(route);
-        await this.setData(route, this.state.lang);
-    };
-
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     // console.log('TCL: shouldComponentUpdate -> nextProps', nextProps);
-    //     console.log('TCL: MyApp -> shouldComponentUpdate: ', nextState.render);
-    //     if (nextState.render) return true;
-    //     return false;
-    // }
 
     onTest = () => {
         console.log('TCL: MyApp -> onTest: REFRESH');
@@ -265,7 +242,6 @@ export default class MyApp extends App {
                 <Navbar
                     language={this.state.lang}
                     onChangeLanguage={this.setLanguage}
-                    onChangeRoute={this.setRoute}
                     onTest={this.onTest}
                 />
                 <Component

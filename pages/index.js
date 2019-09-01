@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 // import fetch from 'isomorphic-unfetch';
 // import fetchDataAsync from '../lib/fetchDataAsync';
 // import { LanguageCondata } from '../condatas';
 
 import Hero from '../components/Hero';
-import Section1 from '../components/Section-1';
-import Section2 from '../components/Section-2';
-import Section3 from '../components/Section-3';
-import Section4 from '../components/Section-4';
-import Section5 from '../components/Section-5';
+import Section1 from '../components/Index/Section1';
+import Section2 from '../components/Index/Section2';
+import Section3 from '../components/Index/Section3';
+import Section4 from '../components/Index/Section4';
+import Section5 from '../components/Index/Section5';
 
-export default class index extends Component {
+export default class index extends PureComponent {
     buttons = [];
 
     // static async getInitialProps() {
@@ -88,12 +88,12 @@ export default class index extends Component {
             return (
                 <div>
                     {/* <button onClick={() => this.condata.updateLanguage('en')}>test</button> */}
-                    <Hero banner={data.banner.first} />
+                    <Hero banner={data.banner[0]} />
                     <Section1 content={data.section1} />
                     <Section2 content={data.section2} />
                     <Section3 content={data.section3} />
                     <Section4 content={data.section4} />
-                    <Section5 banner={data.banner.second} content={data.section5} />
+                    <Section5 banner={data.banner[1]} content={data.section5} />
                 </div>
             );
         return <h1>Loading</h1>;
