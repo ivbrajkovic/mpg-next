@@ -15,22 +15,22 @@ const banner = {
 import React, { Component } from 'react';
 
 export default class Odjeli extends Component {
-    static async getInitialProps({ req }) {
-        return { page: 'odjeli' };
-    }
+    // static async getInitialProps({ req }) {
+    //     return { page: '/odjeli' };
+    // }
 
     i = 0;
     render() {
         console.log('TCL: Odjeli -> render: ', ++this.i);
-        // console.log('TCL: Odjeli -> this.props', this.props.text);
+        // console.log('TCL: Odjeli -> this.props', this.props.data);
 
-        console.log('TCL: render -> this.props', this.props);
-        const { text } = this.props;
+        const { data } = this.props;
+        if (!data) return <h1>Error, no data.</h1>;
 
-        if (text.banner)
+        if (data.banner)
             return (
                 <div>
-                    <Hero banner={text.banner.first} />
+                    <Hero banner={data.banner.first} />
                     'This is odjeli.html';
                 </div>
             );

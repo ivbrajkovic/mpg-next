@@ -3,12 +3,14 @@
         "en": {
             "banner": {
                 "first": {
+                    "title": "engleski",
                     "small": "https://via.placeholder.com/575x500",
                     "medium": "https://via.placeholder.com/991x500",
                     "large": "https://via.placeholder.com/1199x500",
                     "xlarge": "https://via.placeholder.com/1600x500"
                 },
                 "second": {
+                    "title": "",
                     "small": "https://via.placeholder.com/575x500",
                     "medium": "https://via.placeholder.com/991x500",
                     "large": "https://via.placeholder.com/1199x500",

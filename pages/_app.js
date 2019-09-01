@@ -3,8 +3,10 @@ import Router from 'next/router';
 import Head from 'next/head';
 import NProgress from 'nprogress';
 
+import isofetch from 'isomorphic-unfetch';
+
 // import { LanguageContext } from '../contexts';
-import fetchDataAsync from '../lib/fetchDataAsync';
+// import fetchDataAsync from '../lib/fetchDataAsync';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -20,291 +22,235 @@ Router.events.on('routeChangeError', () => NProgress.done());
 export default class MyApp extends App {
     constructor(props) {
         super(props);
-        // console.log('TCL: MyApp -> constructor -> props', props);
         this.state = {
-            // language: 'hr',
-            language: MyApp.lang
-            // language: this.props.language,
-            // updateLanguage: value => {
-            //     this.setState({ language: value });
-            //     MyApp.myLang = value;
-            // }
-            // data: this.props.data.data,
-            // page: this.props.data.page,
-            // success: this.props.data.success,
-            // lastError: this.props.data.lastError
+            // isServer: false,
+            loading: true,
+            lang: 'hr',
+            success: false,
+            data: null,
+            lastError: null
         };
+        // const { loading, success, data, lastError } = props.data;
+        // this.state = {
+        //     isServer: false,
+        //     loading: loading,
+        //     lang: 'hr',
+        //     success: success,
+        //     data: data,
+        //     lastError: lastError
+        // };
     }
 
-    static success = true;
-    static lang = 'hr';
-    static page = 'index';
-    static data = null;
-    static lastError = null;
+    // static async getInitialProps({ Component, router, ctx }) {
+    //     let pageProps = {};
+    //     if (Component.getInitialProps) {
+    //         pageProps = await Component.getInitialProps(ctx);
+    //     }
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         language: 'hr'
-    //         // updateLanguage: value => this.setState({ language: value }),
-    //         // data: this.props.data
-    //     };
+    //     let data = { isServer: false, loading: true };
+
+    //     if (ctx.req) {
+    //         try {
+    //             const url = `${ctx.req.protocol}://${ctx.req.get('host')}/api/index/hr`;
+    //             console.log('TCL: MyApp -> getInitialProps -> url', url);
+    //             const res = await isofetch(url);
+    //             data = await res.json();
+    //             data.isServer = true;
+    //             data.loading = false;
+    //         } catch (err) {
+    //             data = { success: false, lastError: err };
+    //         }
+    //     }
+
+    //     return { pageProps, data };
     // }
 
-    // updateData: (language, data) =>
-    //     this.setState(state => {
-    //         let stateData = state.data;
-    //         stateData[language] = data.data[language];
-    //         return {
-    //             // language: language,
-    //             data: stateData
-    //         };
-    //     })
-
-    static async getInitialProps1({ Component, router, ctx }) {
-        let pageProps = {};
-        // let data = { success: false, page: null, data: null, lastError: 'Invalid page.' };
-
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx);
-        }
-
-        if (pageProps && pageProps.page) {
-            console.log('TCL: MyApp -> getInitialProps -> MyApp.staticLang', MyApp.staticLang);
-
-            data = await fetchDataAsync(ctx.req, null, pageProps.page, MyApp.staticLang);
-            data.page = pageProps.page;
-        }
-
-        return { pageProps, data };
-    }
-
-    static async getInitialProps({ Component, router, ctx }) {
-        let pageProps = {};
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx);
-        }
-
-        if (pageProps && pageProps.page) {
-            console.log('TCL: getInitialProps -> pageProps.page', pageProps.page);
-            console.log('TCL: getInitialProps -> MyApp (data, page, lang):', data, page, lang);
-
-            const { data, lang } = MyApp;
-            const page = pageProps.page;
-
-            console.log(
-                'TCL: getInitialProps -> (!data || !data[page] || !data[page][lang])',
-                !data || !data[page] || !data[page][lang]
-            );
-
-            if (!data || !data[page] || !data[page][lang]) {
-                const nextData = await fetchDataAsync(ctx.req, null, pageProps.page, lang);
-
-                if (!nextData.success) {
-                    MyApp.lastError = nextData.lastError;
-                    console.log('TCL: getInitialProps -> MyApp.lastError', MyApp.lastError);
-                } else {
-                    if (!data) {
-                        console.log('TCL: getInitialProps -> data');
-                        MyApp.data = nextData.data;
-                    } else if (!data[page]) {
-                        console.log('TCL: getInitialProps -> page');
-                        MyApp.data[page] = nextData.data[page];
-                    } else if (!data[page]) {
-                        console.log('TCL: getInitialProps -> lang');
-                        MyApp.data[page][lang] = nextData.data[page][lang];
-                    }
-                }
-                MyApp.success = nextData.success;
-            }
-            // data.page = pageProps.page;
-        }
-
-        return { pageProps };
-    }
-
-    static getDerivedStateFromProps1(props, state) {
-        console.log('TCL: MyApp -> getDerivedStateFromProps -> state', state);
-        console.log('TCL: MyApp -> getDerivedStateFromProps -> props', props);
-
-        const {
-            success: propsSuccess,
-            page: propsPage,
-            data: propsData,
-            lastError: propsLastError
-        } = props.data;
-
-        if (!propsSuccess) {
-            console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: LAST ERROR');
-            return {
-                success: propsSuccess,
-                lastError: propsLastError
-            };
-        }
-
-        let {
-            language: stateLanguage,
-            success: stateSuccess,
-            // page: statePage,
-            data: stateData
-            // lastError: stateLastError
-        } = state;
-
-        if (propsData && propsPage && propsData[propsPage] && propsData[propsPage][stateLanguage]) {
-            let isChanged = false;
-            if (!stateData) {
-                stateData = propsData;
-                isChanged = true;
-            } else if (!stateData[propsPage]) {
-                stateData[propsPage] = propsData[propsPage];
-                isChanged = true;
-            } else if (!stateData[propsPage][stateLanguage]) {
-                stateData[propsPage][stateLanguage] = propsData[propsPage][stateLanguage];
-                isChanged = true;
-            }
-            if (isChanged) {
-                console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE');
-                return {
-                    success: propsSuccess,
-                    data: stateData,
-                    page: propsPage
-                };
-            } else if (stateSuccess != propsSuccess) {
-                console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: SUCCESS');
-                return {
-                    success: propsSuccess
-                };
-            }
-        }
-        //         console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 1');
-        //         return {
-        //             text: props.data
-        //         };
-        //     } else if (state.page && state.text && state.text.data) {
-        //         let newState = state;
-        //         let language = state.language;
-        //         let page = props.page;
-        //         page = page.substr(1);
-
-        //         if (!state.text.data[page]) {
-        //             console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 2');
-        //             newState.text.data[page] = props.data.data[page];
-        //             return newState;
-        //         } else if (!state.text.data[page][language]) {
-        //             console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: TRUE 3');
-        //             newState.text.data[page][language] = props.data.data[page][language];
-        //             return newState;
-        //         }
-        console.log('TCL: MyApp -> getDerivedStateFromProps -> set state: FALSE');
-        return null;
-    }
-
-    changeLanguage = async lang => {
-        this.setState({
-            language: lang
+    pausecompAsync(millis) {
+        return new Promise((resolve, reject) => {
+            // var date = new Date();
+            // var curDate = null;
+            // do {
+            //     curDate = new Date();
+            // } while (curDate - date < millis);
+            // resolve("ok");
+            console.log('TCL: pausecompAsync -> timer: START');
+            setTimeout(function() {
+                resolve('Success!'); // Yay! Everything went well!
+            }, millis);
+            console.log('TCL: pausecompAsync -> timer: STOP');
         });
-        MyApp.staticLang = lang;
+    }
+
+    componentDidMount() {
+        if (!this.data) {
+            this.setData(Router.pathname, this.state.lang);
+        }
+        Router.events.on('routeChangeStart', this.setRoute);
+    }
+
+    componentWillUnmount() {
+        Router.events.off('routeChangeStart', this.setRoute);
+    }
+
+    fetchData = async (route, lang) => {
+        try {
+            const url = `/api${route}/${lang}`;
+            console.log('TCL: fetchDataAsync -> url', url);
+
+            const res = await fetch(url);
+            if (!res.ok) return { success: false, lastError: `${res.status}` };
+
+            const data = await res.json();
+            return data;
+        } catch (err) {
+            return { success: false, lastError: err };
+        }
     };
 
-    changeLanguage1 = async lang => {
-        // try {
-        // let page = window.location.pathname.substr(1);
+    getData = async (route, lang) => {
+        // console.log('TCL: getData -> (route, lang):', route, lang);
+        if (!route || !lang) return false;
 
-        if (this.state.language === lang) {
+        let { success, data, lastError } = this.state;
+        if (route === '/') route = '/index';
+
+        const page = route.substr(1); // Remove leading '/'
+        // if (!(page && (!data || !data[page] || !data[page][lang]))) return false;
+        if (!(!data || !data[page] || !data[page][lang])) return false;
+
+        const nextData = await this.fetchData(route, lang);
+
+        if (nextData.success) {
+            if (!data) {
+                data = nextData.data;
+            } else if (!data[page]) {
+                data[page] = nextData.data[page];
+            } else if (!data[page][lang]) {
+                data[page][lang] = nextData.data[page][lang];
+            }
+        }
+
+        success = nextData.success;
+        lastError = nextData.lastError;
+        console.log('TCL: MyApp -> getData -> data: NEW');
+
+        return { success, data, lastError };
+    };
+
+    setData = async (route, lang) => {
+        const fetchedData = await this.getData(route, lang);
+        console.log('TCL: setData -> getData:', !!fetchedData);
+
+        if (!fetchedData) return false;
+
+        const { success, data, lastError } = fetchedData;
+        // console.log('TCL: setData -> success, data, lastError', success, data, lastError);
+
+        // this.setState({
+        //     render: false
+        // });
+
+        this.setState(state => {
+            return {
+                // render: true,
+                loading: false,
+                lang: success ? lang : state.lang,
+                success: success,
+                // page: success ? route : state.page,
+                data: data,
+                lastError: lastError
+            };
+        });
+
+        return true;
+    };
+
+    setLanguage = async lang => {
+        // if (this.state.lang === lang || !this.state.page) {
+        if (this.state.lang === lang) {
             console.log('TCL: MyApp -> changeLanguage -> changed: FALSE');
             return;
         }
 
-        let { lastError: prevLastError, success: prevSuccess, data: prevData, page } = this.state;
+        // const { page } = this.state;
+        const isAdded = await this.setData(Router.pathname, lang);
 
-        if (!prevData) {
-            const {
-                success: nextSuccess,
-                data: nextData,
-                lastError: nextLastError
-            } = await fetchDataAsync(null, null, page, lang);
+        if (!isAdded) {
+            console.log('TCL: MyApp -> changeLanguage -> changed: TRUE');
             this.setState({
-                language: lang,
-                data: nextData,
-                success: nextSuccess,
-                lastError: nextLastError
+                lang: lang
             });
-            console.log('TCL: MyApp -> changeLanguage -> added: TRUE');
-            return;
         }
-
-        if (/*prevData && (*/ !prevData[page] || !prevData[page][lang] /*)*/) {
-            const {
-                success: nextSuccess,
-                data: nextData,
-                lastError: nextLastError
-            } = await fetchDataAsync(null, null, page, lang);
-
-            if (!nextSuccess) {
-                prevLastError = nextLastError;
-            } else {
-                if (!prevData[page]) {
-                    prevData[page] = nextData[page];
-                } else {
-                    prevData[page][lang] = nextData[page][lang];
-                }
-            }
-            prevSuccess = nextSuccess;
-
-            this.setState({
-                language: lang,
-                data: prevData,
-                success: prevSuccess,
-                lastError: prevLastError
-            });
-            console.log('TCL: MyApp -> changeLanguage -> added: TRUE');
-            return;
-        }
-        // console.log('TCL: MyApp -> changeLanguage -> added: FALSE');
-
-        this.setState({
-            language: lang
-        });
-        MyApp.staticLang = lang;
-        console.log('TCL: MyApp -> changeLanguage -> changed: TRUE');
-        // } catch (err) {
-        //     console.log('TCL: TCL: MyApp -> changeLanguage -> ERROR:', err);
-        // }
     };
 
-    // componentDidMount() {
-    //     const test = 'test';
-    //     console.log('TCL: componentDidMount -> test', test);
+    setRoute = async route => {
+        // route = route === '/' ? '/index' : route;
+        // Router.push(route);
+        await this.setData(route, this.state.lang);
+    };
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     // console.log('TCL: shouldComponentUpdate -> nextProps', nextProps);
+    //     console.log('TCL: MyApp -> shouldComponentUpdate: ', nextState.render);
+    //     if (nextState.render) return true;
+    //     return false;
     // }
+
+    onTest = () => {
+        console.log('TCL: MyApp -> onTest: REFRESH');
+        this.setState({
+            lang: this.state.lang
+        });
+    };
 
     i = 0;
     render() {
         console.log('TCL: MyApp -> render: ', ++this.i);
         console.log('TCL: MyApp -> render -> this.state', this.state);
 
-        return <Navbar language={this.state.language} onChangeLanguage={this.changeLanguage} />;
+        // return (
+        //     <Navbar
+        //         language={this.state.lang}
+        //         onChangeLanguage={this.setLanguage}
+        //         onChangeRoute={this.setRoute}
+        //         onTest={this.onTest}
+        //     />
+        // );
+
+        // const page = pageProps.page && pageProps.page.substr(1);
+        const { loading, success, lang, data } = this.state;
+
+        if (loading)
+            return (
+                <>
+                    <Navbar
+                        language={this.state.lang}
+                        onChangeLanguage={this.setLanguage}
+                        onChangeRoute={this.setRoute}
+                        onTest={this.onTest}
+                    />
+                    <h1>Loading...</h1>
+                </>
+            );
+
+        console.log('TCL: MyApp -> render -> process.browser', process.browser);
 
         const { Component, pageProps } = this.props;
-        const page = pageProps.page && pageProps.page.substr(1);
-        const { language, text } = this.state;
+        let page = process.browser
+            ? Router.pathname === '/'
+                ? '/index'
+                : Router.pathname
+            : '/index';
+        page = page.substr(1);
+        const sendData = data && data[page] && data[page][lang] ? data[page][lang] : null;
 
-        const sendData =
-            page && text && text.success && text.data[page] && text.data[page][language]
-                ? text.data[page][language]
-                : { success: false, data: 'Wrong page props.' };
+        // console.log('TCL: render -> page', page);
+        // console.log('TCL: render -> data', data);
+        // console.log('TCL: render -> data[page]', data[page]);
+        // console.log('TCL: render -> lang', lang);
+        // console.log('TCL: render -> data[page][lang]', data[page][lang]);
+        // console.log('TCL: render -> sendData', sendData);
 
-        // let sendData = { success: false, data: 'Wrong page props.' };
-        // if (page) {
-        //     if (text) {
-        //         if (text.success) {
-        //             if (text.data[page]) {
-        //                 sendData = text.data[page][language];
-        //             }
-        //         }
-        //     }
-        // }
-
-        console.log('TCL: render -> sendData', sendData);
         return (
             <>
                 <Head>
@@ -314,13 +260,19 @@ export default class MyApp extends App {
                 {/* <LanguageContext.Provider value={this.state}> */}
                 {/* <LanguageContext.Provider value={this.state}> */}
                 {/* <Layout></Layout> */}
-                <Navbar language={this.state.language} onChangeLanguage={this.changeLanguage} />
+                {/* <Navbar language={this.state.language} onChangeLanguage={this.setLanguage} /> */}
                 {/* <Navbar /> */}
+                <Navbar
+                    language={this.state.lang}
+                    onChangeLanguage={this.setLanguage}
+                    onChangeRoute={this.setRoute}
+                    onTest={this.onTest}
+                />
                 <Component
                     {...pageProps}
                     // data={data[pageProps.page.substr(1)]}
                     // data={data[pageProps.page.substr(1)][language]}
-                    text={sendData}
+                    data={sendData}
                     // data={MyApp.myData}
                     // language={language}
                     // data={localeData}

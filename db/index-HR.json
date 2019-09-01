@@ -3,7 +3,7 @@
         "hr": {
             "banner": {
                 "first": {
-                    "title": "Index hero test",
+                    "title": "hrvatski",
                     "small": "https://via.placeholder.com/575x500",
                     "medium": "https://via.placeholder.com/991x500",
                     "large": "https://via.placeholder.com/1199x500",
@@ -14,7 +14,7 @@
                     "small": "https://via.placeholder.com/575x500",
                     "medium": "https://via.placeholder.com/991x500",
                     "large": "https://via.placeholder.com/1199x500",
-                    "xlarge": "https://via.placeholder.com/1600x500"
+                    "xlarge": "/static/img/banner/baner-pocetna-okastelu.jpg"
                 }
             },
             "section1": {

@@ -86,6 +86,8 @@ export default class Navbar extends Component {
                 // content={json ? json[this.context.language] : []}
                 onChangeLanguage={value => this.props.onChangeLanguage(value)}
                 shrink={this.state.isShrinked}
+                onChangeRoute={value => this.props.onChangeRoute(value)}
+                onTest={this.props.onTest}
             />
             // <Menu
             //     content={json ? json[this.context.language] : []}

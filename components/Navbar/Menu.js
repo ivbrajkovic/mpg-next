@@ -1,51 +1,48 @@
-import React, { Component } from 'react';
+// import ActiveLink from './ActiveLink';
 import Link from './Link';
 import Language from './Language';
 
-export default class Menu extends Component {
-    changeLanguage = data => {
-        console.log('TCL: Nav -> data', data);
-    };
+import { withRouter } from 'next/router';
 
-    render() {
-        const menuContent = this.props.content;
-        // console.log('TCL: Nav -> render -> menuContent', menuContent);
-        return (
-            <nav className="w3-card-4">
-                <div
-                    id="navbar"
-                    className={`container navbar f-xl-18 ${
-                        this.props.shrink ? `navbar-shrink` : ``
-                    }`}
-                >
-                    <Language
-                        language={this.props.language}
-                        onChangeLanguage={data => this.props.onChangeLanguage(data)}
-                    />
+const Menu = ({ router, ...props }) => {
+    const { shrink, content: menu, onChangeLanguage, onChangeRoute, onTest } = props;
 
-                    <div className="logo">
-                        <img src="static/img/logo/logo.png" alt="MGP logo" />
-                    </div>
+    return (
+        <nav className="w3-card-4">
+            <div
+                id="navbar"
+                className={`container navbar f-xl-18 ${shrink ? `navbar-shrink` : ``}`}
+            >
+                <Language
+                    language={props.language}
+                    onChangeLanguage={data => onChangeLanguage(data)}
+                    onTest={onTest}
+                />
 
-                    <div className="hamburger hamburger--collapse">
-                        <span className="hamburger-box">
-                            <span className="hamburger-inner"></span>
-                        </span>
-                    </div>
+                <div className="logo">
+                    <img src="static/img/logo/logo.png" alt="MGP logo" />
+                </div>
 
-                    <div className="menu-lists">
-                        {menuContent.map((menuItem, index) => {
-                            if (!menuItem.hasSubmenu) {
-                                return (
-                                    <Link activeClassName="active" href={menuItem.href} key={index}>
-                                        <a className="menu-items">{menuItem.title}</a>
-                                    </Link>
-                                );
-                            } else {
-                                return (
-                                    <Link activeClassName="active" href={menuItem.href} key={index}>
-                                        <a className="menu-items">
-                                            {menuItem.title}
+                <div className="hamburger hamburger--collapse">
+                    <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
+                    </span>
+                </div>
+
+                <div className="menu-lists">
+                    {menu.map((menuItem, index) => {
+                        return (
+                            <Link activeClassName="active" href={menuItem.href} key={index}>
+                                <a className="menu-items">
+                                    {/* <ActiveLink
+                                    route={menuItem.href}
+                                    className="menu-items" 
+                                    activeClassName="active"
+                                    onChangeRoute={onChangeRoute}
+                                    key={index}*/}
+                                    {menuItem.title}
+                                    {menuItem.hasSubmenu && (
+                                        <>
                                             <div className="dropdown"></div>
                                             <div className="submenu-lists submenu--1-list">
                                                 {menuItem.submenu.map((submenuItem, index) => {
@@ -59,14 +56,17 @@ export default class Menu extends Component {
                                                     );
                                                 })}
                                             </div>
-                                        </a>
-                                    </Link>
-                                );
-                            }
-                        })}
-                    </div>
+                                        </>
+                                    )}
+                                    {/* </ActiveLink> */}
+                                </a>
+                            </Link>
+                        );
+                    })}
                 </div>
-            </nav>
-        );
-    }
-}
+            </div>
+        </nav>
+    );
+};
+
+export default withRouter(Menu);

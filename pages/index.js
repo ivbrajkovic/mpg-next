@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import fetch from 'isomorphic-unfetch';
 // import fetchDataAsync from '../lib/fetchDataAsync';
-// import { LanguageContext } from '../contexts';
+// import { LanguageCondata } from '../condatas';
 
 import Hero from '../components/Hero';
 import Section1 from '../components/Section-1';
@@ -13,9 +13,9 @@ import Section5 from '../components/Section-5';
 export default class index extends Component {
     buttons = [];
 
-    static async getInitialProps() {
-        return { page: 'index' };
-    }
+    // static async getInitialProps() {
+    //     return { page: '/index' };
+    // }
 
     componentDidMount = () => {
         ripplet.defaultOptions.color = 'rgba(255, 255, 255, .2)';
@@ -31,63 +31,26 @@ export default class index extends Component {
         });
     }
 
-    // static getDerivedStateFromProps(props, state) {
-    //     console.log('TCL: getDerivedStateFromProps -> state', state);
-    //     console.log('TCL: getDerivedStateFromProps -> props', props);
-    //     return null;
-    // }
+    //shouldComponentUpdate(nextProps, nextState) {
+    // console.log('TCL: shouldComponentUpdate -> nextState', nextState);
+    // console.log('TCL: shouldComponentUpdate -> nextProps', nextProps);
+    // console.log('TCL: index -> shouldComponentUpdate -> language', language);
 
-    shouldComponentUpdate(nextProps, nextState) {
-        // console.log('TCL: shouldComponentUpdate -> nextState', nextState);
-        // console.log('TCL: shouldComponentUpdate -> nextProps', nextProps);
-        // console.log('TCL: index -> shouldComponentUpdate -> language', language);
+    // if (this.props.language != nextProps.language) return true;
 
-        // if (this.props.language != nextProps.language) return true;
+    // return false;
+    //return true;
 
-        // return false;
-        //return true;
-
-        // console.log(
-        //     'TCL: shouldComponentUpdate -> update is required: ',
-        //     this.state.language != nextState.language
-        // );
-        // return true;
-        // console.log('TCL: shouldComponentUpdate -> nextState.language', nextState.language);
-        // console.log('TCL: shouldComponentUpdate -> this.state.language', this.state.language);
-        // return this.state.language != nextState.language;
-        return true;
-    }
-
-    componentDidUpdate(prevProps) {
-        // console.log('TCL: componentDidUpdate -> prevProps', prevProps);
-        // console.log(
-        //     `TCL: componentDidUpdate -> language update required: ${this.state.language !==
-        //         this.context.language}`
-        // );
-        // console.log('TCL: this.context.language', this.context.language);
-        // if (this.state.language !== this.context.language) {
-        // if (!this.context.data[this.context.language]) {
-        //     console.log('componentDidUpdate fetching data ...');
-        // let lang = this.context.language;
-        // let data = await fetchDataAsync(false, this.context.language);
-        // this.context.updateData(this.context.language, data);
-        // this.setState({
-        //     language: this.context.language
-        // });
-        //     // this.setState({
-        //     //     language: this.context.language,
-        //     //     data: data.data
-        //     // });
-        //     // this.setState(state => {
-        //     //     let stateData = state.data;
-        //     //     stateData[lang] = fetchData.data[lang];
-        //     //     return {
-        //     //         language: lang,
-        //     //         data: stateData
-        //     //     };
-        //     // });
-        // }
-    }
+    // console.log(
+    //     'TCL: shouldComponentUpdate -> update is required: ',
+    //     this.state.language != nextState.language
+    // );
+    // return true;
+    // console.log('TCL: shouldComponentUpdate -> nextState.language', nextState.language);
+    // console.log('TCL: shouldComponentUpdate -> this.state.language', this.state.language);
+    // return this.state.language != nextState.language;
+    //return true;
+    //}
 
     fetchData = lang => {
         this.setState({ loading: true });
@@ -118,18 +81,19 @@ export default class index extends Component {
         console.log('TCL: index -> render: ', ++this.i);
         // console.log('TCL: index -> this.props', this.props);
 
-        const { text } = this.props;
+        const { data } = this.props;
+        if (!data) return <h1>Error, no data.</h1>;
 
-        if (text.banner)
+        if (data.banner)
             return (
                 <div>
-                    {/* <button onClick={() => this.context.updateLanguage('en')}>test</button> */}
-                    <Hero banner={text.banner.first} />
-                    <Section1 content={text.section1} />
-                    <Section2 content={text.section2} />
-                    <Section3 content={text.section3} />
-                    <Section4 content={text.section4} />
-                    <Section5 banner={text.banner.second} content={text.section5} />
+                    {/* <button onClick={() => this.condata.updateLanguage('en')}>test</button> */}
+                    <Hero banner={data.banner.first} />
+                    <Section1 content={data.section1} />
+                    <Section2 content={data.section2} />
+                    <Section3 content={data.section3} />
+                    <Section4 content={data.section4} />
+                    <Section5 banner={data.banner.second} content={data.section5} />
                 </div>
             );
         return <h1>Loading</h1>;
