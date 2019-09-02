@@ -79,7 +79,8 @@ export default class MyApp extends App {
 
     fetchData = async (route, lang) => {
         try {
-            const url = `/api${route}/${lang}`;
+            // const url = `/api${route}/${lang}`;
+            const url = `/api${route}`;
             console.log('TCL: fetchDataAsync -> url', url);
 
             const res = await fetch(url);
@@ -101,7 +102,8 @@ export default class MyApp extends App {
 
         const page = route.substr(1); // Remove leading '/'
         // if (!(page && (!data || !data[page] || !data[page][lang]))) return false;
-        if (!(!data || !data[page] || !data[page][lang])) return false;
+        // if (!(!data || !data[page] || !data[page][lang])) return false;
+        if (!(!data || !data[page])) return false;
 
         const nextData = await this.fetchData(route, lang);
 
@@ -110,9 +112,10 @@ export default class MyApp extends App {
                 data = nextData.data;
             } else if (!data[page]) {
                 data[page] = nextData.data[page];
-            } else if (!data[page][lang]) {
-                data[page][lang] = nextData.data[page][lang];
             }
+            // } else if (!data[page][lang]) {
+            //     data[page][lang] = nextData.data[page][lang];
+            // }
         }
 
         success = nextData.success;
@@ -164,14 +167,14 @@ export default class MyApp extends App {
         }
 
         // const { page } = this.state;
-        const isAdded = await this.setData(Router.pathname, lang);
+        // const isAdded = await this.setData(Router.pathname, lang);
 
-        if (!isAdded) {
-            console.log('TCL: MyApp -> changeLanguage -> changed: TRUE');
-            this.setState({
-                lang: lang
-            });
-        }
+        // if (!isAdded) {
+        console.log('TCL: MyApp -> changeLanguage -> changed: TRUE');
+        this.setState({
+            lang: lang
+        });
+        // }
     };
 
     onTest = () => {
@@ -227,7 +230,8 @@ export default class MyApp extends App {
                 : Router.pathname
             : '/index';
         page = page.substr(1);
-        const sendData = data && data[page] && data[page][lang] ? data[page][lang] : {};
+        // const sendData = data && data[page] && data[page][lang] ? data[page][lang] : {};
+        const sendData = data && data[page] ? data[page] : {};
 
         // console.log('TCL: render -> page', page);
         // console.log('TCL: render -> data', data);
@@ -259,6 +263,7 @@ export default class MyApp extends App {
                     // data={data[pageProps.page.substr(1)][language]}
                     data={sendData}
                     odjel={this.state.odjel}
+                    lang={this.state.lang}
                     // data={MyApp.myData}
                     // language={language}
                     // data={localeData}

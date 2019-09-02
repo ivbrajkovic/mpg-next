@@ -1,8 +1,8 @@
 // section4.js
 
-const Section4 = ({ data }) => {
-    const header = data && data.header;
-    const content1 = data && data.content1;
+const Section4 = ({ lang, data }) => {
+    const header = data[lang] && data[lang].header;
+    const content = data[lang] && data[lang].content;
 
     const slides = ['/static/img/slider/slider-pocetna-zbirke-1.jpg'];
 
@@ -14,7 +14,7 @@ const Section4 = ({ data }) => {
                 </div>
                 <div className="p-20 p-relative d-flex d-column justify-center item-2">
                     <h1 className="header-2">{header}</h1>
-                    <p className="content-1">{content1}</p>
+                    <p className="content-1">{content}</p>
                     <div className="btn-container">
                         <button className="btn btn-dark f-m-18">VIŠE</button>
                     </div>

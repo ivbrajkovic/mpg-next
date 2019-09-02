@@ -43,17 +43,27 @@ export default class index extends PureComponent {
     i = 0;
     render() {
         console.log('TCL: index -> render: ', ++this.i);
+        // console.log('TCL: index -> render -> this.props.lang:', this.props.lang);
+        // console.log('TCL: index -> render -> this.props.data', this.props.data);
+
+        const lang = this.props.lang;
 
         const data = this.props.data ? this.props.data : {};
+        const hero = data.hero && data.hero[lang] ? data.hero[lang] : [];
+        const section1 = data.section1 ? data.section1 : [];
+        const section2 = data.section2 ? data.section2 : [];
+        const section3 = data.section3 ? data.section3 : [];
+        const section4 = data.section4 ? data.section4 : {};
+        const section5 = data.section5 ? data.section5 : {};
 
         return (
             <div>
-                <Hero title={data.banners ? data.banners[0] : null} banner={banners[0]} />
-                <Section1 data={data.section1} />
-                <Section2 data={data.section2} />
-                <Section3 data={data.section3} />
-                <Section4 data={data.section4} />
-                <Section5 data={data.section5} banner={banners[1]} />
+                <Hero title={hero[0]} banner={banners[0]} />
+                <Section1 lang={lang} data={section1} />
+                <Section2 lang={lang} data={section2} />
+                <Section3 lang={lang} data={section3} />
+                <Section4 lang={lang} data={section4} />
+                <Section5 lang={lang} data={section5} banner={banners[1]} />
             </div>
         );
     }

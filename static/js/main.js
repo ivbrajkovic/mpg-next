@@ -21,6 +21,11 @@
         false
     );
 
+    // function ImageOnLoad(id) {
+    //     const el = document.getElementById(id);
+    //     el && el.classList.add('vivible');
+    // }
+
     // window.requestAnimationFrame(function() {
     //     console.log('paint!');
     // });
