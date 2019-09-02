@@ -47,6 +47,7 @@ export default class Navbar extends Component {
     };
 
     setLanguage = value => this.props.onChangeLanguage(value);
+    setOdjel = (odjel, index) => this.props.onSetOdjel(odjel, index);
 
     i = 0;
     render() {
@@ -62,6 +63,7 @@ export default class Navbar extends Component {
                 onChangeLanguage={this.setLanguage}
                 shrink={this.state.isShrinked}
                 onTest={this.props.onTest}
+                onSetOdjel={this.setOdjel}
             />
             // <Menu
             //     content={json ? json[this.context.language] : []}

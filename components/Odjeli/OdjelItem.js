@@ -10,14 +10,17 @@ const OdjelItem = ({ odjel }) => {
     //         return <h1>Odjel 3</h1>;
     // }
 
-    return odjel.map((item, index) => {
-        return (
-            <div class="menu-item w3-card-4" key={index}>
-                <img class="img-cover" src={item.src} alt="" srcset="" />
-                <div class="header-3 m-0">{item.title}</div>
-            </div>
-        );
-    });
+    return (
+        odjel &&
+        odjel.map((item, index) => {
+            return (
+                <div class="menu-item w3-card-4" key={index}>
+                    <img class="img-cover" src={item.src} alt="" srcset="" />
+                    <div class="header-3 m-0">{item.title}</div>
+                </div>
+            );
+        })
+    );
 };
 
 export default OdjelItem;

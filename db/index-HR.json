@@ -1,27 +1,11 @@
 {
     "index": {
         "hr": {
-            "banner": [
-                {
-                    "title": "hrvatski",
-                    "small": "static/img/banner/baner-pocetna-768px.jpg",
-                    "medium": "static/img/banner/baner-pocetna-1200px.jpg",
-                    "large": "static/img/banner/baner-pocetna-1200px.jpg",
-                    "xlarge": "static/img/banner/baner-pocetna.jpg"
-                },
-                {
-                    "title": "",
-                    "small": "static/img/banner/baner-pocetna-okastelu.jpg",
-                    "medium": "static/img/banner/baner-pocetna-okastelu.jpg",
-                    "large": "static/img/banner/baner-pocetna-okastelu.jpg",
-                    "xlarge": "static/img/banner/baner-pocetna-okastelu.jpg"
-                }
-            ],
+            "banners": ["index hrvatski", ""],
             "section1": {
-                "src": "/static/img/post/post-big.png",
-                "title": "Izložba, 07. 05. do 15. 09. 2019.",
                 "header": "definiraj nedefinirano",
-                "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+                "content1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem",
+                "content2": ""
             },
             "section2": [
                 {
@@ -70,13 +54,12 @@
                 }
             ],
             "section4": {
-                "src": ["/static/img/slider/slider-pocetna-zbirke-1.jpg"],
                 "header": "zbirke",
-                "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
+                "content1": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
             },
             "section5": {
-                "title": "o pazinskom kaštelu",
-                "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
+                "header": "o pazinskom kaštelu",
+                "content1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
             }
         }
     }

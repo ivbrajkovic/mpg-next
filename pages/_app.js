@@ -28,7 +28,8 @@ export default class MyApp extends App {
             lang: 'hr',
             success: false,
             data: null,
-            lastError: null
+            lastError: null,
+            odjel: 0
         };
         // const { loading, success, data, lastError } = props.data;
         // this.state = {
@@ -123,7 +124,7 @@ export default class MyApp extends App {
 
     setData = async (route, lang) => {
         const fetchedData = await this.getData(route, lang);
-        console.log('TCL: setData -> getData:', !!fetchedData);
+        console.log('TCL: MyApp -> setData -> getData:', !!fetchedData);
 
         if (!fetchedData) return false;
 
@@ -180,6 +181,13 @@ export default class MyApp extends App {
         });
     };
 
+    setOdjel = (odjel, index) => {
+        if (Router.pathname === odjel) Router.push(odjel);
+        this.setState({
+            odjel: index
+        });
+    };
+
     i = 0;
     render() {
         console.log('TCL: MyApp -> render: ', ++this.i);
@@ -197,18 +205,18 @@ export default class MyApp extends App {
         // const page = pageProps.page && pageProps.page.substr(1);
         const { loading, success, lang, data } = this.state;
 
-        if (loading)
-            return (
-                <>
-                    <Navbar
-                        language={this.state.lang}
-                        onChangeLanguage={this.setLanguage}
-                        onChangeRoute={this.setRoute}
-                        onTest={this.onTest}
-                    />
-                    <h1>Loading...</h1>
-                </>
-            );
+        // if (loading)
+        //     return (
+        //         <>
+        //             <Navbar
+        //                 language={this.state.lang}
+        //                 onChangeLanguage={this.setLanguage}
+        //                 onChangeRoute={this.setRoute}
+        //                 onTest={this.onTest}
+        //             />
+        //             <h1>Loading...</h1>
+        //         </>
+        //     );
 
         console.log('TCL: MyApp -> render -> process.browser', process.browser);
 
@@ -219,7 +227,7 @@ export default class MyApp extends App {
                 : Router.pathname
             : '/index';
         page = page.substr(1);
-        const sendData = data && data[page] && data[page][lang] ? data[page][lang] : null;
+        const sendData = data && data[page] && data[page][lang] ? data[page][lang] : {};
 
         // console.log('TCL: render -> page', page);
         // console.log('TCL: render -> data', data);
@@ -243,12 +251,14 @@ export default class MyApp extends App {
                     language={this.state.lang}
                     onChangeLanguage={this.setLanguage}
                     onTest={this.onTest}
+                    onSetOdjel={this.setOdjel}
                 />
                 <Component
                     {...pageProps}
                     // data={data[pageProps.page.substr(1)]}
                     // data={data[pageProps.page.substr(1)][language]}
                     data={sendData}
+                    odjel={this.state.odjel}
                     // data={MyApp.myData}
                     // language={language}
                     // data={localeData}

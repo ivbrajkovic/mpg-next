@@ -1,15 +1,7 @@
 {
     "odjeli": {
         "hr": {
-            "banner": [
-                {
-                    "title": "hrvatski",
-                    "small": "static/img/banner/baner-odjeli-768px.jpg",
-                    "medium": "static/img/banner/baner-odjeli-1200px.jpg",
-                    "large": "static/img/banner/baner-odjeli-1200px.jpg",
-                    "xlarge": "static/img/banner/baner-odjeli.jpg"
-                }
-            ],
+            "banners": ["odjeli hrvatski", ""],
             "section1": ["kulturno-povjesni odjel", "povjesni odjel", "galerijski odjel"],
             "odjeli": [
                 [

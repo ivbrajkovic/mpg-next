@@ -1,14 +1,15 @@
-// import ActiveLink from './ActiveLink';
-import ActiveLink from './Link';
+// import { withRouter } from 'next/router';
 import Language from './Language';
+import ActiveLink from './Link';
 
-import { withRouter } from 'next/router';
-
-const Menu = ({ router, ...props }) => {
-    const { shrink, content: menu, onChangeLanguage, onTest } = props;
+// const Menu = ({ router, ...props }) => {
+const Menu = props => {
+    const { shrink, content: menu, onChangeLanguage, onTest, onSetOdjel } = props;
 
     const setLanguage = value => onChangeLanguage(value);
+    const setOdjel = (odjel, index) => onSetOdjel(odjel, index);
 
+    let i = 1;
     return (
         <nav className="w3-card-4">
             <div
@@ -34,35 +35,32 @@ const Menu = ({ router, ...props }) => {
                 <div className="menu-lists">
                     {menu.map((menuItem, index) => {
                         return (
-                            <ActiveLink activeClassName="active" href={menuItem.href} key={index}>
-                                <a className="menu-items">
-                                    {/* <ActiveLink
-                                    route={menuItem.href}
-                                    className="menu-items" 
-                                    activeClassName="active"
-                                    onChangeRoute={onChangeRoute}
-                                    key={index}*/}
-                                    {menuItem.title}
-                                    {menuItem.hasSubmenu && (
-                                        <>
-                                            <div className="dropdown"></div>
-                                            <div className="submenu-lists submenu--1-list">
-                                                {menuItem.submenu.map((submenuItem, index) => {
-                                                    return (
-                                                        <div
-                                                            className="nav_submenu-items"
-                                                            key={index}
-                                                        >
-                                                            {submenuItem.title}
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-                                        </>
-                                    )}
-                                    {/* </ActiveLink> */}
-                                </a>
-                            </ActiveLink>
+                            <div className="menu-items" key={index}>
+                                <ActiveLink activeClassName="active" href={menuItem.href}>
+                                    <a>{menuItem.title}</a>
+                                </ActiveLink>
+                                {menuItem.hasSubmenu && (
+                                    <>
+                                        <div className="dropdown"></div>
+                                        {/* <div className="submenu-lists submenu--1-list"> */}
+                                        <div className={`submenu-lists submenu--${i++}-list`}>
+                                            {menuItem.submenu.map((submenuItem, i) => {
+                                                return (
+                                                    <div
+                                                        className="nav_submenu-items"
+                                                        key={i}
+                                                        // onClick={() =>
+                                                        //     setOdjel(menuItem.href, index)
+                                                        // }
+                                                    >
+                                                        {submenuItem.title}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </>
+                                )}
+                            </div>
                         );
                     })}
                 </div>
@@ -71,4 +69,4 @@ const Menu = ({ router, ...props }) => {
     );
 };
 
-export default withRouter(Menu);
+export default Menu;

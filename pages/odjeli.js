@@ -1,29 +1,50 @@
-// import fetch from 'isomorphic-unfetch';
-// import Layout from '../components/Layout.js';
+import { PureComponent } from 'react';
 import Hero from '../components/Hero';
 import Section6 from '../components/Odjeli/Section6';
 import Section7 from '../components/Odjeli/Section7';
 
-// import '../scss/style.scss';
-
-// const banner = {
-//     small: 'https://via.placeholder.com/575x500',
-//     medium: 'https://via.placeholder.com/991x500',
-//     large: 'https://via.placeholder.com/1199x500',
-//     xlarge: 'https://via.placeholder.com/1600x500'
-// };
-
-import { PureComponent } from 'react';
+const banners = [
+    {
+        small: 'static/img/banner/baner-odjeli-768px.jpg',
+        medium: 'static/img/banner/baner-odjeli-1200px.jpg',
+        large: 'static/img/banner/baner-odjeli-1200px.jpg',
+        xlarge: '/static/img/banner/baner-odjeli.jpg'
+    }
+];
 
 export default class Odjeli extends PureComponent {
     state = {
         current: 0
     };
 
-    // static async getInitialProps({ req }) {
-    //     return { page: '/odjeli' };
-    // }
+    submenuItems = null;
+
+    componentDidMount = () => {
+        this.submenuItems = document.querySelectorAll(
+            '#navbar .submenu--2-list .nav_submenu-items'
+        );
+        this.submenuItems &&
+            this.submenuItems.forEach((item, index) => {
+                item.keyIndex = index;
+                item.addEventListener('click', this.onSubmenuItemClick);
+            });
+    };
+
+    componentWillUnmount = () => {
+        this.submenuItems &&
+            this.submenuItems.forEach((item, index) => {
+                item.removeEventListener('click', this.onSubmenuItemClick);
+            });
+
+        document.removeEventListener;
+    };
+
+    onSubmenuItemClick = e => {
+        this.changeOdjel(e.srcElement.keyIndex);
+    };
+
     changeOdjel = value => {
+        // console.log('TCL: Odjeli -> value', value);
         if (this.props.data.odjeli[value])
             this.setState({
                 current: value
@@ -34,37 +55,18 @@ export default class Odjeli extends PureComponent {
     i = 0;
     render() {
         console.log('TCL: Odjeli -> render: ', ++this.i);
-        // console.log('TCL: Odjeli -> this.props', this.props.data);
 
-        const { data } = this.props;
         const { current } = this.state;
+        const data = this.props.data ? this.props.data : {};
+        const odjel = data.odjeli ? data.odjeli[current] : [];
+        const title = data.banners ? data.banners[0] : '';
 
-        if (!data) return <h1>Error, no data.</h1>;
-
-        // if (data.banner)
         return (
             <>
-                <Hero banner={data.banner[0]} />
-                <Section6
-                    current={current}
-                    titles={data.section1}
-                    onChangeOdjel={this.changeOdjel}
-                />
-                <Section7 odjel={data.odjeli[current]} />
-                'This is odjeli.html';
+                <Hero title={title} banner={banners[0]} />
+                <Section6 current={current} data={data.section1} onChangeOdjel={this.changeOdjel} />
+                <Section7 odjel={odjel} />
             </>
         );
-        return <h1>Loading</h1>;
     }
 }
-
-// Index.getInitialProps = async function() {
-//     const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-//     const data = await res.json();
-
-//     console.log(`Show data fetched. Count: ${data.length}`);
-
-//     return {
-//         shows: data.map(entry => entry.show)
-//     };
-// };
