@@ -3,6 +3,7 @@
         "hr": {
             "banners": ["index hrvatski", ""],
             "section1": {
+                "title": "Lorem ipsum dolor",
                 "header": "definiraj nedefinirano",
                 "content1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem",
                 "content2": ""

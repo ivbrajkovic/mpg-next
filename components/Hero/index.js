@@ -8,7 +8,7 @@ const Hero = ({ title, banner }) => {
                 src={banner.small}
                 srcSet={`${banner.small} 575w, ${banner.medium} 991w, ${banner.large} 1199w, ${banner.xlarge} 1600w`}
             />
-            <div className="header-hero">{title}</div>
+            <h1 className="header-hero">{title}</h1>
         </section>
     );
 };

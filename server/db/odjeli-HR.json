@@ -1,120 +1,120 @@
 {
     "odjeli": {
-        "en": {
-            "banners": ["odjeli engleski", ""],
+        "hr": {
+            "banners": ["Odjeli i zbirke", ""],
             "section1": ["kulturno-povjesni odjel", "povjesni odjel", "galerijski odjel"],
             "odjeli": [
                 [
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "static/img/odjeli/mini/glazbena-zbirka.jpg",
                         "title": "glazbena zbirka"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
-                        "title": "glazbena zbirka"
+                        "src": "static/img/odjeli/mini/sakralna-zbirka.jpg",
+                        "title": "sakralna zbirka"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
-                        "title": "glazbena zbirka"
+                        "src": "static/img/odjeli/mini/tehnicka-zbirka.jpg",
+                        "title": "tehnička zbirka"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
-                        "title": "glazbena zbirka"
+                        "src": "static/img/odjeli/mini/fotografije-zbirka.jpg",
+                        "title": "zbirka fotografija i fotografskog pribora"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
-                        "title": "glazbena zbirka"
+                        "src": "static/img/odjeli/mini/namjestaj-zbirka.jpg",
+                        "title": "zbirka namještaja i ura"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
-                        "title": "glazbena zbirka"
+                        "src": "static/img/odjeli/mini/razglednice-zbirka.jpg",
+                        "title": "zbirka razglednica i čestitki"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
-                        "title": "glazbena zbirka"
+                        "src": "static/img/odjeli/mini/svakodnevna-zbirka.jpg",
+                        "title": "zbirka svakodnevnog života"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
-                        "title": "glazbena zbirka"
+                        "src": "static/img/odjeli/mini/skulptura.zbirka.jpg",
+                        "title": "zbirka skulptura, slika i grafika"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
-                        "title": "glazbena zbirka"
+                        "src": "static/img/odjeli/mini/tekstilna-zbirka.jpg",
+                        "title": "zbirka tekstilnih predmeta, modnog pribora i nakita"
                     }
                 ],
                 [
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "povjesni odjel"
                     }
                 ],
                 [
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     },
                     {
-                        "src": "https://via.placeholder.com/350x350",
+                        "src": "",
                         "title": "galserijski odjel"
                     }
                 ]

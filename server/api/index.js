@@ -26,14 +26,17 @@ router.get('/:cmp/:lng', function(req, res, next) {
     //     return;
     // }
 
-    fs.readFile(`db/${req.params.cmp}-${req.params.lng.toUpperCase()}.json`, (error, data) => {
-        if (error) {
-            console.error('readFile error:', error);
-            res.json({ success: false, lastError: error });
-            return;
+    fs.readFile(
+        `server/db/${req.params.cmp}-${req.params.lng.toUpperCase()}.json`,
+        (error, data) => {
+            if (error) {
+                console.error('readFile error:', error);
+                res.json({ success: false, lastError: error });
+                return;
+            }
+            res.json({ success: true, data: JSON.parse(data) });
         }
-        res.json({ success: true, data: JSON.parse(data) });
-    });
+    );
 });
 
 module.exports = router;

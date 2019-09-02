@@ -11,6 +11,14 @@ export default class MyDocument extends Document {
             <html>
                 <Head>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    {/* <link
+                        href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap"
+                        rel="stylesheet"
+                    ></link> */}
+                    <link
+                        href="https://fonts.googleapis.com/css?family=Lato:300,400,900|Open+Sans:400,700,800&display=swap"
+                        rel="stylesheet"
+                    />
                     {/* Import CSS for nprogress */}
                     <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
                     {/* Button ripple effect */}
