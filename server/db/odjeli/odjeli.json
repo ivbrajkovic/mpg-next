@@ -15,61 +15,73 @@
         "section7": [
             [
                 {
-                    "src": "static/img/odjeli/mini/glazbena-zbirka.jpg",
+                    "id": 0,
+                    "src": "static/img/zbirke/glazbena-zbirka.jpg",
                     "hr": "glazbena zbirka",
                     "en": "Musical Collection"
                 },
                 {
-                    "src": "static/img/odjeli/mini/sakralna-zbirka.jpg",
+                    "id": 1,
+                    "src": "static/img/zbirke/sakralna-zbirka.jpg",
                     "hr": "sakralna zbirka",
                     "en": "Sacral Collection"
                 },
                 {
-                    "src": "static/img/odjeli/mini/tehnicka-zbirka.jpg",
+                    "id": 2,
+                    "src": "static/img/zbirke/tehnicka-zbirka.jpg",
                     "hr": "tehnička zbirka",
                     "en": "Technical Collection"
                 },
                 {
-                    "src": "static/img/odjeli/mini/fotografije-zbirka.jpg",
+                    "id": 3,
+                    "src": "static/img/zbirke/fotografije-zbirka.jpg",
                     "hr": "zbirka fotografija i fotografskog pribora",
                     "en": "Photographs and Photographic equipment"
                 },
                 {
-                    "src": "static/img/odjeli/mini/namjestaj-zbirka.jpg",
+                    "id": 4,
+                    "src": "static/img/zbirke/namjestaj-zbirka.jpg",
                     "hr": "zbirka namještaja i ura",
                     "en": "Collection of Furniture and Clocks"
                 },
                 {
-                    "src": "static/img/odjeli/mini/razglednice-zbirka.jpg",
+                    "id": 5,
+                    "src": "static/img/zbirke/razglednice-zbirka.jpg",
                     "hr": "zbirka razglednica i čestitki",
                     "en": "Postcards and Greeting Cards"
                 },
                 {
-                    "src": "static/img/odjeli/mini/svakodnevna-zbirka.jpg",
+                    "id": 6,
+                    "src": "static/img/zbirke/svakodnevna-zbirka.jpg",
                     "hr": "zbirka svakodnevnog života",
                     "en": "Everyday Life Collection"
                 },
                 {
-                    "src": "static/img/odjeli/mini/skulptura.zbirka.jpg",
+                    "id": 7,
+                    "src": "static/img/zbirke/skulptura.zbirka.jpg",
                     "hr": "zbirka skulptura, slika i grafika",
                     "en": "Collection of Sculptures, Paintings and Graphic Arts"
                 },
                 {
-                    "src": "static/img/odjeli/mini/tekstilna-zbirka.jpg",
+                    "id": 8,
+                    "src": "static/img/zbirke/tekstilna-zbirka.jpg",
                     "hr": "zbirka tekstilnih predmeta, modnog pribora i nakita",
                     "en": "COllection of Textiles, Fashion Accessories and JEwerly"
                 },
                 {
+                    "id": 9,
                     "src": "https://via.placeholder.com/350x350",
-                    "hr": "Ljekarnička i medicinska zbirka",
+                    "hr": "Ljekarnička i medicinska zbirka",
                     "en": "Pharmacy and Medical Collection"
                 },
                 {
+                    "id": 10,
                     "src": "https://via.placeholder.com/350x350",
                     "hr": "Zbirka varia",
                     "en": "Varia Collection"
                 },
                 {
+                    "id": 11,
                     "src": "https://via.placeholder.com/350x350",
                     "hr": "Zbirka zvona",
                     "en": "Collection of Bells"
@@ -77,77 +89,70 @@
             ],
             [
                 {
-                    "src": "",
+                    "id": 0,
+                    "src": "https://picsum.photos/350?=0",
                     "title": "povjesni odjel"
                 },
                 {
-                    "src": "",
+                    "id": 1,
+                    "src": "https://picsum.photos/350?=2",
                     "title": "povjesni odjel"
                 },
                 {
-                    "src": "",
+                    "id": 2,
+                    "src": "https://picsum.photos/350?=3",
                     "title": "povjesni odjel"
                 },
                 {
-                    "src": "",
+                    "id": 3,
+                    "src": "https://picsum.photos/350?=4",
                     "title": "povjesni odjel"
                 },
                 {
-                    "src": "",
-                    "title": "povjesni odjel"
-                },
-                {
-                    "src": "",
-                    "title": "povjesni odjel"
-                },
-                {
-                    "src": "",
-                    "title": "povjesni odjel"
-                },
-                {
-                    "src": "",
-                    "title": "povjesni odjel"
-                },
-                {
-                    "src": "",
+                    "id": 4,
+                    "src": "https://picsum.photos/350?=5",
                     "title": "povjesni odjel"
                 }
             ],
             [
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=6",
                     "title": "galserijski odjel"
                 },
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=7",
                     "title": "galserijski odjel"
                 },
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=8",
                     "title": "galserijski odjel"
                 },
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=9",
                     "title": "galserijski odjel"
                 },
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=10",
                     "title": "galserijski odjel"
                 },
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=11",
                     "title": "galserijski odjel"
                 },
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=12",
                     "title": "galserijski odjel"
                 },
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=13",
                     "title": "galserijski odjel"
                 },
                 {
-                    "src": "",
+                    "src": "https://picsum.photos/350?=14",
+                    "title": "galserijski odjel"
+                },
+                {
+                    "src": "https://picsum.photos/350?=15",
                     "title": "galserijski odjel"
                 }
             ]

@@ -11,6 +11,7 @@ import isofetch from 'isomorphic-unfetch';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../scss/style.scss';
+import { log } from 'util';
 
 Router.events.on('routeChangeStart', url => {
     console.log(`Loading: ${url}`);
@@ -23,7 +24,6 @@ export default class MyApp extends App {
     constructor(props) {
         super(props);
         this.state = {
-            // isServer: false,
             loading: true,
             lang: 'hr',
             success: false,
@@ -31,40 +31,7 @@ export default class MyApp extends App {
             lastError: null,
             odjel: 0
         };
-        // const { loading, success, data, lastError } = props.data;
-        // this.state = {
-        //     isServer: false,
-        //     loading: loading,
-        //     lang: 'hr',
-        //     success: success,
-        //     data: data,
-        //     lastError: lastError
-        // };
     }
-
-    // static async getInitialProps({ Component, router, ctx }) {
-    //     let pageProps = {};
-    //     if (Component.getInitialProps) {
-    //         pageProps = await Component.getInitialProps(ctx);
-    //     }
-
-    //     let data = { isServer: false, loading: true };
-
-    //     if (ctx.req) {
-    //         try {
-    //             const url = `${ctx.req.protocol}://${ctx.req.get('host')}/api/index/hr`;
-    //             console.log('TCL: MyApp -> getInitialProps -> url', url);
-    //             const res = await isofetch(url);
-    //             data = await res.json();
-    //             data.isServer = true;
-    //             data.loading = false;
-    //         } catch (err) {
-    //             data = { success: false, lastError: err };
-    //         }
-    //     }
-
-    //     return { pageProps, data };
-    // }
 
     componentDidMount() {
         if (!this.data) {
@@ -100,7 +67,15 @@ export default class MyApp extends App {
         let { success, data, lastError } = this.state;
         if (route === '/') route = '/index';
 
-        const page = route.substr(1); // Remove leading '/'
+        // const page = route.substr(1); // Remove leading '/'
+        const page = route.match(/[^\/]+?((?=\?)|$)/)[0];
+
+        // console.log('TCL: MyApp -> getData -> route', route);
+        // const matches = route.match(/id=(.+?)((?=&)|$)/);
+        // if (matches && matches.length > 0)
+        //     console.log(`Test route and qurry: ${route.match(/id=(.+?)((?=&)|$)/)[0]}`);
+        // else console.log('NO PARAMS FOUND');
+
         // if (!(page && (!data || !data[page] || !data[page][lang]))) return false;
         // if (!(!data || !data[page] || !data[page][lang])) return false;
         if (!(!data || !data[page])) return false;
@@ -194,7 +169,8 @@ export default class MyApp extends App {
     i = 0;
     render() {
         console.log('TCL: MyApp -> render: ', ++this.i);
-        console.log('TCL: MyApp -> render -> this.state', this.state);
+        // console.log('TCL: MyApp -> render -> this.state', this.state);
+        console.log('TCL: MyApp -> render -> process.browser', process.browser);
 
         // return (
         //     <Navbar
@@ -205,23 +181,7 @@ export default class MyApp extends App {
         //     />
         // );
 
-        // const page = pageProps.page && pageProps.page.substr(1);
         const { loading, success, lang, data } = this.state;
-
-        // if (loading)
-        //     return (
-        //         <>
-        //             <Navbar
-        //                 language={this.state.lang}
-        //                 onChangeLanguage={this.setLanguage}
-        //                 onChangeRoute={this.setRoute}
-        //                 onTest={this.onTest}
-        //             />
-        //             <h1>Loading...</h1>
-        //         </>
-        //     );
-
-        console.log('TCL: MyApp -> render -> process.browser', process.browser);
 
         const { Component, pageProps } = this.props;
         let page = process.browser
@@ -264,6 +224,7 @@ export default class MyApp extends App {
                     data={sendData}
                     odjel={this.state.odjel}
                     lang={this.state.lang}
+                    // loading={this.state.loading}
                     // data={MyApp.myData}
                     // language={language}
                     // data={localeData}

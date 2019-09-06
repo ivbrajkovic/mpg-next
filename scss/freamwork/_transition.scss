@@ -11,7 +11,20 @@
         visibility: hidden;
         opacity: 0;
         transition-duration: 2000ms, 0;
-        transition-property: opacity, visibility;
+        transition-property: top, visibility;
+        transition-delay: 0, 2000ms;
+    }
+}
+
+.fadeInBottomTrans {
+    transition-duration: 2000ms, 2000ms;
+    transition-property: top, opacity;
+    transition-delay: 0;
+    &.hidden {
+        top: 100px;
+        // opacity: 0;
+        transition-duration: 2000ms, 2000ms;
+        transition-property: transform, opacity;
         transition-delay: 0;
     }
 }

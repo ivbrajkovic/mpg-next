@@ -1,14 +1,23 @@
 // hero component
 
+import { useEffect } from 'react';
+
 const Hero = ({ title, banner }) => {
+    const src = banner ? banner : [];
+    //     useEffect(() => {
+    //         const el = document.getElementById('hero');
+    //         el && el.classList.add('fade-in');
+    //     }, []);
+
     return (
-        <section className="w3-card-4 banner hero">
+        <section id="hero" className="w3-card-4 banner hero">
             <img
+                // className="img-cover kenburns-top-right"
                 className="img-cover"
-                src={banner.small}
-                srcSet={`${banner.small} 575w, ${banner.medium} 991w, ${banner.large} 1199w, ${banner.xlarge} 1600w`}
+                src={src[0]}
+                srcSet={`${src[0]} 575w, ${src[1]} 991w, ${src[2]} 1199w, ${src[3]} 1600w`}
             />
-            <h1 className="header-hero">{title}</h1>
+            <h1 className="header">{title}</h1>
         </section>
     );
 };

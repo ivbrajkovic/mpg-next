@@ -1,8 +1,8 @@
 {
     "index": {
-        "her": {
-            "hr": ["index hrvatski", ""],
-            "en": ["index engleski", ""]
+        "hero": {
+            "hr": ["pocetna hrvatski", ""],
+            "en": ["pocetna engleski", ""]
         },
         "section1": {
             "hr": {
@@ -18,7 +18,7 @@
         },
         "section2": [
             {
-                "src": "/static/img/post/post-1.png",
+                "src": "/static/img/pocetna/post-1.png",
                 "hr": {
                     "title": "Lorem ipsum dolor",
                     "header": "Lorem ipsum dolor",
@@ -31,7 +31,7 @@
                 }
             },
             {
-                "src": "/static/img/post/post-1.png",
+                "src": "/static/img/pocetna/post-1.png",
                 "hr": {
                     "title": "Lorem ipsum dolor",
                     "header": "Lorem ipsum dolor",
@@ -44,7 +44,7 @@
                 }
             },
             {
-                "src": "/static/img/post/post-1.png",
+                "src": "/static/img/pocetna/post-1.png",
                 "hr": {
                     "title": "Lorem ipsum dolor",
                     "header": "Lorem ipsum dolor",
@@ -59,7 +59,7 @@
         ],
         "section3": [
             {
-                "src": "/static/img/info/info-lokacija.png",
+                "src": "/static/img/info-lokacija.png",
                 "hr": {
                     "title": "",
                     "header": "lokacija",
@@ -74,7 +74,7 @@
                 }
             },
             {
-                "src": "/static/img/info/info-lokacija.png",
+                "src": "/static/img/info-lokacija.png",
                 "hr": {
                     "title": "",
                     "header": "lokacija",
@@ -89,7 +89,7 @@
                 }
             },
             {
-                "src": "/static/img/info/info-lokacija.png",
+                "src": "/static/img/info-lokacija.png",
                 "hr": {
                     "title": "",
                     "header": "lokacija",
@@ -105,6 +105,12 @@
             }
         ],
         "section4": {
+            "slider": [
+                "static/img/pocetna/slider-pocetna-zbirke-1.jpg",
+                "static/img/pocetna/slider-pocetna-zbirke-2.jpg",
+                "static/img/pocetna/slider-pocetna-zbirke-3.jpg",
+                "static/img/pocetna/slider-pocetna-zbirke-4.jpg"
+            ],
             "hr": {
                 "header": "zbirke",
                 "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
@@ -115,6 +121,7 @@
             }
         },
         "section5": {
+            "src": "static/img/pocetna/baner-pocetna-okastelu.jpg",
             "hr": {
                 "header": "o pazinskom kaštelu",
                 "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"

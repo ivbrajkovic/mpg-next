@@ -4,7 +4,12 @@ const Section4 = ({ lang, data }) => {
     const header = data[lang] && data[lang].header;
     const content = data[lang] && data[lang].content;
 
-    const slides = ['/static/img/slider/slider-pocetna-zbirke-1.jpg'];
+    const slides = [
+        'static/img/pocetna/slider/slider-pocetna-zbirke-1.jpg',
+        'static/img/pocetna/slider/slider-pocetna-zbirke-2.jpg',
+        'static/img/pocetna/slider/slider-pocetna-zbirke-3.jpg',
+        'static/img/pocetna/slider/slider-pocetna-zbirke-4.jpg'
+    ];
 
     return (
         <section className="container m-t-xs-20-xl-40 p-0 text-center section-4">

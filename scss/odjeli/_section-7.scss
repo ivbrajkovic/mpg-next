@@ -4,39 +4,39 @@
     display: grid;
     // grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
     grid-template-columns: minmax(200px, 350px);
-    grid-gap: 20px;
+    // grid-template-rows: minmax(200px, 350px);
+    // grid-gap: 20px;
     justify-content: center;
     text-align: center;
 
     .menu-item {
         position: relative;
-        // height: 350px;
-        // width: 350px;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        //background: $odjeli-menu-back;
-        //transition: $nav-transation-fnc;
-        // visibility: visible;
-        opacity: 0;
-        // transition-duration: 2000ms;
-        // transition-property: opacity;
+        cursor: pointer;
+        // transition-duration: 1000ms, 800ms;
+        // transition-duration: 500ms, 500ms;
+
+        // transition-property: transform, opacity;
         // transition-delay: 0;
+        // will-change: opacity, transform;
+
+        // transform: translateY(0);
+        // transition-timing-function: cubic-bezier(0.01, 0.82, 0.55, 1);
+
+        // opacity: 0;
+        // visibility: hidden;
     }
 
-    &.fade-in-bottom .menu-item {
-        // visibility: hidden;
-        opacity: 1;
-        animation-name: fade-in-bottom;
-        // animation-duration: 0.6s;
-        animation-duration: 1s;
-        animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-        animation-fill-mode: forward;
-        animation-delay: 0;
-        // transition-duration: 2000ms, 0;
-        // transition-property: opacity, visibility;
-        // transition-delay: 0;
-    }
+    // &.hidden .menu-item {
+    //     opacity: 0;
+    //     will-change: transform, opacity;
+    //     // transition-duration: 500ms, 500ms;
+    //     transition-duration: 350ms, 350ms;
+    //     transition-property: transform, opacity;
+    //     transition-delay: 0;
+    //     transform: translateY(20px);
+    //     transition-timing-function: cubic-bezier(0.4, 1.14, 1, 1);
+    //     transition-timing-function: cubic-bezier(0.85, 0.01, 0.66, 0.49);
+    // }
 
     .header-3 {
         position: absolute;

@@ -1,11 +1,6 @@
 .section-2 {
-    // text-align: center;
-    // display: grid;
-    // grid-template-columns: minmax(100px, 400px);
     grid-template-columns: 1fr;
     justify-items: center;
-    // grid-gap: 20px;
-
     .post {
         max-width: $post-max-width;
         background: $secondary-back;

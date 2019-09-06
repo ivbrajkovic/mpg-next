@@ -1,5 +1,11 @@
 // Section3.js
 
+const srcs = [
+    'static/img/info-lokacija.png',
+    'static/img/info-rvrijeme.png',
+    'static/img/info-ulaznice.png'
+];
+
 const Section3 = ({ lang, data }) => (
     <section className="m-t-xs-20-xl-40 p-20-0 w3-card-4 text-center section-3">
         <div className="container d-grid">
@@ -8,7 +14,8 @@ const Section3 = ({ lang, data }) => (
                     return (
                         <article className="post-info" key={index}>
                             <header className="m-b-10">
-                                <img src={item.src} />
+                                {/* <img src={item.src} /> */}
+                                <img src={srcs[index]} />
                                 <h1 className="d-inl-blok header-4">
                                     {item[lang] && item[lang].header}
                                 </h1>

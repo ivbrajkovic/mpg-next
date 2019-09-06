@@ -8,8 +8,10 @@ const Section5 = ({ lang, data, banner }) => {
             <div className="container p-0 banner w3-card-4 item-1">
                 <img
                     className="img-cover"
-                    src={banner.small}
-                    srcSet={`${banner.small} 575w, ${banner.medium} 991w, ${banner.large} 1199w, ${banner.xlarge} 1600w`}
+                    src={banner[0]}
+                    srcSet={`${banner[0]} 575w, ${banner[0]} 991w, ${banner[1]} 1199w, ${
+                        banner[2]
+                    } 1600w`}
                 />
             </div>
 

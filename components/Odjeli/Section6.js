@@ -6,7 +6,10 @@ const Section6 = ({ lang, odjel, data, onChangeOdjel }) => {
     const changeOdjel = value => onChangeOdjel(value);
 
     return (
-        <section className="container m-t-xs-20-xl-40 section-6">
+        <section
+            style={{ minHeight: 100 }}
+            className="container m-t-xs-20-xl-40 gap-xs-20-xl-30 section-6"
+        >
             {data[lang] &&
                 data[lang].map((title, index) => {
                     return (

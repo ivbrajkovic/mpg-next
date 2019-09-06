@@ -5,6 +5,7 @@
 @import './mixin';
 @import './font';
 @import './freamwork/animation';
+// @import './freamwork/transition';
 @import './freamwork/freamwork';
 
 $hamburger-padding-x: 0;
@@ -30,6 +31,9 @@ $hamburger-layer-color: $color-1;
 @import './odjeli/section-6';
 @import './odjeli/section-7';
 @import './odjeli/media';
+
+// Zbirke
+@import './zbirke/zbirke';
 
 // Debug
 // @import './debug';

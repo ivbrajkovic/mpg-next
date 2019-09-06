@@ -2,14 +2,16 @@ import { PureComponent } from 'react';
 import Hero from '../components/Hero';
 import Section6 from '../components/Odjeli/Section6';
 import Section7 from '../components/Odjeli/Section7';
+// import Section7new from '../components/Odjeli/Section7new';
+// import Section7gsap from '../components/Odjeli/Section7gsap';
+// import Test from '../components/Odjeli/test';
+// import Section7class from '../components/Odjeli/Section7class';
 
 const banners = [
-    {
-        small: 'static/img/banner/baner-odjeli-768px.jpg',
-        medium: 'static/img/banner/baner-odjeli-1200px.jpg',
-        large: 'static/img/banner/baner-odjeli-1200px.jpg',
-        xlarge: '/static/img/banner/baner-odjeli.jpg'
-    }
+    'static/img/odjeli/baner-odjeli-768px.jpg',
+    'static/img/odjeli/baner-odjeli-1200px.jpg',
+    'static/img/odjeli/baner-odjeli-1200px.jpg',
+    'static/img/odjeli/baner-odjeli.jpg'
 ];
 
 export default class Odjeli extends PureComponent {
@@ -18,6 +20,11 @@ export default class Odjeli extends PureComponent {
     };
 
     submenuItems = null;
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     if (!(this.props.data && this.props.data['odjeli'])) return false;
+    //     return true;
+    // }
 
     componentDidMount = () => {
         this.submenuItems = document.querySelectorAll(
@@ -66,9 +73,10 @@ export default class Odjeli extends PureComponent {
         const section6 = data.section6 ? data.section6 : {};
         const section7 = data.section7 && data.section7[odjel] ? data.section7[odjel] : [];
 
+        // if (!this.props.loading)
         return (
             <>
-                <Hero title={hero[0]} banner={banners[0]} />
+                <Hero title={hero[0]} banner={banners} />
                 <Section6
                     lang={lang}
                     odjel={odjel}
@@ -76,7 +84,11 @@ export default class Odjeli extends PureComponent {
                     onChangeOdjel={this.changeOdjel}
                 />
                 <Section7 lang={lang} data={section7} />
+                {/* <Section7new lang={lang} odjel={odjel} data={[...section7]} /> */}
+                {/* <Section7class lang={lang} odjel={odjel} data={[...section7]} /> */}
+                {/* <Test lang={lang} odjel={odjel} data={section7} /> */}
             </>
         );
+        // else return <h1>Loading ...</h1>;
     }
 }

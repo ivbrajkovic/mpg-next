@@ -2,8 +2,10 @@
     position: relative;
     border-top: 4px solid $primary-back;
     border-bottom: 4px solid $hero-bottom;
+    // opacity: 0;
+    overflow: hidden;
 
-    .header-hero {
+    .header {
         // @extend .header-1-light;
         position: absolute;
         bottom: 0;
@@ -14,10 +16,10 @@
         font-family: 'Lato', sans-serif;
         font-size: 42px;
         text-align: center;
-        font-weight: 600;
+        font-weight: bold;
         color: $color-5;
-        line-height: 1.2;
-        letter-spacing: 2px;
+        // line-height: 1.2;
+        // letter-spacing: 2px;
         text-transform: uppercase;
     }
 

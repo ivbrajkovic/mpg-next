@@ -1,55 +1,71 @@
 // Section7.js
 
-import { useState } from 'react';
-// import OdjelItem from './OdjelItem';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import preloadImages from '../../lib/preloadImages.js';
+import './style.scss';
+
+const PostLink = props => (
+    <div>
+        <Link href={`/zbirke?id=${props.id}`}>
+            <a>{props.id}</a>
+        </Link>
+    </div>
+);
 
 const Section7 = ({ lang, data }) => {
-    const [fadeInBottom, setFadeInBottom] = useState(false);
-    let imagesLoaded = 0;
-    let itemsCount = 0;
+    const [grid, setGrid] = useState(data);
+    const [show, setShow] = useState(true);
 
-    const onImageLoad = e => {
-        // console.log('TCL: imageLoaded -> e', e.target);
-        // e.target.parentElement.style.animationDelay = `${delay}ms`;
+    // const gridRef = useRef();
 
-        if (itemsCount === ++imagesLoaded) {
-            // console.log('Num of menu-item images: ', imagesLoaded);
-            for (let index = 0; index < itemsCount; index++) {
-                const element = document.getElementById(`odjeli-menu-item-${index}`);
-                if (element) element.style.animationDelay = `${index * 100}ms`;
-            }
-            setFadeInBottom(true);
-        }
+    const DELAY = 50;
+    const DURATION = 350;
+
+    const loadImages = data => {
+        preloadImages(data || [])
+            .then(() => {
+                setGrid(data);
+                setTimeout(() => setShow(true), 10);
+            })
+            .catch(err => console.log('TCL: Section7 -> loadImages -> err():', err));
     };
 
+    useEffect(() => {
+        if (data.length > 0) {
+            setShow(false);
+            setTimeout(() => loadImages(data), grid.length * DELAY + DURATION);
+        }
+    }, [data]);
+
     return (
-        // <div className={`container m-t-xs-20-xl-40 section-7 ${hidden ? ' hidden' : ''}`}>
         <div
-            className={`container m-t-xs-20-xl-40 section-7${
-                fadeInBottom ? ' fade-in-bottom' : ''
-            }`}
+            // ref={gridRef}
+            className={`container m-t-xs-20-xl-40 gap-xs-20-xl-30 section-7${show ? '' : ' hide'}`}
         >
-            {data.map((item, index) => {
-                itemsCount++;
-                return (
-                    // <OdjelItem
-                    //     lang={lang}
-                    //     item={item}
-                    //     key={index}
-                    //     index={index}
-                    //     placeholder={'https://via.placeholder.com/350x350'}
-                    //     onImageLoaded={incrementCount}
-                    // />
-                    <div
-                        id={`odjeli-menu-item-${index}`}
-                        className="menu-item w3-card-4"
-                        key={index}
-                    >
-                        <img className="img-cover" src={item.src} onLoad={e => onImageLoad(e)} />
-                        <div className="header-3 m-0">{item[lang]}</div>
-                    </div>
-                );
-            })}
+            {grid &&
+                grid.map((item, index) => {
+                    return (
+                        <Link key={index} href={`/zbirke?id=${item.id}`}>
+                            <div
+                                style={{ transitionDelay: `${index * DELAY}ms` }}
+                                className="menu-item w3-card-4"
+                            >
+                                <img className="img-cover" src={item.src} />
+                                <div className="header-3 m-0">{item[lang]}</div>
+                            </div>
+                        </Link>
+
+                        // <div
+                        //     key={index}
+                        //     style={{ transitionDelay: `${index * DELAY}ms` }}
+                        //     className="menu-item w3-card-4"
+                        // >
+                        //     <img className="img-cover" src={item.src} />
+                        //     <div className="header-3 m-0">{item[lang]}</div>
+                        // </div>
+                    );
+                })}
         </div>
     );
 };

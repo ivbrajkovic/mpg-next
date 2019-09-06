@@ -6,19 +6,18 @@ import Section3 from '../components/Index/Section3';
 import Section4 from '../components/Index/Section4';
 import Section5 from '../components/Index/Section5';
 
-const banners = [
-    {
-        small: 'static/img/banner/baner-pocetna-768px.jpg',
-        medium: 'static/img/banner/baner-pocetna-1200px.jpg',
-        large: 'static/img/banner/baner-pocetna-1200px.jpg',
-        xlarge: 'static/img/banner/baner-pocetna.jpg'
-    },
-    {
-        small: 'static/img/banner/baner-pocetna-okastelu.jpg',
-        medium: 'static/img/banner/baner-pocetna-okastelu.jpg',
-        large: 'static/img/banner/baner-pocetna-okastelu.jpg',
-        xlarge: 'static/img/banner/baner-pocetna-okastelu.jpg'
-    }
+const banner1 = [
+    'static/img/pocetna/baner-pocetna-768px.jpg',
+    'static/img/pocetna/baner-pocetna-1200px.jpg',
+    'static/img/pocetna/baner-pocetna-1200px.jpg',
+    'static/img/pocetna/baner-pocetna.jpg'
+];
+
+const banner2 = [
+    'static/img/pocetna/baner-pocetna-okastelu.jpg',
+    'static/img/pocetna/baner-pocetna-okastelu.jpg',
+    'static/img/pocetna/baner-pocetna-okastelu.jpg',
+    'static/img/pocetna/baner-pocetna-okastelu.jpg'
 ];
 
 export default class index extends PureComponent {
@@ -58,12 +57,12 @@ export default class index extends PureComponent {
 
         return (
             <div>
-                <Hero title={hero[0]} banner={banners[0]} />
+                <Hero title={hero[0]} banner={banner1} />
                 <Section1 lang={lang} data={section1} />
                 <Section2 lang={lang} data={section2} />
                 <Section3 lang={lang} data={section3} />
                 <Section4 lang={lang} data={section4} />
-                <Section5 lang={lang} data={section5} banner={banners[1]} />
+                <Section5 lang={lang} data={section5} banner={banner2} />
             </div>
         );
     }

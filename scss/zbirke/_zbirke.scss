@@ -1,0 +1,27 @@
+.zbirke {
+    .item-1 {
+        grid-column: 3;
+        grid-row: 1;
+        // line-height: 0;
+    }
+    .header {
+        padding: 0 10px;
+        border-left: 6px solid $footer-1;
+        p:nth-child(1) {
+            line-height: 0.8;
+            margin-bottom: 2px;
+            font-size: 14px;
+        }
+        p:nth-child(2) {
+            margin-bottom: 8px;
+        }
+        p:nth-child(3) {
+            line-height: 0.9;
+            margin-bottom: 0;
+        }
+    }
+    .content {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+}
