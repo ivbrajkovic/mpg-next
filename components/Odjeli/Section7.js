@@ -46,7 +46,8 @@ const Section7 = ({ lang, data }) => {
             {grid &&
                 grid.map((item, index) => {
                     return (
-                        <Link key={index} href={`/zbirke?id=${item.id}`}>
+                        // <Link key={index} href={`/zbirke?id=${item.id}`}>
+                        <Link key={index} href="/zbirke/[id]" as={`/zbirke/${item.id}`}>
                             <div
                                 style={{ transitionDelay: `${index * DELAY}ms` }}
                                 className="menu-item w3-card-4"

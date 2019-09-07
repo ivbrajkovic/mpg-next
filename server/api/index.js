@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
+const fsPromises = require('fs').promises;
 
 // router.get('/:cmp/:lng', function(req, res, next) {
 router.get('/:folder', function(req, res, next) {
@@ -47,6 +48,35 @@ router.get('/:folder', function(req, res, next) {
         }
         res.json({ success: true, data: JSON.parse(data) });
     });
+});
+
+router.get('/zbirke/:id', function(req, res, next) {
+    const regex = /[^-]+?(?=\.json)/gm;
+
+    fsPromises
+        .readdir('server/db/zbirke')
+        .then(files => {
+            console.log('TCL: files', files);
+            let matches;
+            for (let i = 0; i < files.length; i++) {
+                if ((matches = regex.exec(files[i])) !== null && matches[0] == req.params.id) {
+                    fs.readFile(`server/db/zbirke/${files[i]}`, (error, data) => {
+                        if (error) {
+                            console.error('readFile error:', error);
+                            res.json({ success: false, lastError: error });
+                            return;
+                        }
+                        res.json({ success: true, data: JSON.parse(data) });
+                    });
+                    break;
+                }
+            }
+        })
+        .catch(error => {
+            console.error('readFile error:', error);
+            res.render('error', { error });
+        });
+    // res.json({ success: true, data: 'test' });
 });
 
 module.exports = router;
