@@ -3,15 +3,14 @@ import Router from 'next/router';
 import Head from 'next/head';
 import NProgress from 'nprogress';
 
-import isofetch from 'isomorphic-unfetch';
-
+// import isofetch from 'isomorphic-unfetch';
 // import { LanguageContext } from '../contexts';
 // import fetchDataAsync from '../lib/fetchDataAsync';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../scss/style.scss';
-import { log } from 'util';
+// import { log } from 'util';
 
 Router.events.on('routeChangeStart', url => {
     console.log(`Loading: ${url}`);
@@ -24,128 +23,137 @@ export default class MyApp extends App {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true,
+            // loading: true,
             lang: 'hr',
-            success: false,
-            data: null,
-            lastError: null,
+            // success: false,
+            // data: null,
+            // lastError: null,
             odjel: 0
         };
     }
 
-    componentDidMount() {
-        if (!this.data) {
-            this.setData(Router.pathname, this.state.lang);
+    static async getInitialProps({ Component, router, ctx }) {
+        let pageProps = {};
+        if (Component.getInitialProps) {
+            pageProps = await Component.getInitialProps(ctx);
         }
-        Router.events.on('routeChangeStart', this.setRoute);
+        return { pageProps };
     }
 
-    componentWillUnmount() {
-        Router.events.off('routeChangeStart', this.setRoute);
-    }
+    // componentDidMount() {
+    //     // if (!this.data) {
+    //     //     this.setData(Router.pathname, this.state.lang);
+    //     // }
+    //     // Router.events.on('routeChangeStart', this.setRoute);
+    // }
 
-    fetchData = async (route, lang) => {
-        try {
-            // const url = `/api${route}/${lang}`;
-            const url = `/api${route}`;
-            console.log('TCL: fetchDataAsync -> url', url);
+    // componentWillUnmount() {
+    //     Router.events.off('routeChangeStart', this.setRoute);
+    // }
 
-            const res = await fetch(url);
-            if (!res.ok) return { success: false, lastError: `${res.status}` };
+    // fetchData = async (route, lang) => {
+    //     try {
+    //         // const url = `/api${route}/${lang}`;
+    //         const url = `/api${route}`;
+    //         console.log('TCL: fetchDataAsync -> url', url);
 
-            const data = await res.json();
-            return data;
-        } catch (err) {
-            return { success: false, lastError: err };
-        }
-    };
+    //         const res = await fetch(url);
+    //         if (!res.ok) return { success: false, lastError: `${res.status}` };
 
-    getData = async (route, lang) => {
-        // console.log('TCL: getData -> (route, lang):', route, lang);
-        if (!route || !lang) return false;
+    //         const data = await res.json();
+    //         return data;
+    //     } catch (err) {
+    //         return { success: false, lastError: err };
+    //     }
+    // };
 
-        let { success, data, lastError } = this.state;
-        if (route === '/') route = '/index';
+    // getData = async (route, lang) => {
+    //     // console.log('TCL: getData -> (route, lang):', route, lang);
+    //     if (!route || !lang) return false;
 
-        // const page = route.substr(1); // Remove leading '/'
-        const page = route.match(/[^\/]+?((?=\?)|$)/)[0];
+    //     let { success, data, lastError } = this.state;
+    //     if (route === '/') route = '/index';
 
-        // console.log('TCL: MyApp -> getData -> route', route);
-        // const matches = route.match(/id=(.+?)((?=&)|$)/);
-        // if (matches && matches.length > 0)
-        //     console.log(`Test route and qurry: ${route.match(/id=(.+?)((?=&)|$)/)[0]}`);
-        // else console.log('NO PARAMS FOUND');
+    //     // const page = route.substr(1); // Remove leading '/'
+    //     const page = route.match(/[^\/]+?((?=\?)|$)/)[0];
 
-        // if (!(page && (!data || !data[page] || !data[page][lang]))) return false;
-        // if (!(!data || !data[page] || !data[page][lang])) return false;
-        if (!(!data || !data[page])) return false;
+    //     // console.log('TCL: MyApp -> getData -> route', route);
+    //     // const matches = route.match(/id=(.+?)((?=&)|$)/);
+    //     // if (matches && matches.length > 0)
+    //     //     console.log(`Test route and qurry: ${route.match(/id=(.+?)((?=&)|$)/)[0]}`);
+    //     // else console.log('NO PARAMS FOUND');
 
-        const nextData = await this.fetchData(route, lang);
+    //     // if (!(page && (!data || !data[page] || !data[page][lang]))) return false;
+    //     // if (!(!data || !data[page] || !data[page][lang])) return false;
+    //     if (!(!data || !data[page])) return false;
 
-        if (nextData.success) {
-            if (!data) {
-                data = nextData.data;
-            } else if (!data[page]) {
-                data[page] = nextData.data[page];
-            }
-            // } else if (!data[page][lang]) {
-            //     data[page][lang] = nextData.data[page][lang];
-            // }
-        }
+    //     const nextData = await this.fetchData(route, lang);
 
-        success = nextData.success;
-        lastError = nextData.lastError;
-        console.log('TCL: MyApp -> getData -> data: NEW');
+    //     if (nextData.success) {
+    //         if (!data) {
+    //             data = nextData.data;
+    //         } else if (!data[page]) {
+    //             data[page] = nextData.data[page];
+    //         }
+    //         // } else if (!data[page][lang]) {
+    //         //     data[page][lang] = nextData.data[page][lang];
+    //         // }
+    //     }
 
-        return { success, data, lastError };
-    };
+    //     success = nextData.success;
+    //     lastError = nextData.lastError;
+    //     console.log('TCL: MyApp -> getData -> data: NEW');
 
-    setData = async (route, lang) => {
-        const fetchedData = await this.getData(route, lang);
-        console.log('TCL: MyApp -> setData -> getData:', !!fetchedData);
+    //     return { success, data, lastError };
+    // };
 
-        if (!fetchedData) return false;
+    // setData = async (route, lang) => {
+    //     const fetchedData = await this.getData(route, lang);
+    //     console.log('TCL: MyApp -> setData -> getData:', !!fetchedData);
 
-        const { success, data, lastError } = fetchedData;
-        // console.log('TCL: setData -> success, data, lastError', success, data, lastError);
+    //     if (!fetchedData) return false;
 
-        // this.setState({
-        //     render: false
-        // });
+    //     const { success, data, lastError } = fetchedData;
+    //     // console.log('TCL: setData -> success, data, lastError', success, data, lastError);
 
-        this.setState(state => {
-            return {
-                // render: true,
-                loading: false,
-                lang: success ? lang : state.lang,
-                success: success,
-                // page: success ? route : state.page,
-                data: data,
-                lastError: lastError
-            };
-        });
+    //     // this.setState({
+    //     //     render: false
+    //     // });
 
-        return true;
-    };
+    //     this.setState(state => {
+    //         return {
+    //             // render: true,
+    //             loading: false,
+    //             lang: success ? lang : state.lang,
+    //             success: success,
+    //             // page: success ? route : state.page,
+    //             data: data,
+    //             lastError: lastError
+    //         };
+    //     });
 
-    setRoute = async route => {
-        // route = route === '/' ? '/index' : route;
-        // Router.push(route);
-        await this.setData(route, this.state.lang);
-    };
+    //     return true;
+    // };
+
+    // setRoute = async route => {
+    //     // route = route === '/' ? '/index' : route;
+    //     // Router.push(route);
+    //     //
+    //     await this.setData(route, this.state.lang);
+    // };
 
     setLanguage = async lang => {
         // if (this.state.lang === lang || !this.state.page) {
-        if (this.state.lang === lang) {
-            console.log('TCL: MyApp -> changeLanguage -> changed: FALSE');
-            return;
-        }
+        // if (this.state.lang === lang) {
+        //     console.log('TCL: MyApp -> changeLanguage -> changed: FALSE');
+        //     return;
+        // }
 
         // const { page } = this.state;
         // const isAdded = await this.setData(Router.pathname, lang);
 
         // if (!isAdded) {
-        console.log('TCL: MyApp -> changeLanguage -> changed: TRUE');
+        // console.log('TCL: MyApp -> changeLanguage -> changed: TRUE');
         this.setState({
             lang: lang
         });
@@ -183,15 +191,14 @@ export default class MyApp extends App {
 
         const { loading, success, lang, data } = this.state;
 
-        const { Component, pageProps } = this.props;
-        let page = process.browser
-            ? Router.pathname === '/'
-                ? '/index'
-                : Router.pathname
-            : '/index';
-        page = page.substr(1);
+        // let page = process.browser
+        //     ? Router.pathname === '/'
+        //         ? '/index'
+        //         : Router.pathname
+        //     : '/index';
+        // page = page.substr(1);
         // const sendData = data && data[page] && data[page][lang] ? data[page][lang] : {};
-        const sendData = data && data[page] ? data[page] : {};
+        // const sendData = data && data[page] ? data[page] : {};
 
         // console.log('TCL: render -> page', page);
         // console.log('TCL: render -> data', data);
@@ -200,38 +207,21 @@ export default class MyApp extends App {
         // console.log('TCL: render -> data[page][lang]', data[page][lang]);
         // console.log('TCL: render -> sendData', sendData);
 
+        const { Component, pageProps } = this.props;
+
         return (
             <>
                 <Head>
                     <title>Muzej Grada Pazina</title>
                 </Head>
-                {/* <Layout contentData={this.props.router.query.data}> */}
-                {/* <LanguageContext.Provider value={this.state}> */}
-                {/* <LanguageContext.Provider value={this.state}> */}
-                {/* <Layout></Layout> */}
-                {/* <Navbar language={this.state.language} onChangeLanguage={this.setLanguage} /> */}
-                {/* <Navbar /> */}
                 <Navbar
                     language={this.state.lang}
                     onChangeLanguage={this.setLanguage}
                     onTest={this.onTest}
                     onSetOdjel={this.setOdjel}
                 />
-                <Component
-                    {...pageProps}
-                    // data={data[pageProps.page.substr(1)]}
-                    // data={data[pageProps.page.substr(1)][language]}
-                    data={sendData}
-                    odjel={this.state.odjel}
-                    lang={this.state.lang}
-                    // loading={this.state.loading}
-                    // data={MyApp.myData}
-                    // language={language}
-                    // data={localeData}
-                    // onAddLanguage={this.addLanguage}
-                />
+                <Component {...pageProps} odjel={this.state.odjel} lang={this.state.lang} />
                 <Footer />
-                {/* </LanguageContext.Provider> */}
             </>
         );
     }
