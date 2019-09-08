@@ -1,6 +1,15 @@
 // section5.js
 
-const Section5 = ({ lang, data, banner }) => {
+import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
+
+const banner = [
+    // 'static/img/pocetna/baner-pocetna-okastelu.jpg',
+    'static/img/pocetna/baner-pocetna-okastelu.jpg',
+    'static/img/pocetna/baner-pocetna-okastelu.jpg',
+    'static/img/pocetna/baner-pocetna-okastelu.jpg'
+];
+
+const Section5 = ({ lang, data }) => {
     const header = data[lang] && data[lang].header;
     const content = data[lang] && data[lang].content;
     return (
@@ -15,15 +24,17 @@ const Section5 = ({ lang, data, banner }) => {
                 />
             </div>
 
-            <div className="container p-0 item-2">
-                <div className="p-20 w3-card-4 float-right">
-                    <h1 className="header-2-light">{header}</h1>
-                    <p className="m-b-20 content-1-light">{content}</p>
-                    <div className="btn-container">
-                        <button className="btn btn-light f-m-18">VIŠE</button>
+            <Zoom cascade>
+                <div className="container p-0 item-2">
+                    <div className="p-20 w3-card-4 float-right">
+                        <h1 className="header-2-light">{header}</h1>
+                        <p className="m-b-20 content-1-light">{content}</p>
+                        <div className="btn-container">
+                            <button className="btn btn-light f-m-18">VIŠE</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Zoom>
         </section>
     );
 };

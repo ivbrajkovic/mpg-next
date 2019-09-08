@@ -1,0 +1,18 @@
+{
+    "index": {
+        "baseUrl": "/static/img/pocetna/",
+        "src": ["baner-pocetna-1200px.jpg", "baner-pocetna-1200px.jpg", "baner-pocetna.jpg"],
+        "title": {
+            "hr": [],
+            "en": []
+        }
+    },
+    "odjeli": {
+        "baseUrl": "static/img/odjeli/",
+        "src": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"],
+        "title": {
+            "hr": ["Odjeli i zbirke", ""],
+            "en": ["Departments and Collections", ""]
+        }
+    }
+}

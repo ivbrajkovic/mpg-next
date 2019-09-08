@@ -1,5 +1,7 @@
 // section4.js
 
+import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
+
 const Section4 = ({ lang, data }) => {
     const header = data[lang] && data[lang].header;
     const content = data[lang] && data[lang].content;
@@ -12,20 +14,22 @@ const Section4 = ({ lang, data }) => {
     ];
 
     return (
-        <section className="container m-t-xs-20-xl-40 p-0 text-center section-4">
-            <div className="w3-card-4 d-grid">
-                <div className="item-1">
-                    <img className="img-flex" src={slides[0]} />
-                </div>
-                <div className="p-20 p-relative d-flex d-column justify-center item-2">
-                    <h1 className="header-2">{header}</h1>
-                    <p className="content-1">{content}</p>
-                    <div className="btn-container">
-                        <button className="btn btn-dark f-m-18">VIŠE</button>
+        <Zoom cascade>
+            <section className="container m-t-xs-20-xl-40 p-0 text-center section-4">
+                <div className="w3-card-4 d-grid">
+                    <div className="item-1">
+                        <img className="img-flex" src={slides[0]} />
+                    </div>
+                    <div className="p-20 p-relative d-flex d-column justify-center item-2">
+                        <h1 className="header-2">{header}</h1>
+                        <p className="content-1">{content}</p>
+                        <div className="btn-container">
+                            <button className="btn btn-dark f-m-18">VIŠE</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </Zoom>
     );
 };
 

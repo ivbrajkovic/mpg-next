@@ -1,9 +1,5 @@
 {
     "index": {
-        "hero": {
-            "hr": ["pocetna hrvatski", ""],
-            "en": ["pocetna engleski", ""]
-        },
         "section1": {
             "hr": {
                 "title": "HR Lorem ipsum dolor",
