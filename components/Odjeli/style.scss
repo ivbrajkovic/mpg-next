@@ -9,4 +9,16 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
+    .menu-item {
+        > div {
+            will-change: transform;
+            transition: transform 300ms cubic-bezier(0, 0.78, 0.75, 1);
+        }
+
+        > div:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 15px 20px 0 rgba(0, 0, 0, 0.43);
+        }
+    }
 }
