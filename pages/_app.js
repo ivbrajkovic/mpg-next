@@ -17,6 +17,9 @@ Router.events.on('routeChangeStart', url => {
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
+import config from 'react-reveal/globals';
+config({ ssrReveal: true });
+
 export default class MyApp extends App {
     state = {
         lang: 'hr',

@@ -88,8 +88,7 @@
 }
 
 .kenburns-top-right {
-    -webkit-animation: kenburns-top-right 5s ease-in-out both 1.2s;
-    animation: kenburns-top-right 5s ease-in-out both 1.2s;
+    animation: kenburns-top-right 10s ease-in-out both 1.2s;
 }
 
 /* ----------------------------------------------
@@ -104,31 +103,18 @@
  * animation kenburns-top-right
  * ----------------------------------------
  */
-@-webkit-keyframes kenburns-top-right {
-    0% {
-        -webkit-transform: scale(1) translate(0, 0);
-        transform: scale(1) translate(0, 0);
-        -webkit-transform-origin: 84% 16%;
-        transform-origin: 84% 16%;
-    }
-    100% {
-        -webkit-transform: scale(1.25) translate(20px, -15px);
-        transform: scale(1.25) translate(20px, -15px);
-        -webkit-transform-origin: right top;
-        transform-origin: right top;
-    }
-}
+
 @keyframes kenburns-top-right {
     0% {
-        -webkit-transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0);
-        -webkit-transform-origin: 84% 16%;
         transform-origin: 84% 16%;
     }
-    100% {
-        -webkit-transform: scale(1.25) translate(20px, -15px);
+    50% {
         transform: scale(1.25) translate(20px, -15px);
-        -webkit-transform-origin: right top;
         transform-origin: right top;
+    }
+    100% {
+        transform: scale(1) translate(0, 0);
+        transform-origin: 84% 16%;
     }
 }

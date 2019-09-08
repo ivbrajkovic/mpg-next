@@ -2,6 +2,7 @@
 
 // import { useEffect, useRef } from 'react';
 import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
+import Fade from 'react-reveal/Fade';
 
 const Section1 = ({ lang, data }) => {
     const title = data[lang] && data[lang].title;
@@ -17,10 +18,10 @@ const Section1 = ({ lang, data }) => {
     // }, []);
 
     return (
-        <Zoom>
+        <Fade delay={500} ssrReveal>
             <section
                 // ref={elementRef}
-                style={{ minHeight: 350 }}
+                // style={{ minHeight: 300 }}
                 // className={`container m-t-xs-20-xl-40 text-center section-1 hidden${
                 // className={`container m-t-xs-20-xl-40 text-center section-1${title ? ' fade-in' : ''}`}
                 // className={`container m-t-xs-20-xl-40 text-center section-1 fade-in`}
@@ -39,7 +40,7 @@ const Section1 = ({ lang, data }) => {
                     </article>
                 </div>
             </section>
-        </Zoom>
+        </Fade>
     );
 };
 

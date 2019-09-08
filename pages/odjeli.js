@@ -3,6 +3,7 @@ import fetchDataAsync from '../lib/fetchDataAsync';
 
 import Section6 from '../components/Odjeli/Section6';
 import Section7 from '../components/Odjeli/Section7';
+// import Footer from '../components/Footer';
 
 const Odjel = props => {
     const [odjel, setOdjel] = useState(props.odjel);
@@ -29,8 +30,7 @@ const Odjel = props => {
     };
 
     const changeOdjel = value => {
-        console.log('TCL: props.data', props.data);
-        if (props.data.data['odjeli'].section7[value]) setOdjel(value);
+        if (props.data['odjeli'].section7[value]) setOdjel(value);
         else alert('Odjel nije u zapisima.');
     };
 
@@ -38,15 +38,16 @@ const Odjel = props => {
     console.log('TCL: Odjeli -> render: ', ++i);
 
     const lang = props.lang;
-    const data = props.data && props.data.success ? props.data.data['odjeli'] : [];
+    const data = (props.success && props.data && props.data['odjeli']) || [];
     const section6 = data.section6 ? data.section6 : {};
     const section7 = data.section7 && data.section7[odjel] ? data.section7[odjel] : [];
 
     return (
-        <>
+        <div style={{ minHeight: 800 }}>
             <Section6 lang={lang} odjel={odjel} data={section6} onChangeOdjel={changeOdjel} />
             <Section7 lang={lang} data={section7} />
-        </>
+            {/* <Footer /> */}
+        </div>
     );
 };
 

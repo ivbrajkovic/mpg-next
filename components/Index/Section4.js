@@ -1,6 +1,6 @@
 // section4.js
 
-import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
+import Fade from 'react-reveal/Fade'; // Importing Fade effect
 
 const Section4 = ({ lang, data }) => {
     const header = data[lang] && data[lang].header;
@@ -14,7 +14,7 @@ const Section4 = ({ lang, data }) => {
     ];
 
     return (
-        <Zoom cascade>
+        <Fade fraction={0.8} cascade ssrReveal>
             <section className="container m-t-xs-20-xl-40 p-0 text-center section-4">
                 <div className="w3-card-4 d-grid">
                     <div className="item-1">
@@ -29,7 +29,7 @@ const Section4 = ({ lang, data }) => {
                     </div>
                 </div>
             </section>
-        </Zoom>
+        </Fade>
     );
 };
 

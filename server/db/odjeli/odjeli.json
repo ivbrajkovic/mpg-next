@@ -126,7 +126,7 @@
                 },
                 {
                     "id": 6,
-                    "src": "featureimg-zbirka-pov-6kamenspomen.jpg",
+                    "src": "featureimg-zbirka-pov-7medalje.jpg",
                     "hr": "ZBIRKA MEDALJA, PLAKETA, ODLIKOVANJA I ZNAČAKA",
                     "en": "COLLECTION OF MEDALS, PLAQUES, DECORATIONS AND BADGES"
                 },
@@ -145,44 +145,10 @@
             ],
             [
                 {
-                    "src": "https://picsum.photos/350?=6",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=7",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=8",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=9",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=10",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=11",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=12",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=13",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=14",
-                    "title": "galserijski odjel"
-                },
-                {
-                    "src": "https://picsum.photos/350?=15",
-                    "title": "galserijski odjel"
+                    "id": 0,
+                    "src": "featureimg-zbirka-galerijska.jpg",
+                    "hr": "GALERIJSKA ZBIRKA",
+                    "en": "GALLERY COLLECTION"
                 }
             ]
         ]

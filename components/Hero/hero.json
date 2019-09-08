@@ -8,7 +8,15 @@
         }
     },
     "odjeli": {
-        "baseUrl": "static/img/odjeli/",
+        "baseUrl": "/static/img/odjeli/",
+        "src": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"],
+        "title": {
+            "hr": ["Odjeli i zbirke", ""],
+            "en": ["Departments and Collections", ""]
+        }
+    },
+    "zvona": {
+        "baseUrl": "/static/img/odjeli/",
         "src": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"],
         "title": {
             "hr": ["Odjeli i zbirke", ""],

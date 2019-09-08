@@ -29,7 +29,7 @@ export default class MyDocument extends Document {
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>{' '}
                     {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> */}
                 </Head>
-                <body>
+                <body style={{ minHeight: '100vh' }}>
                     <Main />
                     <NextScript />
                     {/* <script src="/static/js/waves.min.js"></script> */}

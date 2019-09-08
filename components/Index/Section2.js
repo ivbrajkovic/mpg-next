@@ -3,7 +3,7 @@
 import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
 
 const Section2 = ({ lang, data }) => (
-    <Zoom cascade>
+    <Zoom ssrReveal cascade>
         <section
             // ref={elementRef}
             className="container m-t-xs-20-xl-40 gap-xs-20-xl-40 d-grid text-center section-2"

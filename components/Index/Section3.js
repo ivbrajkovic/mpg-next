@@ -10,8 +10,8 @@ const srcs = [
 
 const Section3 = ({ lang, data }) => (
     <section className="m-t-xs-20-xl-40 p-20-0 w3-card-4 text-center section-3">
-        <Zoom cascade>
-            <div className="container d-grid fade-in">
+        <Zoom fraction={0.3} cascade ssrReveal>
+            <div className="container d-grid">
                 {data &&
                     data.map((item, index) => {
                         return (
