@@ -178,7 +178,7 @@ export default class MyApp extends App {
     render() {
         console.log('TCL: MyApp -> render: ', ++this.i);
         // console.log('TCL: MyApp -> render -> this.state', this.state);
-        console.log('TCL: MyApp -> render -> process.browser', process.browser);
+        // console.log('TCL: MyApp -> render -> process.browser', process.browser);
 
         // return (
         //     <Navbar

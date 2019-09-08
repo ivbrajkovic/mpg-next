@@ -1,3 +1,5 @@
+// Home page
+
 import { useEffect } from 'react';
 // import fetch from 'isomorphic-unfetch';
 import fetchDataAsync from '../lib/fetchDataAsync';
@@ -10,14 +12,14 @@ import Section4 from '../components/Index/Section4';
 import Section5 from '../components/Index/Section5';
 
 const banner1 = [
-    'static/img/pocetna/baner-pocetna-768px.jpg',
+    // 'static/img/pocetna/baner-pocetna-768px.jpg',
     'static/img/pocetna/baner-pocetna-1200px.jpg',
     'static/img/pocetna/baner-pocetna-1200px.jpg',
     'static/img/pocetna/baner-pocetna.jpg'
 ];
 
 const banner2 = [
-    'static/img/pocetna/baner-pocetna-okastelu.jpg',
+    // 'static/img/pocetna/baner-pocetna-okastelu.jpg',
     'static/img/pocetna/baner-pocetna-okastelu.jpg',
     'static/img/pocetna/baner-pocetna-okastelu.jpg',
     'static/img/pocetna/baner-pocetna-okastelu.jpg'
@@ -65,8 +67,8 @@ const Index = props => {
     );
 };
 
-Index.getInitialProps = async function({ req }) {
-    const data = await fetchDataAsync(req, 'index');
+Index.getInitialProps = async function(context) {
+    const data = await fetchDataAsync(context, 'index');
     return data;
 };
 

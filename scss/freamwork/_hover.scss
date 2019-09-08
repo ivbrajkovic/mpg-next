@@ -1,0 +1,7 @@
+.on-hover-1:hover {
+    color: $color-5;
+    background: $primary-back;
+    transform: scale(1.04);
+    // box-shadow: 0 4px -10px 0 rgba(0, 0, 0, 0.2), 0 8px 10px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 15px 20px 0 rgba(0, 0, 0, 0.43);
+}

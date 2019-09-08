@@ -15,9 +15,10 @@ const Hero = ({ title, banner }) => {
                 // className="img-cover kenburns-top-right"
                 className="img-cover"
                 src={src[0]}
-                srcSet={`${src[0]} 575w, ${src[1]} 991w, ${src[2]} 1199w, ${src[3]} 1600w`}
+                // srcSet={`${src[0]} 575w, ${src[1]} 991w, ${src[2]} 1199w, ${src[2]} 1600w`}
+                srcSet={`${src[0]} 991w, ${src[1]} 1199w, ${src[2]} 1600w`}
             />
-            <h1 className="header">{title}</h1>
+            <h1 className="hero-header">{title}</h1>
         </section>
     );
 };

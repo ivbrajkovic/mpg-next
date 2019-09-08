@@ -1,41 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-const fsPromises = require('fs').promises;
+// const fsPromises = require('fs').promises;
 
-// router.get('/:cmp/:lng', function(req, res, next) {
 router.get('/:folder', function(req, res, next) {
-    // console.log('TCL server: req', req);
-
-    // if (!req.params.cmp || !req.params.lng) {
-    // if (!req.params.folder || !req.params.file) {
-    //     console.error('readFile error: Invalid argument');
-    //     res.json({ success: false, lastError: 'Invalid params' });
-    //     return;
-    // }
-
-    // fs.readFile(`db/${req.params.cmp}.json`, (error, data) => {
-    //     if (error) {
-    //         console.error('readFile error:', error);
-    //         res.json({ success: false, data: error });
-    //         return;
-    //     }
-    //     res.json(JSON.parse(data));
-    // });
-
-    //const lng = req.params.lng || 'HR';
-    // if (!/HR|hr|ENG|eng|IT|it/.test(lng)) {
-    //     res.json({ success: false, data: 'Invalid argument' });
-    //     return;
-    // }
-    // console.log('TCL: req.params.folder', req.params.folder);
-    // console.log('TCL: req.query.file', req.query.file);
-
-    // let file;
-    // if (req.params.folder && req.query.file)
-    //     file = `server/db/${req.params.folder}/${req.query.file}.json`;
-    // else file = `server/db/${req.params.folder}.json`;
-
     const file = `server/db/${req.params.folder}/${
         req.query.file ? req.query.file : req.params.folder
     }.json`;
@@ -50,33 +18,36 @@ router.get('/:folder', function(req, res, next) {
     });
 });
 
-router.get('/zbirke/:id', function(req, res, next) {
-    const regex = /[^-]+?(?=\.json)/gm;
-
-    fsPromises
-        .readdir('server/db/zbirke')
-        .then(files => {
-            console.log('TCL: files', files);
-            let matches;
-            for (let i = 0; i < files.length; i++) {
-                if ((matches = regex.exec(files[i])) !== null && matches[0] == req.params.id) {
-                    fs.readFile(`server/db/zbirke/${files[i]}`, (error, data) => {
-                        if (error) {
-                            console.error('readFile error:', error);
-                            res.json({ success: false, lastError: error });
-                            return;
-                        }
-                        res.json({ success: true, data: JSON.parse(data) });
-                    });
-                    break;
-                }
-            }
-        })
-        .catch(error => {
-            console.error('readFile error:', error);
-            res.render('error', { error });
-        });
-    // res.json({ success: true, data: 'test' });
-});
-
 module.exports = router;
+
+// router.get('/:cmp/:lng', function(req, res, next) {
+// console.log('TCL server: req', req);
+
+// if (!req.params.cmp || !req.params.lng) {
+// if (!req.params.folder || !req.params.file) {
+//     console.error('readFile error: Invalid argument');
+//     res.json({ success: false, lastError: 'Invalid params' });
+//     return;
+// }
+
+// fs.readFile(`db/${req.params.cmp}.json`, (error, data) => {
+//     if (error) {
+//         console.error('readFile error:', error);
+//         res.json({ success: false, data: error });
+//         return;
+//     }
+//     res.json(JSON.parse(data));
+// });
+
+//const lng = req.params.lng || 'HR';
+// if (!/HR|hr|ENG|eng|IT|it/.test(lng)) {
+//     res.json({ success: false, data: 'Invalid argument' });
+//     return;
+// }
+// console.log('TCL: req.params.folder', req.params.folder);
+// console.log('TCL: req.query.file', req.query.file);
+
+// let file;
+// if (req.params.folder && req.query.file)
+//     file = `server/db/${req.params.folder}/${req.query.file}.json`;
+// else file = `server/db/${req.params.folder}.json`;

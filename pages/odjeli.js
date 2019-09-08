@@ -9,7 +9,6 @@ import Section7 from '../components/Odjeli/Section7';
 const banners = [
     'static/img/odjeli/baner-odjeli-768px.jpg',
     'static/img/odjeli/baner-odjeli-1200px.jpg',
-    'static/img/odjeli/baner-odjeli-1200px.jpg',
     'static/img/odjeli/baner-odjeli.jpg'
 ];
 
@@ -53,7 +52,7 @@ const Odjel = props => {
 
     const lang = props.lang;
     const data = props.data && props.data.success ? props.data.data['odjeli'] : [];
-    console.log('TCL: Odjel -> data', data);
+    // console.log('TCL: Odjel -> data', data);
     const hero = data.hero && data.hero[lang] ? data.hero[lang] : [];
     const section6 = data.section6 ? data.section6 : {};
     const section7 = data.section7 && data.section7[odjel] ? data.section7[odjel] : [];
@@ -69,8 +68,8 @@ const Odjel = props => {
     // else return <h1>Loading ...</h1>;
 };
 
-Odjel.getInitialProps = async function({ req }) {
-    const data = await fetchDataAsync(req, 'odjeli');
+Odjel.getInitialProps = async function(context) {
+    const data = await fetchDataAsync(context, 'odjeli');
     return data;
 };
 

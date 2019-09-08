@@ -1,17 +1,17 @@
 // Section7.js
 
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import preloadImages from '../../lib/preloadImages.js';
 import './style.scss';
 
-const PostLink = props => (
-    <div>
-        <Link href={`/zbirke?id=${props.id}`}>
-            <a>{props.id}</a>
-        </Link>
-    </div>
-);
+// const PostLink = props => (
+//     <div>
+//         <Link href={`/zbirke?id=${props.id}`}>
+//             <a>{props.id}</a>
+//         </Link>
+//     </div>
+// );
 
 const Section7 = ({ lang, data }) => {
     const [grid, setGrid] = useState(data);
@@ -20,10 +20,11 @@ const Section7 = ({ lang, data }) => {
     // const gridRef = useRef();
 
     const DELAY = 50;
-    const DURATION = 350;
+    const DURATION = 300;
+    const FOLDER = '/static/img/odjeli/';
 
     const loadImages = data => {
-        preloadImages(data || [])
+        preloadImages(FOLDER, data || [])
             .then(() => {
                 setGrid(data);
                 setTimeout(() => setShow(true), 10);
@@ -31,7 +32,7 @@ const Section7 = ({ lang, data }) => {
             .catch(err => console.log('TCL: Section7 -> loadImages -> err():', err));
     };
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (data.length > 0) {
             setShow(false);
             setTimeout(() => loadImages(data), grid.length * DELAY + DURATION);
@@ -41,18 +42,25 @@ const Section7 = ({ lang, data }) => {
     return (
         <div
             // ref={gridRef}
-            className={`container m-t-xs-20-xl-40 gap-xs-20-xl-30 section-7${show ? '' : ' hide'}`}
+            className={`container m-t-xs-20-xl-40 gap-xs-20-xl-30 odjeli__section-7${
+                show ? '' : ' hide'
+            }`}
         >
             {grid &&
                 grid.map((item, index) => {
                     return (
                         // <Link key={index} href={`/zbirke?id=${item.id}`}>
+                        // <Link
+                        //     key={index}
+                        //     href={{ pathname: '/zbirke', query: { id: item.id } }}
+                        //     as={`/zbirke/${item.id}`}
+                        // >
                         <Link key={index} href="/zbirke/[id]" as={`/zbirke/${item.id}`}>
                             <div
                                 style={{ transitionDelay: `${index * DELAY}ms` }}
                                 className="menu-item w3-card-4"
                             >
-                                <img className="img-cover" src={item.src} />
+                                <img className="img-cover" src={FOLDER + item.src} />
                                 <div className="header-3 m-0">{item[lang]}</div>
                             </div>
                         </Link>

@@ -11,6 +11,8 @@ app.prepare().then(() => {
     const server = express();
 
     server.use('/api', require('./api'));
+    server.use('/api/zbirke', require('./api/zbirke.js'));
+    server.use('/api/detalji', require('./api/detalji.js'));
 
     // server.get('/', (req, res) => {
     //     console.log('TCL: server - > req.url', req.url);

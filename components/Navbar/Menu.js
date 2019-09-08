@@ -23,7 +23,7 @@ const Menu = props => {
                 />
 
                 <div className="logo">
-                    <img src="static/img/logo/logo.png" alt="MGP logo" />
+                    <img src="/static/img/logo.png" alt="MGP logo" />
                 </div>
 
                 <div className="hamburger hamburger--collapse">
