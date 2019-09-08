@@ -60,8 +60,10 @@ const Section7 = ({ lang, data }) => {
                                 style={{ transitionDelay: `${index * DELAY}ms` }}
                                 className="menu-item w3-card-4"
                             >
-                                <img className="img-cover" src={FOLDER + item.src} />
-                                <div className="header-3 m-0">{item[lang]}</div>
+                                <div>
+                                    <img className="img-cover" src={FOLDER + item.src} />
+                                    <div className="header-3 m-0">{item[lang]}</div>
+                                </div>
                             </div>
                         </Link>
 
