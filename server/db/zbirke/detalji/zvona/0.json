@@ -1,5 +1,15 @@
 {
     "id": 0,
+    "name": "zvona",
+    "hero": {
+        "src": [
+            "zbirka-kult-pov-12zvona-baner-768px.jpg",
+            "zbirka-kult-pov-12zvona-baner-1200px.jpg",
+            "zbirka-kult-pov-12zvona-baner.jpg"
+        ],
+        "hr": "Zbirka zvona",
+        "en": "Collection of Bells"
+    },
     "title": {
         "hr": "zvono izložak 1993",
         "en": "engleski ..."
