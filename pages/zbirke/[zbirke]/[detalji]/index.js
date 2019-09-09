@@ -26,19 +26,13 @@ const Detalji = ({ lang, data }) => {
 };
 
 Detalji.getInitialProps = async context => {
-    // return { id: id, name: name };
     const zbirke = context.query.zbirke;
     const detalji = context.query.detalji;
     const params = [zbirke, detalji];
-    console.log('TCL: Detalji -> getInitialProps -> params', params);
-
     const data = await fetchDataAsync(context, 'zbirke', params);
-    console.log('TCL: Detalji -> getInitialProps -> data', data);
-
     const page = (data && data.data && data.data.name) || '';
     const hero = (data && data.data && data.data.hero) || '';
     data.hero = { page: page, title: hero };
-
     return data;
 
     // Zbirke.getInitialProps = async context => {

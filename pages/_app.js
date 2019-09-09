@@ -31,7 +31,7 @@ export default class MyApp extends App {
         let pageProps = {};
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx);
-            console.log('TCL: MyApp -> getInitialProps -> pageProps', pageProps);
+            // console.log('TCL: MyApp -> getInitialProps -> pageProps', pageProps);
         }
         return { pageProps };
     }

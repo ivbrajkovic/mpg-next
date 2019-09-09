@@ -26,8 +26,8 @@ const Zbirke = ({ lang, data }) => {
             <Fade cascsade ssrReveal>
                 <Section1 data={section1} />
                 <Section2 data={section2} />
+                <Section3 name={name} folder={FOLDER} data={section3} />
             </Fade>
-            <Section3 name={name} folder={FOLDER} data={section3} />
         </div>
     );
 };
@@ -36,12 +36,16 @@ const Zbirke = ({ lang, data }) => {
 Zbirke.getInitialProps = async context => {
     const zbirke = context.query.zbirke;
     const params = [zbirke];
-    console.log('TCL: Zbirke -> getInitialProps -> params', params);
-
     const data = await fetchDataAsync(context, 'zbirke', params);
     const page = (data && data.data && data.data.name) || '';
     const hero = (data && data.data && data.data.hero) || '';
     data.hero = { page: page, title: hero };
+
+    // if (data && data.data && data.data.section3)
+    //     data.data.section3.forEach(item => {
+    //         const img = new Image();
+    //         img.src = FOLDER + item.src;
+    //     });
     return data;
 
     // console.log('TCL: Zbirke -> getInitialProps -> process.browser:', process.browser);
