@@ -16,7 +16,7 @@ const Hero = ({ lang, page }) => {
     //     }, []);
 
     return (
-        <Fade>
+        <Fade ssrReveal>
             <section className="w3-card-4 banner hero">
                 <img
                     className="img-cover kenburns-top-right"

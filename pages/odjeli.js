@@ -39,13 +39,14 @@ const Odjel = props => {
 
     const lang = props.lang;
     const data = (props.success && props.data && props.data['odjeli']) || [];
-    const section6 = data.section6 ? data.section6 : {};
-    const section7 = data.section7 && data.section7[odjel] ? data.section7[odjel] : [];
+    const section6 = data.section6 || {};
+    // const section7 = data.section7 && data.section7[odjel] ? data.section7[odjel] : [];
+    const section7 = data.section7 || [];
 
     return (
         <div style={{ minHeight: 800 }}>
             <Section6 lang={lang} odjel={odjel} data={section6} onChangeOdjel={changeOdjel} />
-            <Section7 lang={lang} data={section7} />
+            <Section7 lang={lang} odjel={odjel} data={section7} />
             {/* <Footer /> */}
         </div>
     );

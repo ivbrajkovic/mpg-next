@@ -1,21 +1,24 @@
-@media (min-width: 576px) {
-}
+// @media (min-width: 576px) {
+// }
 
 @media (min-width: 768px) {
-    .odjeli__section-7 {
+    .odjeli__section-7__menu {
         justify-content: start;
         grid-template-columns: repeat(3, minmax(200px, 350px));
     }
 }
 
 @media (min-width: 992px) {
-    .section-6 {
-        grid-template-columns: 1fr 1fr 1fr;
-        .menu-item {
-            display: flex;
+    .odjeli__section-6 {
+        &__menu {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            &-item {
+                display: flex;
+            }
         }
     }
 }
 
-@media (min-width: 1200px) {
-}
+// @media (min-width: 1200px) {
+// }

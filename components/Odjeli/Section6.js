@@ -8,16 +8,16 @@ const Section6 = ({ lang, odjel, data, onChangeOdjel }) => {
     const changeOdjel = value => onChangeOdjel(value);
 
     return (
-        <Fade cascade>
+        <Fade cascade ssrReveal>
             <section
                 style={{ minHeight: 100 }}
-                className="container m-t-xs-20-xl-40 gap-xs-20-xl-30 section-6"
+                className="container m-t-xs-20-xl-40 gap-xs-20-xl-30 odjeli__section-6__menu"
             >
                 {data[lang] &&
                     data[lang].map((title, index) => {
                         return (
                             <div
-                                className={`header-3 m-0 w3-card-4 menu-item${
+                                className={`m-0 header-3 w3-card-4 odjeli__section-6__menu-item${
                                     odjel == index ? ' active' : ''
                                 }`}
                                 key={index}

@@ -18,7 +18,7 @@ const Section1 = ({ lang, data }) => {
     // }, []);
 
     return (
-        <Fade delay={500} ssrReveal>
+        <Fade delay={250} ssrReveal>
             <section
                 // ref={elementRef}
                 // style={{ minHeight: 300 }}
