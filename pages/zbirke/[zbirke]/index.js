@@ -1,23 +1,34 @@
-// Zbirke dinamic page
-// import { useRef } from 'react';
-import fetchDataAsync from '../../../lib/fetchDataAsync';
-import Opcenita from '../../../components/Zbirke/Opcenita';
+// Zbirke - Opcenita
 
-const Zbirke = props => {
-    console.log('TCL: Zbirke -> props', props);
-    const lang = props.lang;
-    const data = (props.success && props.data) || {};
+import Fade from 'react-reveal/Fade';
+
+import fetchDataAsync from '../../../lib/fetchDataAsync';
+import Section1 from '../../../components/Zbirke/Opcenita/Section1';
+import Section2 from '../../../components/Zbirke/Opcenita/Section2';
+import Section3 from '../../../components/Zbirke/Opcenita/Section3';
+
+const FOLDER = '/static/img/odjeli/zbirke/mini/';
+
+const Zbirke = ({ lang, data }) => {
+    const name = (data && data.name) || '';
+    const section1 = (data && data.section1 && data.section1[lang]) || [];
+    const section2 = (data && data.section2 && data.section2[lang]) || [];
+    const section3 = (data && data.section3) || [];
 
     let i = 0;
     console.log('TCL: Zbirke -> i', ++i);
     return (
-        <div className="zbirke">
-            {/* <Hero title={hero[lang]} banner={banner} /> */}
-            {/* <Section1 data={data.section1} /> */}
-            {/* <Zvona data={data} /> */}
-            <Opcenita lang={lang} data={data} />
+        // <div className="zbirke">
+        //     <Opcenita lang={lang} data={data} />
+        // </div>
+
+        <div className="container">
+            <Fade cascsade ssrReveal>
+                <Section1 data={section1} />
+                <Section2 data={section2} />
+            </Fade>
+            <Section3 name={name} folder={FOLDER} data={section3} />
         </div>
-        // <h1>zbirke</h1>
     );
 };
 
@@ -28,9 +39,9 @@ Zbirke.getInitialProps = async context => {
     console.log('TCL: Zbirke -> getInitialProps -> params', params);
 
     const data = await fetchDataAsync(context, 'zbirke', params);
-    const name = (data && data.data && data.data.title) || '';
+    const page = (data && data.data && data.data.name) || '';
     const hero = (data && data.data && data.data.hero) || '';
-    data.hero = { page: name, title: hero };
+    data.hero = { page: page, title: hero };
     return data;
 
     // console.log('TCL: Zbirke -> getInitialProps -> process.browser:', process.browser);

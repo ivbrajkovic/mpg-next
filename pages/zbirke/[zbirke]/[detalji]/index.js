@@ -1,55 +1,27 @@
 // Zbirke - detalji
-
 import Fade from 'react-reveal/Fade';
 
 import fetchDataAsync from '../../../../lib/fetchDataAsync';
+import Section1 from '../../../../components/Zbirke/Detaljna/Section1';
+import Section2 from '../../../../components/Zbirke/Detaljna/Section2';
+import Section3 from '../../../../components/Zbirke/Detaljna/Section3';
 
-// import Hero from '../../../../components/Hero';
-// import Section1 from '../../components/Zbirke/Section1';
-// import Zvona from '../../components/Zbirke/Zvona';
-
-const Detalji = props => {
-    // console.log('TCL: Detalji -> props', props);
-
+const Detalji = ({ lang, data }) => {
     const FOLDER = '/static/img/odjeli/zbirke/';
-    const lang = props.lang;
-    const data = (props.success && props.data) || {};
-    // const hero = data.hero ? data.hero : [];
-    // const banner = hero.src && hero.src.map(item => FOLDER + item);
-    const title = (data.title && data.title[lang]) || [];
-    const section1 = (data.section1 && data.section1) || {};
-    const section2 = (data.section2 && data.section2[lang]) || [];
-    const section3 = data.section3 || [];
+
+    const title = (data && data.section1 && data.section1.title && data.section1.title[lang]) || '';
+    const section1 = (data && data.section1 && data.section1) || {};
+    const section2 = (data && data.section2 && data.section2[lang]) || [];
+    const section3 = (data && data.section3) || [];
 
     return (
-        <>
-            <div className="container">
-                <div className="m-t-xs-20-xl-40 ">
-                    <div className="header-2 header">{title}</div>
-                    <div className="d-grid gap-xs-20-xl-30 justify-xs-center-l-left zbirke-zvona__section-1">
-                        <div className="item-1">
-                            <img className="img-cover" src={FOLDER + section1.pic} />
-                        </div>
-                        <div className="item-2">
-                            <img className="img-cover" src="https://via.placeholder.com/800x600" />
-                        </div>
-                    </div>
-                </div>
-                <div className="m-t-xs-20-xl-40 zbirke-zvona__section-2">
-                    {section2.map && section2.map((item, index) => <p key={index}>{item}</p>)}
-                </div>
-                <Fade cascade ssrReveal>
-                    <div className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 justify-xs-center-l-left grid-xs-1fr-l-3fr zbirke-zvona__section-3">
-                        {section3.map &&
-                            section3.map((item, index) => (
-                                <div key={index}>
-                                    <img src={item} />
-                                </div>
-                            ))}
-                    </div>
-                </Fade>
-            </div>
-        </>
+        <div className="container">
+            <Fade delay={250} cascsade ssrReveal>
+                <Section1 title={title} folder={FOLDER} data={section1} />
+                <Section2 data={section2} />
+                <Section3 data={section3} />
+            </Fade>
+        </div>
     );
 };
 
@@ -61,7 +33,12 @@ Detalji.getInitialProps = async context => {
     console.log('TCL: Detalji -> getInitialProps -> params', params);
 
     const data = await fetchDataAsync(context, 'zbirke', params);
-    data.page = (data && data.data && data.data.name) || '';
+    console.log('TCL: Detalji -> getInitialProps -> data', data);
+
+    const page = (data && data.data && data.data.name) || '';
+    const hero = (data && data.data && data.data.hero) || '';
+    data.hero = { page: page, title: hero };
+
     return data;
 
     // Zbirke.getInitialProps = async context => {
