@@ -1,9 +1,10 @@
 // Zbirke dinamic page
-import { useRef } from 'react';
-import fetchDataAsync from '../../lib/fetchDataAsync';
-import Opcenita from '../../components/Zbirke/Opcenita';
+// import { useRef } from 'react';
+import fetchDataAsync from '../../../lib/fetchDataAsync';
+import Opcenita from '../../../components/Zbirke/Opcenita';
 
 const Zbirke = props => {
+    console.log('TCL: Zbirke -> props', props);
     const lang = props.lang;
     const data = (props.success && props.data) || {};
 
@@ -16,13 +17,20 @@ const Zbirke = props => {
             {/* <Zvona data={data} /> */}
             <Opcenita lang={lang} data={data} />
         </div>
+        // <h1>zbirke</h1>
     );
 };
 
 // Zbirke.getInitialProps = async ({ query: { id } }) => {
 Zbirke.getInitialProps = async context => {
-    const data = await fetchDataAsync(context, 'zbirke');
-    data.page = data.data.name;
+    const zbirke = context.query.zbirke;
+    const params = [zbirke];
+    console.log('TCL: Zbirke -> getInitialProps -> params', params);
+
+    const data = await fetchDataAsync(context, 'zbirke', params);
+    const name = (data && data.data && data.data.title) || '';
+    const hero = (data && data.data && data.data.hero) || '';
+    data.hero = { page: name, title: hero };
     return data;
 
     // console.log('TCL: Zbirke -> getInitialProps -> process.browser:', process.browser);

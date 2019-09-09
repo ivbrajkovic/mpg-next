@@ -1,8 +1,8 @@
 {
     "odjeli": {
         "hero": {
-            "hr": ["Odjeli i zbirke", ""],
-            "en": ["Departments and Collections", ""]
+            "hr": "Odjeli i zbirke",
+            "en": "Departments and Collections"
         },
         "section6": {
             "hr": ["kulturno-povjesni odjel", "povjesni odjel", "galerijski odjel"],
@@ -16,72 +16,84 @@
             [
                 {
                     "id": 0,
+                    "name": "glazba",
                     "src": "featureimg-zbirka-kult-pov-1glazbena.jpg",
                     "hr": "glazbena zbirka",
                     "en": "Musical Collection"
                 },
                 {
                     "id": 1,
+                    "name": "sakralna",
                     "src": "featureimg-zbirka-kult-pov-3sakralna.jpg",
                     "hr": "sakralna zbirka",
                     "en": "Sacral Collection"
                 },
                 {
                     "id": 2,
+                    "name": "tehncika",
                     "src": "featureimg-zbirka-kult-pov-4tehnicka.jpg",
                     "hr": "tehnička zbirka",
                     "en": "Technical Collection"
                 },
                 {
                     "id": 3,
+                    "name": "fotografija",
                     "src": "featureimg-zbirka-kult-pov-5foto.jpg",
                     "hr": "zbirka fotografija i fotografskog pribora",
                     "en": "Photographs and Photographic equipment"
                 },
                 {
                     "id": 4,
+                    "name": "namjestaja",
                     "src": "featureimg-zbirka-kult-pov-6namjestaj.jpg",
                     "hr": "zbirka namještaja i ura",
                     "en": "Collection of Furniture and Clocks"
                 },
                 {
                     "id": 5,
+                    "name": "razglednica",
                     "src": "featureimg-zbirka-kult-pov-7razglednice.jpg",
                     "hr": "zbirka razglednica i čestitki",
                     "en": "Postcards and Greeting Cards"
                 },
                 {
                     "id": 6,
+                    "name": "svakodnevna",
                     "src": "featureimg-zbirka-kult-pov-9svakodneni.jpg",
                     "hr": "zbirka svakodnevnog života",
                     "en": "Everyday Life Collection"
                 },
                 {
                     "id": 7,
+                    "name": "grafika",
                     "src": "featureimg-zbirka-kult-pov-8grafikaskulptura.jpg",
                     "hr": "zbirka skulptura, slika i grafika",
                     "en": "Collection of Sculptures, Paintings and Graphic Arts"
                 },
                 {
                     "id": 8,
+                    "name": "modna",
                     "src": "featureimg-zbirka-kult-pov-10moda.jpg",
                     "hr": "zbirka tekstilnih predmeta, modnog pribora i nakita",
                     "en": "COllection of Textiles, Fashion Accessories and JEwerly"
                 },
                 {
                     "id": 9,
+                    "name": "medicinska",
                     "src": "featureimg-zbirka-kult-pov-2ljekarnicka.jpg",
                     "hr": "Ljekarnička i medicinska zbirka",
                     "en": "Pharmacy and Medical Collection"
                 },
                 {
                     "id": 10,
+                    "name": "varia",
                     "src": "featureimg-zbirka-kult-pov-11varia.jpg",
                     "hr": "Zbirka varia",
                     "en": "Varia Collection"
                 },
                 {
                     "id": 11,
+                    "name": "zvona",
                     "src": "featureimg-zbirka-kult-pov-12zvona.jpg",
                     "hr": "Zbirka zvona",
                     "en": "Collection of Bells"
@@ -90,54 +102,63 @@
             [
                 {
                     "id": 0,
+                    "name": "arheoloska",
                     "src": "featureimg-zbirka-pov-1arheol.jpg",
                     "hr": "ARHEOLOŠKA ZBIRKA",
                     "en": "ARCHAEOLOGICAL COLLECTION"
                 },
                 {
                     "id": 1,
+                    "name": "postanska",
                     "src": "featureimg-zbirka-pov-2filatel.jpg",
                     "hr": "FILATELISTIČKO – POŠTANSKA ZBIRKA",
                     "en": "PHILATELIC AND POSTAL COLLECTION"
                 },
                 {
                     "id": 2,
+                    "name": "numizmaticka",
                     "src": "featureimg-zbirka-pov-3numizmaticka.jpg",
                     "hr": "NUMIZMATIČKA ZBIRKA",
                     "en": "NUMISMATIC COLLECTION"
                 },
                 {
                     "id": 3,
+                    "name": "tiskovna",
                     "src": "featureimg-zbirka-pov-4dokumenti.jpg",
                     "hr": "ZBIRKA DOKUMENATA, KARATA, RUKOPISA I TISKOVINA",
                     "en": "COLLECTION OF DOCUMENTS, MAPS, MANUSCRIPTS AND PRINTS"
                 },
                 {
                     "id": 4,
+                    "name": "domovinska",
                     "src": "featureimg-zbirka-pov-5domovinski.jpg",
                     "hr": "ZBIRKA DOMOVINSKOG RATA",
                     "en": "HOMELAND WAR COLLECTION"
                 },
                 {
                     "id": 5,
+                    "name": "spomenika",
                     "src": "featureimg-zbirka-pov-6kamenspomen.jpg",
                     "hr": "ZBIRKA KAMENIH SPOMENIKA",
                     "en": "COLLECTION OF STONE MONUMENTS"
                 },
                 {
                     "id": 6,
+                    "name": "medalja",
                     "src": "featureimg-zbirka-pov-7medalje.jpg",
                     "hr": "ZBIRKA MEDALJA, PLAKETA, ODLIKOVANJA I ZNAČAKA",
                     "en": "COLLECTION OF MEDALS, PLAQUES, DECORATIONS AND BADGES"
                 },
                 {
                     "id": 7,
+                    "name": "oruzja",
                     "src": "featureimg-zbirka-pov-8oruzje.jpg",
                     "hr": "COLLECTION OF WEAPONS AND MILITARY EQUIPMENT",
                     "en": "ZBIRKA ORUŽJA I VOJNE OPREME"
                 },
                 {
                     "id": 8,
+                    "name": "zastava",
                     "src": "featureimg-zbirka-pov-9zastave.jpg",
                     "hr": "ZBIRKA ZASTAVA, PEČATNJAKA I GRBOVA",
                     "en": "COLLECTION OF FLAGS, SEALS AND COAT OF ARMS"
@@ -146,6 +167,7 @@
             [
                 {
                     "id": 0,
+                    "name": "galerija",
                     "src": "featureimg-zbirka-galerijska.jpg",
                     "hr": "GALERIJSKA ZBIRKA",
                     "en": "GALLERY COLLECTION"

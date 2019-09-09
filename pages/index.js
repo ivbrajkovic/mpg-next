@@ -69,7 +69,8 @@ const Index = props => {
 
 Index.getInitialProps = async function(context) {
     const data = await fetchDataAsync(context, 'index');
-    data.page = 'index';
+    const title = (data && data.data && data.data.hero) || '';
+    data.hero = { page: 'index', title: title };
     return data;
 };
 

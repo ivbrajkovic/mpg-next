@@ -16,14 +16,15 @@ const Section6 = ({ lang, odjel, data, onChangeOdjel }) => {
                 {data[lang] &&
                     data[lang].map((title, index) => {
                         return (
-                            <div
-                                className={`m-0 header-3 w3-card-4 odjeli__section-6__menu-item${
-                                    odjel == index ? ' active' : ''
-                                }`}
-                                key={index}
-                                onClick={() => changeOdjel(index)}
-                            >
-                                {title}
+                            <div key={index} className="dummy-needed-for-fade">
+                                <div
+                                    className={`m-0 header-3 w3-card-4 expand-on-hover odjeli__section-6__menu-item${
+                                        odjel == index ? ' active' : ''
+                                    }`}
+                                    onClick={() => changeOdjel(index)}
+                                >
+                                    {title}
+                                </div>
                             </div>
                         );
                     })}

@@ -54,7 +54,8 @@ const Odjel = props => {
 
 Odjel.getInitialProps = async function(context) {
     const data = await fetchDataAsync(context, 'odjeli');
-    data.page = 'odjeli';
+    // data.page = 'odjeli';
+    data.hero = { page: 'odjeli', title: data.data.hero };
     return data;
 };
 

@@ -11,7 +11,7 @@ const Section1 = ({ lang, data }) => {
 
     return (
         <div className="container">
-            <div className=" zbirke-naslovna__section-1">
+            <div className="zbirke__section-1">
                 <div className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 justify-xs-center-l-left grid-xs-1fr-l-3fr">
                     <div className="item-1">
                         <div className="header">
@@ -21,38 +21,38 @@ const Section1 = ({ lang, data }) => {
                         </div>
                     </div>
                     <div className="item-2">
-                        <div className="content-1">
+                        <div className="content">
                             <p>{section1.content && section1.content[0]}</p>
                         </div>
                     </div>
                 </div>
-                <div className="content-2">
+            </div>
+            <div className="zbirke__section-2">
+                <div className="content">
                     {section1.content &&
                         section1.content.map &&
                         section1.content.map((item, index) => {
                             if (item.startsWith('- ')) return <ul key={index}>{item}</ul>;
                             else return <p key={index}>{item}</p>;
                         })}
-                    {/* <p>{section1.content && section1.content[1]}</p>
-                <p>{section1.content && section1.content[2]}</p> */}
                 </div>
-                <div className="zbirke-naslovna__section-2">
-                    <div className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30">
-                        {section2.map((item, index) => {
-                            return (
-                                <Link
-                                    key={index}
-                                    href="/zbirke/detalji/[name]/[id]"
-                                    as={`/zbirke/detalji/${name}/${item.id}`}
-                                    // as={`/zbirke/detalji/${name}-${index}`}
-                                >
-                                    <div key={index} className="w3-card-4">
-                                        <img src={FOLDER + item.src} />
-                                    </div>
-                                </Link>
-                            );
-                        })}
-                    </div>
+            </div>
+            <div className="zbirke__section-3">
+                <div className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30">
+                    {section2.map((item, index) => {
+                        return (
+                            <Link
+                                key={index}
+                                href="/zbirke/[zbirke]/[detalji]"
+                                as={`/zbirke/${name}/${item.id}`}
+                                // as={`/zbirke/detalji/${name}-${index}`}
+                            >
+                                <div key={index} className="w3-card-4">
+                                    <img src={FOLDER + item.src} />
+                                </div>
+                            </Link>
+                        );
+                    })}
                 </div>
             </div>
         </div>

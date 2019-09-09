@@ -43,7 +43,7 @@ const Section7 = ({ lang, odjel, data }) => {
             }
         }
 
-        console.log('TCL: imgs', imgs);
+        // console.log('TCL: imgs', imgs);
 
         preloadImages(imgs)
             .then(() => {
@@ -123,8 +123,8 @@ const Section7 = ({ lang, odjel, data }) => {
                                 style={{ transitionDelay: `${index * DELAY}ms` }}
                                 className="w3-card-4 odjeli__section-7__menu-item"
                             >
-                                <Link href="/zbirke/[id]" as={`/zbirke/${item.id}`}>
-                                    <div>
+                                <Link href="/zbirke/[zbirke]" as={`/zbirke/${item.name}`}>
+                                    <div className="expand-on-hover">
                                         <img className="img-cover" src={FOLDER + item.src} />
                                         <div className="header-3 m-0">{item[lang]}</div>
                                     </div>
