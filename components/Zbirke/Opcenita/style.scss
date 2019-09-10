@@ -13,7 +13,6 @@
 // }
 
 .fade-bottom {
-    opacity: 0;
     > div {
         opacity: 0;
         transform: translateY(50px);
@@ -25,7 +24,6 @@
 }
 
 .fade-bottom-active {
-    opacity: 1;
     > div {
         opacity: 1;
         transform: none;

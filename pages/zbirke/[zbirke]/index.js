@@ -26,8 +26,8 @@ const Zbirke = ({ lang, data }) => {
             <Fade cascsade ssrReveal>
                 <Section1 data={section1} />
                 <Section2 data={section2} />
-                <Section3 name={name} folder={FOLDER} data={section3} />
             </Fade>
+            <Section3 name={name} folder={FOLDER} data={section3} />
         </div>
     );
 };
