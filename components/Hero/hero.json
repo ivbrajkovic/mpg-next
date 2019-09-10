@@ -1,26 +1,22 @@
 {
     "index": {
         "baseUrl": "/static/img/pocetna/",
-        "src": ["baner-pocetna-1200px.jpg", "baner-pocetna-1200px.jpg", "baner-pocetna.jpg"],
-        "title": {
-            "hr": [],
-            "en": []
-        }
+        "src": ["baner-pocetna-1200px.jpg", "baner-pocetna-1200px.jpg", "baner-pocetna.jpg"]
     },
     "odjeli": {
         "baseUrl": "/static/img/odjeli/",
-        "src": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"],
-        "title": {
-            "hr": ["Odjeli i zbirke", ""],
-            "en": ["Departments and Collections", ""]
-        }
+        "src": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"]
     },
     "zvona": {
         "baseUrl": "/static/img/odjeli/",
-        "src": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"],
-        "title": {
-            "hr": ["Odjeli i zbirke", ""],
-            "en": ["Departments and Collections", ""]
-        }
+        "src": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"]
+    },
+    "fotografija": {
+        "baseUrl": "/static/img/odjeli/zbirke/",
+        "src": [
+            "featureimg-zbirka-kult-pov-5foto-baner-768px.jpg",
+            "featureimg-zbirka-kult-pov-5foto-baner-1200px.jpg",
+            "featureimg-zbirka-kult-pov-5foto-baner.jpg"
+        ]
     }
 }

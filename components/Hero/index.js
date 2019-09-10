@@ -4,11 +4,10 @@
 import Fade from 'react-reveal/Fade'; // Importing Zoom effect
 import hero from './hero.json';
 
-const Hero = ({ lang, page }) => {
-    // const src = banner ? banner : [];
+const Hero = ({ title, page }) => {
+    console.log('TCL: Hero -> title', title);
     const baseUrl = (hero[page] && hero[page].baseUrl) || '';
     const images = (hero[page] && hero[page].src) || '';
-    const title1 = (hero[page] && hero[page].title[lang]) || '';
 
     //     useEffect(() => {
     //         const el = document.getElementById('hero');
@@ -26,7 +25,9 @@ const Hero = ({ lang, page }) => {
                     srcSet={`${baseUrl + images[0]} 991w, ${baseUrl + images[1]} 1199w, ${baseUrl +
                         images[2]} 1600w`}
                 />
-                <h1 className="hero-header">{title1}</h1>
+                <div className="container">
+                    <h1 className="hero-header">{title}</h1>
+                </div>
             </section>
         </Fade>
     );

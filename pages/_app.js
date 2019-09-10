@@ -84,9 +84,11 @@ export default class MyApp extends App {
         // const { loading, success, lang, data } = this.state;
 
         const { Component, pageProps } = this.props;
-        const { hero } = pageProps;
-        const heroTitle = (hero && hero.title) || '';
-        const heroPage = (hero && hero.page) || 'index';
+
+        const { data } = pageProps;
+
+        const page = (data && data.page) || 'index';
+        const title = (data && data.hero && data.hero[this.state.lang]) || '';
 
         return (
             <>
@@ -99,7 +101,7 @@ export default class MyApp extends App {
                     onTest={this.onTest}
                     onSetOdjel={this.setOdjel}
                 />
-                <Hero lang={this.state.lang} title={heroTitle} page={heroPage} />
+                <Hero lang={this.state.lang} title={title} page={page} />
                 <Component
                     {...pageProps}
                     odjel={this.state.odjel}

@@ -47,7 +47,7 @@ const Index = props => {
     console.log('TCL: Index -> render: ', ++i);
 
     const lang = props.lang;
-    const data = (props.success && props.data && props.data['index']) || [];
+    const data = (props.success && props.data) || [];
     const section1 = data.section1 ? data.section1 : [];
     const section2 = data.section2 ? data.section2 : [];
     const section3 = data.section3 ? data.section3 : [];
@@ -69,8 +69,6 @@ const Index = props => {
 
 Index.getInitialProps = async function(context) {
     const data = await fetchDataAsync(context, 'index');
-    const hero = (data && data.data && data.data.hero) || '';
-    data.hero = { page: 'index', title: hero };
     return data;
 };
 

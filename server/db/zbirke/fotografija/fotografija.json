@@ -1,0 +1,160 @@
+{
+    "id": 11,
+    "page": "fotografija",
+    "hero": {
+        "hr": "zbirka fotografija i fotografskog pribora",
+        "en": "Photographs and Photographic equipment"
+    },
+    "section1": {
+        "hr": {
+            "header": ["Voditelj zbirke:", "Ivan Smoljan, kustos", "Uvod u zbirku: prema najavi"],
+            "content": [
+                "Zbirku fotografija i fotografske opreme, koja je jedna od većih zbirki Muzeja rada Pazina, čine fotografije crno-bijele i u koloru, negativi (na staklu), fotoalbumi te raznovrsna fotografska oprema i fotografski pribor. Građa zbirke datirana je u razdoblje od posljednjeg desetljeća 19. stoljeća do recentnog doba, a može se podijeliti u nekoliko tematskih skupina:"
+            ]
+        },
+        "en": {
+            "header": ["Voditelj zbirke:", "Ivan Smoljan, kustos", "Uvod u zbirku: prema najavi"],
+            "content": [
+                "Collection of Photographs and Photographic Equipment, one of several larger museum Collections, consists of black and white photographs, negatives (on glass), photo albums and diverse photographic equipment and accessories. Items within the Collection date in the period from the last decade of the 19th century until recent times and can be divided into several thematic groups"
+            ]
+        }
+    },
+    "section2": {
+        "hr": [
+            "- panorame i vedute Pazina i mjesta Pazinštine",
+            "- individualni i grupni portreti žena, muškaraca, djece, učenika osnovnih škola i gimnazija, vojnika, obiteljski portreti, portreti sportskih (i drugih) udruga i udruženja",
+            "- javna događanja političkog, vjerskog, gospodarskog i sportskog života",
+            "- spomenici i grbovi",
+            "- Pazinski potok (Pazinčica) i poplave",
+            "- stalni postav Narodnog muzeja u Pazinu",
+            "- negativi na staklu",
+            "- fotoalbumi",
+            "- fotografski pribor i oprema.",
+            "Iako veći dio fotografija zbirke nema poznate autore, dio fotografija s kraja 19. i početka 20. stoljeća pripisuju se fotografima iz Istre i drugih mjesta s područja Rijeke i Trsta (Atelier Flora ili E. Mioni iz Pule, G. B. Mazucco iz Gorice, A. Percich iz Voloskog, Giuseppe Wulz iz Trsta), ali i fotografima -  amaterima koji su radili i živjeli u Pazinu, primjerice slikaru Saši Šantelu. Od trećeg desetljeća u Pazinu djeluju, pa se tako i u fundusu Zbirke čuvaju, fotografska ostvarenja profesionalnih fotografa – Matka Gortana, Francesca Stepcicha i Erne Carletti, kasnije Marije Nađ i Bruna Stefanija. Fotografski pribor i oprema s kraja 19. i iz 20. stoljeća, stativi, kasete, torbe i pribor za laboratorijsku obradu fotografija, vrijedan su spomen fotografske kulture Pazina i Pazinštine."
+        ],
+        "en": [
+            "- panoramas of Pazin and the surrounding area,",
+            "- individual and group portraits of women, men, children, students of primary schools and Gymnasiums, soldiers, family portraits,rtraits of sports (and other) associations,",
+            "- public events of political, religious, economy and sports character,",
+            "- monuments and coats of arms,",
+            "- Pazin Stream (Pazinčica) and the floods,",
+            "- Permanent exhibition of the National Museum in Pazin,",
+            "- negatives on glass,",
+            "- photo albums, ",
+            "- photographic accessories and equipment.",
+            "Although the authors of majority of photographs are unknown, part of those dated at the end of the 19th century and beginning of the 20th century are attributed to photographers from Istria and other places around Rijeka and Trieste (Atelier Flora or E. Mioni from Pule, G. B. Mazucco from Gorizia, A. Percich from Volosko, Giuseppe Wulz from Trieste). Another part of photographs are attributed to amateur photographers who lived and worked in Pazin, like Saša Šantel.",
+            "The fundus also guards photographic accomplishments of professional photographers active during the 1930s – Marko Gortan, Francesco Stepcich and Erna Carletti, later Marija Nađ and Bruno Stefani.",
+            "Photographic accessories and equipment from the end of the 19th and the 20th century, photo stands, casetes, bags and laboratory processing equipment are an important reminder of photographic culture of Pazin and beyond."
+        ]
+    },
+    "section3": [
+        {
+            "id": 0,
+            "src": "1986.jpg"
+        },
+        {
+            "id": 1,
+            "src": "1987.jpg"
+        },
+        {
+            "id": 2,
+            "src": "1988.jpg"
+        },
+        {
+            "id": 3,
+            "src": "1989.jpg"
+        },
+        {
+            "id": 4,
+            "src": "1990.jpg"
+        },
+        {
+            "id": 5,
+            "src": "1991.jpg"
+        },
+        {
+            "id": 6,
+            "src": "1992a.jpg"
+        },
+        {
+            "id": 7,
+            "src": "1993a.jpg"
+        },
+        {
+            "id": 8,
+            "src": "1993b.jpg"
+        },
+        {
+            "id": 9,
+            "src": "1994.jpg"
+        },
+        {
+            "id": 10,
+            "src": "1995.jpg"
+        },
+        {
+            "id": 11,
+            "src": "1996.jpg"
+        },
+        {
+            "id": 12,
+            "src": "1997a.jpg"
+        },
+        {
+            "id": 13,
+            "src": "1997b.jpg"
+        },
+        {
+            "id": 14,
+            "src": "1998.jpg"
+        },
+        {
+            "id": 15,
+            "src": "1999.jpg"
+        },
+        {
+            "id": 16,
+            "src": "2000.jpg"
+        },
+        {
+            "id": 17,
+            "src": "2001.jpg"
+        },
+        {
+            "id": 18,
+            "src": "2002.jpg"
+        },
+        {
+            "id": 19,
+            "src": "2003a.jpg"
+        },
+        {
+            "id": 20,
+            "src": "2003b.jpg"
+        },
+        {
+            "id": 21,
+            "src": "2004.jpg"
+        },
+        {
+            "id": 22,
+            "src": "2005a.jpg"
+        },
+        {
+            "id": 23,
+            "src": "2005b.jpg"
+        },
+        {
+            "id": 24,
+            "src": "2006.jpg"
+        },
+        {
+            "id": 25,
+            "src": "2007.jpg"
+        },
+        {
+            "id": 26,
+            "src": "2008.jpg"
+        }
+    ]
+}

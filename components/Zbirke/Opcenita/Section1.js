@@ -3,7 +3,7 @@
 const Section1 = ({ data }) => {
     return (
         <div className="zbirke__section-1">
-            <div className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 justify-xs-center-l-left grid-xs-1fr-l-3fr">
+            <div className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 justify-xs-center-l-left">
                 <div className="item-1">
                     <div className="header">
                         {data.header &&

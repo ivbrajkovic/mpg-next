@@ -38,7 +38,7 @@ const Odjel = props => {
     console.log('TCL: Odjeli -> render: ', ++i);
 
     const lang = props.lang;
-    const data = (props.success && props.data && props.data['odjeli']) || [];
+    const data = (props.success && props.data) || [];
     const section6 = data.section6 || {};
     // const section7 = data.section7 && data.section7[odjel] ? data.section7[odjel] : [];
     const section7 = data.section7 || [];
@@ -54,8 +54,6 @@ const Odjel = props => {
 
 Odjel.getInitialProps = async function(context) {
     const data = await fetchDataAsync(context, 'odjeli');
-    const hero = (data && data.data && data.data.hero) || '';
-    data.hero = { page: 'odjeli', title: hero };
     return data;
 };
 

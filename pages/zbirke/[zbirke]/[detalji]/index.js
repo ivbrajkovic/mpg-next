@@ -30,9 +30,7 @@ Detalji.getInitialProps = async context => {
     const detalji = context.query.detalji;
     const params = [zbirke, detalji];
     const data = await fetchDataAsync(context, 'zbirke', params);
-    const page = (data && data.data && data.data.name) || '';
-    const hero = (data && data.data && data.data.hero) || '';
-    data.hero = { page: page, title: hero };
+    console.log('TCL: data', data);
     return data;
 
     // Zbirke.getInitialProps = async context => {

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const DELAY = 50;
 
-const Section3 = ({ name, folder, data }) => {
+const Section3 = ({ page, folder, data }) => {
     const [grid, setGrid] = useState([]);
     const firstRef = useRef(true);
     const gridRef = useRef();
@@ -39,7 +39,7 @@ const Section3 = ({ name, folder, data }) => {
                         <Link
                             key={index}
                             href="/zbirke/[zbirke]/[detalji]"
-                            as={`/zbirke/${name}/${item.id}`}
+                            as={`/zbirke/${page}/${item.id}`}
                         >
                             <div style={{ transitionDelay: `${index * DELAY}ms` }}>
                                 <div className="w3-card-4 expand-on-hover">

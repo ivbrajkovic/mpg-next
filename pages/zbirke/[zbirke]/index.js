@@ -10,10 +10,11 @@ import Section3 from '../../../components/Zbirke/Opcenita/Section3';
 const FOLDER = '/static/img/odjeli/zbirke/mini/';
 
 const Zbirke = ({ lang, data }) => {
-    const name = (data && data.name) || '';
+    const page = (data && data.page) || '';
     const section1 = (data && data.section1 && data.section1[lang]) || [];
     const section2 = (data && data.section2 && data.section2[lang]) || [];
     const section3 = (data && data.section3) || [];
+    console.log('TCL: Zbirke -> section3', section3);
 
     let i = 0;
     console.log('TCL: Zbirke -> i', ++i);
@@ -27,7 +28,7 @@ const Zbirke = ({ lang, data }) => {
                 <Section1 data={section1} />
                 <Section2 data={section2} />
             </Fade>
-            <Section3 name={name} folder={FOLDER} data={section3} />
+            <Section3 page={page} folder={FOLDER} data={section3} />
         </div>
     );
 };
@@ -37,9 +38,11 @@ Zbirke.getInitialProps = async context => {
     const zbirke = context.query.zbirke;
     const params = [zbirke];
     const data = await fetchDataAsync(context, 'zbirke', params);
-    const page = (data && data.data && data.data.name) || '';
-    const hero = (data && data.data && data.data.hero) || '';
-    data.hero = { page: page, title: hero };
+    // console.log('TCL: data', data);
+    // const page = (data && data.data && data.data.name) || '';
+    // console.log('TCL: page', page);
+    // const hero = (data && data.data && data.data.hero) || '';
+    // data.hero = { page: page, title: hero };
 
     // if (data && data.data && data.data.section3)
     //     data.data.section3.forEach(item => {
