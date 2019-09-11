@@ -1,7 +1,9 @@
 {
     "id": 11,
+    "folder": "/static/img/odjeli/",
     "page": "zvona",
     "hero": {
+        "srcset": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"],
         "hr": "Zbirka zvona",
         "en": "Collection of Bells"
     },
@@ -36,114 +38,117 @@
             "The items within the Collection present only a small part of bells taken from Istrian churches during the Second World War. In 1961 some of them were returned to Istria and enlisted into the Register of movable cultural goods of the Rijeka County in 1962. The first Collection of Bells consisted of 33 registered and two unregistered bells. In the period between 1986 and 1999, by virtue of the Regional Institute for Preservation of Cultural Monuments in Rijeka (Public Administration for Preservation of Cultural and Natural Heritage, i.e. Conservation Department in Pula) twelve of them were returned to the bell towers (11 registered and one unregistered bell)."
         ]
     },
-    "section3": [
-        {
-            "id": 0,
-            "src": "1986.jpg"
-        },
-        {
-            "id": 1,
-            "src": "1987.jpg"
-        },
-        {
-            "id": 2,
-            "src": "1988.jpg"
-        },
-        {
-            "id": 3,
-            "src": "1989.jpg"
-        },
-        {
-            "id": 4,
-            "src": "1990.jpg"
-        },
-        {
-            "id": 5,
-            "src": "1991.jpg"
-        },
-        {
-            "id": 6,
-            "src": "1992a.jpg"
-        },
-        {
-            "id": 7,
-            "src": "1993a.jpg"
-        },
-        {
-            "id": 8,
-            "src": "1993b.jpg"
-        },
-        {
-            "id": 9,
-            "src": "1994.jpg"
-        },
-        {
-            "id": 10,
-            "src": "1995.jpg"
-        },
-        {
-            "id": 11,
-            "src": "1996.jpg"
-        },
-        {
-            "id": 12,
-            "src": "1997a.jpg"
-        },
-        {
-            "id": 13,
-            "src": "1997b.jpg"
-        },
-        {
-            "id": 14,
-            "src": "1998.jpg"
-        },
-        {
-            "id": 15,
-            "src": "1999.jpg"
-        },
-        {
-            "id": 16,
-            "src": "2000.jpg"
-        },
-        {
-            "id": 17,
-            "src": "2001.jpg"
-        },
-        {
-            "id": 18,
-            "src": "2002.jpg"
-        },
-        {
-            "id": 19,
-            "src": "2003a.jpg"
-        },
-        {
-            "id": 20,
-            "src": "2003b.jpg"
-        },
-        {
-            "id": 21,
-            "src": "2004.jpg"
-        },
-        {
-            "id": 22,
-            "src": "2005a.jpg"
-        },
-        {
-            "id": 23,
-            "src": "2005b.jpg"
-        },
-        {
-            "id": 24,
-            "src": "2006.jpg"
-        },
-        {
-            "id": 25,
-            "src": "2007.jpg"
-        },
-        {
-            "id": 26,
-            "src": "2008.jpg"
-        }
-    ]
+    "section3": {
+        "folder": "zbirke/mini/",
+        "src": [
+            {
+                "id": 0,
+                "src": "1986.jpg"
+            },
+            {
+                "id": 1,
+                "src": "1987.jpg"
+            },
+            {
+                "id": 2,
+                "src": "1988.jpg"
+            },
+            {
+                "id": 3,
+                "src": "1989.jpg"
+            },
+            {
+                "id": 4,
+                "src": "1990.jpg"
+            },
+            {
+                "id": 5,
+                "src": "1991.jpg"
+            },
+            {
+                "id": 6,
+                "src": "1992a.jpg"
+            },
+            {
+                "id": 7,
+                "src": "1993a.jpg"
+            },
+            {
+                "id": 8,
+                "src": "1993b.jpg"
+            },
+            {
+                "id": 9,
+                "src": "1994.jpg"
+            },
+            {
+                "id": 10,
+                "src": "1995.jpg"
+            },
+            {
+                "id": 11,
+                "src": "1996.jpg"
+            },
+            {
+                "id": 12,
+                "src": "1997a.jpg"
+            },
+            {
+                "id": 13,
+                "src": "1997b.jpg"
+            },
+            {
+                "id": 14,
+                "src": "1998.jpg"
+            },
+            {
+                "id": 15,
+                "src": "1999.jpg"
+            },
+            {
+                "id": 16,
+                "src": "2000.jpg"
+            },
+            {
+                "id": 17,
+                "src": "2001.jpg"
+            },
+            {
+                "id": 18,
+                "src": "2002.jpg"
+            },
+            {
+                "id": 19,
+                "src": "2003a.jpg"
+            },
+            {
+                "id": 20,
+                "src": "2003b.jpg"
+            },
+            {
+                "id": 21,
+                "src": "2004.jpg"
+            },
+            {
+                "id": 22,
+                "src": "2005a.jpg"
+            },
+            {
+                "id": 23,
+                "src": "2005b.jpg"
+            },
+            {
+                "id": 24,
+                "src": "2006.jpg"
+            },
+            {
+                "id": 25,
+                "src": "2007.jpg"
+            },
+            {
+                "id": 26,
+                "src": "2008.jpg"
+            }
+        ]
+    }
 }

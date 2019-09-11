@@ -9,6 +9,14 @@
     padding: 20px;
 }
 
+.p-xs-20-l-40 {
+    padding: 20px;
+}
+
+.p-xs-20-l-30 {
+    padding: 20px;
+}
+
 .p-15-0 {
     padding: 15px 0;
 }
@@ -33,6 +41,9 @@
     padding: 10px;
 }
 
+.panel-xs-20-l-40 {
+    padding: 20px 0;
+}
 // @media (min-width: 576px) {
 // }
 
@@ -45,5 +56,14 @@
 // @media (min-width: 992px) {
 // }
 
-// @media (min-width: 1200px) {
-// }
+@media (min-width: 1200px) {
+    .p-xs-20-l-40 {
+        padding: 40px;
+    }
+    .p-xs-20-l-30 {
+        padding: 30px;
+    }
+    .panel-xs-20-l-40 {
+        padding: 40px 0;
+    }
+}

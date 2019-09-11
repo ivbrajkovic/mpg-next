@@ -4,16 +4,17 @@ import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
 import makeCarousel from 'react-reveal/makeCarousel';
 
-const Section4 = ({ lang, data }) => {
+const Section4 = ({ lang, folder, data }) => {
     const header = data[lang] && data[lang].header;
     const content = data[lang] && data[lang].content;
+    const slides = data.slides || [];
 
-    const slides = [
-        'static/img/pocetna/slider/slider-pocetna-zbirke-1.jpg',
-        'static/img/pocetna/slider/slider-pocetna-zbirke-2.jpg',
-        'static/img/pocetna/slider/slider-pocetna-zbirke-3.jpg',
-        'static/img/pocetna/slider/slider-pocetna-zbirke-4.jpg'
-    ];
+    // const slides = [
+    //     'static/img/pocetna/slides/slider-pocetna-zbirke-1.jpg',
+    //     'static/img/pocetna/slides/slider-pocetna-zbirke-2.jpg',
+    //     'static/img/pocetna/slides/slider-pocetna-zbirke-3.jpg',
+    //     'static/img/pocetna/slides/slider-pocetna-zbirke-4.jpg'
+    // ];
 
     const sliderContainer = {
         position: 'relative',
@@ -25,36 +26,29 @@ const Section4 = ({ lang, data }) => {
     const Carousel = makeCarousel(CarouselUI);
 
     return (
-        <Fade fraction={0.8} cascade ssrReveal>
+        <Fade fraction={0.8} ssrReveal>
             <section className="container m-t-xs-20-xl-40 p-0 text-center section-4">
                 <div className="w3-card-4 d-grid">
                     <div className="item-1">
                         <Carousel defaultWait={4000} /*wait for 1000 milliseconds*/>
-                            <Slide right>
-                                <div>
-                                    <img className="img-flex" src={slides[0]} />
-                                </div>
-                            </Slide>
-                            <Slide right>
-                                <div>
-                                    <img className="img-flex" src={slides[1]} />
-                                </div>
-                            </Slide>
-                            <Slide right>
-                                <div>
-                                    <img className="img-flex" src={slides[2]} />
-                                </div>
-                            </Slide>
-                            <Slide right>
-                                <div>
-                                    <img className="img-flex" src={slides[3]} />
-                                </div>
-                            </Slide>
+                            {slides.map((item, index) => {
+                                return (
+                                    <Slide right>
+                                        <div>
+                                            <img
+                                                key={index}
+                                                className="img-flex"
+                                                src={`${folder}slides/${item}`}
+                                            />
+                                        </div>
+                                    </Slide>
+                                );
+                            })}
                         </Carousel>
                     </div>
-                    <div className="p-20 p-relative d-flex d-column justify-center item-2">
-                        <h1 className="header-2">{header}</h1>
-                        <p className="content-1">{content}</p>
+                    <div className="p-xs-20-l-30 p-relative d-flex d-column justify-center item-2">
+                        <h1 className="header-2 m-b-10">{header}</h1>
+                        <p className="content-1 m-b-20">{content}</p>
                         <div className="btn-container">
                             <button className="btn btn-dark f-m-18">VIŠE</button>
                         </div>
@@ -66,3 +60,26 @@ const Section4 = ({ lang, data }) => {
 };
 
 export default Section4;
+
+// {/* <Carousel defaultWait={4000} /*wait for 1000 milliseconds*/>
+//     <Slide right>
+//         <div>
+//             <img className="img-flex" src={slides[0]} />
+//         </div>
+//     </Slide>
+//     <Slide right>
+//         <div>
+//             <img className="img-flex" src={slides[1]} />
+//         </div>
+//     </Slide>
+//     <Slide right>
+//         <div>
+//             <img className="img-flex" src={slides[2]} />
+//         </div>
+//     </Slide>
+//     <Slide right>
+//         <div>
+//             <img className="img-flex" src={slides[3]} />
+//         </div>
+//     </Slide>
+// </Carousel> */}

@@ -22,11 +22,12 @@ export default class MyDocument extends Document {
                     {/* Import CSS for nprogress */}
                     <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
                     {/* Button ripple effect */}
-                    <script src="https://cdn.jsdelivr.net/npm/ripplet.js@0.1.14"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineLite.min.js"></script>
+                    {/* <script src="https://cdn.jsdelivr.net/npm/ripplet.js@0.1.14"></script> */}
+                    <script src="/static/js/ripplet.js"></script>
+                    {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineLite.min.js"></script> */}
                     {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/easing/EasePack.min.js"></script> */}
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>{' '}
+                    {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>{' '} */}
                     {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> */}
                 </Head>
                 <body>

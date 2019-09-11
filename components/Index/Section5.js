@@ -28,7 +28,7 @@ const Section5 = ({ lang, data }) => {
                 <div className="container p-0 item-2">
                     <Fade right delay={800} ssrReveal>
                         <div className="p-20 w3-card-4 float-right hide">
-                            <h1 className="header-2-light">{header}</h1>
+                            <h1 className="m-b-10 header-2-light">{header}</h1>
                             <p className="m-b-20 content-1-light">{content}</p>
                             <div className="btn-container">
                                 <button className="btn btn-light f-m-18">VIŠE</button>

@@ -1,10 +1,10 @@
 // Zbirke - detalji
 import Fade from 'react-reveal/Fade';
 
-import fetchDataAsync from '../../../../lib/fetchDataAsync';
-import Section1 from '../../../../components/Zbirke/Detaljna/Section1';
-import Section2 from '../../../../components/Zbirke/Detaljna/Section2';
-import Section3 from '../../../../components/Zbirke/Detaljna/Section3';
+import fetchDataAsync from '../../../../../lib/fetchDataAsync';
+import Section1 from '../../../../../components/Zbirke/Detaljna/Section1';
+import Section2 from '../../../../../components/Zbirke/Detaljna/Section2';
+import Section3 from '../../../../../components/Zbirke/Detaljna/Section3';
 
 const Detalji = ({ lang, data }) => {
     const FOLDER = '/static/img/odjeli/zbirke/';

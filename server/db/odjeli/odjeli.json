@@ -1,6 +1,8 @@
 {
     "page": "odjeli",
+    "folder": "/static/img/odjeli/",
     "hero": {
+        "srcset": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"],
         "hr": "Odjeli i zbirke",
         "en": "Departments and Collections"
     },

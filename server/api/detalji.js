@@ -5,17 +5,20 @@ const router = express.Router();
 const fs = require('fs');
 
 router.get('/:name/:id', function(req, res, next) {
-    const folder = 'server/db/zbirke/detalji/';
-    const file = folder + req.params.name + '/' + req.params.id + '.json';
+    const file = `server/db/zbirke/${req.params.name}/detalji/${req.params.id}.json`;
 
-    fs.readFile(file, (error, data) => {
-        if (error) {
-            console.error('myfile does not exist');
-            res.json({ success: false, lastError: error });
-            return;
-        }
-        res.json({ success: true, data: JSON.parse(data) });
-    });
+    if (req.params.name && req.params.id) {
+        fs.readFile(file, (error, data) => {
+            if (error) {
+                console.error('myfile does not exist');
+                res.json({ success: false, lastError: error });
+                return;
+            }
+            res.json({ success: true, data: JSON.parse(data) });
+        });
+    } else {
+        res.json({ success: false, lastError: error });
+    }
 });
 
 module.exports = router;

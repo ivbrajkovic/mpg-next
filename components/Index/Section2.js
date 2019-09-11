@@ -2,7 +2,7 @@
 
 import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
 
-const Section2 = ({ lang, data }) => (
+const Section2 = ({ lang, folder, data }) => (
     <Zoom ssrReveal cascade>
         <section
             // ref={elementRef}
@@ -12,7 +12,8 @@ const Section2 = ({ lang, data }) => (
                 data.map((item, index) => {
                     return (
                         <article className="w3-card-4 post" key={index}>
-                            <img className="img-flex" src={item.src} />
+                            {/* <img className="img-flex" src={item.src} /> */}
+                            <img className="img-flex" src={`${folder}post-${index + 1}.png`} />
                             <h2 className="p-0-20 content-2 post-title content-1-light">
                                 {item[lang] && item[lang].title}
                             </h2>

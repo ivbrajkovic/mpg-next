@@ -1,6 +1,13 @@
 {
     "page": "index",
+    "folder": "/static/img/pocetna/",
+    "hero": {
+        "hr": "",
+        "en": "",
+        "srcset": ["baner-pocetna-1200px.jpg", "baner-pocetna-1200px.jpg", "baner-pocetna.jpg"]
+    },
     "section1": {
+        "src": "post-big.png",
         "hr": {
             "title": "HR Lorem ipsum dolor",
             "header": "definiraj nedefinirano",
@@ -14,7 +21,7 @@
     },
     "section2": [
         {
-            "src": "/static/img/pocetna/post-1.png",
+            "src": "post-1.png",
             "hr": {
                 "title": "Lorem ipsum dolor",
                 "header": "Lorem ipsum dolor",
@@ -27,7 +34,7 @@
             }
         },
         {
-            "src": "/static/img/pocetna/post-1.png",
+            "src": "post-1.png",
             "hr": {
                 "title": "Lorem ipsum dolor",
                 "header": "Lorem ipsum dolor",
@@ -40,7 +47,7 @@
             }
         },
         {
-            "src": "/static/img/pocetna/post-1.png",
+            "src": "post-1.png",
             "hr": {
                 "title": "Lorem ipsum dolor",
                 "header": "Lorem ipsum dolor",
@@ -55,7 +62,7 @@
     ],
     "section3": [
         {
-            "src": "/static/img/info-lokacija.png",
+            "src": "info-lokacija.png",
             "hr": {
                 "title": "",
                 "header": "lokacija",
@@ -70,10 +77,10 @@
             }
         },
         {
-            "src": "/static/img/info-lokacija.png",
+            "src": "info-vrijeme.png",
             "hr": {
                 "title": "",
-                "header": "lokacija",
+                "header": "radno vrijeme",
                 "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
                 "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
             },
@@ -85,10 +92,10 @@
             }
         },
         {
-            "src": "/static/img/info-lokacija.png",
+            "src": "info-ulaznice.png",
             "hr": {
                 "title": "",
-                "header": "lokacija",
+                "header": "ulaznice",
                 "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
                 "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
             },
@@ -101,12 +108,7 @@
         }
     ],
     "section4": {
-        "slider": [
-            "static/img/pocetna/slider-pocetna-zbirke-1.jpg",
-            "static/img/pocetna/slider-pocetna-zbirke-2.jpg",
-            "static/img/pocetna/slider-pocetna-zbirke-3.jpg",
-            "static/img/pocetna/slider-pocetna-zbirke-4.jpg"
-        ],
+        "slides": "",
         "hr": {
             "header": "zbirke",
             "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
@@ -117,7 +119,7 @@
         }
     },
     "section5": {
-        "src": "static/img/pocetna/baner-pocetna-okastelu.jpg",
+        "src": "baner-pocetna-okastelu.jpg",
         "hr": {
             "header": "o pazinskom kaštelu",
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"

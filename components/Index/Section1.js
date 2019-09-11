@@ -4,11 +4,11 @@
 import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
 import Fade from 'react-reveal/Fade';
 
-const Section1 = ({ lang, data }) => {
+const Section1 = ({ lang, folder, data }) => {
     const title = data[lang] && data[lang].title;
     const header = data[lang] && data[lang].header;
     const content = data[lang] && data[lang].content;
-    const src = '/static/img/pocetna/post-big.png';
+    const src = `${folder}post-big.png`;
 
     // const elementRef = useRef(null);
     // useEffect(() => {
@@ -33,7 +33,7 @@ const Section1 = ({ lang, data }) => {
                     </div>
                     <article className="item-2">
                         <h2 className="p-0-20 post-title content-1-light1">{title}</h2>
-                        <section className="p-20">
+                        <section className="p-xs-20-l-40">
                             <h1 className="header-1">{header}</h1>
                             <p className="content-1">{content}</p>
                         </section>

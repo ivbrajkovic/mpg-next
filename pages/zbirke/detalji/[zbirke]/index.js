@@ -7,14 +7,15 @@ import Section1 from '../../../components/Zbirke/Opcenita/Section1';
 import Section2 from '../../../components/Zbirke/Opcenita/Section2';
 import Section3 from '../../../components/Zbirke/Opcenita/Section3';
 
-const FOLDER = '/static/img/odjeli/zbirke/mini/';
+// const FOLDER = '/static/img/odjeli/zbirke/mini/';
 
 const Zbirke = ({ lang, data }) => {
     const page = (data && data.page) || '';
     const section1 = (data && data.section1 && data.section1[lang]) || [];
     const section2 = (data && data.section2 && data.section2[lang]) || [];
-    const section3 = (data && data.section3) || [];
-    console.log('TCL: Zbirke -> section3', section3);
+    const section3 = (data && data.section3 && data.section3.src) || [];
+    const folder =
+        ((data && data.folder) || '') + (data && data.section3 && data.section3.folder) || '';
 
     let i = 0;
     console.log('TCL: Zbirke -> i', ++i);
@@ -28,7 +29,7 @@ const Zbirke = ({ lang, data }) => {
                 <Section1 data={section1} />
                 <Section2 data={section2} />
             </Fade>
-            <Section3 page={page} folder={FOLDER} data={section3} />
+            <Section3 page={page} folder={folder} data={section3} />
         </div>
     );
 };

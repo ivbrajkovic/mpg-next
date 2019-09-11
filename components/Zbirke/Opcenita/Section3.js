@@ -38,8 +38,10 @@ const Section3 = ({ page, folder, data }) => {
                     return (
                         <Link
                             key={index}
-                            href="/zbirke/[zbirke]/[detalji]"
-                            as={`/zbirke/${page}/${item.id}`}
+                            // href="/zbirke/test/"
+                            // as={`/zbirke/detalji/`}
+                            href="/zbirke/detalji/[zbirke]/[detalji]"
+                            as={`/zbirke/detalji/${page}/${item.id}`}
                         >
                             <div style={{ transitionDelay: `${index * DELAY}ms` }}>
                                 <div className="w3-card-4 expand-on-hover">

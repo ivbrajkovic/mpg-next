@@ -6,7 +6,7 @@ const Section3 = ({ data }) => {
             <div className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 justify-xs-center-l-left grid-xs-1fr-l-3fr">
                 {data.map &&
                     data.map((item, index) => (
-                        <div key={index}>
+                        <div key={index} className="w3-card-4">
                             <img src={item} />
                         </div>
                     ))}

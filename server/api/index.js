@@ -14,7 +14,15 @@ router.get('/:folder', function(req, res, next) {
             res.json({ success: false, lastError: error });
             return;
         }
-        res.json({ success: true, data: JSON.parse(data) });
+
+        if (req.params.folder === 'index')
+            fs.readdir(`static/img/pocetna/slides/`, (error, files) => {
+                data = JSON.parse(data);
+                if (!error) data.section4.slides = files.filter(file => /\.jpg/.test(file));
+                // if (!error) data.slides = files.map(file => `/static/img/pocetna/slides/${file}`);
+                res.json({ success: true, data: data });
+            });
+        else res.json({ success: true, data: JSON.parse(data) });
     });
 });
 

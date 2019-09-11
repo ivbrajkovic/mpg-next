@@ -84,11 +84,11 @@ export default class MyApp extends App {
         // const { loading, success, lang, data } = this.state;
 
         const { Component, pageProps } = this.props;
-
         const { data } = pageProps;
 
-        const page = (data && data.page) || 'index';
+        const folder = (data && data.folder) || '';
         const title = (data && data.hero && data.hero[this.state.lang]) || '';
+        const srcset = (data && data.hero && data.hero.srcset) || [];
 
         return (
             <>
@@ -101,7 +101,7 @@ export default class MyApp extends App {
                     onTest={this.onTest}
                     onSetOdjel={this.setOdjel}
                 />
-                <Hero lang={this.state.lang} title={title} page={page} />
+                <Hero title={title} folder={folder} srcset={srcset} />
                 <Component
                     {...pageProps}
                     odjel={this.state.odjel}

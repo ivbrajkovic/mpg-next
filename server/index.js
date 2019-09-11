@@ -1,3 +1,5 @@
+// Server
+
 const express = require('express');
 const next = require('next');
 const fs = require('fs');
@@ -12,7 +14,7 @@ app.prepare().then(() => {
 
     server.use('/api', require('./api'));
     server.use('/api/zbirke', require('./api/zbirke.js'));
-    server.use('/api/detalji', require('./api/detalji.js'));
+    server.use('/api/zbirke/detalji', require('./api/detalji.js'));
 
     // server.get('/', (req, res) => {
     //     console.log('TCL: server - > req.url', req.url);

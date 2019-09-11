@@ -7,9 +7,7 @@ router.get('/:file', function(req, res, next) {
     // const regex = /-([^-]*)(?=\.json)/;
     // const regex = new RegExp(`-${req.params.id}.json`);
     const folder = `server/db/zbirke/${req.params.file}/`;
-    console.log('TCL: folder', folder);
     const pattern = `${req.params.file}.json`;
-    console.log('TCL: pattern', pattern);
 
     fs.readdir(folder, (error, files) => {
         if (error) {
