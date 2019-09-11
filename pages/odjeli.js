@@ -30,7 +30,7 @@ const Odjel = props => {
     };
 
     const changeOdjel = value => {
-        if (props.data['odjeli'].section7[value]) setOdjel(value);
+        if (props.data.section7[value]) setOdjel(value);
         else alert('Odjel nije u zapisima.');
     };
 
