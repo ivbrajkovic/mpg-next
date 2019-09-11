@@ -2,5 +2,8 @@
     .d-grid {
         grid-template-columns: 1fr;
         background: $secondary-back;
+        .post-title {
+            line-height: 2.8;
+        }
     }
 }
