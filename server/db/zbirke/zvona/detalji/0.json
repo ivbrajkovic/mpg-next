@@ -1,6 +1,7 @@
 {
     "id": 0,
     "page": "zvona",
+    "folder": "/static/img/odjeli/",
     "hero": {
         "srcset": ["baner-odjeli-768px.jpg", "baner-odjeli-1200px.jpg", "baner-odjeli.jpg"],
         "hr": "Zbirka zvona",
