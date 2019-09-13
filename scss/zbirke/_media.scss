@@ -4,9 +4,12 @@
 @media (min-width: 768px) {
   .zbirke-detalji {
     &__section-1 {
+      .header-2 {
+        text-align: left;
+      }
       .d-grid {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 400px;
+        grid-template-rows: 300px;
         .item-1 {
           grid-row: 1;
           padding: 0;
@@ -23,8 +26,22 @@
   }
 }
 
-// @media (min-width: 992px) {
-// }
+@media (min-width: 992px) {
+  .zbirke-detalji {
+    &__section-1 {
+      .d-grid {
+        grid-template-rows: 400px;
+      }
+    }
+  }
+}
 
-// @media (min-width: 1200px) {
-// }
+@media (min-width: 1200px) {
+  .zbirke-detalji {
+    &__section-1 {
+      .d-grid {
+        grid-template-rows: 500px;
+      }
+    }
+  }
+}

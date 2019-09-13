@@ -2,23 +2,36 @@
 // }
 
 @media (min-width: 768px) {
-    .odjeli__section-7__menu {
-        justify-content: start;
-        grid-template-columns: repeat(3, minmax(200px, 350px));
+  .odjeli__section-7__menu {
+    justify-content: start;
+    grid-template-columns: repeat(3, minmax(200px, 350px));
+    .header-3 {
+      font-size: 22px;
     }
+  }
 }
 
 @media (min-width: 992px) {
-    .odjeli__section-6 {
-        &__menu {
-            grid-template-columns: 1fr 1fr 1fr;
+  .odjeli__section-6 {
+    &__menu {
+      grid-template-columns: 1fr 1fr 1fr;
 
-            &-item {
-                display: flex;
-            }
-        }
+      &-item {
+        display: flex;
+      }
     }
+  }
+  .odjeli__section-7__menu {
+    .header-3 {
+      font-size: 28px;
+    }
+  }
 }
 
-// @media (min-width: 1200px) {
-// }
+@media (min-width: 1200px) {
+  .odjeli__section-7__menu {
+    .header-3 {
+      font-size: 32px;
+    }
+  }
+}
