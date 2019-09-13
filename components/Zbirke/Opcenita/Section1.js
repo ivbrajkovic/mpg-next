@@ -1,24 +1,35 @@
-// Zbirke - Opcenita - Section 1
+// Zbirke - Opcenita - Section 4
 
-const Section1 = ({ data }) => {
-    return (
-        <div className="zbirke__section-1">
-            <div className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 justify-xs-center-l-left">
-                <div className="item-1">
-                    <div className="header">
-                        {data.header &&
-                            data.header.map &&
-                            data.header.map((item, index) => <p key={index}>{item}</p>)}
-                    </div>
-                </div>
-                <div className="item-2">
-                    <div className="content-1">
-                        <p>{data.content && data.content[0]}</p>
-                    </div>
-                </div>
-            </div>
+const Section4 = ({ data }) => {
+  const header = (data.header && data.header.split("\\n")) || [];
+  const text = (data.content && data.content.split("\\n")) || [];
+
+  return (
+    <div className="m-t-xs-20-xl-40 zbirke__section-1">
+      <div className="float-right">
+        <div className="header">
+          {header.map((item, index) => (
+            <p key={index}>{item}</p>
+          ))}
         </div>
-    );
+      </div>
+      <div className="content-1">
+        {text.map((item, index) => {
+          if (
+            item.startsWith("-") ||
+            item.startsWith("−") ||
+            item.startsWith("–")
+          )
+            return (
+              <div className="list-item" key={index}>
+                {item.substring(1)}
+              </div>
+            );
+          else return <p key={index}>{item}</p>;
+        })}
+      </div>
+    </div>
+  );
 };
 
-export default Section1;
+export default Section4;

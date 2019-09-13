@@ -1,13 +1,22 @@
 /******************************************************************
+ * Items
+ ******************************************************************/
+
+.full {
+  height: 100%;
+  width: 100%;
+}
+
+/******************************************************************
  * Display blok
  ******************************************************************/
 
 .d-blok {
-    display: block;
+  display: block;
 }
 
 .d-inl-blok {
-    display: inline-block;
+  display: inline-block;
 }
 
 /******************************************************************
@@ -15,23 +24,23 @@
  ******************************************************************/
 
 .d-grid {
-    display: grid;
+  display: grid;
 }
 
 .gap-xs-20-xl-30 {
-    grid-gap: 20px;
+  grid-gap: 20px;
 }
 
 .gap-xs-20-xl-40 {
-    grid-gap: 20px;
+  grid-gap: 20px;
 }
 
 .grid-xs-1fr-l-3fr {
-    grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 .grid-item-span-2 {
-    grid-column-start: span 2;
+  grid-column-start: span 2;
 }
 
 /******************************************************************
@@ -39,35 +48,35 @@
  ******************************************************************/
 
 .d-flex {
-    display: flex;
+  display: flex;
 }
 
 .align-center {
-    align-items: center;
+  align-items: center;
 }
 
 .d-row {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .d-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .d-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .space-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .justify-xs-center-l-left {
-    justify-content: center;
+  justify-content: center;
 }
 
 /******************************************************************
@@ -80,12 +89,12 @@
  * Media min-width: 768px
  ******************************************************************/
 @media (min-width: 768px) {
-    .grid-xs-1fr-l-3fr {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .justify-xs-center-l-left {
-        justify-content: left;
-    }
+  .grid-xs-1fr-l-3fr {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .justify-xs-center-l-left {
+    justify-content: left;
+  }
 }
 
 /******************************************************************
@@ -98,11 +107,11 @@
  * Media min-width: 1200px
  ******************************************************************/
 @media (min-width: 1200px) {
-    .gap-xs-20-xl-30 {
-        grid-gap: 30px;
-    }
+  .gap-xs-20-xl-30 {
+    grid-gap: 30px;
+  }
 
-    .gap-xs-20-xl-40 {
-        grid-gap: 40px;
-    }
+  .gap-xs-20-xl-40 {
+    grid-gap: 40px;
+  }
 }

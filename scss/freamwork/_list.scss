@@ -1,0 +1,10 @@
+.list-item {
+  position: relative;
+  margin-left: 60px;
+  max-width: 80%;
+}
+.list-item::before {
+  position: absolute;
+  left: -20px;
+  content: "–";
+}

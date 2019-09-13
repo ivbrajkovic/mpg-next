@@ -1,125 +1,125 @@
 .header-1 {
-    font-family: 'Lato', sans-serif;
-    font-size: 42px;
-    font-style: normal;
-    // font-weight: normal;
-    font-weight: 400;
-    //letter-spacing: -0.5px;
-    line-height: 1.3;
-    text-transform: uppercase;
-    color: $header-1;
-    margin-bottom: 22px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.42);
+  font-family: "Lato", sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  // font-weight: normal;
+  font-weight: 400;
+  //letter-spacing: -0.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: $header-1;
+  margin-bottom: 22px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.42);
 }
 .header-1-light {
-    @extend .header-1;
-    color: $color-5;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
+  @extend .header-1;
+  color: $color-5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
 }
 .header-2 {
-    @extend .header-1;
-    font-size: 34px;
-    // line-height: 42px;
+  @extend .header-1;
+  font-size: 34px;
+  // line-height: 42px;
 }
 .header-2-light {
-    @extend .header-1;
-    color: $color-5;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
+  @extend .header-1;
+  color: $color-5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
 }
 .header-3 {
-    @extend .header-1;
-    font-size: 28px;
+  @extend .header-1;
+  font-size: 28px;
 }
 .header-4 {
-    @extend .header-1;
-    color: $color-5;
-    font-weight: 300;
-    font-size: 26px;
+  @extend .header-1;
+  color: $color-5;
+  font-weight: 300;
+  font-size: 26px;
 }
 
 .content-1 {
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    letter-spacing: normal;
-    text-transform: none;
-    font-size: 18px;
-    // line-height: 24px;
-    // margin: 24px 0;
-    color: content-1;
-    // color: red;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  font-size: 21px;
+  // line-height: 24px;
+  // margin: 24px 0;
+  color: content-1;
+  // color: red;
 }
 .content-1-light {
-    @extend .content-1;
-    color: $color-5;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
+  @extend .content-1;
+  color: $color-5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
 }
 .content-2 {
-    @extend .content-1;
-    // line-height: 20px;
+  @extend .content-1;
+  // line-height: 20px;
 }
 .content-3 {
-    @extend .content-2;
-    color: $color-5;
-    line-height: 1.2;
+  @extend .content-2;
+  color: $color-5;
+  line-height: 1.2;
 }
 .content-4 {
-    @extend .content-3;
-    font-size: 16px;
+  @extend .content-3;
+  font-size: 16px;
 }
 .content-footer {
-    @extend .content-2;
-    color: $footer-1;
+  @extend .content-2;
+  color: $footer-1;
 }
 
 .post-title {
-    margin: 0;
-    // padding-top: 5px;
-    // padding-bottom: 5px;
+  margin: 0;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
 
-    font-size: 18px;
-    color: $color-5;
-    line-height: 2;
+  font-size: 18px;
+  color: $color-5;
+  line-height: 2;
 
-    font-weight: bold;
+  font-weight: bold;
 
-    // // color: $color-3;
-    background: $primary-back;
+  // // color: $color-3;
+  background: $primary-back;
 }
 
 @media (max-width: 1199.99px) {
-    .navbar {
-        font-size: 16px;
-    }
-    .header-1,
-    .header-1-light,
-    .header-2,
-    .header-2-light {
-        font-size: 34px;
-        // line-height: 40px;
-        // margin-bottom: 8px;
-    }
-    .header-3 {
-        font-size: 28px;
+  .navbar {
+    font-size: 16px;
+  }
+  .header-1,
+  .header-1-light,
+  .header-2,
+  .header-2-light {
+    font-size: 34px;
+    // line-height: 40px;
+    // margin-bottom: 8px;
+  }
+  .header-3 {
+    font-size: 28px;
 
-        // line-height: 34px;
-        // color: red;
-    }
-    .header-4 {
-        font-size: 24px;
-        // line-height: 34px;
-        // color: red;
-    }
+    // line-height: 34px;
+    // color: red;
+  }
+  .header-4 {
+    font-size: 24px;
+    // line-height: 34px;
+    // color: red;
+  }
 
-    .content-1,
-    .content-1-light,
-    .content-2,
-    .content-3 {
-        font-size: 16px;
-    }
-    .content-4,
-    .content-footer {
-        font-size: 15px;
-    }
+  .content-1,
+  .content-1-light,
+  .content-2,
+  .content-3 {
+    font-size: 16px;
+  }
+  .content-4,
+  .content-footer {
+    font-size: 15px;
+  }
 }
 
 // .header-4 {

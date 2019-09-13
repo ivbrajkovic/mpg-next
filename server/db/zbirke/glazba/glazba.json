@@ -1,0 +1,29 @@
+{
+  "id": 11,
+  "meni": false,
+  "page": "fotografija",
+  "folder": "/static/img/odjeli/zbirke/glazba/",
+  "hero": {
+    "srcset": [
+      "featureimg-zbirka-kult-pov-1glazbena-baner-768px.jpg",
+      "featureimg-zbirka-kult-pov-1glazbena-baner-1200px.jpg",
+      "featureimg-zbirka-kult-pov-1glazbena-baner.jpg"
+    ],
+    "hr": "GLAZBENA ZBIRKA",
+    "en": "MUSICAL COLLECTION"
+  },
+  "section1": {
+    "hr": {
+      "header": "Voditelj zbirke:\\nIvan Smoljan, kustos\\nUvod u zbirku: prema najavi",
+      "content": "Građa Glazbene zbirke, najvećim dijelom oformljene darovima pojedinaca i donacijom Limene glazbe Pazin, datirana je u razdoblje 19. i 20. stoljeća i može se podijeliti u sljedeće skupine:\\n−glazbala – puhačka i žičana glazbala, udaraljke\\n−uređaji za snimanje, reprodukciju i prijenos zvuka – gramofoni, radioprijamnici\\n−zvučni zapisi – gramofonske ploče, CD-ovi i DVD-ovi\\n−rukopisni i notni zapisi\\n−odjeća – dijelovi odore glazbenika.\\nPosebna vrijednost ove zbirke jesu glazbala datirana od zadnjeg desetljeća 19. stoljeća i početka 20. stoljeća, glazbena oprema, ali i rukopisni notni zapisi, primjerice Canzonario popolare iz 1909. godine, Bokaleta Nella Milottija iz 1966. godine, otisnuti skladateljski radovi Luigija Dallapiccole itd. Građu zbirke čine i radioprijamnici i gramofoni, gramofonske ploče, CD-i i kasete s očuvanim skladbama koje su sadržajem, izvođačima, izdavačima ili temom vezani uz Pazin i Pazinštinu, primjerice singl Učka 71/73 izdan od strane Odbora za izgradnju tunela kroz Učku."
+    },
+    "en": {
+      "header": "Voditelj zbirke:\\nIvan Smoljan, kustos\\nUvod u zbirku: prema najavi",
+      "content": "MUSICAL COLLECTION\\nFundus of the Musical Collection, mostly formed by donations of individuals and the Pazin Brass Band, dates in the period of the 19th and the 20th century. Museum items within the Collection can be divided into the following groups: \\n−Musical instruments – wind and string instruments, percussions,\\n−Recording devices, reproduction and acoustic transmission devices – gramophones, radio receivers,\\n−musical tracks – records, CDs, DVDs\\n−Musical notations,\\n−Pazin Brass Band vestments.\\nMusical instruments dated in the last decade of the 19th and the beginning of the 20th century, musical equipment and notations (for example, Canzonario popolare from 1909, Bokaleta by Nello Milotti from 1966, compositions by Luigi Dallapiccola etc.) are the items of distinct value within the Collection. \\nThe Collection also guards radio receivers, gramophones, records, CDs and radio tapes with recordings of compositions related with Pazin and the surrounding area by its' performers, compositors or themes (for example, the single Učka 71/73 was released from the Construction Committee of the Učka Tunnel)."
+    }
+  },
+  "gallery": {
+    "folder": "galerija/",
+    "src": []
+  }
+}

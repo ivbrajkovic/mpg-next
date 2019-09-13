@@ -1,29 +1,35 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const fs = require('fs');
+const fs = require("fs");
 // const fsPromises = require('fs').promises;
 
-router.get('/:folder', function(req, res, next) {
-    const file = `server/db/${req.params.folder}/${
-        req.query.file ? req.query.file : req.params.folder
-    }.json`;
+router.get("/:folder", function(req, res, next) {
+  console.log("TCL: SERVER 3");
 
-    fs.readFile(file, (error, data) => {
-        if (error) {
-            console.error('readFile error:', error);
-            res.json({ success: false, lastError: error });
-            return;
-        }
+  const file = `server/db/${req.params.folder}/${
+    req.query.file ? req.query.file : req.params.folder
+  }.json`;
 
-        if (req.params.folder === 'index')
-            fs.readdir(`static/img/pocetna/slides/`, (error, files) => {
-                data = JSON.parse(data);
-                if (!error) data.section4.slides = files.filter(file => /\.jpg/.test(file));
-                // if (!error) data.slides = files.map(file => `/static/img/pocetna/slides/${file}`);
-                res.json({ success: true, data: data });
-            });
-        else res.json({ success: true, data: JSON.parse(data) });
-    });
+  fs.readFile(file, (error, data) => {
+    console.log("TCL: SERVER -> index ->  data", data);
+    if (error) {
+      console.error("readFile error:", error);
+      res.json({ success: false, lastError: error });
+      return;
+    }
+
+    if (data.gallery) {
+      const folder = `${data.folder}${data.gallery}`;
+      console.log("TCL: SERVER -> index -> folder", folder);
+
+      fs.readdir(``, (error, files) => {
+        data = JSON.parse(data);
+        if (!error)
+          data.gallery.src = files.filter(file => /\.jpg||\.png/.test(file));
+        res.json({ success: true, data: data });
+      });
+    } else res.json({ success: true, data: JSON.parse(data) });
+  });
 });
 
 module.exports = router;
