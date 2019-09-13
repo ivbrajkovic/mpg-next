@@ -19,8 +19,6 @@ const Section2 = ({ page, meni, folder, gallery }) => {
       return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gm, "$1-tmb$2");
     });
 
-  console.log("TCL: image", images);
-
   // Wait for preload images
   useLayoutEffect(() => {
     // let imgs = [];

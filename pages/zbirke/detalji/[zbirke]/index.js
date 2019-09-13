@@ -39,7 +39,6 @@ Zbirke.getInitialProps = async context => {
   const zbirke = context.query.zbirke;
   const params = [zbirke];
   const data = await fetchDataAsync(context, "zbirke", params);
-  // console.log('TCL: data', data);
   // const page = (data && data.data && data.data.name) || '';
   // console.log('TCL: page', page);
   // const hero = (data && data.data && data.data.hero) || '';

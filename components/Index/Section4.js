@@ -5,7 +5,6 @@ import Slide from "react-reveal/Slide";
 import makeCarousel from "react-reveal/makeCarousel";
 
 const Section4 = ({ lang, folder, data, slides }) => {
-  console.log("TCL: data", data);
   const header = data[lang] && data[lang].header;
   const content = data[lang] && data[lang].content;
 
@@ -35,12 +34,8 @@ const Section4 = ({ lang, folder, data, slides }) => {
             <Carousel defaultWait={4000} /*wait for 1000 milliseconds*/>
               {slides.map((item, index) => {
                 return (
-                  <Slide right>
-                    <img
-                      key={index}
-                      className="img-cover"
-                      src={`${folder}${item}`}
-                    />
+                  <Slide right key={index}>
+                    <img className="img-cover" src={`${folder}${item}`} />
                   </Slide>
                 );
               })}

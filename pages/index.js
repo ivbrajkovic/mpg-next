@@ -37,7 +37,6 @@ const Index = props => {
   useEffect(() => {
     ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)";
     buttons = document.querySelectorAll(".btn");
-    console.log("TCL: buttons", buttons);
     buttons &&
       buttons.forEach(btn => {
         btn.addEventListener("mousedown", ripplet);

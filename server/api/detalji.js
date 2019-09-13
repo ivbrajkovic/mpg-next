@@ -5,21 +5,63 @@ const router = express.Router();
 const fs = require("fs");
 
 router.get("/:name/:id", function(req, res, next) {
-  const file = `server/db/zbirke/${req.params.name}/detalji/${req.params.id}.json`;
-  console.log("TCL: SERVER 4");
+  const json = `server/db/zbirke/${req.params.name}/detalji/${req.params.id}.json`;
+  console.log(
+    "TCL: *********************** SERVER 3 ***************************"
+  );
 
-  if (req.params.name && req.params.id) {
-    fs.readFile(file, (error, data) => {
-      if (error) {
-        console.error("myfile does not exist");
-        res.json({ success: false, lastError: error });
-        return;
+  console.log("SERVER file:", json);
+
+  // if (req.params.name && req.params.id) {
+  fs.readFile(json, (error, file) => {
+    if (error) {
+      console.error("myfile does not exist");
+      res.json({ success: false, lastError: error });
+      return;
+    }
+
+    // Parse JSON file
+    let data = {};
+    try {
+      data = JSON.parse(file);
+    } catch (error) {
+      console.error(`SERVER: Error parsing json file, ${error}`);
+      res.json({ success: false, lastError: error });
+      return;
+    }
+
+    if (!data.folder) {
+      console.error("SERVER: folder not specified");
+      res.json({
+        success: true,
+        data: data,
+        lastError: "folder not specified"
+      });
+    }
+
+    //Read image file names
+    fs.readdir(data.folder.substring(1), (error, files) => {
+      if (!error) {
+        // data.gallery = [];
+        if (data.slider) data.slides = [];
+        data.banners = [];
+        for (let index = 0; index < files.length; index++) {
+          // Get banner
+          if (/baner/gm.test(files[index])) {
+            data.banners.push(files[index]);
+            continue;
+            // Get slides
+          } else if (data.slider && /slider/gm.test(files[index])) {
+            data.slides.push(files[index]);
+            continue;
+          }
+        }
+        // data.gallery.sort();
+        data.banners.sort();
       }
-      res.json({ success: true, data: JSON.parse(data) });
+      res.json({ success: true, data: data });
     });
-  } else {
-    res.json({ success: false, lastError: error });
-  }
+  });
 });
 
 module.exports = router;
