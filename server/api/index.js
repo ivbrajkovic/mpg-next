@@ -4,31 +4,64 @@ const fs = require("fs");
 // const fsPromises = require('fs').promises;
 
 router.get("/:folder", function(req, res, next) {
-  console.log("TCL: SERVER 3");
+  console.log(
+    "TCL: *********************** SERVER 2 ***************************"
+  );
 
-  const file = `server/db/${req.params.folder}/${
+  const json = `server/db/${req.params.folder}/${
     req.query.file ? req.query.file : req.params.folder
   }.json`;
 
-  fs.readFile(file, (error, data) => {
-    console.log("TCL: SERVER -> index ->  data", data);
+  console.log("SERVER file:", json);
+
+  fs.readFile(json, (error, file) => {
     if (error) {
-      console.error("readFile error:", error);
+      console.error(`SERVER: Read file error ${error}`);
       res.json({ success: false, lastError: error });
       return;
     }
 
-    if (data.gallery) {
-      const folder = `${data.folder}${data.gallery}`;
-      console.log("TCL: SERVER -> index -> folder", folder);
+    // Parse JSON file
+    let data = {};
+    try {
+      data = JSON.parse(file);
+    } catch (error) {
+      console.error(`SERVER: Error parsing json file, ${error}`);
+      res.json({ success: false, lastError: error });
+      return;
+    }
 
-      fs.readdir(``, (error, files) => {
-        data = JSON.parse(data);
-        if (!error)
-          data.gallery.src = files.filter(file => /\.jpg||\.png/.test(file));
-        res.json({ success: true, data: data });
+    if (!data.folder) {
+      console.error("SERVER: folder not specified");
+      res.json({
+        success: true,
+        data: data,
+        lastError: "folder not specified"
       });
-    } else res.json({ success: true, data: JSON.parse(data) });
+    }
+
+    //Read image file names
+    fs.readdir(data.folder.substring(1), (error, files) => {
+      if (!error) {
+        // data.gallery = [];
+        if (data.slider) data.slides = [];
+        data.banners = [];
+        for (let index = 0; index < files.length; index++) {
+          // Get banner
+          if (/baner/gm.test(files[index])) {
+            data.banners.push(files[index]);
+            continue;
+            // Get slides
+          } else if (data.slider && /slider/gm.test(files[index])) {
+            data.slides.push(files[index]);
+            continue;
+          }
+        }
+        // data.gallery.sort();
+        data.banners.sort();
+      }
+      res.json({ success: true, data: data });
+    });
   });
 });
 

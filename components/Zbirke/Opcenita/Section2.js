@@ -8,17 +8,17 @@ import MeniItem from "./MeniItem";
 
 const DELAY = 50;
 
-const Section2 = ({ page, meni, base, data }) => {
+const Section2 = ({ page, meni, folder, gallery }) => {
   const [grid, setGrid] = useState([]);
   const firstRef = useRef(true);
   const gridRef = useRef();
 
   const images =
-    data.src &&
-    data.src.map &&
-    data.src.map(item => {
-      return `${base}mini/${item}`;
+    gallery.map &&
+    gallery.map(item => {
+      return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gm, "$1-tmb$2");
     });
+
   console.log("TCL: image", images);
 
   // Wait for preload images
@@ -28,8 +28,8 @@ const Section2 = ({ page, meni, base, data }) => {
     //   imgs.push(src[i]);
     // }
 
-    preloadImages(images)
-      .then(() => setGrid(images))
+    preloadImages(images || [])
+      .then(() => setGrid(images || []))
       .catch(err => console.log("TCL: Section7 -> loadImages -> err():", err));
   }, []);
 

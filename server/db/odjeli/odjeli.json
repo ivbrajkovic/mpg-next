@@ -1,14 +1,11 @@
 {
   "page": "odjeli",
   "folder": "/static/img/odjeli/",
-  "hero": {
-    "srcset": [
-      "baner-odjeli-768px.jpg",
-      "baner-odjeli-1200px.jpg",
-      "baner-odjeli.jpg"
-    ],
-    "hr": "Odjeli i zbir\nke",
-    "en": "Departments and Collections"
+  "hr": {
+    "hero": "Odjeli i zbirke"
+  },
+  "en": {
+    "hero": "Departments and Collections"
   },
   "section6": {
     "hr": ["kulturno-povjesni odjel", "povjesni odjel", "galerijski odjel"],
@@ -21,84 +18,84 @@
   "section7": [
     [
       {
-        "id": 0,
-        "name": "glazba",
+        "id": 1,
+        "name": "glazbena",
         "src": "featureimg-zbirka-kult-pov-1glazbena.jpg",
         "hr": "glazbena zbirka",
         "en": "Musical Collection"
       },
       {
-        "id": 1,
-        "name": "sakralna",
-        "src": "featureimg-zbirka-kult-pov-3sakralna.jpg",
-        "hr": "sakralna zbirka",
-        "en": "Sacral Collection"
-      },
-      {
         "id": 2,
-        "name": "tehncika",
-        "src": "featureimg-zbirka-kult-pov-4tehnicka.jpg",
-        "hr": "tehnička zbirka",
-        "en": "Technical Collection"
-      },
-      {
-        "id": 3,
-        "name": "fotografija",
-        "src": "featureimg-zbirka-kult-pov-5foto.jpg",
-        "hr": "zbirka fotografija i fotografskog pribora",
-        "en": "Photographs and Photographic equipment"
-      },
-      {
-        "id": 4,
-        "name": "namjestaja",
-        "src": "featureimg-zbirka-kult-pov-6namjestaj.jpg",
-        "hr": "zbirka namještaja i ura",
-        "en": "Collection of Furniture and Clocks"
-      },
-      {
-        "id": 5,
-        "name": "razglednica",
-        "src": "featureimg-zbirka-kult-pov-7razglednice.jpg",
-        "hr": "zbirka razglednica i čestitki",
-        "en": "Postcards and Greeting Cards"
-      },
-      {
-        "id": 6,
-        "name": "svakodnevna",
-        "src": "featureimg-zbirka-kult-pov-9svakodneni.jpg",
-        "hr": "zbirka svakodnevnog života",
-        "en": "Everyday Life Collection"
-      },
-      {
-        "id": 7,
-        "name": "grafika",
-        "src": "featureimg-zbirka-kult-pov-8grafikaskulptura.jpg",
-        "hr": "zbirka skulptura, slika i grafika",
-        "en": "Collection of Sculptures, Paintings and Graphic Arts"
-      },
-      {
-        "id": 8,
-        "name": "modna",
-        "src": "featureimg-zbirka-kult-pov-10moda.jpg",
-        "hr": "zbirka tekstilnih predmeta, modnog pribora i nakita",
-        "en": "COllection of Textiles, Fashion Accessories and JEwerly"
-      },
-      {
-        "id": 9,
         "name": "medicinska",
         "src": "featureimg-zbirka-kult-pov-2ljekarnicka.jpg",
         "hr": "Ljekarnička i medicinska zbirka",
         "en": "Pharmacy and Medical Collection"
       },
       {
+        "id": 3,
+        "name": "sakralna",
+        "src": "featureimg-zbirka-kult-pov-3sakralna.jpg",
+        "hr": "sakralna zbirka",
+        "en": "Sacral Collection"
+      },
+      {
+        "id": 4,
+        "name": "tehncika",
+        "src": "featureimg-zbirka-kult-pov-4tehnicka.jpg",
+        "hr": "tehnička zbirka",
+        "en": "Technical Collection"
+      },
+      {
+        "id": 5,
+        "name": "fotografija",
+        "src": "featureimg-zbirka-kult-pov-5foto.jpg",
+        "hr": "zbirka fotografija i fotografskog pribora",
+        "en": "Photographs and Photographic equipment"
+      },
+      {
+        "id": 6,
+        "name": "namjestaja",
+        "src": "featureimg-zbirka-kult-pov-6namjestaj.jpg",
+        "hr": "zbirka namještaja i ura",
+        "en": "Collection of Furniture and Clocks"
+      },
+      {
+        "id": 7,
+        "name": "razglednica",
+        "src": "featureimg-zbirka-kult-pov-7razglednice.jpg",
+        "hr": "zbirka razglednica i čestitki",
+        "en": "Postcards and Greeting Cards"
+      },
+      {
+        "id": 8,
+        "name": "grafika",
+        "src": "featureimg-zbirka-kult-pov-8grafikaskulptura.jpg",
+        "hr": "zbirka skulptura, slika i grafika",
+        "en": "Collection of Sculptures, Paintings and Graphic Arts"
+      },
+      {
+        "id": 9,
+        "name": "svakodnevna",
+        "src": "featureimg-zbirka-kult-pov-9svakodneni.jpg",
+        "hr": "zbirka svakodnevnog života",
+        "en": "Everyday Life Collection"
+      },
+      {
         "id": 10,
+        "name": "modna",
+        "src": "featureimg-zbirka-kult-pov-10moda.jpg",
+        "hr": "zbirka tekstilnih predmeta, modnog pribora i nakita",
+        "en": "COllection of Textiles, Fashion Accessories and JEwerly"
+      },
+      {
+        "id": 11,
         "name": "varia",
         "src": "featureimg-zbirka-kult-pov-11varia.jpg",
         "hr": "Zbirka varia",
         "en": "Varia Collection"
       },
       {
-        "id": 11,
+        "id": 12,
         "name": "zvona",
         "src": "featureimg-zbirka-kult-pov-12zvona.jpg",
         "hr": "Zbirka zvona",

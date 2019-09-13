@@ -1,0 +1,16 @@
+{
+  "id": 2,
+  "meni": false,
+  "page": "medicinska",
+  "folder": "/static/img/odjeli/zbirke/medicinska/",
+  "hr": {
+    "hero": "LJEKARNIČKA I MEDICINSKA ZBIRKA",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Ljekarničku i medicinsku zbirku, oformljenu darovanjem i otkupom muzejske građe s područja Pazina i Pazinštine, čini građa datirana u razdoblje 19. i 20. stoljeća, a može se podijeliti u tri temeljne skupine: \\n−laboratorijski instrumenti i oprema – hidrometri, aerometri, urinometar, hemometar, laboratorijske tikvice…\\n−medicinski instrumenti – kirurške hvataljke, hvataljke za tkivo, kirurške igle…\\n−osobni zdravstveni i liječnički dokumenti – zdravstvene iskaznice, ljekarničke potvrde i sl.\\n\\nGrađa potječe s prostora Pazina i Pazinštine, a od ukupnog broja predmeta zanimljivo je istaknuti laboratorijske instrumente iz 19. stoljeća iz liječničke ordinacije u Tinjanu i kirurške instrumente iz prve polovice 20. stoljeća iz Pazina dobivene po zatvaranju izložbe Partizanska bolnica u Gologorici."
+  },
+  "en": {
+    "hero": "PHARMACY AND MEDICAL COLLECTION",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Fundus of the Pharmacy and Medical Collection is formed by donated and purchased museum items from Pazin and its surroundings. Items within the Collection are dated in the 19th and the 20th century and divided into three basic groups: \\n−Laboratory instruments and equipment – hydrometers, aerometers, urinometer, hemometer, laboratory flasks, etc.\\n−Medical instruments – surgical grips, tissue clamps, surgical needles, etc.\\n−Personal health and medical records – health cards, medical documentation etc. \\n\\nFundus of the Collection originates from Pazin and the surrounding towns and area. From the overall number of museum items within the Collection it is important to emphasize the value of laboratory instruments from the 19th century, belonging to a medical practice in Tinjan, and surgical instruments from the first half of the 20th century donated to the Museum for the exhibition titled Partisan hospital in Gologorica."
+  }
+}

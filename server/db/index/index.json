@@ -1,132 +1,128 @@
 {
-    "page": "index",
-    "folder": "/static/img/pocetna/",
-    "hero": {
-        "hr": "",
-        "en": "",
-        "srcset": ["baner-pocetna-1200px.jpg", "baner-pocetna-1200px.jpg", "baner-pocetna.jpg"]
+  "page": "index",
+  "slider": true,
+  "folder": "/static/img/pocetna/",
+  "section1": {
+    "src": "post-big.png",
+    "hr": {
+      "title": "HR Lorem ipsum dolor",
+      "header": "definiraj nedefinirano",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
     },
-    "section1": {
-        "src": "post-big.png",
-        "hr": {
-            "title": "HR Lorem ipsum dolor",
-            "header": "definiraj nedefinirano",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
-        },
-        "en": {
-            "title": "EN Lorem ipsum dolor",
-            "header": "definiraj nedefinirano",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
-        }
-    },
-    "section2": [
-        {
-            "src": "post-1.png",
-            "hr": {
-                "title": "Lorem ipsum dolor",
-                "header": "Lorem ipsum dolor",
-                "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            },
-            "en": {
-                "title": "Lorem ipsum dolor",
-                "header": "Lorem ipsum dolor",
-                "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            }
-        },
-        {
-            "src": "post-1.png",
-            "hr": {
-                "title": "Lorem ipsum dolor",
-                "header": "Lorem ipsum dolor",
-                "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            },
-            "en": {
-                "title": "Lorem ipsum dolor",
-                "header": "Lorem ipsum dolor",
-                "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            }
-        },
-        {
-            "src": "post-1.png",
-            "hr": {
-                "title": "Lorem ipsum dolor",
-                "header": "Lorem ipsum dolor",
-                "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            },
-            "en": {
-                "title": "Lorem ipsum dolor",
-                "header": "Lorem ipsum dolor",
-                "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            }
-        }
-    ],
-    "section3": [
-        {
-            "src": "info-lokacija.png",
-            "hr": {
-                "title": "",
-                "header": "lokacija",
-                "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            },
-            "en": {
-                "title": "",
-                "header": "radno vrijeme",
-                "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            }
-        },
-        {
-            "src": "info-vrijeme.png",
-            "hr": {
-                "title": "",
-                "header": "radno vrijeme",
-                "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            },
-            "en": {
-                "title": "",
-                "header": "radno vrijeme",
-                "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            }
-        },
-        {
-            "src": "info-ulaznice.png",
-            "hr": {
-                "title": "",
-                "header": "ulaznice",
-                "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            },
-            "en": {
-                "title": "",
-                "header": "radno vrijeme",
-                "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-                "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
-            }
-        }
-    ],
-    "section4": {
-        "slides": "",
-        "hr": {
-            "header": "zbirke",
-            "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
-        },
-        "en": {
-            "header": "zbirke",
-            "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
-        }
-    },
-    "section5": {
-        "src": "baner-pocetna-okastelu.jpg",
-        "hr": {
-            "header": "o pazinskom kaštelu",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
-        },
-        "en": {
-            "header": "o pazinskom kaštelu",
-            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
-        }
+    "en": {
+      "title": "EN Lorem ipsum dolor",
+      "header": "definiraj nedefinirano",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
     }
+  },
+  "section2": [
+    {
+      "src": "post-1.png",
+      "hr": {
+        "title": "Lorem ipsum dolor",
+        "header": "Lorem ipsum dolor",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      },
+      "en": {
+        "title": "Lorem ipsum dolor",
+        "header": "Lorem ipsum dolor",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      }
+    },
+    {
+      "src": "post-1.png",
+      "hr": {
+        "title": "Lorem ipsum dolor",
+        "header": "Lorem ipsum dolor",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      },
+      "en": {
+        "title": "Lorem ipsum dolor",
+        "header": "Lorem ipsum dolor",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      }
+    },
+    {
+      "src": "post-1.png",
+      "hr": {
+        "title": "Lorem ipsum dolor",
+        "header": "Lorem ipsum dolor",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      },
+      "en": {
+        "title": "Lorem ipsum dolor",
+        "header": "Lorem ipsum dolor",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      }
+    }
+  ],
+  "section3": [
+    {
+      "src": "info-lokacija.png",
+      "hr": {
+        "title": "",
+        "header": "lokacija",
+        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
+        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      },
+      "en": {
+        "title": "",
+        "header": "radno vrijeme",
+        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
+        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      }
+    },
+    {
+      "src": "info-vrijeme.png",
+      "hr": {
+        "title": "",
+        "header": "radno vrijeme",
+        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
+        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      },
+      "en": {
+        "title": "",
+        "header": "radno vrijeme",
+        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
+        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      }
+    },
+    {
+      "src": "info-ulaznice.png",
+      "hr": {
+        "title": "",
+        "header": "ulaznice",
+        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
+        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      },
+      "en": {
+        "title": "",
+        "header": "radno vrijeme",
+        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
+        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+      }
+    }
+  ],
+  "section4": {
+    "slides": "",
+    "hr": {
+      "header": "zbirke",
+      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
+    },
+    "en": {
+      "header": "zbirke",
+      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
+    }
+  },
+  "section5": {
+    "src": "baner-pocetna-okastelu.jpg",
+    "hr": {
+      "header": "o pazinskom kaštelu",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
+    },
+    "en": {
+      "header": "o pazinskom kaštelu",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
+    }
+  }
 }

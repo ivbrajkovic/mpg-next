@@ -3,59 +3,66 @@ const router = express.Router();
 const fs = require("fs");
 
 router.get("/:file", function(req, res, next) {
-  // const regex = /[^-]+?(?=\.json)/gm;
-  // const regex = /-([^-]*)(?=\.json)/;
-  // const regex = new RegExp(`-${req.params.id}.json`);
-  const folder = `server/db/zbirke/${req.params.file}/`;
-  const pattern = `${req.params.file}.json`;
+  const json = `server/db/zbirke/${req.params.file}/${req.params.file}.json`;
 
-  console.log("TCL: SERVER 1");
+  console.log(
+    "TCL: *********************** SERVER 1 ***************************"
+  );
 
-  fs.readdir(folder, (error, files) => {
+  fs.readFile(json, (error, file) => {
     if (error) {
-      console.error("readFile error:", error);
+      console.error(`SERVER: Read file error, ${error}`);
       res.json({ success: false, lastError: error });
       return;
     }
 
-    let file = files.find(file => {
-      return file.includes(pattern);
-    });
-
-    if (file) {
-      fs.readFile(folder + file, (error, data) => {
-        if (error) {
-          console.error("readFile error:", error);
-          res.json({ success: false, lastError: error });
-          return;
-        }
-
-        // Parse JSON file
-        data = JSON.parse(data);
-
-        if (data.folder && data.gallery && data.gallery.folder) {
-          let folder = `${data.folder}${data.gallery.folder}`;
-
-          fs.readdir(folder.substring(1), (error, files) => {
-            if (!error) {
-              data.gallery.src = files
-                .filter(file => /\.jpg|\.png/.test(file))
-                .sort();
-            }
-            res.json({ success: true, data: data });
-          });
-        } else {
-          res.json({ success: true, data: data });
-        }
-      });
-    } else {
-      res.json({ success: false, lastError: "SERVER: File not found." });
+    // Parse JSON file
+    let data = {};
+    try {
+      data = JSON.parse(file);
+    } catch (error) {
+      console.error(`SERVER: Error parsing json file, ${error}`);
+      res.json({ success: false, lastError: error });
+      return;
     }
+
+    if (!data.folder) {
+      console.error("SERVER: folder not specified");
+      res.json({
+        success: true,
+        data: data,
+        lastError: "folder not specified"
+      });
+    }
+
+    // Read image file names
+    fs.readdir(data.folder.substring(1), (error, files) => {
+      if (!error) {
+        data.gallery = [];
+        data.banners = [];
+        for (let index = 0; index < files.length; index++) {
+          // Get images
+          if (/^(?!.*(-tmb|baner)).*\.jpg|\.png$/gm.test(files[index])) {
+            data.gallery.push(files[index]);
+            continue;
+            // Get banners
+          } else if (/baner/gm.test(files[index])) {
+            data.banners.push(files[index]);
+            continue;
+          }
+        }
+        data.gallery.sort();
+        data.banners.sort();
+      }
+      res.json({ success: true, data: data });
+    });
   });
 });
 
 router.get("/:folder/:file", function(req, res, next) {
-  console.log("TCL: SERVER 2");
+  console.log(
+    "TCL: *********************** SERVER 2 ***************************"
+  );
 
   const folder = `server/db/zbirke/${req.params.folder}/detalji/`;
   const pattern = `${req.params.file}.json`;

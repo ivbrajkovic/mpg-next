@@ -15,8 +15,7 @@ const Zbirke = ({ lang, data }) => {
   const meni = (data && data.meni) || false;
   const page = (data && data.page) || "";
   const folder = (data && data.folder) || "";
-
-  const section1 = (data && data.section1 && data.section1[lang]) || {};
+  const text = (data && data[lang]) || {};
   const gallery = (data && data.gallery) || {};
 
   let i = 0;
@@ -28,9 +27,9 @@ const Zbirke = ({ lang, data }) => {
 
     <div className="container">
       <Fade cascsade ssrReveal>
-        <Section1 data={section1} />
+        <Section1 data={text} />
       </Fade>
-      <Section2 page={page} meni={meni} base={folder} data={gallery} />
+      <Section2 page={page} meni={meni} folder={folder} gallery={gallery} />
     </div>
   );
 };
