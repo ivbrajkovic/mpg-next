@@ -3,7 +3,8 @@
 import Fade from "react-reveal/Fade";
 
 import fetchDataAsync from "../../../../lib/fetchDataAsync";
-import Section1 from "../../../../components/zbirke/Opcenita/Section1";
+import Section1 from "../../../../components/Zbirke/Opcenita/Section1";
+// import Section1 from "components/zbirke/Opcenita/Section1";
 // import Section2 from "../../../../components/Zbirke/Opcenita/Section2";
 import Section2 from "../../../../components/Zbirke/Opcenita/Section2";
 // import Section4 from "../../../../components/Zbirke/Opcenita/Section4";
