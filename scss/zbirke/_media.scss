@@ -2,6 +2,16 @@
 // }
 
 @media (min-width: 768px) {
+  .zbirke {
+    &__section-1 {
+      .float-right {
+        float: right;
+        display: block;
+        margin: 0 0 20px 40px;
+      }
+    }
+  }
+
   .zbirke-detalji {
     &__section-1 {
       .header-2 {
@@ -27,6 +37,16 @@
 }
 
 @media (min-width: 992px) {
+  .zbirke {
+    &__section-1 {
+      .float-right {
+        float: right;
+        display: block;
+        margin: 0 0 100px 60px;
+      }
+    }
+  }
+
   .zbirke-detalji {
     &__section-1 {
       .d-grid {
@@ -37,6 +57,24 @@
 }
 
 @media (min-width: 1200px) {
+  .zbirke {
+    &__section-1 {
+      .float-right {
+        .header {
+          p:nth-child(1) {
+            font-size: 16px;
+          }
+          p:nth-child(2) {
+            font-size: 18px;
+          }
+          p:nth-child(3) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
   .zbirke-detalji {
     &__section-1 {
       .d-grid {
