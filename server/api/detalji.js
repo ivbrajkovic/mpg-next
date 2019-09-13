@@ -39,27 +39,35 @@ router.get("/:name/:id", function(req, res, next) {
       });
     }
 
-    //Read image file names
-    fs.readdir(data.folder.substring(1), (error, files) => {
+    const folder = data.folder.substring(1);
+
+    // Get banners
+    fs.readdir(folder, (error, files) => {
       if (!error) {
-        // data.gallery = [];
-        if (data.slider) data.slides = [];
         data.banners = [];
         for (let index = 0; index < files.length; index++) {
-          // Get banner
           if (/baner/gm.test(files[index])) {
             data.banners.push(files[index]);
             continue;
-            // Get slides
-          } else if (data.slider && /slider/gm.test(files[index])) {
-            data.slides.push(files[index]);
-            continue;
           }
         }
-        // data.gallery.sort();
         data.banners.sort();
       }
-      res.json({ success: true, data: data });
+
+      // Get gallery
+      fs.readdir(`${folder}detalji/`, (error, files) => {
+        if (!error) {
+          data.gallery = [];
+          for (let index = 0; index < files.length; index++) {
+            if (/^(?!.*(-tmb|baner)).*\.jpg|\.png$/gm.test(files[index])) {
+              data.gallery.push(files[index]);
+              continue;
+            }
+          }
+          data.gallery.sort();
+        }
+        res.json({ success: true, data: data });
+      });
     });
   });
 });

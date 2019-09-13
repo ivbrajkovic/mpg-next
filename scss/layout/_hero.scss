@@ -1,55 +1,56 @@
 .hero {
-    position: relative;
-    border-top: 4px solid $primary-back;
-    border-bottom: 4px solid $hero-bottom;
-    // opacity: 0;
-    overflow: hidden;
+  position: relative;
+  border-top: 4px solid $primary-back;
+  border-bottom: 4px solid $hero-bottom;
+  // opacity: 0;
+  overflow: hidden;
 
+  .hero-header {
+    // @extend .header-1-light;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    // width: 100%;
+    margin-bottom: 16px;
+    font-family: "Lato", sans-serif;
+    line-height: 1.2;
+    font-size: 42px;
+    text-align: center;
+    font-weight: bold;
+    color: $color-5;
+    // line-height: 1.2;
+    // letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(25, 25, 25, 0.6),
+      -1px -1px 8px rgba(25, 25, 25, 0.6);
+  }
+
+  @media (min-width: 576px) {
     .hero-header {
-        // @extend .header-1-light;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%);
-        // width: 100%;
-        margin-bottom: 16px;
-        font-family: 'Lato', sans-serif;
-        line-height: 1.2;
-        font-size: 42px;
-        text-align: center;
-        font-weight: bold;
-        color: $color-5;
-        // line-height: 1.2;
-        // letter-spacing: 2px;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 4px rgba(25, 25, 25, 0.8), -1px -1px 8px rgba(25, 25, 25, 0.8);
+      // margin-bottom: 24px;
+      font-size: 48px;
     }
+  }
 
-    @media (min-width: 576px) {
-        .hero-header {
-            // margin-bottom: 24px;
-            font-size: 48px;
-        }
+  @media (min-width: 768px) {
+    .hero-header {
+      // margin-bottom: 26px;
+      font-size: 56px;
     }
+  }
 
-    @media (min-width: 768px) {
-        .hero-header {
-            // margin-bottom: 26px;
-            font-size: 56px;
-        }
+  @media (min-width: 992px) {
+    .hero-header {
+      // margin-bottom: 30px;
+      font-size: 70px;
     }
+  }
 
-    @media (min-width: 992px) {
-        .hero-header {
-            // margin-bottom: 30px;
-            font-size: 70px;
-        }
+  @media (min-width: 1200px) {
+    .hero-header {
+      // margin-bottom: 16px;
+      font-size: 72px;
     }
-
-    @media (min-width: 1200px) {
-        .hero-header {
-            // margin-bottom: 16px;
-            font-size: 72px;
-        }
-    }
+  }
 }

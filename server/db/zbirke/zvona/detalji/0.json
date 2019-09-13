@@ -2,39 +2,17 @@
   "id": 0,
   "page": "zvona",
   "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "1986.jpg",
+  "video": "",
+  "audio": "",
   "hr": {
-    "hero": "Odjeli i zbirke"
+    "hero": "detalji zvona",
+    "title": "zvono izložak 1993",
+    "content": "HR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Id veniam natus laboriosam nostrum rem suscipit ratione doloremque aliquam exercitationem ea, maxime deserunt pariatur voluptatem eligendi, voluptates eius beatae! Impedit, dolore? Ab quisquam ratione officiis porro sed corporis quaerat esse. Perferendis deserunt illo praesentium, sunt et nihil culpa alias nostrum tempora! Culpa repellat tempore repellendus cum quam, vel dicta modi illo! Pariatur labore nulla totam autem architecto quis. Soluta nobis veritatis est, eveniet ratione quae ea, quos provident perferendis nostrum sunt?\\nLorem ipsum dolor sit amet consectetur adipisicing elit. Id veniam natus laboriosam nostrum rem suscipit ratione doloremque aliquam exercitationem ea, maxime deserunt pariatur voluptatem eligendi, voluptates eius beatae! Impedit, dolore? Ab quisquam ratione officiis porro sed corporis quaerat esse. Perferendis deserunt illo praesentium, sunt et nihil culpa alias nostrum tempora! Culpa repellat tempore repellendus cum quam, vel dicta modi illo! Pariatur labore nulla totam autem architecto quis. Soluta nobis veritatis est, eveniet ratione quae ea, quos provident perferendis nostrum sunt?"
   },
   "en": {
-    "hero": "Departments and Collections"
-  },
-  "section1": {
-    "title": {
-      "hr": "zvono izložak 1993",
-      "en": "engleski ..."
-    },
-    "pic": "1986.jpg",
-    "video": ""
-  },
-  "section2": {
-    "hr": [
-      "HR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Id veniam natus laboriosam nostrum rem suscipit ratione doloremque aliquam exercitationem ea, maxime deserunt pariatur voluptatem eligendi, voluptates eius beatae! Impedit, dolore? Ab quisquam ratione officiis porro sed corporis quaerat esse. Perferendis deserunt illo praesentium, sunt et nihil culpa alias nostrum tempora! Culpa repellat tempore repellendus cum quam, vel dicta modi illo! Pariatur labore nulla totam autem architecto quis. Soluta nobis veritatis est, eveniet ratione quae ea, quos provident perferendis nostrum sunt?",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id veniam natus laboriosam nostrum rem suscipit ratione doloremque aliquam exercitationem ea, maxime deserunt pariatur voluptatem eligendi, voluptates eius beatae! Impedit, dolore? Ab quisquam ratione officiis porro sed corporis quaerat esse. Perferendis deserunt illo praesentium, sunt et nihil culpa alias nostrum tempora! Culpa repellat tempore repellendus cum quam, vel dicta modi illo! Pariatur labore nulla totam autem architecto quis. Soluta nobis veritatis est, eveniet ratione quae ea, quos provident perferendis nostrum sunt?"
-    ],
-    "en": [
-      "EN - Lorem ipsum dolor sit amet consectetur adipisicing elit. Id veniam natus laboriosam nostrum rem suscipit ratione doloremque aliquam exercitationem ea, maxime deserunt pariatur voluptatem eligendi, voluptates eius beatae! Impedit, dolore? Ab quisquam ratione officiis porro sed corporis quaerat esse. Perferendis deserunt illo praesentium, sunt et nihil culpa alias nostrum tempora! Culpa repellat tempore repellendus cum quam, vel dicta modi illo! Pariatur labore nulla totam autem architecto quis. Soluta nobis veritatis est, eveniet ratione quae ea, quos provident perferendis nostrum sunt?",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id veniam natus laboriosam nostrum rem suscipit ratione doloremque aliquam exercitationem ea, maxime deserunt pariatur voluptatem eligendi, voluptates eius beatae! Impedit, dolore? Ab quisquam ratione officiis porro sed corporis quaerat esse. Perferendis deserunt illo praesentium, sunt et nihil culpa alias nostrum tempora! Culpa repellat tempore repellendus cum quam, vel dicta modi illo! Pariatur labore nulla totam autem architecto quis. Soluta nobis veritatis est, eveniet ratione quae ea, quos provident perferendis nostrum sunt?"
-    ]
-  },
-  "section3": [
-    "https://via.placeholder.com/350x350",
-    "https://via.placeholder.com/350x350",
-    "https://via.placeholder.com/350x350",
-    "https://via.placeholder.com/350x350",
-    "https://via.placeholder.com/350x350",
-    "https://via.placeholder.com/350x350",
-    "https://via.placeholder.com/350x350",
-    "https://via.placeholder.com/350x350",
-    "https://via.placeholder.com/350x350"
-  ]
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN - Lorem ipsum dolor sit amet consectetur adipisicing elit. Id veniam natus laboriosam nostrum rem suscipit ratione doloremque aliquam exercitationem ea, maxime deserunt pariatur voluptatem eligendi, voluptates eius beatae! Impedit, dolore? Ab quisquam ratione officiis porro sed corporis quaerat esse. Perferendis deserunt illo praesentium, sunt et nihil culpa alias nostrum tempora! Culpa repellat tempore repellendus cum quam, vel dicta modi illo! Pariatur labore nulla totam autem architecto quis. Soluta nobis veritatis est, eveniet ratione quae ea, quos provident perferendis nostrum sunt?\\nLorem ipsum dolor sit amet consectetur adipisicing elit. Id veniam natus laboriosam nostrum rem suscipit ratione doloremque aliquam exercitationem ea, maxime deserunt pariatur voluptatem eligendi, voluptates eius beatae! Impedit, dolore? Ab quisquam ratione officiis porro sed corporis quaerat esse. Perferendis deserunt illo praesentium, sunt et nihil culpa alias nostrum tempora! Culpa repellat tempore repellendus cum quam, vel dicta modi illo! Pariatur labore nulla totam autem architecto quis. Soluta nobis veritatis est, eveniet ratione quae ea, quos provident perferendis nostrum sunt?"
+  }
 }

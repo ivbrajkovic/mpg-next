@@ -1,28 +1,28 @@
 footer {
-    padding: 30px 0;
-    background: $background-5;
-    img {
-        margin-right: 10px;
-        width: auto;
-    }
-    p {
-        color: $color-6;
-        font-weight: 400;
-    }
-    .d-grid {
-        // display: grid;
-        // grid-template-columns: repeat(3, 1fr) auto;
-        grid-template-columns: 1fr auto;
-        grid-auto-rows: auto;
-        align-items: center;
-        grid-gap: 10px;
-        grid-gap: 20px;
-    }
-    .item-1 {
-        grid-column: 1 / span 2;
-    }
-    .item-2 {
-        grid-column: 1 / span 2;
-    }
-    // .item-3 {}
+  padding: 30px 0;
+  background: $background-5;
+  img {
+    margin-right: 10px;
+    width: auto;
+  }
+  p {
+    color: $color-6;
+    font-weight: 400;
+  }
+  .d-grid {
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr) auto;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    align-items: center;
+    grid-gap: 10px;
+    grid-gap: 20px;
+  }
+  .item-1 {
+    grid-column: 1 / span 2;
+  }
+  .item-2 {
+    grid-column: 1 / span 2;
+  }
+  // .item-3 {}
 }

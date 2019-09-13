@@ -7,25 +7,29 @@ import Section2 from "../../../../../components/Zbirke/Detaljna/Section2";
 import Section3 from "../../../../../components/Zbirke/Detaljna/Section3";
 
 const Detalji = ({ lang, data }) => {
-  // const FOLDER = "/static/img/odjeli/zbirke/";
   const FOLDER = (data && data.folder) || "";
 
-  const title =
-    (data &&
-      data.section1 &&
-      data.section1.title &&
-      data.section1.title[lang]) ||
-    "";
-  const section1 = (data && data.section1 && data.section1) || {};
-  const section2 = (data && data.section2 && data.section2[lang]) || [];
-  const section3 = (data && data.section3) || [];
+  const text = (data && data[lang]) || {};
+  const title = (text && text.title) || "";
+  const content = (text && text.content) || "";
+
+  const image = (data && data.image) || "";
+  const audio = (data && data.audio) || "";
+  const video = (data && data.video) || "";
+  const gallery = (data && data.gallery) || [];
 
   return (
-    <div className="container">
+    <div className="container zbirke-detalji">
       <Fade delay={250} cascsade ssrReveal>
-        <Section1 title={title} folder={FOLDER} data={section1} />
-        <Section2 data={section2} />
-        <Section3 data={section3} />
+        <Section1
+          folder={FOLDER}
+          title={title}
+          image={image}
+          audio={audio}
+          video={video}
+        />
+        <Section2 content={content} />
+        <Section3 folder={FOLDER} data={gallery} />
       </Fade>
     </div>
   );
