@@ -13,18 +13,15 @@ const Section2 = ({ page, meni, folder, gallery }) => {
   const firstRef = useRef(true);
   const gridRef = useRef();
 
-  const images =
-    gallery.map &&
-    gallery.map(item => {
-      return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gm, "$1-tmb$2");
-    });
+  let images = [];
 
   // Wait for preload images
   useLayoutEffect(() => {
-    // let imgs = [];
-    // for (let i = 0; i < src.length; i++) {
-    //   imgs.push(src[i]);
-    // }
+    images =
+      gallery.map &&
+      gallery.map(item => {
+        return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gm, "$1-tmb$2");
+      });
 
     preloadImages(images || [])
       .then(() => setGrid(images || []))
@@ -33,7 +30,8 @@ const Section2 = ({ page, meni, folder, gallery }) => {
 
   // When grid change add transition in effect
   useEffect(() => {
-    if (!firstRef.current) gridRef.current.classList.add("fade-bottom-active");
+    if (!firstRef.current)
+      gridRef.current.classList.add("fade-bottom-cascade-active");
     else firstRef.current = false;
   }, [grid]);
 
@@ -41,7 +39,7 @@ const Section2 = ({ page, meni, folder, gallery }) => {
     <div className="zbirke__section-3">
       <div
         ref={gridRef}
-        className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 fade-bottom"
+        className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 fade-bottom-cascade"
       >
         {/* <Fade delay={250} mountOnEnter={true} appear={true} cascsade ssrReveal> */}
         {grid.map((item, index) => {

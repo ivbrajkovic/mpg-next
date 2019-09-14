@@ -1,0 +1,22 @@
+.spinner-icon {
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+
+  margin: 0 auto;
+  border: solid 2px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+
+  animation: spinner-animation 400ms linear infinite;
+}
+
+@keyframes spinner-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

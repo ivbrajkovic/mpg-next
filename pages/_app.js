@@ -85,6 +85,7 @@ export default class MyApp extends App {
 
     const { Component, pageProps } = this.props;
     const { data } = pageProps;
+    console.log("TCL: render -> pageProps", pageProps);
 
     const folder = (data && data.folder) || "";
     // const title = (data && data.hero && data.hero[this.state.lang]) || '';
@@ -93,6 +94,7 @@ export default class MyApp extends App {
     const heroTitle =
       (data && data[this.state.lang] && data[this.state.lang].hero) || "";
     const heroSrcset = (data && data.banners) || [];
+    console.log("TCL: render -> heroSrcset", heroSrcset);
 
     return (
       <>
@@ -105,14 +107,22 @@ export default class MyApp extends App {
           onTest={this.onTest}
           onSetOdjel={this.setOdjel}
         />
-        <Hero title={heroTitle} folder={folder} srcset={heroSrcset} />
-        <Component
-          {...pageProps}
-          odjel={this.state.odjel}
-          lang={this.state.lang}
-          // onSetHero={this.setHero}
-        />
-        <Footer />
+        {/* <Hero title={heroTitle} folder={folder} srcset={heroSrcset} /> */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gridTemplateRows: "1fr auto"
+          }}
+        >
+          <Component
+            {...pageProps}
+            odjel={this.state.odjel}
+            lang={this.state.lang}
+            // onSetHero={this.setHero}
+          />
+          <Footer />
+        </div>
       </>
     );
   }

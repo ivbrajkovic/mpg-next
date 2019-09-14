@@ -2,60 +2,75 @@
  * Fade in from bottom transition
  */
 
-.fade-bottom {
-    opacity: 0;
-    will-change: opacity;
-    transition: opacity 350ms ease-out 0ms;
+.fade-bottom-cascade {
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 350ms ease-out 0ms;
 
-    > div {
-        opacity: 0;
-        transform: translateY(50px);
-        will-change: transform, opacity;
-        transition-duration: 350ms, 450ms;
-        transition-property: transform, opacity;
-        transition-timing-function: cubic-bezier(0.85, 0.01, 0.66, 0.49);
-    }
+  > div {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: transform, opacity;
+    transition-duration: 350ms, 450ms;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.85, 0.01, 0.66, 0.49);
+  }
 }
 
-.fade-bottom-active {
-    opacity: 1;
+.fade-bottom-cascade-active {
+  opacity: 1;
 
-    > div {
-        opacity: 1;
-        transform: none;
-        // transform: translateY(0);
-    }
+  > div {
+    opacity: 1;
+    transform: none;
+    // transform: translateY(0);
+  }
 }
 
 /*
- * FadeIn transition
+ * Fade in from bottom transition
  */
 
-.fadeInOut {
-    transition-duration: 0, 2000ms;
-    transition-property: visibility, opacity;
-    transition-delay: 0;
-
-    &.hidden {
-        visibility: hidden;
-        opacity: 0;
-        transition-duration: 2000ms, 0;
-        transition-property: top, visibility;
-        transition-delay: 0, 2000ms;
-    }
+.fade {
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 450ms ease-out 0ms;
+  transition-timing-function: cubic-bezier(0.85, 0.01, 0.66, 0.49);
 }
 
+.fade-active {
+  opacity: 1;
+}
+
+// /*
+//  * FadeIn transition
+//  */
+
+// .fadeInOut {
+//     transition-duration: 0, 2000ms;
+//     transition-property: visibility, opacity;
+//     transition-delay: 0;
+
+//     &.hidden {
+//         visibility: hidden;
+//         opacity: 0;
+//         transition-duration: 2000ms, 0;
+//         transition-property: top, visibility;
+//         transition-delay: 0, 2000ms;
+//     }
+// }
+
 .fadeInBottomTrans {
+  transition-duration: 2000ms, 2000ms;
+  transition-property: top, opacity;
+  transition-delay: 0;
+  &.hidden {
+    top: 100px;
+    // opacity: 0;
     transition-duration: 2000ms, 2000ms;
-    transition-property: top, opacity;
+    transition-property: transform, opacity;
     transition-delay: 0;
-    &.hidden {
-        top: 100px;
-        // opacity: 0;
-        transition-duration: 2000ms, 2000ms;
-        transition-property: transform, opacity;
-        transition-delay: 0;
-    }
+  }
 }
 
 // .fadeInOut {
@@ -77,17 +92,17 @@
  */
 
 .scale {
+  transition-delay: 0;
+  transition-duration: 0, 200ms;
+  transition-property: height, width;
+  transition-timing-function: ease-in-out;
+  &.shrink {
     transition-delay: 0;
-    transition-duration: 0, 200ms;
+    transition-duration: 200ms, 0;
     transition-property: height, width;
     transition-timing-function: ease-in-out;
-    &.shrink {
-        transition-delay: 0;
-        transition-duration: 200ms, 0;
-        transition-property: height, width;
-        transition-timing-function: ease-in-out;
-        transform: scale(0.8);
-    }
+    transform: scale(0.8);
+  }
 }
 
 /*
@@ -95,11 +110,11 @@
  */
 
 .expand-on-hover {
-    will-change: transform;
-    transition: transform 300ms cubic-bezier(0, 0.78, 0.75, 1);
-    &:hover {
-        transform: scale(1.04);
-        // box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 15px 20px 0 rgba(0, 0, 0, 0.43);
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    }
+  will-change: transform;
+  transition: transform 300ms cubic-bezier(0, 0.78, 0.75, 1);
+  &:hover {
+    transform: scale(1.04);
+    // box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 15px 20px 0 rgba(0, 0, 0, 0.43);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 }

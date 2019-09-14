@@ -41,7 +41,7 @@ const Section4 = ({ lang, folder, data, slides }) => {
               })}
             </Carousel>
           </div>
-          <div className="p-xs-20-l-30 p-relative d-flex d-column justify-center item-2">
+          <div className="p-xs-20-l-30 pos-relative d-flex d-column justify-center item-2">
             <h1 className="header-2 m-b-10">{header}</h1>
             <p className="content-1 m-b-20">{content}</p>
             <div className="btn-container">

@@ -1,0 +1,16 @@
+{
+  "id": 9,
+  "meni": false,
+  "page": "svakodnevna",
+  "folder": "/static/img/odjeli/zbirke/svakodnevna/",
+  "hr": {
+    "hero": "ZBIRKA SVAKODNEVNOG ŽIVOTA",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Zbirka svakodnevnog života jedna je od najvećih zbirki Muzeja. Građa unutar zbirke najvećim dijelom datira u razdoblje 19. i 20. stoljeća s tek nekoliko iznimki datiranih u kasni srednji vijek ili recentno doba. Građa Zbirke svakodnevnog života očituje se u raznovrsnosti materijala i namjene predmeta, a može se podijeliti u sljedeće skupine:\\n−predmeti vezani za pripremu i konzumaciju hrane i pića – kuhinjsko posuđe i pribor, stolno posuđe, pribor za jelo i stolni pribor\\n−rasvjeta i rasvjetna tijela\\n−pribor za duhan i pušenje\\n−pribor za pisanje\\n−šivaći pribor\\n−osobni i toaletni pribor\\n−obrtnički predmeti\\n−svadbene bombonjere\\n−igračke\\n−ambalaža\\n−dekorativni predmeti \\n−ostalo.\\nUnutar cjelokupne zbirke ističu se predmeti s kraja 18. i početka 19. stoljeća izrađeni iz metala, primjerice, svjetiljke na ulje i svijećnjaci, kao i mnogobrojno kuhinjsko posuđe i pribor, predmeti od porculana i keramike, svadbene bombonjere i dječje igračke."
+  },
+  "en": {
+    "hero": "EVERYDAY LIFE COLLECTION",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Everyday Life Collection is one of the largest Museum Collections whose fundus mostly dates in the period of the 19th and the 20th century with several exceptions of items dated into the Late Middle Ages or recent times. Items within the Collection, diverse in materials and function, can be divided into the following groups: \\n−Items related to preparation and consumption of food and drinks – kitchen vessels and utensils, table dishes, cutlery,  tableware and table accessories, \\n−lighting and lighting fixtures, \\n−smoking accessories, \\n−stationery, \\n−sewing accessories, \\n−personal and toilet accessories, \\n−craft items,\\n−wedding favors,\\n−toys, \\n−packaging,\\n−decorations,\\n−other.\\nItems dated at the end of the 18th and beginning of the 19th century stand out from the overall fundus of the Collection, as well as metal oil lamps and candle holders, numerous kitchen vessels and utensils, items made of porcelain or ceramics, wedding favors and toys."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": 4,
+  "meni": false,
+  "page": "tehnicka",
+  "folder": "/static/img/odjeli/zbirke/tehnicka/",
+  "hr": {
+    "hero": "TEHNIČKA ZBIRKA",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Tehnička zbirka još je jedna od većih zbirki Muzeja, a čini ju raznovrsna građa vezana uz prikaz tehničkih i tehnoloških aspekata svakodnevnog života Pazina i Pazinštine. Građa unutar zbirke datirana je u razdoblje 19. i 20. stoljeća, s nekoliko iznimki građe datirane u 16. i 17. stoljeće te recentnog vremena. Građa Tehničke zbirke može se podijeliti u šest skupina, pretežno s obzirom na uporabnu namjenu predmeta unutar istih: \\n−uredska oprema – mehanički pisaći strojevi, floppy diskovi, računala, pisači, tipkovnice…\\n−oprema i materijali željeznice i željezničke pruge,\\n−alati, alatke i oruđe\\n−kamere, kinoprojektor i teleprinter\\n−predmeti svjedoci o razvoju i izgradnji pazinskog Kaštela - čavli iz 16. i 17. stoljeća, lokot ulaznih vrata iz 19. stoljeća\\n−oprema pazinske tiskare Istratisak – regali za pohranjivanje ladica s olovnim slovima i klišejima, tiskarski stroj, olovna i drvena tiskarska slova, tiskarski klišeji…"
+  },
+  "en": {
+    "hero": "TECHNICAL COLLECTION",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Technical Collection is one of several larger museum collections. It consists of items related with the display of technical and technological aspects of everyday life of Pazin and the surrounding area. Items within the Collection are dated within the period of the 19th and the 20th century with several exceptions of items dated in the 16th and the 17th century and recent times. Fundus of the Technical Collection can be divided into the following groups, mainly due to the purpose of the items: \\n−Office equipment – mechanical writing machines, floopy discs, computers, printers, keyboards, … \\n−Railway and railroad equipment and materials,\\n−Tools, \\n−Cameras, cinema projector and teleprinter, \\n−Items connected with the development and construction of the Pazin Castle – nails from the 16th and the 17th century, entrance door padlock from the 19th century,\\n−Equipment belonging to the printing house Istratisak – closed shelfs for storage of lead and wooden printing material, printing machine, lead and wooden material, printing blocks, …"
+  }
+}

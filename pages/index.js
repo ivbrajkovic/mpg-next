@@ -1,38 +1,31 @@
 // Home page
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import { Transition } from 'react-transition-group';
 // import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
 
 import fetchDataAsync from "../lib/fetchDataAsync";
+import preloadImages from "../lib/preloadImages";
+import isLocalImage from "../lib/isLocalImage";
 
-// import Hero from '../components/Hero';
+import Hero from "../components/Hero";
+import Spinner from "../components/Spinner/Spinner";
 import Section1 from "../components/Index/Section1";
 import Section2 from "../components/Index/Section2";
 import Section3 from "../components/Index/Section3";
 import Section4 from "../components/Index/Section4";
 import Section5 from "../components/Index/Section5";
 
-// const folder = '/static/img/pocetna/';
-// const srcset = ['baner-pocetna-1200px.jpg', 'baner-pocetna-1200px.jpg', 'baner-pocetna.jpg'];
-// const hero = {};
-// hero.srcset = srcset.map(src => folder + src);
+const srcset = [
+  "/static/img/pocetna/baner-pocetna-768px.jpg",
+  "/static/img/pocetna/baner-pocetna-1200px.jpg",
+  "/static/img/pocetna/baner-pocetna.jpg"
+];
+
+let buttons = null;
 
 const Index = props => {
-  let buttons = null;
-
-  // const duration = 300;
-  // const defaultStyle = {
-  //     transition: `opacity ${duration}ms ease-in-out`,
-  //     opacity: 0
-  // };
-
-  // const transitionStyles = {
-  //     entering: { opacity: 1 },
-  //     entered: { opacity: 1 },
-  //     exiting: { opacity: 0 },
-  //     exited: { opacity: 0 }
-  // };
+  const [dbData, setDbData] = useState();
 
   useEffect(() => {
     ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)";
@@ -41,6 +34,21 @@ const Index = props => {
       buttons.forEach(btn => {
         btn.addEventListener("mousedown", ripplet);
       });
+
+    fetchDataAsync(null, "index").then(data => {
+      if (data && data.success) {
+        const folder = (data.data && data.data.folder) || "";
+        let image =
+          (data.data && data.data.section1 && data.data.section1.src) || "";
+
+        // preload post-big image
+        preloadImages([isLocalImage ? folder + image : image]).then(value => {
+          console.log("TCL: value", value);
+          setDbData(data);
+        });
+      } else setDbData(data);
+    });
+
     return () => {
       buttons &&
         buttons.forEach(btn => {
@@ -53,9 +61,9 @@ const Index = props => {
   console.log("TCL: Index -> render: ", ++i);
 
   const lang = props.lang;
-  const data = (props.success && props.data) || [];
+  // const data = (props.success && props.data) || [];
+  const data = (dbData && dbData.success && dbData.data) || [];
   const folder = (data && data.folder) || "";
-  // hero.title = (data && data.hero && data.hero[lang]) || '';
   const slides = (data && data.slides) || [];
 
   const section1 = data.section1 ? data.section1 : [];
@@ -64,24 +72,49 @@ const Index = props => {
   const section4 = data.section4 ? data.section4 : {};
   const section5 = data.section5 ? data.section5 : {};
 
-  // section4 && (section4.slides = (data && data.slides) || []);
-
   return (
     // <Transition in={inProp} timeout={duration} mountOnEnter unmountOnExit>
-    <>
-      {/* <Hero data={hero} /> */}
-      <Section1 lang={lang} folder={folder} data={section1} />
-      <Section2 lang={lang} folder={folder} data={section2} />
-      <Section3 lang={lang} folder={folder} data={section3} />
-      <Section4 lang={lang} folder={folder} data={section4} slides={slides} />
-      <Section5 lang={lang} folder={folder} data={section5} />
-    </>
-    // </Transition>
+    // <div style={{ minHeight: "90vh" }}>
+    <div>
+      {(false && (
+        <>
+          <Hero move srcset={srcset} />
+          <Section1 lang={lang} folder={folder} data={section1} />
+          <Section2 lang={lang} folder={folder} data={section2} />
+          <Section3 lang={lang} folder={folder} data={section3} />
+          <Section4
+            lang={lang}
+            folder={folder}
+            data={section4}
+            slides={slides}
+          />
+          <Section5 lang={lang} folder={folder} data={section5} />
+
+          {/* <Section1 lang={lang} folder={folder} data={section1} />
+          <Section2 lang={lang} folder={folder} data={section2} />
+          <Section3 lang={lang} folder={folder} data={section3} />
+          <Section4 lang={lang} folder={folder} data={section4} slides={slides} />
+          <Section5 lang={lang} folder={folder} data={section5} /> */}
+        </>
+      )) || (
+        <div className="pos-absolute-center">
+          <Spinner />
+        </div>
+      )}
+    </div>
+    // {/* // </Transition> */}
   );
 };
 
 Index.getInitialProps = async function(context) {
   const data = await fetchDataAsync(context, "index");
+  // const data = {};
+  // data.data = {};
+  // data.data.banners = [
+  //   "/static/img/pocetna/baner-pocetna-768px.jpg",
+  //   "/static/img/pocetna/baner-pocetna-1200px.jpg",
+  //   "/static/img/pocetna/baner-pocetna.jpg"
+  // ];
   return data;
 };
 
