@@ -24,8 +24,22 @@ const srcset = [
 
 let buttons = null;
 
-const Index = props => {
-  const [dbData, setDbData] = useState();
+const Index = ({ lang, success, data }) => {
+  console.log("TCL: Index -> success", success);
+  // const [dbData, setDbData] = useState();
+  const [loaded, setLoaded] = useState(false);
+
+  // const lang = props.lang;
+  // const data = (props.success && props.data) || [];
+  // const data = (dbData && dbData.success && dbData.data) || [];
+  const folder = (success && data && data.folder) || "";
+  const slides = (success && data && data.slides) || [];
+
+  const section1 = (success && data && data.section1) || [];
+  const section2 = (success && data && data.section2) || [];
+  const section3 = (success && data && data.section3) || [];
+  const section4 = (success && data && data.section4) || {};
+  const section5 = (success && data && data.section5) || {};
 
   useEffect(() => {
     ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)";
@@ -35,19 +49,24 @@ const Index = props => {
         btn.addEventListener("mousedown", ripplet);
       });
 
-    fetchDataAsync(null, "index").then(data => {
-      if (data && data.success) {
-        const folder = (data.data && data.data.folder) || "";
-        let image =
-          (data.data && data.data.section1 && data.data.section1.src) || "";
+    // fetchDataAsync(null, "index").then(data => {
+    //   if (data && data.success) {
+    //     const folder = (data.data && data.data.folder) || "";
+    //     let image =
+    //       (data.data && data.data.section1 && data.data.section1.src) || "";
 
-        // preload post-big image
-        preloadImages([isLocalImage ? folder + image : image]).then(value => {
-          console.log("TCL: value", value);
-          setDbData(data);
-        });
-      } else setDbData(data);
-    });
+    const image =
+      (success && data && data.section1 && data.section1.src) || null;
+    // preload post-big image
+    image &&
+      preloadImages([isLocalImage ? folder + image : image]).then(value =>
+        // setDbData(data)
+        setLoaded(true)
+      );
+
+    //     );
+    //   } else setDbData(data);
+    // });
 
     return () => {
       buttons &&
@@ -60,25 +79,13 @@ const Index = props => {
   let i = 0;
   console.log("TCL: Index -> render: ", ++i);
 
-  const lang = props.lang;
-  // const data = (props.success && props.data) || [];
-  const data = (dbData && dbData.success && dbData.data) || [];
-  const folder = (data && data.folder) || "";
-  const slides = (data && data.slides) || [];
-
-  const section1 = data.section1 ? data.section1 : [];
-  const section2 = data.section2 ? data.section2 : [];
-  const section3 = data.section3 ? data.section3 : [];
-  const section4 = data.section4 ? data.section4 : {};
-  const section5 = data.section5 ? data.section5 : {};
-
   return (
     // <Transition in={inProp} timeout={duration} mountOnEnter unmountOnExit>
     // <div style={{ minHeight: "90vh" }}>
     <div>
-      {(false && (
+      <Hero move srcset={srcset} />
+      {(loaded && (
         <>
-          <Hero move srcset={srcset} />
           <Section1 lang={lang} folder={folder} data={section1} />
           <Section2 lang={lang} folder={folder} data={section2} />
           <Section3 lang={lang} folder={folder} data={section3} />
@@ -91,13 +98,13 @@ const Index = props => {
           <Section5 lang={lang} folder={folder} data={section5} />
 
           {/* <Section1 lang={lang} folder={folder} data={section1} />
-          <Section2 lang={lang} folder={folder} data={section2} />
-          <Section3 lang={lang} folder={folder} data={section3} />
-          <Section4 lang={lang} folder={folder} data={section4} slides={slides} />
-          <Section5 lang={lang} folder={folder} data={section5} /> */}
+            <Section2 lang={lang} folder={folder} data={section2} />
+            <Section3 lang={lang} folder={folder} data={section3} />
+            <Section4 lang={lang} folder={folder} data={section4} slides={slides} />
+            <Section5 lang={lang} folder={folder} data={section5} /> */}
         </>
       )) || (
-        <div className="pos-absolute-center">
+        <div className="m-t-120 d-flex justify-center">
           <Spinner />
         </div>
       )}

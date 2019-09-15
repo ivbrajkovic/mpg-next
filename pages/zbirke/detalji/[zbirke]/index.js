@@ -3,6 +3,8 @@
 import Fade from "react-reveal/Fade";
 
 import fetchDataAsync from "../../../../lib/fetchDataAsync";
+
+import Hero from "../../../../components/Hero";
 import Section1 from "../../../../components/Zbirke/Opcenita/Section1";
 // import Section1 from "components/zbirke/Opcenita/Section1";
 // import Section2 from "../../../../components/Zbirke/Opcenita/Section2";
@@ -18,6 +20,9 @@ const Zbirke = ({ lang, data }) => {
   const text = (data && data[lang]) || {};
   const gallery = (data && data.gallery) || {};
 
+  const banners =
+    data && data.banners && data.banners.map(item => folder + item);
+
   let i = 0;
   console.log("TCL: Zbirke -> i", ++i);
   return (
@@ -25,12 +30,15 @@ const Zbirke = ({ lang, data }) => {
     //     <Opcenita lang={lang} data={data} />
     // </div>
 
-    <div className="container">
-      <Fade cascsade ssrReveal>
-        <Section1 data={text} />
-      </Fade>
-      <Section2 page={page} meni={meni} folder={folder} gallery={gallery} />
-    </div>
+    <>
+      <Hero title={text.hero} srcset={banners} />
+      <div className="container">
+        <Fade cascsade ssrReveal>
+          <Section1 data={text} />
+        </Fade>
+        <Section2 page={page} meni={meni} folder={folder} gallery={gallery} />
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 {
   "page": "index",
-  "slider": true,
+  "isSlider": true,
   "folder": "/static/img/pocetna/",
   "section1": {
     "src": "post-big.png",

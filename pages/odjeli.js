@@ -2,59 +2,65 @@ import { useEffect, useState } from "react";
 import fetchDataAsync from "../lib/fetchDataAsync";
 
 import Hero from "../components/Hero";
+// import Spinner from "../components/Spinner/Spinner";
 import Section6 from "../components/Odjeli/Section6";
 import Section7 from "../components/Odjeli/Section7";
 // import Footer from '../components/Footer';
 
 const srcset = [
-  "/static/img/pocetna/baner-pocetna-768px.jpg",
-  "/static/img/pocetna/baner-pocetna-1200px.jpg",
-  "/static/img/pocetna/baner-pocetna.jpg"
+  "/static/img/odjeli/baner-odjeli-768px.jpg",
+  "/static/img/odjeli/baner-odjeli-1200px.jpg",
+  "/static/img/odjeli/baner-odjeli.jpg"
 ];
 
-const Odjel = props => {
-  const [odjel, setOdjel] = useState(props.odjel);
-  let submenuItems = null;
+// let submenuItems = null;
 
-  useEffect(() => {
-    submenuItems = document.querySelectorAll(
-      "#navbar .submenu--2-list .nav_submenu-items"
-    );
-    submenuItems &&
-      submenuItems.forEach((item, index) => {
-        item.keyIndex = index;
-        item.addEventListener("click", onSubmenuItemClick);
-      });
+const Odjel = ({ lang, odjel, success, data }) => {
+  // const [odjel, setOdjel] = useState(props.odjel);
 
-    return () => {
-      submenuItems &&
-        submenuItems.forEach((item, index) => {
-          item.removeEventListener("click", onSubmenuItemClick);
-        });
-    };
-  }, []);
+  // useEffect(() => {
+  //   submenuItems = document.querySelectorAll(
+  //     "#navbar .submenu--2-list .nav_submenu-items"
+  //   );
+  //   submenuItems &&
+  //     submenuItems.forEach((item, index) => {
+  //       item.keyIndex = index;
+  //       item.addEventListener("click", onSubmenuItemClick);
+  //     });
 
-  const onSubmenuItemClick = e => {
-    changeOdjel(e.srcElement.keyIndex);
-  };
+  //   // fetchDataAsync(null, "odjeli").then(data => setDbData(data));
+
+  //   return () => {
+  //     submenuItems &&
+  //       submenuItems.forEach((item, index) => {
+  //         item.removeEventListener("click", onSubmenuItemClick);
+  //       });
+  //   };
+  // }, []);
+
+  // const onSubmenuItemClick = e => {
+  //   changeOdjel(e.srcElement.keyIndex);
+  // };
 
   const changeOdjel = value => {
-    if (props.data.section7[value]) setOdjel(value);
+    if (data && data.section7 && data.section7[value]) setOdjel(value);
     else alert("Odjel nije u zapisima.");
   };
 
   let i = 0;
   console.log("TCL: Odjeli -> render: ", ++i);
 
-  const lang = props.lang;
-  const data = (props.success && props.data) || [];
-  const section6 = data.section6 || {};
-  // const section7 = data.section7 && data.section7[odjel] ? data.section7[odjel] : [];
-  const section7 = data.section7 || [];
+  // const lang = props.lang;
+  // const data = (props.success && props.data) || [];
+  const section6 = (success && data && data.section6) || {};
+  const section7 = (success && data && data.section7) || [];
+  const title = (success && data && data[lang] && data[lang].hero) || "";
 
   return (
-    <div style={{ minHeight: 800 }}>
-      <Hero move srcset={srcset} />
+    <div>
+      <Hero title={title} srcset={srcset} />
+      {/* {(dbData && (
+        <> */}
       <Section6
         lang={lang}
         odjel={odjel}
@@ -62,7 +68,12 @@ const Odjel = props => {
         onChangeOdjel={changeOdjel}
       />
       <Section7 lang={lang} odjel={odjel} data={section7} />
-      {/* <Footer /> */}
+      {/* </>
+      )) || (
+        <div className="m-t-120 d-flex justify-center">
+          <Spinner />
+        </div>
+      )} */}
     </div>
   );
 };

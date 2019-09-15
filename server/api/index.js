@@ -40,25 +40,34 @@ router.get("/:folder", function(req, res, next) {
       });
     }
 
-    //Read image file names
+    const isBanner = data.isBanner;
+    const isSlider = data.isSlider;
+
+    // Return if no banner or slider
+    if (!(isBanner || isSlider)) {
+      res.json({ success: true, data: data });
+      return;
+    }
+
     fs.readdir(data.folder.substring(1), (error, files) => {
       if (!error) {
-        // data.gallery = [];
-        if (data.slider) data.slides = [];
-        data.banners = [];
+        isBanner && (data.banners = []);
+        isSlider && (data.slides = []);
+
         for (let index = 0; index < files.length; index++) {
-          // Get banner
-          if (/baner/gm.test(files[index])) {
+          // Get banners
+          if (isBanner && /baner/gm.test(files[index])) {
             data.banners.push(files[index]);
             continue;
             // Get slides
-          } else if (data.slider && /slider/gm.test(files[index])) {
+          } else if (isSlider && /slider/gm.test(files[index])) {
             data.slides.push(files[index]);
             continue;
           }
         }
+
         // data.gallery.sort();
-        data.banners.sort();
+        isBanner && data.banners.sort();
       }
       res.json({ success: true, data: data });
     });
