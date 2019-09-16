@@ -1,0 +1,16 @@
+{
+  "id": 7,
+  "meni": false,
+  "page": "medalja",
+  "folder": "/static/img/odjeli/zbirke/medalja/",
+  "hr": {
+    "hero": "ZBIRKA MEDALJA, PLAKETA, ODLIKOVANJA I ZNAČAKA",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Zbirka sadrži predmete koji predstavljaju službeni čin priznanja ili zahvalnosti pojedinim ustanovama ili pojedincima za njihove zasluge i doprinos u kulturnom i društveno-političkom životu Pazina i Pazinštine te za gospodarski razvitak ovog prostora. Građa zbirke, osim što pruža uvid u individualne osobne vrijednosti odlikovanih, pohvaljenih ili nagrađenih pojedinaca, nudi saznanja i o društveno-političkoj, kulturnoj i gospodarskoj povijesti ovih prostora. \\nMeđu brojnim predmetima ističu se značke i bedževi nekadašnje jake pazinske industrije – tvrtki Kamen Pazin, Istraplastike, Purisa i kemijsko-tekstilne industrije Pazinka. No, osim predmeta vezanih za gospodarske subjekte, u zbirci se čuvaju i predmeti vezani za značajna kulturna, društveno-politička i sportska događanja, razne obljetnice i manifestacije održavane na području Pazinštine."
+  },
+  "en": {
+    "hero": "COLLECTION OF MEDALS, PLAQUES, DECORATIONS AND BADGES",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Items which create the Collection of Medals, Plaques, Decorations and Badges represent an act of acknowledgement or gratitute for individual or group merit and contribution to cultural, social and political life and economical development of Pazin and the surrounding area. Besides the fact that the fundus of the Collection gives an oversight into personal importance of the rewarded individuals, it offers insight into the social, political, cultural and economic history of the area.  \\nBadges issued from former industrial giants of Pazin –Kamen Pazin, Istraplastika, Puris and chemical-textile industry Pazinka stand out from the overall fundus of the Collection. Besides them, the Collection also guards items marking important cultural, historical, political and sports events, anniversaries and manifestations."
+  }
+}

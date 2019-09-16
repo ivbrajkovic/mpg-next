@@ -6,18 +6,23 @@ import GalleryItem from "./GalleryItem";
 import MeniItem from "./MeniItem";
 // import Fade from 'react-reveal/Fade';
 
+import "./style.scss";
+
 const DELAY = 50;
+// let lightbox = null;
+
+// console.log("TCL: lightbox", lightbox);
+// let images = [];
 
 const Section2 = ({ page, meni, folder, gallery }) => {
   const [grid, setGrid] = useState([]);
-  const firstRef = useRef(true);
+  // const firstRef = useRef(true);
   const gridRef = useRef();
-
-  let images = [];
+  // const lightboxRef = useRef();
 
   // Wait for preload images
   useLayoutEffect(() => {
-    images =
+    const images =
       gallery.map &&
       gallery.map(item => {
         return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gm, "$1-tmb$2");
@@ -25,21 +30,38 @@ const Section2 = ({ page, meni, folder, gallery }) => {
 
     preloadImages(images || [])
       .then(() => setGrid(images || []))
-      .catch(err => console.log("TCL: Section7 -> loadImages -> err():", err));
+      .catch(err =>
+        console.log("TCL: Opcenita - Section2 -> loadImages -> err():", err)
+      );
   }, []);
 
-  // When grid change add transition in effect
+  // // When grid change add transition in effect
+  // useEffect(() => {
+  //   if (!firstRef.current)
+  //     gridRef.current.classList.add("fade-bottom-cascade-active");
+  //   else firstRef.current = false;
+  // }, [grid]);
+
+  // useEffect(() => {
+  //   const lightbox = GLightbox({
+  //     selector: "glightbox"
+  //   });
+  //   lightboxRef.current = lightbox;
+
+  //   return () => lightboxRef.current.destroy();
+  // }, []);
+
   useEffect(() => {
-    if (!firstRef.current)
-      gridRef.current.classList.add("fade-bottom-cascade-active");
-    else firstRef.current = false;
+    lightbox.reload();
   }, [grid]);
 
   return (
-    <div className="zbirke__section-3">
+    <div className="zbirke__section-3" data-aos="">
       <div
         ref={gridRef}
-        className="m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 fade-bottom-cascade"
+        className={`m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 zbirke-fade-bottom${
+          page === "zvona" ? " zvona" : ""
+        }`}
       >
         {/* <Fade delay={250} mountOnEnter={true} appear={true} cascsade ssrReveal> */}
         {grid.map((item, index) => {
@@ -47,7 +69,8 @@ const Section2 = ({ page, meni, folder, gallery }) => {
             return (
               <GalleryItem
                 key={index}
-                item={item}
+                thumb={item}
+                large={folder + gallery[index]}
                 style={{ transitionDelay: `${index * DELAY}ms` }}
               />
             );

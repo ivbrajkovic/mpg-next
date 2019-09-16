@@ -7,14 +7,16 @@ const Section3 = ({ folder, data }) => {
         {data &&
           data.map &&
           data.map((item, index) => (
-            <img
-              key={index}
-              className="w3-card-4 expand-on-hover"
-              src={`${folder}${item}`.replace(
-                /(.*)(\.jpg|\.png)/gm,
-                "$1-tmb$2"
-              )}
-            />
+            <a href={folder + item} className="glightbox">
+              <img
+                key={index}
+                className="w3-card-4 expand-on-hover"
+                src={`${folder}${item}`.replace(
+                  /(.*)(\.jpg|\.png)/gm,
+                  "$1-tmb$2"
+                )}
+              />
+            </a>
           ))}
       </div>
     </div>

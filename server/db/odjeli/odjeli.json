@@ -104,63 +104,63 @@
     ],
     [
       {
-        "id": 0,
+        "id": 1,
         "name": "arheoloska",
         "src": "featureimg-zbirka-pov-1arheol.jpg",
         "hr": "ARHEOLOŠKA ZBIRKA",
         "en": "ARCHAEOLOGICAL COLLECTION"
       },
       {
-        "id": 1,
+        "id": 2,
         "name": "postanska",
         "src": "featureimg-zbirka-pov-2filatel.jpg",
         "hr": "FILATELISTIČKO – POŠTANSKA ZBIRKA",
         "en": "PHILATELIC AND POSTAL COLLECTION"
       },
       {
-        "id": 2,
+        "id": 3,
         "name": "numizmaticka",
         "src": "featureimg-zbirka-pov-3numizmaticka.jpg",
         "hr": "NUMIZMATIČKA ZBIRKA",
         "en": "NUMISMATIC COLLECTION"
       },
       {
-        "id": 3,
+        "id": 4,
         "name": "tiskovna",
         "src": "featureimg-zbirka-pov-4dokumenti.jpg",
         "hr": "ZBIRKA DOKUMENATA, KARATA, RUKOPISA I TISKOVINA",
         "en": "COLLECTION OF DOCUMENTS, MAPS, MANUSCRIPTS AND PRINTS"
       },
       {
-        "id": 4,
+        "id": 5,
         "name": "domovinska",
         "src": "featureimg-zbirka-pov-5domovinski.jpg",
         "hr": "ZBIRKA DOMOVINSKOG RATA",
         "en": "HOMELAND WAR COLLECTION"
       },
       {
-        "id": 5,
+        "id": 6,
         "name": "spomenika",
         "src": "featureimg-zbirka-pov-6kamenspomen.jpg",
         "hr": "ZBIRKA KAMENIH SPOMENIKA",
         "en": "COLLECTION OF STONE MONUMENTS"
       },
       {
-        "id": 6,
+        "id": 7,
         "name": "medalja",
         "src": "featureimg-zbirka-pov-7medalje.jpg",
         "hr": "ZBIRKA MEDALJA, PLAKETA, ODLIKOVANJA I ZNAČAKA",
         "en": "COLLECTION OF MEDALS, PLAQUES, DECORATIONS AND BADGES"
       },
       {
-        "id": 7,
+        "id": 8,
         "name": "oruzja",
         "src": "featureimg-zbirka-pov-8oruzje.jpg",
         "hr": "COLLECTION OF WEAPONS AND MILITARY EQUIPMENT",
         "en": "ZBIRKA ORUŽJA I VOJNE OPREME"
       },
       {
-        "id": 8,
+        "id": 9,
         "name": "zastava",
         "src": "featureimg-zbirka-pov-9zastave.jpg",
         "hr": "ZBIRKA ZASTAVA, PEČATNJAKA I GRBOVA",
@@ -169,7 +169,7 @@
     ],
     [
       {
-        "id": 0,
+        "id": 1,
         "name": "galerija",
         "src": "featureimg-zbirka-galerijska.jpg",
         "hr": "GALERIJSKA ZBIRKA",

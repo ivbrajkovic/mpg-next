@@ -5,7 +5,12 @@ const Section4 = ({ data }) => {
   const text = (data.content && data.content.split("\\n")) || [];
 
   return (
-    <div className="m-t-xs-20-xl-40 zbirke__section-1">
+    <div
+      className="m-t-xs-20-xl-40 zbirke__section-1"
+      data-aos="fade"
+      data-aos-duration="1000"
+      data-aos-delay="1000"
+    >
       <div className="float-right">
         <div className="header">
           {header.map((item, index) => (
@@ -15,17 +20,17 @@ const Section4 = ({ data }) => {
       </div>
       <div className="content-1">
         {text.map((item, index) => {
-          if (
-            item.startsWith("-") ||
-            item.startsWith("−") ||
-            item.startsWith("–")
-          )
-            return (
-              <div className="list-item" key={index}>
-                {item.substring(1)}
-              </div>
-            );
-          else return <p key={index}>{item}</p>;
+          return (
+            <>
+              {((item.startsWith("-") ||
+                item.startsWith("−") ||
+                item.startsWith("–")) && (
+                <div className="list-item" key={index}>
+                  {item.substring(1)}
+                </div>
+              )) || <p key={index}>{item}</p>}
+            </>
+          );
         })}
       </div>
     </div>

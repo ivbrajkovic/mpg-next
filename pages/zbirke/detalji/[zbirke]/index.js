@@ -1,5 +1,6 @@
 // Zbirke - Opcenita
 
+import { useEffect } from "react";
 import Fade from "react-reveal/Fade";
 
 import fetchDataAsync from "../../../../lib/fetchDataAsync";
@@ -21,10 +22,15 @@ const Zbirke = ({ lang, data }) => {
   const gallery = (data && data.gallery) || {};
 
   const banners =
-    data && data.banners && data.banners.map(item => folder + item);
+    (data && data.banners && data.banners.map(item => folder + item)) || [];
 
   let i = 0;
   console.log("TCL: Zbirke -> i", ++i);
+
+  useEffect(() => {
+    AOS.refreshHard();
+  }, []);
+
   return (
     // <div className="zbirke">
     //     <Opcenita lang={lang} data={data} />

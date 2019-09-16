@@ -1,18 +1,24 @@
 // Section2
 
-import Zoom from "react-reveal/Zoom"; // Importing Zoom effect
+// import Zoom from "react-reveal/Zoom"; // Importing Zoom effect
 import isLocalImage from "../../lib/isLocalImage";
 
 const Section2 = ({ lang, folder, data }) => (
-  <Zoom ssrReveal cascade>
-    <section
-      // ref={elementRef}
-      className="container m-t-xs-20-xl-40 gap-xs-20-xl-40 d-grid text-center section-2"
-    >
-      {data &&
-        data.map((item, index) => {
-          return (
-            <article className="w3-card-4 post" key={index}>
+  // <Zoom ssrReveal cascade>
+  <section
+    // ref={elementRef}
+    className="container m-t-xs-20-xl-40 gap-xs-20-xl-40 d-grid text-center section-2"
+  >
+    {data &&
+      data.map((item, index) => {
+        return (
+          <div
+            key={index}
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            data-aos-delay={100 * index}
+          >
+            <article className="w3-card-4 post">
               {/* <img className="img-flex" src={item.src} /> */}
               <img
                 className="img-flex"
@@ -26,10 +32,11 @@ const Section2 = ({ lang, folder, data }) => (
                 <p className="content-2">{item[lang] && item[lang].content}</p>
               </section>
             </article>
-          );
-        })}
-    </section>
-  </Zoom>
+          </div>
+        );
+      })}
+  </section>
+  // {/* </Zoom> */}
 );
 
 export default Section2;

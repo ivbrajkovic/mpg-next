@@ -42,7 +42,7 @@ router.get("/:file", function(req, res, next) {
         data.banners = [];
         for (let index = 0; index < files.length; index++) {
           // Get images
-          if (/^(?!.*(-tmb|baner)).*\.jpg|\.png$/gm.test(files[index])) {
+          if (/^(?!.*(-tmb|baner)).*\.jpg|\.png$/gim.test(files[index])) {
             data.gallery.push(files[index]);
             continue;
             // Get banners

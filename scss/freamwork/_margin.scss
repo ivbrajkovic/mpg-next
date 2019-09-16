@@ -91,6 +91,10 @@
   margin-top: 20px;
 }
 
+.m-b-xs-20-xl-40 {
+  margin-bottom: 20px;
+}
+
 @media (min-width: 576px) {
   .m-xs-10-s-20 {
     margin: 20px 0;
@@ -104,6 +108,10 @@
 // }
 
 @media (min-width: 1200px) {
+  .m-b-xs-20-xl-40 {
+    margin-bottom: 40px;
+  }
+
   .m-t-xs-20-xl-40 {
     margin-top: 40px;
   }

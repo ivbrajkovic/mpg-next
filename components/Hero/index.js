@@ -37,8 +37,8 @@ const Hero = ({ title, srcset, move }) => {
         //   setLoaded(true);
         // }}
       />
-      <div className="container">
-        <h1 className="hero-header">{title}</h1>
+      <div className="container pos-relative">
+        <h1 className="m-b-xs-20-xl-40 w-100 hero-header">{title}</h1>
       </div>
     </section>
     // </Fade>

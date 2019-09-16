@@ -15,7 +15,7 @@ const srcset = [
 
 // let submenuItems = null;
 
-const Odjel = ({ lang, odjel, success, data }) => {
+const Odjel = ({ lang, odjel, onSetOdjel, success, data }) => {
   // const [odjel, setOdjel] = useState(props.odjel);
 
   // useEffect(() => {
@@ -43,8 +43,9 @@ const Odjel = ({ lang, odjel, success, data }) => {
   // };
 
   const changeOdjel = value => {
-    if (data && data.section7 && data.section7[value]) setOdjel(value);
-    else alert("Odjel nije u zapisima.");
+    // if (data && data.section7 && data.section7[value]) setOdjel(value);
+    // else alert("Odjel nije u zapisima.");
+    onSetOdjel("/odjeli", value);
   };
 
   let i = 0;

@@ -1,4 +1,6 @@
 // Zbirke - detalji
+
+import { useEffect } from "react";
 import Fade from "react-reveal/Fade";
 
 import fetchDataAsync from "../../../../../lib/fetchDataAsync";
@@ -17,6 +19,10 @@ const Detalji = ({ lang, data }) => {
   const audio = (data && data.audio) || "";
   const video = (data && data.video) || "";
   const gallery = (data && data.gallery) || [];
+
+  useEffect(() => {
+    lightbox.reload();
+  }, []);
 
   return (
     <div className="container zbirke-detalji">
@@ -39,9 +45,7 @@ Detalji.getInitialProps = async context => {
   const zbirke = context.query.zbirke;
   const detalji = context.query.detalji;
   const params = [zbirke, detalji];
-  console.log("TCL: params", params);
   const data = await fetchDataAsync(context, "zbirke/detalji/", params);
-  console.log("TCL: Detalji.getInitialProps -> data", data);
   return data;
 
   // Zbirke.getInitialProps = async context => {

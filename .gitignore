@@ -1,4 +1,30 @@
+# const decompress = require("decompress");
+
+# var parseDocx = function(filename, callback) {
+#   decompress(filename, "dist").then(files => {
+#     fs = require("fs");
+#     fs.readFile("dist/word/document.xml", "utf8", function(err, data) {
+#       if (err) {
+#         return console.log(err);
+#       }
+
+#       var plain_text = data
+#         .replace(/(<w:p )[\s\S]*?>/g, "\n<w:p") // Find text
+#         .replace(/(<(w:num[^ >]+)>)/gi, "-") // Replace list with '-'
+#         .replace(/(<([^>]+)>)/gi, "") // Remove tags
+#         .replace(/(\r?\n)/g, "\\\\n") // Remove new lines
+#         .replace(/(\t)/g, ""); // Remove tabs
+#       console.log("TCL: parseDocx -> data", data);
+#       callback(plain_text);
+#     });
+#   });
+# };
+
+# module.exports.parseDocx = parseDocx;
+
 node_modules/
 .next/
 *old*
 *copy*
+.gitignore
+.test*

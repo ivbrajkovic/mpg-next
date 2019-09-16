@@ -1,6 +1,6 @@
 // Section1.js
 
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import isLocalImage from "../../lib/isLocalImage";
 
 const Section1 = ({ lang, folder, data }) => {
@@ -9,7 +9,9 @@ const Section1 = ({ lang, folder, data }) => {
   const content = data[lang] && data[lang].content;
 
   return (
-    <Fade delay={250} ssrReveal>
+    // <Fade delay={250} ssrReveal>
+
+    <div data-aos="fade" data-aos-duration="1000">
       <section className={`container m-t-xs-20-xl-40 text-center section-1`}>
         <div className="w3-card-4 d-grid">
           <div className="item-1">
@@ -27,7 +29,9 @@ const Section1 = ({ lang, folder, data }) => {
           </article>
         </div>
       </section>
-    </Fade>
+    </div>
+
+    // </Fade>
   );
 };
 

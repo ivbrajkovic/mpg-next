@@ -1,0 +1,24 @@
+.zbirke-fade-bottom {
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 350ms ease-out 0ms;
+
+  > div {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+    transition: opacity 0.2s, transform 0.35s;
+  }
+}
+
+.zbirke__section-3.aos-animate {
+  .zbirke-fade-bottom {
+    opacity: 1;
+
+    > div {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition: opacity 0.4s, transform 0.35s;
+      transition-delay: 0s, 0s;
+    }
+  }
+}

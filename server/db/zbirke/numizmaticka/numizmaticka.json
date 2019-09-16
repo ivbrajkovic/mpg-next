@@ -1,0 +1,16 @@
+{
+  "id": 3,
+  "meni": false,
+  "page": "numizmaticka",
+  "folder": "/static/img/odjeli/zbirke/numizmaticka/",
+  "hr": {
+    "hero": "NUMIZMATIČKA ZBIRKA",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Numizmatička zbirka sadrži papirnati i kovani novac, datiran od početka 19. stoljeća pa do danas, uz nekoliko primjeraka kovanog novca i iz ranijeg razdoblja. Osim novca, zbirka sadrži i bonove za gorivo te obveznice zajma za gradnju tunela Učka, oboje iz razdoblja druge polovice 20. stoljeća. Najveći dio zbirke sačinjava novac koji se upotrebljavao u Istri dok je ona bila dijelom, kronološki:\\n-Austrijske Monarhije\\n-Austro – Ugarske Monarhije\\n-Kraljevine Italije \\n-Socijalističke Federativne Republike Jugoslavije, i danas\\n-Republike Hrvatske.\\nMeđu predmetima se ističu kovanice i novčanice koje se nisu dugo vremena zadržale u opticaju, poput prijelaznih jugolira koje su se koristile po završetku Drugog svjetskog rata, kao i novac iz vremena Kraljevine Jugoslavije, Nezavisne Države Hrvatske, kovanice njemačkog Reicha, ali i čitave serije novčanica iz vremena SFRJ."
+  },
+  "en": {
+    "hero": "NUMISMATIC COLLECTION",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Numismatic Collection guards paper and coin money dated from the beginning of the 19th century until recent times with several exceptions of older coined money. Besides money, items within the Collection also include fuel vouchers and Učka Tunnel building loan bonds from the second half of the 20th century. Largest part of the Collection is the money used in Istria while it was a part of, chronologically:\\n-Austrian Monarchy,\\n-Austro – Hungarian Empire, \\n-Kingdom of Italy,\\n-Socialist Federal Republic of Yugoslavia and\\n-Republic of Croatia.\\nThe Collection also guards paper and coined money used for a shorter period of time, for example, the so-called jugolira which was used after the Second World War, money used during the time of the Kingdom of Yugoslavia, the Independent State of Croatia, coined money of the German Reich and several series of Yugoslavian paper money."
+  }
+}

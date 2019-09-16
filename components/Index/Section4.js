@@ -1,6 +1,6 @@
 // section4.js
 
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 import makeCarousel from "react-reveal/makeCarousel";
 
@@ -27,7 +27,8 @@ const Section4 = ({ lang, folder, data, slides }) => {
   const Carousel = makeCarousel(CarouselUI);
 
   return (
-    <Fade fraction={0.8} ssrReveal>
+    // <Fade fraction={0.8} ssrReveal>
+    <div data-aos="fade" data-aos-duration="1000">
       <section className="container m-t-xs-20-xl-40 p-0 text-center section-4">
         <div className="w3-card-4 d-grid">
           <div className="item-1">
@@ -35,7 +36,11 @@ const Section4 = ({ lang, folder, data, slides }) => {
               {slides.map((item, index) => {
                 return (
                   <Slide right key={index}>
-                    <img className="img-cover" src={`${folder}${item}`} />
+                    <img
+                      key={index}
+                      className="img-cover"
+                      src={`${folder}${item}`}
+                    />
                   </Slide>
                 );
               })}
@@ -50,7 +55,8 @@ const Section4 = ({ lang, folder, data, slides }) => {
           </div>
         </div>
       </section>
-    </Fade>
+    </div>
+    // </Fade>
   );
 };
 

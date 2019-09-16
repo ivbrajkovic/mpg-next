@@ -31,16 +31,16 @@
       // padding: 0 40px;
       line-height: 1.5;
 
-      .list-item:last-of-type {
-        margin-bottom: 16px;
-      }
+      // .list-item:last-of-type {
+      //   margin-bottom: 16px;
+      // }
     }
   }
 
   &__section-3 {
     .d-grid {
       // grid-template-columns: minmax(147px, 250px);
-      grid-template-columns: repeat(auto-fit, minmax(147px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
       grid-auto-flow: dense;
       justify-content: center;
       img {
@@ -55,6 +55,9 @@
       //     transform: scale(1.04);
       //     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 15px 20px 0 rgba(0, 0, 0, 0.43);
       // }
+      &.zvona {
+        grid-template-columns: repeat(auto-fit, minmax(147px, 1fr));
+      }
     }
   }
 

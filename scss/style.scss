@@ -1,3 +1,7 @@
+// AOS
+$aos-distance: 100px; // It has to be above import
+@import "./aos.css";
+
 // @import './w3';
 @import "./bootstrap-reboot";
 // @import './utility';

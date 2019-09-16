@@ -1,0 +1,16 @@
+{
+  "id": 9,
+  "meni": false,
+  "page": "zastava",
+  "folder": "/static/img/odjeli/zbirke/zastava/",
+  "hr": {
+    "hero": "ZBIRKA ZASTAVA, PEČATNJAKA I GRBOVA",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Građa u zbirci datira od 17. do 21. stoljeća. Jedan od najistaknutijih predmeta u zbirci je zastava kapetana Josipa Lazarića, koji je rodom iz Lindara. Zastavu je dobio u spomen pobjede nad Napoleonovom vojskom kod Pazina 1813. godine. Između ostalih grbova, ističe se metalni grb obitelji Auersperg iz 17. stoljeća, istaknute obitelji u povijesti Pazinske knežije. U zbirci se nalaze i zastave iz vremena talijanske vladavine te zastave sa sportskih, kulturnih i političkih događanja iz razdoblja Jugoslavije."
+  },
+  "en": {
+    "hero": "COLLECTION OF FLAGS, SEALS AND COAT OF ARMS",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Items within the Collection are dated in the period between the 17th and the 21st century. One of the most representative items is the Flag of Captain Josip Lazarić from Lindar gifted to the Captain in memory of his victory over Napoleon's army in 1813. Amongst others, a metal coat of arms from the 17th century stands out, belonging to the Auersperg family, a notable contributor to the history of the Pazin County.\\nThe Collection also guards items from the Italian reign as well as flags of sports, cultural and political events which marked the period of Yugoslavia."
+  }
+}

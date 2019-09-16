@@ -122,6 +122,7 @@ export default class MyApp extends App {
             {...pageProps}
             odjel={this.state.odjel}
             lang={this.state.lang}
+            onSetOdjel={this.setOdjel}
           />
 
           <Footer />

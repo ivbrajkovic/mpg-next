@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "meni": false,
+  "page": "galerija",
+  "folder": "/static/img/odjeli/zbirke/galerija/",
+  "hr": {
+    "hero": "GALERIJSKA ZBIRKA",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Galerijska zbirka jedina je likovna zbirka Muzeja koja zasebno čini jedan od tri muzejska odjela – Galerijski odjel.\\nGalerijska je zbirka utemeljena 1969. godine darovima likovnih umjetnika s područja bivše Jugoslavije a njeno se osnivanje veže uz uređenje galerijskog prostora u Motovunu. Fundus je zbirke kasnije povećan likovnim djelima sa Motovunskih likovnih susreta koji su, u organizaciji tada Etnografskog muzeja Istre i Galerije Cavalino iz Venecije (a kasnije i Moderne galerije Zagreb, današnjeg Muzeja suvremene umjetnosti Hrvatske) realizirani u razdoblju od 1972. do 1984. godine. \\nDanas Galerijsku zbirku, osim navedenog, čine i donacije likovnih djela s prodajne izložbe za Tunel Učku, kao i darovi umjetnika čije je izložbe Muzej organizirao i ugostio.\\nLikovna djela suvremenih likovnih umjetnika unutar Zbirke datirana su u razdoblje od sedmog desetljeća 20. stoljeća do recentnog vremena, izrađena u različitim materijalima i tehnikama. Pored djela suvremenih i avantgardnih hrvatskih autora - Miroslava Šuteja, Miljenka Stančića, Julija Knifera, Eugena Kokota, Ljubomira Karine, Gorana Trbuljaka, …, zbirku čine i djela brojnih europskih i svjetskih umjetnika – Marine Abramović, Ulaya, Franciosa Morelleta, Dore Mauer, Takika Kawaija, Ewerdta Hilgemanna i drugih."
+  },
+  "en": {
+    "hero": "GALLERY COLLECTION",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Gallery Collection, as a single Collection within the Gallery Department, is a unique Collection of art(works) of the Pazin City Museum. It was founded in 1969 by the gifts of artists mainly from the former territory of Yugoslavia and its foundations are related to the adaptation of the Art Gallery in Motovun. The initial Collection fundus has later on increased in number with art works created at the Motovun Encounters which were held in Motovun between 1972 and 1984, organized by the Ethnographic Museum of Istria from Pazin and Gallery Cavallino from Venice (later, also including the Modern Gallery of Zagreb, today the Museum of Contemporary Art of Croatia). \\nBesides the above-mentioned, Gallery Collection also includes donations received as a part of the sales exhibition for the Učka Tunnel together with donations of artists whose exhibitions were hosted by the Museum. \\nArt works of Croatian Contemporary artists, made in different materials and techniques, date in the period between the seventh decade of the 20th century until recent times. Besides artworks of Contemporary and Avant-guard Croatian artists – Miroslav Šutej, Miljenko Stančić, Julije Knifer, Eugen Kokot, Ljubomir Karina, Goran Trbuljak, names of famous European and world-known artists, such as Marina Abramović, Ulay, Francois Morellet, Dora Mauer, Takiko Kawai, Ewerdt Hilgemann and others also make an important contribution to the Collection."
+  }
+}

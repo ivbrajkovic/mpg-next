@@ -1,0 +1,16 @@
+{
+  "id": 4,
+  "meni": false,
+  "page": "tiskovna",
+  "folder": "/static/img/odjeli/zbirke/tiskovna/",
+  "hr": {
+    "hero": "ZBIRKA DOKUMENATA, KARATA, RUKOPISA I TISKOVINA",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Fond Zbirke datira od 16. do 21. stoljeća te se prema sadržaju i formalnim karakteristikama dijeli u sljedeće skupine:\\n-rukopisna građa\\n-tiskana građa vezana za upravne, gospodarske i kulturne subjekte i asocijacije\\n-identifikacijski i drugi predmeti osobnog karaktera\\n-kartografski dio zbirke.\\nRukopisna građa sadrži oporuke, predbračne ugovore, darovnice, ali i blagajničke knjige, knjige evidencija i slično. U drugoj skupini predmeta prevladavaju pozivnice, plakati, brošure, bilteni, zatim kalendari, časopisi te udžbenici iz razdoblja austrougarske vladavine pa do razdoblja nakon Drugog svjetskog rata. Identifikacijski i drugi predmeti osobnog karaktera obuhvaćaju legitimacije, policijske kartone, svjedodžbe dok kartografski dio zbirke sadrži zemljopisne karte i atlas.\\nZbirka sadrži predmete od iznimne važnosti za razumijevanje povijesnog razvoja Pazina i Pazinštine, od kojih se izdvajaju: Urbar Pazinske knežije iz 1573. godine, zemljovidi iz 17. i 18. stoljeća, osobni dokumenti i drugo."
+  },
+  "en": {
+    "hero": "COLLECTION OF DOCUMENTS, MAPS, MANUSCRIPTS AND PRINTS",
+    "header": "Voditelj zbirke:\\nnepoznato\\nUvod u zbirku: nepoznato",
+    "content": "Fundus of the Collection is dated in the period between the 16th and the 21st century and can be divided into the following groups based on the content and formal characteristics of items within it: \\n-manuscripts,\\n-printed materials of administrative, economic and cultural entities and associations, \\n-identification and other personal documents, \\n-maps. \\nManuscripts within the Collection are testaments, prenuptial agreements, deeds of donation, cashier's books, logs etc. Printed materials include invitation cards, brochures, bulletins, calendars, magazines and textbooks from the period of the Austro-Hungarian reign until the Second World War. Identification and other personal documentations are identity cards, police cards and testimonials. Cartographic part of the Collection consists of maps and Atlas. \\nCollection holds items of exceptional importance for understanding the historical development of Pazin and the surrounding area, including the Urbar of the Pazin County from 1573, maps from the 17th and 18th century, personal documents and other. "
+  }
+}
