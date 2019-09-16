@@ -37,6 +37,7 @@ router.get("/:name/:id", function(req, res, next) {
         data: data,
         lastError: "folder not specified"
       });
+      return;
     }
 
     const folder = data.folder.substring(1);

@@ -30,8 +30,10 @@
     .content-1 {
       // padding: 0 40px;
       line-height: 1.5;
-
-      // .list-item:last-of-type {
+      p {
+        margin-top: 16px;
+      }
+      // .list-item:last-child {
       //   margin-bottom: 16px;
       // }
     }

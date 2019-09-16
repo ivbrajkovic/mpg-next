@@ -1,166 +1,166 @@
 {
-    "hr": [
+  "hr": [
+    {
+      "title": "O nama",
+      "href": "/",
+      "hasSubmenu": true,
+      "submenu": [
         {
-            "title": "O nama",
-            "href": "/",
-            "hasSubmenu": true,
-            "submenu": [
-                {
-                    "title": "Pazinski kaštel",
-                    "href": "/kastel"
-                },
-                {
-                    "title": "Povjest MGP",
-                    "href": "/povjest"
-                },
-                {
-                    "title": "Djelatnici",
-                    "href": "/djelatnici"
-                },
-                {
-                    "title": "Dokumenti",
-                    "href": "/dokumenti"
-                },
-                {
-                    "title": "Usluge",
-                    "href": "/usluge"
-                },
-                {
-                    "title": "Kontakt",
-                    "href": "/kontakt"
-                }
-            ]
+          "title": "Pazinski kaštel",
+          "href": "/kastel"
         },
         {
-            "title": "Odjeli i zbirke",
-            "href": "/odjeli",
-            "hasSubmenu": true,
-            "submenu": [
-                {
-                    "title": "Kultutrno-povjesni odjel",
-                    "href": "/kulturni-odjel"
-                },
-                {
-                    "title": "Povjesni odjel",
-                    "href": "/povjesni-odjel"
-                },
-                {
-                    "title": "Galerijski odjel",
-                    "href": "/galerijski-odjel"
-                }
-            ]
+          "title": "Povjest MGP",
+          "href": "/povjest"
         },
         {
-            "title": "Aktivnosti",
-            "href": "/aktivnosti",
-            "hasSubmenu": false,
-            "submenu": []
+          "title": "Djelatnici",
+          "href": "/djelatnici"
         },
         {
-            "title": "Stalni postav",
-            "href": "/stalni-postav",
-            "hasSubmenu": false,
-            "submenu": []
+          "title": "Dokumenti",
+          "href": "/dokumenti"
         },
         {
-            "title": "Edukacija",
-            "href": "/edukacije",
-            "hasSubmenu": false,
-            "submenu": []
+          "title": "Usluge",
+          "href": "/usluge"
         },
         {
-            "title": "Knjižnica",
-            "href": "/knjiznica",
-            "hasSubmenu": false,
-            "submenu": []
-        },
-        {
-            "title": "Izdanja",
-            "href": "/izdanja",
-            "hasSubmenu": false,
-            "submenu": []
+          "title": "Kontakt",
+          "href": "/kontakt"
         }
-    ],
-    "en": [
+      ]
+    },
+    {
+      "title": "Odjeli i zbirke",
+      "href": "/odjeli",
+      "hasSubmenu": true,
+      "submenu": [
         {
-            "title": "About us",
-            "href": "/",
-            "hasSubmenu": true,
-            "submenu": [
-                {
-                    "title": "Castle of Pazin",
-                    "href": "/kastel"
-                },
-                {
-                    "title": "MGP History",
-                    "href": "/povjest"
-                },
-                {
-                    "title": "Employees",
-                    "href": "/djelatnici"
-                },
-                {
-                    "title": "Documents",
-                    "href": "/dokumenti"
-                },
-                {
-                    "title": "Services",
-                    "href": "/usluge"
-                },
-                {
-                    "title": "Contact",
-                    "href": "/kontakt"
-                }
-            ]
+          "title": "Kultutrno-povjesni odjel",
+          "href": "/kulturni-odjel"
         },
         {
-            "title": "Departments",
-            "href": "/odjeli",
-            "hasSubmenu": true,
-            "submenu": [
-                {
-                    "title": "Cultural History Department",
-                    "href": "/kulturni-odjel"
-                },
-                {
-                    "title": "History Department",
-                    "href": "/kulturni-odjel"
-                },
-                {
-                    "title": "Gallery department",
-                    "href": "/galerijski-odjel"
-                }
-            ]
+          "title": "Povjesni odjel",
+          "href": "/povjesni-odjel"
         },
         {
-            "title": "Activities",
-            "href": "/aktivnosti",
-            "hasSubmenu": false,
-            "submenu": []
-        },
-        {
-            "title": "Permanent lineup",
-            "href": "/stalni-postav",
-            "hasSubmenu": false,
-            "submenu": []
-        },
-        {
-            "title": "Education",
-            "href": "/edukacije",
-            "hasSubmenu": false,
-            "submenu": []
-        },
-        {
-            "title": "Library",
-            "href": "/knjiznica",
-            "hasSubmenu": false,
-            "submenu": []
-        },
-        {
-            "title": "Publications",
-            "href": "/test",
-            "hasSubmenu": false,
-            "submenu": []
+          "title": "Galerijski odjel",
+          "href": "/galerijski-odjel"
         }
-    ]
+      ]
+    },
+    {
+      "title": "Aktivnosti",
+      "href": "/aktivnosti",
+      "hasSubmenu": false,
+      "submenu": []
+    },
+    {
+      "title": "Stalni postav",
+      "href": "/postav",
+      "hasSubmenu": false,
+      "submenu": []
+    },
+    {
+      "title": "Edukacija",
+      "href": "/edukacije",
+      "hasSubmenu": false,
+      "submenu": []
+    },
+    {
+      "title": "Knjižnica",
+      "href": "/knjiznica",
+      "hasSubmenu": false,
+      "submenu": []
+    },
+    {
+      "title": "Izdanja",
+      "href": "/izdanja",
+      "hasSubmenu": false,
+      "submenu": []
+    }
+  ],
+  "en": [
+    {
+      "title": "About us",
+      "href": "/",
+      "hasSubmenu": true,
+      "submenu": [
+        {
+          "title": "Castle of Pazin",
+          "href": "/kastel"
+        },
+        {
+          "title": "MGP History",
+          "href": "/povjest"
+        },
+        {
+          "title": "Employees",
+          "href": "/djelatnici"
+        },
+        {
+          "title": "Documents",
+          "href": "/dokumenti"
+        },
+        {
+          "title": "Services",
+          "href": "/usluge"
+        },
+        {
+          "title": "Contact",
+          "href": "/kontakt"
+        }
+      ]
+    },
+    {
+      "title": "Departments",
+      "href": "/odjeli",
+      "hasSubmenu": true,
+      "submenu": [
+        {
+          "title": "Cultural History Department",
+          "href": "/kulturni-odjel"
+        },
+        {
+          "title": "History Department",
+          "href": "/kulturni-odjel"
+        },
+        {
+          "title": "Gallery department",
+          "href": "/galerijski-odjel"
+        }
+      ]
+    },
+    {
+      "title": "Activities",
+      "href": "/aktivnosti",
+      "hasSubmenu": false,
+      "submenu": []
+    },
+    {
+      "title": "Permanent lineup",
+      "href": "/postav",
+      "hasSubmenu": false,
+      "submenu": []
+    },
+    {
+      "title": "Education",
+      "href": "/edukacije",
+      "hasSubmenu": false,
+      "submenu": []
+    },
+    {
+      "title": "Library",
+      "href": "/knjiznica",
+      "hasSubmenu": false,
+      "submenu": []
+    },
+    {
+      "title": "Publications",
+      "href": "/test",
+      "hasSubmenu": false,
+      "submenu": []
+    }
+  ]
 }

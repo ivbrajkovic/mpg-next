@@ -49,6 +49,17 @@ const Index = ({ lang, success, data }) => {
         btn.addEventListener("mousedown", ripplet);
       });
 
+    console.log("TCL: Index -> buttons", buttons);
+    
+    return () => {
+      buttons &&
+        buttons.forEach(btn => {
+          btn.removeEventListener("mousedown", ripplet);
+        });
+    };
+  }, [loaded]);
+
+  useEffect(() => {
     // fetchDataAsync(null, "index").then(data => {
     //   if (data && data.success) {
     //     const folder = (data.data && data.data.folder) || "";
@@ -68,12 +79,6 @@ const Index = ({ lang, success, data }) => {
     //   } else setDbData(data);
     // });
 
-    return () => {
-      buttons &&
-        buttons.forEach(btn => {
-          btn.removeEventListener("mousedown", ripplet);
-        });
-    };
   }, []);
 
   let i = 0;

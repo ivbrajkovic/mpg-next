@@ -1,0 +1,62 @@
+{
+  "page": "postav",
+  "folder": "/static/img/postav/",
+  "hr": {
+    "hero": "stalni postav",
+    "section1": {
+      "title": "STALNI POSTAV MUZEJA GRADA PAZINA",
+      "content": "Realizacija stalnog postava kruna je djelatnosti stručnih djelatnika muzejske ustanove, a istovremeno i iznimno značajan i potreban projekt kojim se muzejska djelatnost institucionalizira, potvrđuje i stručno vrednuje. Iako Muzej ne raspolaže cjelovitim i konkretnim prostorom za realizaciju stalnog postava, realizacijom četiri stalne muzejske izložbe, ali i povremenih tematskih i izložbi iz fundusa, stvaraju se temelji za budući stalni postav. Bogatom izložbenom i pedagoškom djelatnosti, akvizicijom građe (darovanjem ili otkupom) stječu se nova saznanja o prostoru i vremenu djelovanja Muzeja, a javnost prepoznaje muzejske aktivnosti. S obzirom na vrijednost građe u fundusu, važnost Muzeja kao kulturne ustanove, ne samo u Gradu Pazinu, već i u kontekstu muzeologije istarskog poluotoka, a s obzirom na povijest Muzeja koji u istom prostoru djeluje od 1956. godine, realizacija konkretnog stalnog postava postaje značajna potreba kulturne ponude grada. Osim četiri stalne muzejske izložbe u Pazinskom kaštelu, realizirane su i dvije dislocirane stalne muzejske izložbe. U rodnoj kući biskupa Jurja Dobrile u Velom Ježenju postavljena je izložba Dr. Juraj Dobrila: život i djelo dok je u Gimnaziji i strukovnoj školi Jurja Dobrile povodom 100. obljetnice Gimnazije postavljena izložba Hrvatska gimnazija u Pazinu 1899./1999. (dopunjena 2009. godine)."
+    },
+    "section2": [
+      {
+        "title": "ZVONA S ISTARSKIH CRKVI",
+        "content": "U prizemnoj prostoriji Kaštela smještena je izložba Zvona s istarskih crkvi koja predstavlja cjelovitu muzejsku zbirku – Zbirku zvona. Izložena su 23 crkvena zvona datirana u razdoblje između 14. i 19. stoljeća, izlivena iz bronce u ljevaonicama Venecije, Trsta, Ljubljane i ostalih gradova. Zvona su dekorirana vegetabilnim, geometrijskim i religijskim motivima raspela ili raspeća, likovima svetaca (zaštitnika), ali i glagoljičkim natpisima.",
+        "src": "https://picsum.photos/350"
+      },
+      {
+        "title": "PAZINŠTINA OD PRAPOVIJESTI DO RANOG SREDNJEG VIJEKA",
+        "content": "Na prvom katu Kaštela smjestila se izložba Pazinština od prapovijesti do ranog srednjeg vijeka kojom su predstavljeni arheološki nalazi nalazišta i mjesta središnje Istre, a s ciljem opisivanja i utvrđivanja kontinuiteta naseljenosti i života na prostoru Pazinštine od prapovijesti do ranog srednjeg vijeka.",
+        "src": "https://picsum.photos/350"
+      },
+      {
+        "title": "DR. JURAJ DOBRILA – ŽIVOT I DJELO",
+        "content": "U zasebnoj prostoriji na međukatnoj razini između prvog i drugog kata smještena je informativna izložba posvećena životu i djelovanju biskupa dr. Jurja Dobrile. Sadržaj informativne izložbe nadovezuje se na stalnu muzejsku izložbu o životu i djelu biskupa realiziranoj 2004. godine u rodnoj kući biskupa Jurja Dobrile u Velom Ježenju.",
+        "src": "https://picsum.photos/350"
+      },
+      {
+        "title": "PAZINSKI KAŠTEL I BUNE KMETOVA U 15. I 16. STOLJEĆU",
+        "content": "U kvadratnoj kuli Kaštela, jednom od najstarijih dijelova Kaštela, na sve tri razine, smjestila se stalna muzejska izložba Pazinski kaštel i bune kmetova u 15. i 16. stoljeću kao prvi dio budućeg stalnog postava Muzeja. Izložba je posvećena dvjema kmetskim bunama iz 1408. - 1409. te 1516. - 1517. godine kada su pobunjenici napali upravitelja i Pazinski kaštel s ciljem oslobađanja od strahovitih nameta i torture. Dok su na prvoj razini izloženi arheološki iskopi (pronađeni prilikom konzervacije Kule) te ilustrirana tema izložbe, na drugoj je razini izloženo oružje suprotstavljenih strana, a na samom dnu sprave za mučenje kao simboličan kraj pobune seljaka.",
+        "src": "https://picsum.photos/350"
+      }
+    ]
+  },
+  "en": {
+    "hero": "PERMANENT EXHIBITION",
+    "section1": {
+      "title": "PERMANENT EXHIBITION",
+      "content": "Implementation of the permanent display can be defined as the crown work of Museums' professional staff and an extremely important and necessary project by which the work of a Museum is institutionalized, affirmed and professionally valued. Although the Pazin City Museum still does not dispose of a complete and concrete space for implementation of the display, foundations are set by realisation of four permanent exhibitions and various temporary thematic exhibitions. \\nRich exhibition and pedagogical activities and acquisition of museum items (either by donation or purchase) bring out new discoveries about the time and space in focus while the public identifies with the work and activities of the Museum. \\n\\nDue to the value of the museum items within the fundus, importance of the Museum as a cultural institution – not only within the City of Pazin but the Istrian Peninsula in general and the history of the Museum which acts within the walls of the Castle from 1956, the implementation of the permanent display becomes an important need of cultural offer in Pazin.\\nApart from four permanent exhibitions set in the Castle, two dislocated exhibition were also implemented: the exhibition Dr Juraj Dobrila: Life and Work is set in the birth house of Bishop Juraj Dobrila in Veli Ježenj while the exhibition Hrvatska gimnazija u Pazinu 1899/1999 is set in Gimnazija i strukovna škola Jurja Dobrile regarding the 100th anniversary of the Gymnasium (complemented in 2009)."
+    },
+    "section2": [
+      {
+        "title": "BELLS FROM ISTRIAN CHURCHES",
+        "content": "The exhibition Bells from Istrian churches is set in a ground floor room of the Castle. It presents the Collection of Bells, i.e. 23 church bells dated in the period between the 14th and the 19th century, cast in copper in workshops of Venice, Trieste, Ljubljana etc. All bells are decorated with leaves, flowers, geometric elements and religious motives, depictions of saints (patrons) and even Glagolitic inscriptions.",
+        "src": "https://picsum.photos/350"
+      },
+      {
+        "title": "PAZIN AND ITS SURROUNDINGS FROM PREHISTORY TO THE MIDDLE AGES",
+        "content": "The exhibition Pazin and its surroundings from Prehistory to the Middle Ages is set on the first floor of the Castle. It presents archaeological findings of sites and places of Central Istria with the main task of describing and determining the continuity of inhabitance of the place and time mentioned.",
+        "src": "https://picsum.photos/350"
+      },
+      {
+        "title": "DR JURAJ DOBRILA – LIFE AND WORK",
+        "content": "Informative exhibition dedicated to the life and work of Istrian bishop Dr Juraj Dobrila is set in a small room on the intermediate level of the Castle. Content of the exhibition is connected with a permanent exhibition set in Bishop's house in Veli Ježenj in 2004.",
+        "src": "https://picsum.photos/350"
+      },
+      {
+        "title": "PAZIN CASTLE AND THE SERFS' UPRISING IN THE 15TH AND 16TH CENTURY",
+        "content": "One of the oldest parts of the Castle – the square Tower, is a home to a permanent exhibition which presents the first part of the future permanent display, the exhibition titled Pazin Castle and the Serfs' Uprising in the 15th and 16th century. The exhibition is dedicated to two uprisings, from 1408-1409 and 1516-1517 when the serfs attacked the Count and the Castle, eager to liberate themselves from tremendous imposts and torture. Archaeological findings (discovered during tower reconstruction) and basic concepts of the exhibition are presented at the top. Weapons of the belligerent sides present the battles on the second level while torturing devices are set at the bottom of the tower, depicting the symbolical ending to the uprisings.",
+        "src": "https://picsum.photos/350"
+      }
+    ]
+  }
+}
