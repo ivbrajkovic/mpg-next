@@ -48,6 +48,7 @@ export default class MyDocument extends Document {
           {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/easing/EasePack.min.js"></script> */}
           {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>{' '} */}
           {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> */}
+          {/* <script src="/static/js/aos.js"></script> */}
         </Head>
         <body>
           <Main />

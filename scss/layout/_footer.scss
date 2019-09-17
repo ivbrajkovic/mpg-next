@@ -1,6 +1,7 @@
 footer {
   padding: 30px 0;
   background: $background-5;
+  line-height: 1.2;
   img {
     margin-right: 10px;
     width: auto;
@@ -24,5 +25,9 @@ footer {
   .item-2 {
     grid-column: 1 / span 2;
   }
-  // .item-3 {}
+  .item-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

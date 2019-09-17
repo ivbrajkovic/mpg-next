@@ -1,0 +1,54 @@
+{
+  "page": "aktivnosti",
+  "folder": "/static/img/aktivnosti/",
+  "hero": {
+    "hr": "aktivnosti",
+    "en": "activity"
+  },
+  "section1": [
+    {
+      "src": "post-big.png",
+      "hr": {
+        "header": "definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      },
+      "en": {
+        "header": "definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      }
+    },
+    {
+      "src": "post-big.png",
+      "hr": {
+        "header": "definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      },
+      "en": {
+        "header": "definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      }
+    },
+    {
+      "src": "post-big.png",
+      "hr": {
+        "header": "definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      },
+      "en": {
+        "header": "definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      }
+    },
+    {
+      "src": "post-big.png",
+      "hr": {
+        "header": "definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      },
+      "en": {
+        "header": "definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      }
+    }
+  ]
+}

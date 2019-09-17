@@ -50,7 +50,7 @@ const Index = ({ lang, success, data }) => {
       });
 
     console.log("TCL: Index -> buttons", buttons);
-    
+
     return () => {
       buttons &&
         buttons.forEach(btn => {
@@ -78,7 +78,6 @@ const Index = ({ lang, success, data }) => {
     //     );
     //   } else setDbData(data);
     // });
-
   }, []);
 
   let i = 0;
@@ -91,7 +90,13 @@ const Index = ({ lang, success, data }) => {
       <Hero move srcset={srcset} />
       {(loaded && (
         <>
-          <Section1 lang={lang} folder={folder} data={section1} />
+          <Section1
+            lang={lang}
+            folder={folder}
+            data={section1}
+            animation="fade"
+            duration="1000"
+          />
           <Section2 lang={lang} folder={folder} data={section2} />
           <Section3 lang={lang} folder={folder} data={section3} />
           <Section4

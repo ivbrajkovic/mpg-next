@@ -3,7 +3,7 @@
 // import Fade from "react-reveal/Fade";
 import isLocalImage from "../../lib/isLocalImage";
 
-const Section1 = ({ lang, folder, data }) => {
+const Section1 = ({ lang, folder, data, animation, duration }) => {
   const title = data[lang] && data[lang].title;
   const header = data[lang] && data[lang].header;
   const content = data[lang] && data[lang].content;
@@ -11,7 +11,7 @@ const Section1 = ({ lang, folder, data }) => {
   return (
     // <Fade delay={250} ssrReveal>
 
-    <div data-aos="fade" data-aos-duration="1000">
+    <div data-aos={animation} data-aos-duration={duration}>
       <section className={`container m-t-xs-20-xl-40 text-center section-1`}>
         <div className="w3-card-4 d-grid">
           <div className="item-1">

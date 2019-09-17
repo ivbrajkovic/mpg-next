@@ -65,8 +65,8 @@ export default class Navbar extends Component {
       // <LanguageContext.Provider value={{ lng, lngUpdate }}>
       <Menu
         // content={json ? json[this.context.language] : []}
-        language={this.props.language}
-        content={json ? json[this.props.language] : []}
+        lang={this.props.lang}
+        menu={json || []}
         onChangeLanguage={this.setLanguage}
         shrink={this.state.isShrinked}
         onTest={this.props.onTest}

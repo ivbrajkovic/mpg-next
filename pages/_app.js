@@ -56,11 +56,12 @@ export default class MyApp extends App {
   };
 
   setOdjel = (path, index) => {
+    // if (path === "/odjeli") {
     if (Router.pathname !== path) Router.push(path);
     this.setState({
       odjel: index
     });
-    console.log("TCL: setOdjel -> this.state.odjel", this.state.odjel);
+    // }
   };
 
   i = 0;
@@ -103,7 +104,7 @@ export default class MyApp extends App {
         {/* <Hero title={heroTitle} folder={folder} srcset={heroSrcset} /> */}
 
         <Navbar
-          language={this.state.lang}
+          lang={this.state.lang}
           onChangeLanguage={this.setLanguage}
           onTest={this.onTest}
           onSetOdjel={this.setOdjel}

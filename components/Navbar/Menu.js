@@ -1,15 +1,34 @@
 // import { withRouter } from 'next/router';
 import Language from "./Language";
 import ActiveLink from "./Link";
+import Link from "next/link";
 
-// const Menu = ({ router, ...props }) => {
-const Menu = props => {
-  const { shrink, content: menu, onChangeLanguage, onTest, onSetOdjel } = props;
+// const isOdjel = (lang, path, subitem, index, setOdjel) => {
+//   let node = null;
+//   if (path === "/odjeli") {
+//     node = (
+//       <li
+//         key={index}
+//         className="nav_submenu-items"
+//         onClick={() => setOdjel("/odjeli", index)}
+//       >
+//         {subitem[lang]}
+//       </li>
+//     );
+//   } else {
+//     node = (
+//       <Link href={subitem.href} key={index}>
+//         <li className="nav_submenu-items">{subitem[lang]}</li>
+//       </Link>
+//     );
+//   }
+//   return node;
+// };
 
+const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
   const setLanguage = value => onChangeLanguage(value);
   const setOdjel = (path, index) => onSetOdjel(path, index);
 
-  let i = 1;
   return (
     <nav className="w3-card-4">
       <div
@@ -17,7 +36,7 @@ const Menu = props => {
         className={`container navbar f-xl-18 ${shrink ? `navbar-shrink` : ``}`}
       >
         <Language
-          language={props.language}
+          language={lang}
           onChangeLanguage={setLanguage}
           onTest={onTest}
         />
@@ -32,36 +51,54 @@ const Menu = props => {
           </span>
         </div>
 
-        <div className="menu-lists">
+        <ul className="menu-lists">
           {menu.map((menuItem, i) => {
             return (
-              <div className="menu-items" key={i}>
+              <li className="menu-items" key={i}>
                 <ActiveLink activeClassName="active" href={menuItem.href}>
-                  <a>{menuItem.title}</a>
+                  <a>{menuItem[lang]}</a>
                 </ActiveLink>
+
                 {menuItem.hasSubmenu && (
                   <>
                     <div className="dropdown"></div>
-                    {/* <div className="submenu-lists submenu--1-list"> */}
-                    <div className={`submenu-lists submenu--${i++}-list`}>
+                    {/* <div>&#9662;</div> */}
+                    <div>&#8964;</div>
+                    <ul className={`submenu-lists`}>
                       {menuItem.submenu.map((submenuItem, j) => {
-                        return (
-                          <div
-                            className="nav_submenu-items"
-                            key={j}
-                            onClick={() => setOdjel(menuItem.href, j)}
-                          >
-                            {submenuItem.title}
-                          </div>
+                        const node =
+                          menuItem.href === "/odjeli" ? (
+                            <li
+                              key={j}
+                              className="submenu-items"
+                              onClick={() => setOdjel("/odjeli", j)}
+                            >
+                              {submenuItem[lang]}
+                            </li>
+                          ) : (
+                            <Link href={menuItem.href} key={j}>
+                              <li className="submenu-items">
+                                {submenuItem[lang]}
+                              </li>
+                            </Link>
+                          );
+                        return node;
+
+                        return isOdjel(
+                          lang,
+                          menuItem.href,
+                          submenuItem,
+                          j,
+                          setOdjel
                         );
                       })}
-                    </div>
+                    </ul>
                   </>
                 )}
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </nav>
   );
