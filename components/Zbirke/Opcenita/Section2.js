@@ -25,7 +25,7 @@ const Section2 = ({ page, meni, folder, gallery }) => {
     const images =
       gallery.map &&
       gallery.map(item => {
-        return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gm, "$1-tmb$2");
+        return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2");
       });
 
     preloadImages(images || [])

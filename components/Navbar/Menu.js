@@ -51,34 +51,34 @@ const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
           </span>
         </div>
 
-        <ul className="menu-lists">
+        <ul className="menu">
           {menu.map((menuItem, i) => {
             return (
-              <li className="menu-items" key={i}>
+              <li key={i}>
                 <ActiveLink activeClassName="active" href={menuItem.href}>
                   <a>{menuItem[lang]}</a>
                 </ActiveLink>
 
                 {menuItem.hasSubmenu && (
                   <>
-                    <div className="dropdown"></div>
+                    {/* <div className="dropdown"></div> */}
                     {/* <div>&#9662;</div> */}
-                    <div>&#8964;</div>
-                    <ul className={`submenu-lists`}>
+                    {/* <div>&#8964;</div> */}
+                    <ul className={`submenu`}>
                       {menuItem.submenu.map((submenuItem, j) => {
                         const node =
                           menuItem.href === "/odjeli" ? (
                             <li
                               key={j}
-                              className="submenu-items"
+                              // className="submenu-items"
                               onClick={() => setOdjel("/odjeli", j)}
                             >
-                              {submenuItem[lang]}
+                              <a>{submenuItem[lang]}</a>
                             </li>
                           ) : (
-                            <Link href={menuItem.href} key={j}>
-                              <li className="submenu-items">
-                                {submenuItem[lang]}
+                            <Link href={submenuItem.href} key={j}>
+                              <li>
+                                <a>{submenuItem[lang]}</a>
                               </li>
                             </Link>
                           );

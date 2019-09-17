@@ -136,7 +136,7 @@ nav {
     top: 100%;
     left: 0;
     // display: none;
-    width: max-content;
+    // width: max-content;
     text-align: left;
     background: $primary-back;
     list-style: none;
@@ -192,4 +192,96 @@ nav {
   .hamburger {
     margin-bottom: 18px;
   }
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  // position: relative;
+  // margin-top: 15px;
+  align-self: flex-end;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.menu > li {
+  position: relative;
+  display: inline-block;
+  margin-right: 22px;
+  padding: 0 0 20px 0px;
+  & a.active {
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-bottom: 10px solid $color-4;
+    }
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    height: 10px;
+    width: 100%;
+    opacity: 0;
+    background: $color-4;
+    // background: red;
+    transform: translate(-50%, 0) scaleX(0);
+    // transition: all 0.3s ease-in-out;
+    transition: $nav-transation-fnc;
+  }
+  &:hover:not(.active):after {
+    transform: translate(-50%, 0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+.menu > li:last-of-type {
+  margin-right: 0px;
+}
+
+.menu li:hover > .submenu {
+  transition-duration: 0s, 0.25s;
+  transition-delay: 0s, 0s;
+  transition-property: visibility, opacity;
+  opacity: 1;
+  visibility: visible;
+}
+.submenu {
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: max-content;
+  // display: none;
+  display: flex;
+  flex-direction: column;
+  background: $primary-back;
+
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 0.25s, 0s;
+  transition-delay: 0s, 0.25s;
+  transition-property: opacity, visibility;
+  transition-timing-function: ease-out;
+}
+.submenu li {
+  list-style: none;
+  color: $color-3;
+  padding: 5px 15px;
+}
+.submenu li:last-of-type {
+  padding-bottom: 10px;
+}
+.submenu li:first-of-type {
+  padding-top: 10px;
+}
+.submenu li:hover {
+  background: $primary-back-lighter-10;
 }
