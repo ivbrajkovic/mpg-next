@@ -1,16 +1,12 @@
 // Zbirke - Opcenita
 
 import { useEffect } from "react";
-import Fade from "react-reveal/Fade";
 
 import fetchDataAsync from "../../../../lib/fetchDataAsync";
 
 import Hero from "../../../../components/Hero";
 import Section1 from "../../../../components/Zbirke/Opcenita/Section1";
-// import Section1 from "components/zbirke/Opcenita/Section1";
-// import Section2 from "../../../../components/Zbirke/Opcenita/Section2";
 import Section2 from "../../../../components/Zbirke/Opcenita/Section2";
-// import Section4 from "../../../../components/Zbirke/Opcenita/Section4";
 
 // const FOLDER = '/static/img/odjeli/zbirke/mini/';
 
@@ -32,16 +28,10 @@ const Zbirke = ({ lang, data }) => {
   }, []);
 
   return (
-    // <div className="zbirke">
-    //     <Opcenita lang={lang} data={data} />
-    // </div>
-
     <>
       <Hero title={text.hero} srcset={banners} />
       <div className="container">
-        <Fade cascsade ssrReveal>
-          <Section1 data={text} />
-        </Fade>
+        <Section1 data={text} />
         <Section2 page={page} meni={meni} folder={folder} gallery={gallery} />
       </div>
     </>

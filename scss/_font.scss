@@ -45,7 +45,7 @@
   font-size: 21px;
   // line-height: 24px;
   // margin: 24px 0;
-  color: content-1;
+  // color: content-1;
   // color: red;
 }
 .content-1-light {
@@ -67,8 +67,9 @@
   font-size: 16px;
 }
 .content-footer {
-  @extend .content-2;
+  @extend .content-3;
   color: $footer-1;
+  font-size: 18px;
 }
 
 .post-title {
@@ -116,9 +117,11 @@
   .content-3 {
     font-size: 16px;
   }
-  .content-4,
-  .content-footer {
+  .content-4 {
     font-size: 15px;
+  }
+  .content-footer {
+    font-size: 16px;
   }
 }
 

@@ -21,14 +21,12 @@ const Odjel = ({ lang, odjel, onSetOdjel, success, data }) => {
   // const [odjel, setOdjel] = useState(props.odjel);
 
   useEffect(() => {
-    ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)";
     buttons = document.querySelectorAll(".odjeli__section-6__menu-item");
     buttons &&
       buttons.forEach(btn => {
         btn.addEventListener("mousedown", ripplet);
       });
-
-    console.log("TCL: Index -> buttons", buttons);
+    AOS.refreshHard();
 
     return () => {
       buttons &&

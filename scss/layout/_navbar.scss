@@ -199,6 +199,7 @@ nav {
   padding: 0;
   // position: relative;
   // margin-top: 15px;
+  display: none;
   align-self: flex-end;
 }
 
@@ -209,8 +210,9 @@ nav {
 .menu > li {
   position: relative;
   display: inline-block;
-  margin-right: 22px;
+  margin-right: 14px;
   padding: 0 0 20px 0px;
+
   & a.active {
     &::before {
       position: absolute;

@@ -42,6 +42,9 @@ export default class MyApp extends App {
   //     await this.setData(route, this.state.lang);
   // };
 
+  componentDidMount = () =>
+    (ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)");
+
   setLanguage = lang => {
     this.setState({
       lang: lang

@@ -42,7 +42,7 @@ const Index = ({ lang, success, data }) => {
   const section5 = (success && data && data.section5) || {};
 
   useEffect(() => {
-    ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)";
+    // ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)";
     buttons = document.querySelectorAll(".btn");
     buttons &&
       buttons.forEach(btn => {

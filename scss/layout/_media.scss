@@ -9,8 +9,8 @@
     .hamburger {
       display: none;
     }
-    .menu-lists {
-      display: flex;
+    .menu {
+      display: block;
     }
   }
 }
@@ -20,6 +20,9 @@
     font-size: 21px;
     .language {
       font-size: 18px;
+    }
+    .menu > li {
+      margin-right: 22px;
     }
   }
 }

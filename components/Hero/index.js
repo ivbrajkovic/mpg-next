@@ -1,7 +1,7 @@
 // Hero
 
 import { useState, useEffect } from "react";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 
 const Hero = ({ title, srcset, move }) => {
   const [loaded, setLoaded] = useState(false);

@@ -1,7 +1,7 @@
 // Zbirke - detalji
 
 import { useEffect } from "react";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 
 import fetchDataAsync from "../../../../../lib/fetchDataAsync";
 import Section1 from "../../../../../components/Zbirke/Detaljna/Section1";
@@ -22,21 +22,24 @@ const Detalji = ({ lang, data }) => {
 
   useEffect(() => {
     lightbox.reload();
+    AOS.refreshHard();
   }, []);
 
   return (
     <div className="container zbirke-detalji">
-      <Fade delay={250} cascsade ssrReveal>
-        <Section1
-          folder={FOLDER}
-          title={title}
-          image={image}
-          audio={audio}
-          video={video}
-        />
-        <Section2 content={content} />
-        <Section3 folder={FOLDER} data={gallery} />
-      </Fade>
+      {/* <Fade delay={250} cascsade ssrReveal> */}
+      <Section1
+        folder={FOLDER}
+        title={title}
+        image={image}
+        audio={audio}
+        video={video}
+        data-aos="fade"
+        data-aos-duration="1000"
+      />
+      <Section2 content={content} />
+      <Section3 folder={FOLDER} data={gallery} />
+      {/* </Fade> */}
     </div>
   );
 };
