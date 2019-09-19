@@ -13,10 +13,17 @@ const Section2 = ({ lang, data }) => {
       {section2 &&
         section2.map &&
         section2.map((item, index) => {
-          const gallery = data.gallery.filter(img =>
+          const gallery = data.gallery.filter(img => {
+            console.log("TCL: img", img);
             // new RegExp(item.src, "i").test(img)
-            img.toLowerCase().includes(item.src.toLowerCase())
-          );
+            console.log("TCL: item.src.toLowerCase()", item.src.toLowerCase());
+            console.log("TCL: img.toLowerCase()", img.toLowerCase());
+            console.log(
+              "TCL: img.toLowerCase().includes(item.src.toLowerCase())",
+              img.toLowerCase().includes(item.src.toLowerCase())
+            );
+            return img.toLowerCase().includes(item.src.toLowerCase());
+          });
           console.log("TCL: item.src", item.src);
           // console.log("TCL: large", large);
           console.log("TCL: gallery", gallery);
