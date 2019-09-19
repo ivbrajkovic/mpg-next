@@ -14,13 +14,13 @@ const Hero = ({ title, srcset, move }) => {
         ? srcset[1]
         : srcset[2];
 
-    console.log("TCL: Hero -> image", image);
+    // console.log("TCL: Hero -> image", image);
     const img = new Image();
     img.onload = () => setLoaded(true);
     img.src = image;
   }, []);
 
-  console.log("TCL: Hero -> loaded", loaded);
+  // console.log("TCL: Hero -> loaded", loaded);
   return (
     // <Fade ssrReveal delay={loaded}>
     <section

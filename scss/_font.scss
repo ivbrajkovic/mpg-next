@@ -9,12 +9,12 @@
   text-transform: uppercase;
   color: $header-1;
   margin-bottom: 22px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.42);
+  // text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.42);
 }
 .header-1-light {
   @extend .header-1;
   color: $color-5;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
+  // text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
 }
 .header-2 {
   @extend .header-1;
@@ -24,7 +24,7 @@
 .header-2-light {
   @extend .header-1;
   color: $color-5;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
+  // text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
 }
 .header-3 {
   @extend .header-1;
@@ -51,7 +51,7 @@
 .content-1-light {
   @extend .content-1;
   color: $color-5;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
+  // text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
 }
 .content-2 {
   @extend .content-1;

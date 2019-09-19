@@ -25,9 +25,10 @@ const Section4 = ({ data }) => {
               {((item.startsWith("-") ||
                 item.startsWith("−") ||
                 item.startsWith("–")) && (
-                <div className="list-item" key={index}>
+                // <div className="list-item" key={index}>
+                <li style={{ marginLeft: 40 }} key={index}>
                   {item.substring(1)}
-                </div>
+                </li>
               )) || <p key={index}>{item}</p>}
             </>
           );

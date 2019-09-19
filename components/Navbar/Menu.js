@@ -42,7 +42,9 @@ const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
         />
 
         <div className="logo">
-          <img src="/static/img/logo.png" alt="MGP logo" />
+          <Link href="/">
+            <img src="/static/img/logo.png" alt="MGP logo" />
+          </Link>
         </div>
 
         <div className="hamburger hamburger--collapse">
@@ -61,7 +63,7 @@ const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
 
                 {menuItem.hasSubmenu && (
                   <>
-                    {/* <div className="dropdown"></div> */}
+                    <div className="dropdown"></div>
                     {/* <div>&#9662;</div> */}
                     {/* <div>&#8964;</div> */}
                     <ul className={`submenu`}>

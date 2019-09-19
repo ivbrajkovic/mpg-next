@@ -8,7 +8,6 @@ nav {
   right: 0;
   left: 0;
   z-index: 1030;
-
   background: $nav-back;
 }
 
@@ -18,7 +17,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-
   height: $nav-height;
   transition: height 0.3s ease-out 0s;
 
@@ -53,28 +51,28 @@ nav {
   }
   .logo {
     img {
-      // transition-delay: 200ms;
-      // transition-duration: 0, 500ms;
-      // transition-property: height, width;
+      cursor: pointer;
       transition: transform 300ms ease-out;
       transform-origin: 0% 50%;
     }
   }
 
-  .menu-lists {
-    // display: flex;
+  .menu {
+    margin: 0;
+    padding: 0;
     display: none;
     align-self: flex-end;
-
-    background: red;
   }
 
-  .menu-items {
-    position: relative;
-    display: block;
-    padding: 0 0 20px 0px;
-    margin-left: 22px;
+  .menu li {
     cursor: pointer;
+  }
+
+  .menu > li {
+    position: relative;
+    display: inline-block;
+    margin-right: 14px;
+    padding: 0 0 20px 0px;
 
     & a.active {
       &::before {
@@ -107,69 +105,64 @@ nav {
       transform: translate(-50%, 0) scaleX(1);
       opacity: 1;
     }
-
-    &:hover .submenu-lists {
-      display: block;
-    }
-
-    // Submenu 1
-    @include on-hover-submenu-animation(
-      6,
-      "&",
-      ".submenu--1-list",
-      300ms,
-      300ms
-    );
-
-    // Submenu 2
-    @include on-hover-submenu-animation(
-      3,
-      "&",
-      ".submenu--2-list",
-      200ms,
-      300ms
-    );
   }
 
-  .submenu-lists {
+  .menu > li:last-of-type {
+    margin-right: 0px;
+  }
+
+  .menu li:hover > .submenu {
+    transition-duration: 0s, 0.25s;
+    transition-delay: 0s, 0s;
+    transition-property: visibility, opacity;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .submenu {
+    padding: 0;
     position: absolute;
     top: 100%;
     left: 0;
+    width: max-content;
     // display: none;
-    // width: max-content;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
     background: $primary-back;
-    list-style: none;
-  }
 
-  .nav_submenu-items {
-    padding: 0 15px;
-    @include text-center(35px);
-    cursor: pointer;
-    color: $color-3;
-    background: $primary-back;
-    transition: background 0.3s ease 0s;
-
-    &:hover {
-      background: $primary-back-lighter-10;
-    }
-  }
-}
-
-@keyframes menu-animation {
-  from {
+    visibility: hidden;
     opacity: 0;
-    transform: rotateX(-180deg);
+    transition-duration: 0.25s, 0s;
+    transition-delay: 0s, 0.25s;
+    transition-property: opacity, visibility;
+    transition-timing-function: ease-out;
   }
-  to {
-    opacity: 1;
-    transform: rotateX(0deg);
+
+  .submenu li {
+    list-style: none;
+    color: $color-3;
+    padding: 5px 15px;
+  }
+
+  .submenu li:last-of-type {
+    padding-bottom: 10px;
+  }
+
+  .submenu li:first-of-type {
+    padding-top: 10px;
+  }
+
+  .submenu li:hover {
+    background: $primary-back-lighter-10;
   }
 }
+
+/*
+ * Navbar animation
+ */
 
 .navbar-shrink {
   height: 70px;
-
   .language {
     visibility: hidden;
     opacity: 0;
@@ -194,96 +187,13 @@ nav {
   }
 }
 
-.menu {
-  margin: 0;
-  padding: 0;
-  // position: relative;
-  // margin-top: 15px;
-  display: none;
-  align-self: flex-end;
-}
-
-.menu li {
-  cursor: pointer;
-}
-
-.menu > li {
-  position: relative;
-  display: inline-block;
-  margin-right: 14px;
-  padding: 0 0 20px 0px;
-
-  & a.active {
-    &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      border-bottom: 10px solid $color-4;
-    }
-  }
-  &::after {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 50%;
-    height: 10px;
-    width: 100%;
+@keyframes menu-animation {
+  from {
     opacity: 0;
-    background: $color-4;
-    // background: red;
-    transform: translate(-50%, 0) scaleX(0);
-    // transition: all 0.3s ease-in-out;
-    transition: $nav-transation-fnc;
+    transform: rotateX(-180deg);
   }
-  &:hover:not(.active):after {
-    transform: translate(-50%, 0) scaleX(1);
+  to {
     opacity: 1;
+    transform: rotateX(0deg);
   }
-}
-
-.menu > li:last-of-type {
-  margin-right: 0px;
-}
-
-.menu li:hover > .submenu {
-  transition-duration: 0s, 0.25s;
-  transition-delay: 0s, 0s;
-  transition-property: visibility, opacity;
-  opacity: 1;
-  visibility: visible;
-}
-.submenu {
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: max-content;
-  // display: none;
-  display: flex;
-  flex-direction: column;
-  background: $primary-back;
-
-  visibility: hidden;
-  opacity: 0;
-  transition-duration: 0.25s, 0s;
-  transition-delay: 0s, 0.25s;
-  transition-property: opacity, visibility;
-  transition-timing-function: ease-out;
-}
-.submenu li {
-  list-style: none;
-  color: $color-3;
-  padding: 5px 15px;
-}
-.submenu li:last-of-type {
-  padding-bottom: 10px;
-}
-.submenu li:first-of-type {
-  padding-top: 10px;
-}
-.submenu li:hover {
-  background: $primary-back-lighter-10;
 }
