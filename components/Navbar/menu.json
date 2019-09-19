@@ -44,12 +44,12 @@
     "hasSubmenu": true,
     "submenu": [
       {
-        "hr": "Kulturno-povjesni odjel",
+        "hr": "Kulturno-povijesni odjel",
         "en": "Cultural History Department",
         "href": "/kulturni-odjel"
       },
       {
-        "hr": "Povjesni odjel",
+        "hr": "Povijesni odjel",
         "en": "History Department",
         "href": "/povjesni-odjel"
       },

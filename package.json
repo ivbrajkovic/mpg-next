@@ -22,7 +22,8 @@
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
         "react-reveal": "^1.2.2",
-        "react-transition-group": "^4.2.2"
+        "react-transition-group": "^4.2.2",
+        "read-excel-file": "^4.0.2"
     },
     "browserslist": [
         "last 2 versions",
