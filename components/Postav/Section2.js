@@ -17,8 +17,8 @@ const Section2 = ({ lang, data }) => {
           );
           // console.log("TCL: item.src", item.src);
           // console.log("TCL: large", large);
-          // console.log("TCL: gallery", gallery);
-          // console.log("TCL: gallery.length", gallery.length);
+          console.log("TCL: gallery", gallery);
+          console.log("TCL: gallery.length", gallery.length);
 
           return (
             <div
