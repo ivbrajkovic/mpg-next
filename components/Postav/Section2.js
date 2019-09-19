@@ -5,6 +5,7 @@ const DELAY = 50;
 
 const Section2 = ({ lang, data }) => {
   const section2 = (data && data[lang] && data[lang].section2) || [];
+  console.log("TCL: section2", section2);
   const folder = data.folder || "";
 
   return (
