@@ -14,7 +14,8 @@ const Section2 = ({ lang, data }) => {
         section2.map &&
         section2.map((item, index) => {
           const gallery = data.gallery.filter(img =>
-            new RegExp(item.src, "i").test(img)
+            // new RegExp(item.src, "i").test(img)
+            img.toLowerCase().includes(item.src.toLowerCase())
           );
           console.log("TCL: item.src", item.src);
           // console.log("TCL: large", large);
