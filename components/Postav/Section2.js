@@ -24,8 +24,8 @@ const Section2 = ({ lang, data }) => {
             );
             return img.toLowerCase().includes(item.src.toLowerCase());
           });
-          console.log("TCL: item.src", item.src);
           // console.log("TCL: large", large);
+          console.log("TCL: item.src", item.src);
           console.log("TCL: gallery", gallery);
           console.log("TCL: gallery.length", gallery.length);
 
