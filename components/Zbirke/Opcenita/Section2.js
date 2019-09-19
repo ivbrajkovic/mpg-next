@@ -15,6 +15,7 @@ const DELAY = 50;
 // let images = [];
 
 const Section2 = ({ page, meni, folder, gallery }) => {
+  console.log("TCL: gallery", gallery);
   const [grid, setGrid] = useState([]);
   // const firstRef = useRef(true);
   const gridRef = useRef();
@@ -25,6 +26,7 @@ const Section2 = ({ page, meni, folder, gallery }) => {
     const images =
       gallery.map &&
       gallery.map(item => {
+        console.log("TCL: item", item);
         return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2");
       });
 
