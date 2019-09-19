@@ -57,11 +57,7 @@ const kontakt = ({ lang }) => {
       <Hero title={text[lang].hero} srcset={srcset} />
 
       <div className="container contact-page__section1">
-        <h1
-          className="header-3"
-          data-aos="fade"
-          data-aos-duration="1000"
-        >
+        <h1 className="header-3" data-aos="fade" data-aos-duration="1000">
           Muzej Grada Pazina
         </h1>
         <div className="d-grid">
@@ -142,7 +138,29 @@ const kontakt = ({ lang }) => {
 
       <div className="m-t-xs-20-xl-40 contact-page__section2">
         <div className="container">
-          <div className="dummy"></div>
+          <iframe
+            // width="350"
+            // height="215"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=hr&amp;msa=0&amp;msid=213977031059810208133.00049caa016d3401b2179&amp;ll=45.240086,13.936157&amp;spn=0.83158,1.917114&amp;z=8&amp;output=embed"
+          ></iframe>
+          {/*<br />
+           <small>
+            Prikaži{" "}
+            <a
+              href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=hr&amp;msa=0&amp;msid=213977031059810208133.00049caa016d3401b2179&amp;ll=45.240086,13.936157&amp;spn=0.83158,1.917114&amp;z=8&amp;source=embed"
+              style={{
+                color: "#0000FF",
+                textAlign: "left"
+              }}
+            >
+              Muzej grada Pazina
+            </a>{" "}
+            na većoj karti
+          </small> */}
         </div>
       </div>
     </div>

@@ -47,7 +47,8 @@
     }
     &__section-3 {
       .d-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         &.zvona {
           grid-template-columns: repeat(auto-fit, minmax(147px, 1fr));
         }
@@ -83,7 +84,8 @@
     }
     &__section-3 {
       .d-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         &.zvona {
           grid-template-columns: repeat(auto-fit, minmax(147px, 1fr));
         }

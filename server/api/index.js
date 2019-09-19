@@ -42,9 +42,10 @@ router.get("/:folder", function(req, res, next) {
 
     const isBanner = data.isBanner;
     const isSlider = data.isSlider;
+    const isGallery = data.isGallery;
 
     // Return if no banner or slider
-    if (!(isBanner || isSlider)) {
+    if (!(isBanner || isSlider || isGallery)) {
       res.json({ success: true, data: data });
       return;
     }
@@ -53,15 +54,22 @@ router.get("/:folder", function(req, res, next) {
       if (!error) {
         isBanner && (data.banners = []);
         isSlider && (data.slides = []);
+        isGallery && (data.gallery = []);
 
         for (let index = 0; index < files.length; index++) {
           // Get banners
-          if (isBanner && /baner/gm.test(files[index])) {
+          if (isBanner && /baner/gim.test(files[index])) {
             data.banners.push(files[index]);
             continue;
             // Get slides
-          } else if (isSlider && /slider/gm.test(files[index])) {
+          } else if (isSlider && /slider/gim.test(files[index])) {
             data.slides.push(files[index]);
+            continue;
+          } else if (
+            isGallery &&
+            /^(?!.*(-tmb|baner)).*\.jpg|\.png$/gim.test(files[index])
+          ) {
+            data.gallery.push(files[index]);
             continue;
           }
         }

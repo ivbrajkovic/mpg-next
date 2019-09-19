@@ -1,5 +1,10 @@
-import { useEffect } from "react";
+// Stalni postav
+
+import { useEffect, useLayoutEffect, useState } from "react";
+
+import Spinner from "../components/Spinner/Spinner";
 import fetchDataAsync from "../lib/fetchDataAsync";
+import preloadImages from "../lib/preloadImages";
 
 const srcset = [
   "/static/img/postav/baner-stalnipostav-768px.jpg",
@@ -12,20 +17,36 @@ import Section1 from "../components/Postav/Section1";
 import Section2 from "../components/Postav/Section2";
 
 const postav = ({ lang, data }) => {
+  const folder = (data && data.folder) || "";
   const title = (data && data[lang] && data[lang].hero) || "";
-  const section1 = (data && data[lang] && data[lang].section1) || {};
-  const section2 = (data && data[lang] && data[lang].section2) || {};
+  let gallery = (data && data.gallery) || [];
+  gallery = gallery.map(item => folder + item);
+
+  const [loaded, setLoaded] = useState(false);
+
+  useLayoutEffect(() => {
+    preloadImages(gallery)
+      .then(() => setLoaded(true))
+      .catch(err =>
+        console.log("TCL: Stalni postav -> preloadImages -> err():", err)
+      );
+  }, []);
 
   useEffect(() => {
     AOS.refreshHard();
-  }, []);
+    lightbox.reload();
+  }, [loaded]);
 
   return (
     <>
       <Hero title={title} srcset={srcset} />
-      <div className="container">
-        <Section1 data={section1} />
-        <Section2 data={section2} />
+      <div className="container postav-page">
+        <Section1 lang={lang} data={data} />
+        {(loaded && <Section2 lang={lang} data={data} />) || (
+          <div className="m-t-xs-20-xl-40 d-flex justify-center">
+            <Spinner />
+          </div>
+        )}
       </div>
     </>
   );

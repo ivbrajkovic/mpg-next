@@ -67,11 +67,22 @@
   }
 
   &__section2 {
+    margin-bottom: -40px;
     background: #cacaca;
-    .dummy {
-      height: 450px;
-      background: lightcyan;
+    .container {
+      display: flex;
     }
+    iframe {
+      height: 450px;
+      width: 100%;
+    }
+    // small {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   z-index: 99;
+    // }
   }
 }
 

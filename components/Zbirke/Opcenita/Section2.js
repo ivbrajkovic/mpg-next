@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import preloadImages from "../../../lib/preloadImages";
-import GalleryItem from "./GalleryItem";
+import GalleryItem from "../../Gallery/GalleryItem";
 import MeniItem from "./MeniItem";
 // import Fade from 'react-reveal/Fade';
 
-import "./style.scss";
+// import "./style.scss";
 
 const DELAY = 50;
 // let lightbox = null;
@@ -59,7 +59,7 @@ const Section2 = ({ page, meni, folder, gallery }) => {
     <div className="zbirke__section-3" data-aos="">
       <div
         ref={gridRef}
-        className={`m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 zbirke-fade-bottom${
+        className={`m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 gallery-fade-bottom${
           page === "zvona" ? " zvona" : ""
         }`}
       >
