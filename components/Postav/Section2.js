@@ -15,7 +15,7 @@ const Section2 = ({ lang, data }) => {
           const gallery = data.gallery.filter(img =>
             new RegExp(item.src, "gim").test(img)
           );
-          // console.log("TCL: item.src", item.src);
+          console.log("TCL: item.src", item.src);
           // console.log("TCL: large", large);
           console.log("TCL: gallery", gallery);
           console.log("TCL: gallery.length", gallery.length);

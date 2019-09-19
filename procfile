@@ -1,2 +1,0 @@
-# set a default LANG if it does not exist in the environment
-export LANG=${LANG:-hr_HR.UTF-8}
