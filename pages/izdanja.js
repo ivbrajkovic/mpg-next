@@ -1,46 +1,65 @@
-// import { useEffect } from "react";
-// import fetchDataAsync from "../lib/fetchDataAsync";
+// Izdanja page
+
+import { useState, useRef, useEffect } from "react";
+import InfiniteScroll from "react-infinite-scroller";
+import preloadImages from "../lib/preloadImages";
 import fetch from "isomorphic-unfetch";
 
+import Hero from "../components/Hero";
+import IzdanjaItem from "../components/izdanja/IzdanjaItem";
+
 const srcset = [
-  "/static/img/aktivnosti/baner-aktivnosti-768px.jpg",
-  "/static/img/aktivnosti/baner-aktivnosti-1200px.jpg",
-  "/static/img/aktivnosti/baner-aktivnosti.jpg"
+  "/static/img/izdanja/baner-izdanja-768px.jpg",
+  "/static/img/izdanja/baner-izdanja-1200px.jpg",
+  "/static/img/izdanja/baner-izdanja.jpg"
 ];
 
-// import Hero from "../components/Hero";
-// import Section1 from "../components/Index/Section1";
+const numOfItemmsToAdd = 3;
 const folder = "static/img/izdanja/";
 
 const izdanja = ({ lang, data }) => {
-  console.log("TCL: izdanja -> data", data);
-  // const title = (data && data.hero && data.hero[lang]) || "";
-  // const folder = (data && data.folder) || "";
-  // const section1 = (data && data.section1) || [];
+  const [list, setList] = useState(data.slice(0, numOfItemmsToAdd));
+  const countRef = useRef(numOfItemmsToAdd);
 
-  // useEffect(() => {
-  //   AOS.refreshHard();
-  // }, []);
+  useEffect(() => {
+    const images =
+      (data && data.slice && data.slice(0, numOfItemmsToAdd)) || [];
+    preloadImages(images)
+      .then(() => setList(true))
+      .catch(err =>
+        console.log("TCL: Stalni postav -> preloadImages -> err():", err)
+      );
+  }, [data]);
+
+  // console.log("TCL: izdanja -> listIzdanja", listIzdanja);
+
+  const loadMoreContent = () => {
+    if (data.length > countRef.current) {
+      const tmp = data.slice(
+        countRef.current,
+        countRef.current + numOfItemmsToAdd
+      );
+      // console.log("TCL: loadMoreContent -> tmp", tmp);
+      countRef.current += numOfItemmsToAdd;
+      setList(list => [...list, ...tmp]);
+    }
+  };
 
   return (
     <>
-      <div className="container izdanje-page">
-        {data &&
-          data.map &&
-          data.map((item, index) => {
-            return (
-              <div className="m-b-xs-20-xl-40 izdanje-item">
-                <div className="item-1">
-                  <h1 className="header-3"></h1>
-                  <p className="content-2"></p>
-                  <p className="content-2"></p>
-                </div>
-                <div className="item-2">
-                  <img src={folder + item.fotka + ".jpg"} alt="" srcset="" />
-                </div>
-              </div>
-            );
+      <Hero title="izdanja" srcset={srcset} />
+      <div className="container izdanja-page">
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={loadMoreContent}
+          hasMore={true}
+          loader={<h1>Loading ...</h1>}
+          // className="d-grid"
+        >
+          {list.map((item, index) => {
+            return <IzdanjaItem folder={folder} item={item} key={index} />;
           })}
+        </InfiniteScroll>
       </div>
     </>
   );

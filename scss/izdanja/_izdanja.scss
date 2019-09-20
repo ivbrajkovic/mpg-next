@@ -1,0 +1,26 @@
+.izdanja-page {
+  .izdanja-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 400px;
+    background: #efefef;
+
+    .header-3 {
+      color: #005da4;
+      font-style: italic;
+    }
+
+    .item-1 {
+      padding: 40px 80px;
+    }
+
+    .item-2 {
+      text-align: center;
+      background: #9c9c9c;
+      img {
+        height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
