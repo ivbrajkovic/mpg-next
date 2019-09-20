@@ -1,0 +1,35 @@
+{
+  "page": "usluge",
+  "isGallery": true,
+  "folder": "/static/img/usluge/",
+  "hr": {
+    "hero": "usluge",
+    "section1": {
+      "title": "najam prostora",
+      "content": "Pazinski kaštel poznat je kao najočuvanija srednjovjekovna utvrda središnje Istre s jedinstvenim unutrašnjim dvorištem i prostranim (izložbenim) prostorijama. \\nSukladno tome, važno je poticati stalnu potrebu i interese za korištenje prostora za održavanje raznih kulturnih, zabavnih i znanstvenih aktivnosti – izložbi, koncerata, promocija, predavanja i sl. U tu je svrhu moguće iznajmiti prostor Rotonde, na drugom katu polukružne kule Kaštela te izložbene prostore Muzeja, na prvom katu Kaštela, u skladu sa Zakonom o zaštiti spomenika kulture (link) i uvjetima propisanim od strane Muzeja.\\nIzložbeni prostor (prostor za povremene izložbe Muzeja) na prvom katu Pazinskog kaštela  uključuje dvije prostorije kvadratnog oblika ukupne površine 93,80 m2. Prostorije kao takve pogodne su za održavanje izložbi, predavanja, promocija i sl.",
+      "src": "1.kat"
+    },
+    "section2": {
+      "content": "Rotonda ili Viteška dvorana, smještena na drugom katu Pazinskog kaštela, prostorija je okruglog oblika površine 85 m2. Bijeli zidovi, visoki strop te drvene grede vizualno potpomažu dojam o prostoriji i ističu njenu važnost u Kaštelu nekad. Elegantni izgled prostorije Sam izgled prostorije moguće je koristiti u razne svrhe, a akustičnost dvorane izrazito pogoduje organizaciji manjih, intimnijih koncerata, glazbenih točki ili obreda vjenčanja.",
+      "src": "rotonda"
+    },
+    "section3": {
+      "content": "U svrhu zaštite muzejskoga prostora i izložene muzejske građe, korisnici moraju poštivati sljedeća pravila:\\n−u svim je prostorima Muzeja zabranjeno pušiti, paliti otvoreni plamen i pripremati hranu \\n−u svim je prostorima Muzeja zabranjeno koristiti ili pomicati zatečene muzejske eksponate\\n−u svim je prostorima Muzeja zabranjeno poduzimati bilo kakve radnje na zidovima i podovima koje bi mogle dovesti do oštećenja\\n−u sredstvima informiranja obavezno je koristiti puni naziv ustanove (Muzej Grada Pazina) i logotip Muzeja."
+    }
+  },
+  "en": {
+    "hero": "services",
+    "section1": {
+      "title": "SPACE RENTAL",
+      "content": "The Castle of Pazin is known as one of the most preserved medieval fortresses in central Istria with the unique inner courtyard and spacious (exhibition) area. Following that notion, it is important to encourage the constant need for space rental in organization of cultural, entertaining and scientific activities – exhibitions, concerts, promotions, lectures etc.\\nFor the purposes mentioned it is possible to rent the Rotonda or Knights' Hall located on the second floor of the Castle and the exhibitions spaces on the first floor. In order to rent the spaces one must abide by the Act on the Protection and Preservation of Cultural Goods (link) and the conditions issued from the Museum.  \\n\\nExhibition spaces (spaces for temporary exhibitions) on the first floor of the Castle include two rectangular-shaped rooms of 93,80 m2. The rooms are suitable for organising exhibitions, lectures, promotions and similar events.",
+      "src": "1.kat"
+    },
+    "section2": {
+      "content": "Rotonda or Knights Hall, situated on the second floor of the Castle is a round-shaped room of 85 m2. White walls, high ceilings and wooden beams visually help creating the impression of the room and emphasize its importance within the Castle in history. Due to its elegance, the room can be used for numerous purposes while the acoustics serve well in organization of smaller, intimate concerts, musical numbers or weddings.",
+      "src": "rotonda"
+    },
+    "section3": {
+      "content": "In order to protect the museum space and exhibits, users must abide by the following rules:\\n-It is forbidden to smoke, light an open fire or prepare food in the Museum, \\n-It is forbidden to use or move the exhibits, \\n-It is forbidden to take any action on the walls or floors of the Museum that may lead to damage,\\n-When advertising, one must use the name and the logo of the Pazin City Museum."
+    }
+  }
+}

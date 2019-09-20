@@ -1,0 +1,13 @@
+.usluge-page {
+  .d-grid {
+    grid-template-columns: repeat(2, minmax(150px, 300px));
+  }
+}
+
+@media (min-width: 992px) {
+  .usluge-page {
+    .d-grid {
+      grid-template-columns: repeat(3, minmax(150px, 300px));
+    }
+  }
+}

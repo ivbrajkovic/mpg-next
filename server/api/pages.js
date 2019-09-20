@@ -5,6 +5,7 @@ const express = require("express");
 const router = express.Router();
 
 const izdanja = require("../schema/izdanja");
+const getJsonData = require("../lib/getJsonData");
 
 let file = "";
 let schema = {};
@@ -20,6 +21,14 @@ router.get("/", function(req, res, next) {
     case "izdanja":
       schema = izdanja;
       file = "static/img/izdanja/izdanja MGP.xlsx";
+      readXlsxFile(file, { schema }).then(({ rows, errors }) => {
+        res.send(rows);
+      });
+      break;
+
+    case "usluge":
+      const json = `server/db/usluge/usluge.json`;
+      getJsonData(res, json);
       break;
 
     default:
@@ -27,13 +36,6 @@ router.get("/", function(req, res, next) {
       return;
       break;
   }
-
-  readXlsxFile(file, { schema }).then(({ rows, errors }) => {
-    // readXlsxFile(file).then(rows => {
-    // console.log("TCL: errors", errors);
-    // console.log("TCL: rows", rows);
-    res.send(rows);
-  });
 });
 
 module.exports = router;

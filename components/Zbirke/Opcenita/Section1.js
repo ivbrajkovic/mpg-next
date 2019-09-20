@@ -1,8 +1,10 @@
 // Zbirke - Opcenita - Section 4
 
+import getContentFromJson from "../../../lib/getContentFromJson";
+
 const Section4 = ({ data }) => {
-  const header = (data.header && data.header.split("\\n")) || [];
-  const text = (data.content && data.content.split("\\n")) || [];
+  // const header = (data.header && data.header.split("\\n")) || [];
+  // const text = (data.content && data.content.split("\\n")) || [];
 
   return (
     <div
@@ -13,13 +15,16 @@ const Section4 = ({ data }) => {
     >
       <div className="float-right">
         <div className="header">
-          {header.map((item, index) => (
+          {getContentFromJson(data.header)}
+
+          {/* {header.map((item, index) => (
             <p key={index}>{item}</p>
-          ))}
+          ))} */}
         </div>
       </div>
       <div className="content-1">
-        {text.map((item, index) => {
+        {getContentFromJson(data.content)}
+        {/* {text.map((item, index) => {
           return (
             <>
               {((item.startsWith("-") ||
@@ -32,7 +37,7 @@ const Section4 = ({ data }) => {
               )) || <p key={index}>{item}</p>}
             </>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

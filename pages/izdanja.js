@@ -24,14 +24,22 @@ const loader = (
   </div>
 );
 const izdanja = ({ lang, data }) => {
+  const [loaded, setLoaded] = useState(false);
   const [list, setList] = useState(data.slice(0, numOfItemmsToAdd));
   const countRef = useRef(numOfItemmsToAdd);
 
   useEffect(() => {
     const images =
-      (data && data.slice && data.slice(0, numOfItemmsToAdd)) || [];
+      (data &&
+        data.slice &&
+        data.slice(0, numOfItemmsToAdd).map(item => {
+          return `${folder}${
+            item.fotka > 9 ? item.fotka : "0" + item.fotka
+          }.jpg`;
+        })) ||
+      [];
     preloadImages(images)
-      .then(() => setList(true))
+      .then(() => setLoaded(true))
       .catch(err =>
         console.log("TCL: Stalni postav -> preloadImages -> err():", err)
       );
@@ -51,45 +59,36 @@ const izdanja = ({ lang, data }) => {
     }
   };
 
+  useEffect(() => {
+    AOS.refreshHard();
+  }, [loaded]);
+
   return (
     <>
       <Hero title="izdanja" srcset={srcset} />
-      <div className="container izdanja-page">
-        <InfiniteScroll
-          pageStart={0}
-          loadMore={loadMoreContent}
-          hasMore={data.length > list.length}
-          loader={loader}
-          // loader={<h1>Loading ...</h1>}
-          // className="d-grid"
-        >
-          {list.map((item, index) => {
-            return <IzdanjaItem folder={folder} item={item} key={index} />;
-          })}
-        </InfiniteScroll>
-      </div>
+      {(loaded && (
+        <div className="container izdanja-page">
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={loadMoreContent}
+            hasMore={data.length > list.length}
+            loader={loader}
+            // loader={<h1>Loading ...</h1>}
+            // className="d-grid"
+          >
+            {list.map((item, index) => {
+              return <IzdanjaItem folder={folder} item={item} key={index} />;
+            })}
+          </InfiniteScroll>
+        </div>
+      )) ||
+        loader}
     </>
   );
 };
 
 izdanja.getInitialProps = async function(context) {
-  // console.log(
-  //   "TCL: ******************* FETCH DATA ASYNC ***********************"
-  // );
-  // console.log("TCL: fetchDataAsync -> process.browser:", process.browser);
-
-  // let baseUrl = "";
-  // if (typeof window === "undefined") {
-  //   baseUrl = `${context.req.protocol}://${context.req.get("host")}`;
-  // }
-  // const url = `${baseUrl}/api/new?page=izdanja`;
-  // console.log("TCL: fetchDataAsync -> url", url);
-
-  // const res = await fetch(url);
-  // const data = await res.json();
-
-  const data = await fetchDataAsync("/api/new?page=izdanja");
-  console.log("TCL: data", data);
+  const data = await fetchDataAsync(context, "/api/new?page=izdanja");
   return { data: data };
 };
 
