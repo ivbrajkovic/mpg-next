@@ -86,13 +86,13 @@ const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
                           );
                         return node;
 
-                        return isOdjel(
-                          lang,
-                          menuItem.href,
-                          submenuItem,
-                          j,
-                          setOdjel
-                        );
+                        // return isOdjel(
+                        //   lang,
+                        //   menuItem.href,
+                        //   submenuItem,
+                        //   j,
+                        //   setOdjel
+                        // );
                       })}
                     </ul>
                   </>

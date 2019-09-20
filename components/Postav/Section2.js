@@ -17,18 +17,18 @@ const Section2 = ({ lang, data }) => {
             // return new RegExp(item.src, "i").test(img);
             // img.toLowerCase().includes(item.src.toLowerCase())
             // );
-            console.log("TCL: item.src.toLowerCase()", item.src.toLowerCase());
-            console.log("TCL: img.toLowerCase()", img.toLowerCase());
-            console.log(
-              "TCL: img.toLowerCase().includes(item.src.toLowerCase())",
-              img.toLowerCase().includes(item.src.toLowerCase())
-            );
+            // console.log("TCL: item.src.toLowerCase()", item.src.toLowerCase());
+            // console.log("TCL: img.toLowerCase()", img.toLowerCase());
+            // console.log(
+            //   "TCL: img.toLowerCase().includes(item.src.toLowerCase())",
+            //   img.toLowerCase().includes(item.src.toLowerCase())
+            // );
             return img.toLowerCase().includes(item.src.toLowerCase());
             // img.toLowerCase().includes(item.src.toLowerCase());
           });
           // console.log("TCL: large", large);
           // console.log("TCL: item.src", item.src);
-          console.log("TCL: gallery", gallery);
+          // console.log("TCL: gallery", gallery);
           // console.log("TCL: gallery.length", gallery.length);
 
           return (

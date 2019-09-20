@@ -11,7 +11,7 @@ const Section1 = ({ lang, folder, data, animation, duration }) => {
   return (
     // <Fade delay={250} ssrReveal>
 
-    <div data-aos={animation} data-aos-duration={duration}>
+    <div data-aos="fade" data-aos-duration="1000">
       <section className={`container m-t-xs-20-xl-40 text-center section-1`}>
         <div className="w3-card-4 d-grid">
           <div className="item-1">

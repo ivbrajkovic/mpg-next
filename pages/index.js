@@ -25,7 +25,7 @@ const srcset = [
 let buttons = null;
 
 const Index = ({ lang, success, data }) => {
-  console.log("TCL: Index -> success", success);
+  // console.log("TCL: Index -> success", success);
   // const [dbData, setDbData] = useState();
   const [loaded, setLoaded] = useState(false);
 
@@ -49,7 +49,7 @@ const Index = ({ lang, success, data }) => {
         btn.addEventListener("mousedown", ripplet);
       });
 
-    console.log("TCL: Index -> buttons", buttons);
+    // console.log("TCL: Index -> buttons", buttons);
 
     return () => {
       buttons &&
@@ -90,13 +90,7 @@ const Index = ({ lang, success, data }) => {
       <Hero move srcset={srcset} />
       {(loaded && (
         <>
-          <Section1
-            lang={lang}
-            folder={folder}
-            data={section1}
-            animation="fade"
-            duration="1000"
-          />
+          <Section1 lang={lang} folder={folder} data={section1} />
           <Section2 lang={lang} folder={folder} data={section2} />
           <Section3 lang={lang} folder={folder} data={section3} />
           <Section4

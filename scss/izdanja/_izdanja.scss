@@ -1,7 +1,8 @@
 .izdanja-page {
   .izdanja-item {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    // grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 400px;
     background: #efefef;
 
@@ -11,7 +12,8 @@
     }
 
     .item-1 {
-      padding: 40px 80px;
+      grid-row: 2;
+      padding: 20px 20px;
     }
 
     .item-2 {
@@ -20,6 +22,19 @@
       img {
         height: 100%;
         max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .izdanja-page {
+    .izdanja-item {
+      grid-template-columns: 2fr 1fr;
+
+      .item-1 {
+        grid-row: 1;
+        padding: 40px 80px;
       }
     }
   }
