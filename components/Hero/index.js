@@ -24,6 +24,7 @@ const Hero = ({ title, srcset, move }) => {
   return (
     // <Fade ssrReveal delay={loaded}>
     <section
+      id="hero"
       className={`w3-card-4 banner hero fade${loaded ? " fade-active" : ""}`}
     >
       <img

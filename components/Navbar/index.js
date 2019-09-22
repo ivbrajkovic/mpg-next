@@ -1,84 +1,72 @@
 // Navbar - index
 
-import React, { Component } from "react";
-// import fetch from 'isomorphic-unfetch';
-// import { LanguageContext } from '../../contexts';
+import { useState, useEffect } from "react";
 
 import json from "./menu.json";
 import Menu from "./Menu";
 
-// const menu = json.menu;
+const Navbar = props => {
+  const [isShrinked, setIsShrinked] = useState(false);
 
-export default class Navbar extends Component {
-  state = {
-    isShrinked: false,
-    language: "hr"
-  };
-  // static contextType = LanguageContext;
-  ticking = false;
-  scrollBreakPoint = 250;
-  widthBreakPoint = 1200;
+  useEffect(() => {
+    const widthBreakPoint = 1200;
 
-  componentDidMount = () => {
-    this.shrinkNavbar(window.scrollY);
-    window.addEventListener("scroll", this.handleScroll);
-  };
+    const options = {
+      root: null,
+      threshold: 0,
+      rootMargin: "-100px"
+    };
 
-  componentWillUnmount = () =>
-    window.removeEventListener("scroll", this.handleScroll);
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        // console.log("isIntersecting: ", entry.isIntersecting);
 
-  shrinkNavbar = (posY, width) => {
-    const { isShrinked } = this.state;
-    if (
-      !isShrinked &&
-      posY > this.scrollBreakPoint &&
-      width < this.widthBreakPoint
-    ) {
-      this.setState({ isShrinked: true });
-    } else if (isShrinked && posY < this.scrollBreakPoint) {
-      this.setState({ isShrinked: false });
-    }
-  };
+        // if (entry.isIntersecting) {
+        //   if (window.innerWidth < widthBreakPoint) {
+        //     setIsShrinked(true);
+        //   }
+        //   setIsShrinked(false);
+        // } else setIsShrinked(false);
 
-  handleScroll = () => {
-    // if (!this.state.ticking) {
-    if (!this.ticking) {
-      window.requestAnimationFrame(() => {
-        this.shrinkNavbar(window.scrollY, window.innerWidth);
-        // this.setState({ ticking: false });
-        this.ticking = false;
+        if (window.innerWidth < widthBreakPoint) {
+          setIsShrinked(!entry.isIntersecting);
+        } else setIsShrinked(false);
+
+        // setIsShrinked(isShrinked => {
+        //   if (isShrinked) return false;
+        // });
       });
-    }
-    // this.setState({ ticking: true });
-    this.ticking = true;
-  };
+    }, options);
 
-  setLanguage = value => this.props.onChangeLanguage(value);
-  setOdjel = (path, index) => this.props.onSetOdjel(path, index);
+    observer.observe(document.getElementById("hero"));
 
-  i = 0;
-  render() {
-    console.log("TCL: Navbar -> render: ", ++this.i);
-    // console.log('TCL: Navbar -> render -> this.context', this.context);
+    // const navbar = document.get
+    // document.querySelector(".hamburger").addEventListener(
+    //   "click",
+    //   function() {
+    //     this.classList.toggle("is-active");
+    //   },
+    //   false
+    // );
+    return () => observer.disconnect();
+  }, []);
 
-    return (
-      // <LanguageContext.Provider value={{ lng, lngUpdate }}>
-      <Menu
-        // content={json ? json[this.context.language] : []}
-        lang={this.props.lang}
-        menu={json || []}
-        onChangeLanguage={this.setLanguage}
-        shrink={this.state.isShrinked}
-        onTest={this.props.onTest}
-        onSetOdjel={this.setOdjel}
-      />
-      // <Menu
-      //     content={json ? json[this.context.language] : []}
-      //     shrink={this.state.isShrinked}
-      // />
-      // <Menu content={json ? json[this.state.lng] : []} shrink={this.state.isShrinked} />
-      // </LanguageContext.Provider>
-    );
-    // return <h1>Hello from menu</h1>;
-  }
-}
+  const setLanguage = value => props.onChangeLanguage(value);
+  const setOdjel = (path, index) => props.onSetOdjel(path, index);
+
+  let i = 0;
+  console.log("TCL: Navbar -> render: ", ++i);
+
+  return (
+    <Menu
+      lang={props.lang}
+      menu={json || []}
+      onChangeLanguage={setLanguage}
+      shrink={isShrinked}
+      onTest={props.onTest}
+      onSetOdjel={setOdjel}
+    />
+  );
+};
+
+export default Navbar;

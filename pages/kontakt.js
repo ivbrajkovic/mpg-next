@@ -141,10 +141,10 @@ const kontakt = ({ lang }) => {
           <iframe
             // width="350"
             // height="215"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
+            marginHeight="0"
+            marginWidth="0"
             src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=hr&amp;msa=0&amp;msid=213977031059810208133.00049caa016d3401b2179&amp;ll=45.240086,13.936157&amp;spn=0.83158,1.917114&amp;z=8&amp;output=embed"
           ></iframe>
           {/*<br />

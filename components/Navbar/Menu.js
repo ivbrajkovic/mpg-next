@@ -1,33 +1,22 @@
+// Menu items
+
 // import { withRouter } from 'next/router';
+import { useState } from "react";
+
 import Language from "./Language";
 import ActiveLink from "./Link";
 import Link from "next/link";
 
-// const isOdjel = (lang, path, subitem, index, setOdjel) => {
-//   let node = null;
-//   if (path === "/odjeli") {
-//     node = (
-//       <li
-//         key={index}
-//         className="nav_submenu-items"
-//         onClick={() => setOdjel("/odjeli", index)}
-//       >
-//         {subitem[lang]}
-//       </li>
-//     );
-//   } else {
-//     node = (
-//       <Link href={subitem.href} key={index}>
-//         <li className="nav_submenu-items">{subitem[lang]}</li>
-//       </Link>
-//     );
-//   }
-//   return node;
-// };
-
 const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
+  const [isActive, setIsActive] = useState(false);
+
   const setLanguage = value => onChangeLanguage(value);
   const setOdjel = (path, index) => onSetOdjel(path, index);
+
+  const closeMenu = () => isActive && setIsActive(false);
+
+  let submenu = 1;
+  console.log("TCL: Menu -> render", submenu);
 
   return (
     <nav className="w3-card-4">
@@ -47,18 +36,23 @@ const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
           </Link>
         </div>
 
-        <div className="hamburger hamburger--collapse">
+        <div
+          className={`hamburger hamburger--collapse${(isActive &&
+            " is-active") ||
+            ""}`}
+          onClick={() => setIsActive(isActive => !isActive)}
+        >
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
         </div>
 
-        <ul className="menu">
+        <ul className={`menu${(isActive && " is-open") || ""}`}>
           {menu.map((menuItem, i) => {
             return (
               <li key={i}>
                 <ActiveLink activeClassName="active" href={menuItem.href}>
-                  <a>{menuItem[lang]}</a>
+                  <a onClick={() => closeMenu()}>{menuItem[lang]}</a>
                 </ActiveLink>
 
                 {menuItem.hasSubmenu && (
@@ -66,33 +60,33 @@ const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
                     <div className="dropdown"></div>
                     {/* <div>&#9662;</div> */}
                     {/* <div>&#8964;</div> */}
-                    <ul className={`submenu`}>
+                    <ul className={`submenu submenu-${submenu++}`}>
                       {menuItem.submenu.map((submenuItem, j) => {
                         const node =
                           menuItem.href === "/odjeli" ? (
                             <li
                               key={j}
                               // className="submenu-items"
-                              onClick={() => setOdjel("/odjeli", j)}
+                              onClick={() => {
+                                setOdjel("/odjeli", j);
+                                closeMenu();
+                              }}
+                              style={{ animationDelay: 575 + 125 * j + "ms" }}
                             >
                               <a>{submenuItem[lang]}</a>
                             </li>
                           ) : (
                             <Link href={submenuItem.href} key={j}>
-                              <li>
-                                <a>{submenuItem[lang]}</a>
+                              <li
+                                style={{ animationDelay: 575 + 125 * j + "ms" }}
+                              >
+                                <a onClick={() => closeMenu()}>
+                                  {submenuItem[lang]}
+                                </a>
                               </li>
                             </Link>
                           );
                         return node;
-
-                        // return isOdjel(
-                        //   lang,
-                        //   menuItem.href,
-                        //   submenuItem,
-                        //   j,
-                        //   setOdjel
-                        // );
                       })}
                     </ul>
                   </>

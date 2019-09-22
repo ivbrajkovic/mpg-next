@@ -13,13 +13,14 @@
 //     btn.addEventListener('mousedown', ripplet);
 // });
 
-document.querySelector(".hamburger").addEventListener(
-  "click",
-  function() {
-    this.classList.toggle("is-active");
-  },
-  false
-);
+// document.querySelector(".hamburger").addEventListener(
+//   "click",
+//   function() {
+//     console.log("ham");
+//     this.classList.toggle("is-active");
+//   },
+//   false
+// );
 
 // function ImageOnLoad(id) {
 //     const el = document.getElementById(id);

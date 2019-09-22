@@ -88,39 +88,52 @@ const izdanja = ({ lang, data }) => {
       <Hero title={title} srcset={srcset} />
       {(loaded && (
         <div className="container usluge-page">
-          <h1 className="m-t-xs-20-xl-40 header-3">{section1.title}</h1>
-          <div className="content-1">
-            {getContentFromJson(section1.content)}
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <h1 className="m-t-xs-20-xl-40 header-3">{section1.title}</h1>
+            <div className="content-1">
+              {getContentFromJson(section1.content)}
+            </div>
+            <div className="d-grid gap-xs-20-xl-30">
+              {larges
+                .filter(large =>
+                  large.toLowerCase().includes(section1.src.toLowerCase())
+                )
+                .map((item, index) => (
+                  // <img src={item} key={index} />
+                  <GalleryItem
+                    key={index}
+                    thumb={item.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2")}
+                    large={item}
+                  />
+                ))}
+            </div>
           </div>
-          <div className="d-grid gap-xs-20-xl-30">
-            {thumbs
-              .filter(thumb =>
-                thumb.toLowerCase().includes(section1.src.toLowerCase())
-              )
-              .map((item, index) => (
-                <img src={item} key={index} />
-              ))}
+
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <div className="m-t-xs-20-xl-40 content-1">
+              {getContentFromJson(section2.content)}
+            </div>
+            <div className="d-grid gap-xs-20-xl-30">
+              {larges
+                .filter(large =>
+                  large.toLowerCase().includes(section2.src.toLowerCase())
+                )
+                .map((item, index) => (
+                  // <img src={item} key={index} />
+                  <GalleryItem
+                    key={index}
+                    thumb={item.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2")}
+                    large={item}
+                    // style={{ transitionDelay: `${index * DELAY}ms` }}
+                  />
+                ))}
+            </div>
           </div>
-          <div className="m-t-xs-20-xl-40 content-1">
-            {getContentFromJson(section2.content)}
-          </div>
-          <div className="d-grid gap-xs-20-xl-30">
-            {larges
-              .filter(large =>
-                large.toLowerCase().includes(section2.src.toLowerCase())
-              )
-              .map((item, index) => (
-                // <img src={item} key={index} />
-                <GalleryItem
-                  key={index}
-                  thumb={item.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2")}
-                  large={item}
-                  // style={{ transitionDelay: `${index * DELAY}ms` }}
-                />
-              ))}
-          </div>
-          <div className="m-t-xs-20-xl-40 content-1">
-            {getContentFromJson(section3.content)}
+
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <div className="m-t-xs-20-xl-40 content-1">
+              {getContentFromJson(section3.content)}
+            </div>
           </div>
         </div>
       )) ||

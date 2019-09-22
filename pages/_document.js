@@ -52,6 +52,11 @@ export default class MyDocument extends Document {
             href="https://unpkg.com/aos@2.3.1/dist/aos.css"
             rel="stylesheet"
           ></link> */}
+
+          <script
+            crossorigin="anonymous"
+            src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver"
+          ></script>
         </Head>
         <body>
           <Main />
