@@ -7,46 +7,72 @@
   },
   "section1": [
     {
+      "id": 1,
       "src": "post-big.png",
       "hr": {
-        "header": "definiraj nedefinirano",
+        "title": "HR Lorem ipsum dolor",
+        "header": "1 definiraj nedefinirano",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
       },
       "en": {
-        "header": "definiraj nedefinirano",
+        "title": "EN Lorem ipsum dolor",
+        "header": "1 definiraj nedefinirano",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
       }
     },
     {
+      "id": 2,
       "src": "post-big.png",
       "hr": {
-        "header": "definiraj nedefinirano",
+        "title": "HR Lorem ipsum dolor",
+        "header": "2 definiraj nedefinirano",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
       },
       "en": {
-        "header": "definiraj nedefinirano",
+        "title": "EN Lorem ipsum dolor",
+        "header": "2 definiraj nedefinirano",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
       }
     },
     {
+      "id": 3,
       "src": "post-big.png",
       "hr": {
-        "header": "definiraj nedefinirano",
+        "title": "HR Lorem ipsum dolor",
+        "header": "3 definiraj nedefinirano",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
       },
       "en": {
-        "header": "definiraj nedefinirano",
+        "title": "EN Lorem ipsum dolor",
+        "header": "3 definiraj nedefinirano",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
       }
     },
     {
+      "id": 4,
       "src": "post-big.png",
       "hr": {
-        "header": "definiraj nedefinirano",
+        "title": "HR Lorem ipsum dolor",
+        "header": "4 definiraj nedefinirano",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
       },
       "en": {
-        "header": "definiraj nedefinirano",
+        "title": "EN Lorem ipsum dolor",
+        "header": "4 definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      }
+    },
+    {
+      "id": 5,
+      "src": "post-big.png",
+      "hr": {
+        "title": "HR Lorem ipsum dolor",
+        "header": "5 definiraj nedefinirano",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
+      },
+      "en": {
+        "title": "EN Lorem ipsum dolor",
+        "header": "5 definiraj nedefinirano",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, delectus praesentium, amet necessitatibus obcaecati doloremque odio harum deleniti officiis, quod nesciunt rem"
       }
     }
