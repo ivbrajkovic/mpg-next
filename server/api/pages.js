@@ -1,41 +1,46 @@
 // New API pages.js
 
-const readXlsxFile = require("read-excel-file/node");
-const express = require("express");
+const readXlsxFile = require('read-excel-file/node');
+const express = require('express');
 const router = express.Router();
-const fsPromises = require("fs").promises;
+const fsPromises = require('fs').promises;
 
-const izdanja = require("../schema/izdanja");
-const getJsonData = require("../lib/getJsonData");
+const izdanja = require('../schema/izdanja');
+const getJsonData = require('../lib/getJsonData');
 
 let files = {
-  izdanja: "static/img/izdanja/izdanja MGP.xlsx",
+  izdanja: 'static/img/izdanja/izdanja MGP.xlsx',
   usluge: `server/db/usluge/usluge.json`,
-  aktivnosti: `server/db/aktivnosti/aktivnosti.json`
+  aktivnosti: `server/db/aktivnosti/aktivnosti.json`,
+  kastel: 'server/db/kastel/kastel.json'
 };
 
 let schema = {};
 
-router.get("/", function(req, res, next) {
+router.get('/', function(req, res, next) {
   console.log(
-    "TCL: *********************** SERVER PAGES ***************************"
+    'TCL: *********************** SERVER PAGES ***************************'
   );
-  console.log("TCL: SERVER -> req.query: ", req.query);
+  console.log('TCL: SERVER -> req.query: ', req.query);
 
-  const page = req.query.page || "";
+  const page = req.query.page || '';
   switch (page) {
-    case "izdanja":
+    case 'izdanja':
       schema = izdanja;
       readXlsxFile(files[page], { schema }).then(({ rows, errors }) => {
         res.send(rows);
       });
       break;
 
-    case "usluge":
+    case 'usluge':
       getJsonData(res, files[page]);
       break;
 
-    case "aktivnosti":
+    case 'kastel':
+      getJsonData(res, files[page]);
+      break;
+
+    case 'aktivnosti':
       const from = +req.query.from || 0;
       const to = +req.query.to || 0;
 
@@ -54,7 +59,7 @@ router.get("/", function(req, res, next) {
       break;
 
     default:
-      res.json({ success: false, lastError: "No schema specified." });
+      res.json({ success: false, lastError: 'No schema specified.' });
       return;
       break;
   }

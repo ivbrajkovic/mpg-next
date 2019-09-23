@@ -1,13 +1,14 @@
 .section-5 {
-    .float-right {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background: $primary-back;
-    }
+  overflow: hidden;
+  .float-right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: $primary-back;
+  }
 
-    .btn:hover {
-        color: #fff !important;
-    }
+  .btn:hover {
+    color: #fff !important;
+  }
 }
