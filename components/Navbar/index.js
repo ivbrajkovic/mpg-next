@@ -1,9 +1,10 @@
 // Navbar - index
+// import Router from 'next/router';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import json from "./menu.json";
-import Menu from "./Menu";
+import json from './menu.json';
+import Menu from './Menu';
 
 const Navbar = props => {
   const [isShrinked, setIsShrinked] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = props => {
     const options = {
       root: null,
       threshold: 0,
-      rootMargin: "-100px"
+      rootMargin: '-100px'
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -37,8 +38,9 @@ const Navbar = props => {
         // });
       });
     }, options);
+    console.log('TCL: observer -> new', observer);
 
-    observer.observe(document.getElementById("hero"));
+    observer.observe(document.getElementById('hero'));
 
     // const navbar = document.get
     // document.querySelector(".hamburger").addEventListener(
@@ -48,14 +50,17 @@ const Navbar = props => {
     //   },
     //   false
     // );
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      console.log('TCL: observer -> disconnect()', observer);
+    };
   }, []);
 
   const setLanguage = value => props.onChangeLanguage(value);
   const setOdjel = (path, index) => props.onSetOdjel(path, index);
 
   let i = 0;
-  console.log("TCL: Navbar -> render: ", ++i);
+  console.log('TCL: Navbar -> render: ', ++i);
 
   return (
     <Menu
