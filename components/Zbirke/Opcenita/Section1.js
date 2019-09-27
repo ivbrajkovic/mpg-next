@@ -1,20 +1,20 @@
-// Zbirke - Opcenita - Section 4
+// Zbirke - Opcenita - Section 1
 
-import getContentFromJson from "../../../lib/getContentFromJson";
+import getContentFromJson from '../../../lib/getContentFromJson';
 
-const Section4 = ({ data }) => {
+const Section1 = ({ data }) => {
   // const header = (data.header && data.header.split("\\n")) || [];
   // const text = (data.content && data.content.split("\\n")) || [];
 
   return (
     <div
-      className="m-t-xs-20-xl-40 zbirke__section-1"
-      data-aos="fade"
-      data-aos-duration="1000"
-      data-aos-delay="1000"
+      className='m-t-xs-20-xl-40 zbirke__section-1'
+      data-aos='fade'
+      data-aos-duration='1000'
+      data-aos-delay='1000'
     >
-      <div className="float-right">
-        <div className="header">
+      <div className='float-right'>
+        <div className='header'>
           {getContentFromJson(data.header)}
 
           {/* {header.map((item, index) => (
@@ -22,7 +22,7 @@ const Section4 = ({ data }) => {
           ))} */}
         </div>
       </div>
-      <div className="content-1">
+      <div className='content-1'>
         {getContentFromJson(data.content)}
         {/* {text.map((item, index) => {
           return (
@@ -43,4 +43,4 @@ const Section4 = ({ data }) => {
   );
 };
 
-export default Section4;
+export default Section1;

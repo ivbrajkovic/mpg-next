@@ -1,9 +1,9 @@
 // Zbirke - Opcenita - Section 2
 
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
-import preloadImages from "../../../lib/preloadImages";
-import GalleryItem from "../../Gallery/GalleryItem";
-import MeniItem from "./MeniItem";
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import preloadImages from '../../../lib/preloadImages';
+import GalleryItem from '../../Gallery/GalleryItem';
+import MeniItem from './MeniItem';
 // import Fade from 'react-reveal/Fade';
 
 // import "./style.scss";
@@ -15,7 +15,7 @@ const DELAY = 50;
 // let images = [];
 
 const Section2 = ({ page, meni, folder, gallery }) => {
-  console.log("TCL: gallery", gallery);
+  // console.log('TCL: gallery', gallery);
   const [grid, setGrid] = useState([]);
   // const firstRef = useRef(true);
   const gridRef = useRef();
@@ -26,14 +26,14 @@ const Section2 = ({ page, meni, folder, gallery }) => {
     const images =
       gallery.map &&
       gallery.map(item => {
-        console.log("TCL: item", item);
-        return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2");
+        // console.log("TCL: item", item);
+        return `${folder}${item}`.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2');
       });
 
     preloadImages(images || [])
       .then(() => setGrid(images || []))
       .catch(err =>
-        console.log("TCL: Opcenita - Section2 -> loadImages -> err():", err)
+        console.log('TCL: Opcenita - Section2 -> loadImages -> err():', err)
       );
   }, []);
 
@@ -58,11 +58,11 @@ const Section2 = ({ page, meni, folder, gallery }) => {
   }, [grid]);
 
   return (
-    <div className="zbirke__section-3" data-aos="">
+    <div className='zbirke__section-3' data-aos=''>
       <div
         ref={gridRef}
         className={`m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 gallery-fade-bottom${
-          page === "zvona" ? " zvona" : ""
+          page === 'zvona' ? ' zvona' : ''
         }`}
       >
         {/* <Fade delay={250} mountOnEnter={true} appear={true} cascsade ssrReveal> */}

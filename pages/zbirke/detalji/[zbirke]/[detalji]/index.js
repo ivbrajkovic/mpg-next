@@ -1,12 +1,15 @@
 // Zbirke - detalji
 
 import { useEffect } from 'react';
+// import ReactAudioPlayer from 'react-audio-player';
 
 import fetchDataAsync from '../../../../../lib/fetchDataAsync';
 
 import Hero from '../../../../../components/Hero';
 
 const Detalji = ({ lang, data }) => {
+  // const audioRef = useRef();
+
   const folder = (data && data.folder) || '';
 
   const text = (data && data[lang]) || {};
@@ -23,8 +26,9 @@ const Detalji = ({ lang, data }) => {
     (data && data.banners && data.banners.map(item => folder + item)) || [];
 
   useEffect(() => {
-    lightbox.reload();
+    // lightbox.reload();
     AOS.refreshHard();
+    // audioRef.current.play();
   }, []);
 
   return (
@@ -41,8 +45,25 @@ const Detalji = ({ lang, data }) => {
 
         <div className='item-2'>
           <div className='content-1'>
+            <h1 className='header-2'>{title}</h1>
             <p>{content1}</p>
             <p>{content2}</p>
+            {/* <div className='green-audio'>
+              <audio crossorigin>
+                <source src={folder + audio} type='audio/mpeg' />
+              </audio>
+            </div> */}
+            {/* <ReactAudioPlayer src={folder + audio} autoPlay controls /> */}
+            <audio
+              // ref={audioRef}
+              controls
+              autoPlay
+              src={folder + audio}
+              type='audio/mpeg'
+            >
+              Your browser does not support the
+              <code>audio</code> element.
+            </audio>
           </div>
         </div>
       </div>
