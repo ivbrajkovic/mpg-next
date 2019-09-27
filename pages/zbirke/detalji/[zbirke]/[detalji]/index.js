@@ -28,7 +28,7 @@ const Detalji = ({ lang, data }) => {
   useEffect(() => {
     // lightbox.reload();
     AOS.refreshHard();
-    // audioRef.current.play();
+    // setTimeout(() => audioRef.current.play(), 1000);
   }, []);
 
   return (

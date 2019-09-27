@@ -90,7 +90,10 @@
 // }
 // selectNavbarLink(navbar);
 let lightbox = GLightbox({
-  selector: "glightbox"
+  selector: 'glightbox'
 });
 //   console.log("TCL: lightbox", lightbox);
 // })();
+// window.onload = function() {
+//   var context = new AudioContext();
+// };
