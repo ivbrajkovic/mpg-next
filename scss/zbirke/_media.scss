@@ -12,26 +12,22 @@
     }
   }
 
-  .zbirke-detalji {
-    &__section-1 {
-      .header-2 {
-        text-align: left;
+  .detalji-page {
+    grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 300px;
+    .header-2 {
+      text-align: left;
+    }
+    .item-1 {
+      grid-row: 1;
+      padding: 0;
+      justify-content: center;
+      img {
+        width: 100%;
       }
-      .d-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 300px;
-        .item-1 {
-          grid-row: 1;
-          padding: 0;
-          justify-content: center;
-          img {
-            width: 100%;
-          }
-        }
-        .item-2 {
-          grid-column: 2 / span 2;
-        }
-      }
+    }
+    .item-2 {
+      grid-column: 2 / span 2;
     }
   }
 }

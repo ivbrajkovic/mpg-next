@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "2000.jpg",
+  "video": "",
+  "audio": "mp3/15 Jasenovik.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve sv. Kvirina u Jasenoviku, inv. br. 2000",
+    "content-1": "Zvono crkve sv. Kvirina u Jasenoviku iz 1604. godine, izliveno u bronci. U kruni zvona četiri držača. Tijelo i udarni prsten dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, unutar polja između para linija, nadnevak izrade. Reljefni prikazi scena Raspeća, sv. Nikole iz Barija, Bogorodice s Djetetom i sv. Ivana Krstitelja opasavaju donji dio tijela.",
+    "content-2": "Zvonoljevač: Domenego Macharini"
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

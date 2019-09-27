@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "1999.jpg",
+  "video": "",
+  "audio": "mp3/14 Završje.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve Rođenja Blažene Djevice Marije u Završju, inv. br. 1999",
+    "content-1": "Zvono župne crkve Rođenja Blažene Djevice Marije u Završju iz 1635. godine, izliveno u bronci. U kruni zvona srednji luk i šest držača. Tijelo i udarni prsten dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, unutar polja između dvije linije, dekorativni friz akantusovih listova. U polju ispod, ime majstora i nadnevak izrade. Reljefni prikazi scena Raspeća, sv. Ivana Krstitelja, Bogorodice s Djetetom i sv. Nikole od Barija opasavaju gornji dio tijela. ",
+    "content-2": "Zvonoljevač: Domenego Macharini"
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

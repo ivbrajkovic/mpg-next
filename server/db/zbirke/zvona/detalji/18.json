@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "2003b.jpg",
+  "video": "",
+  "audio": "mp3/18 Juršići.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve sv. Franje Asiškog u Juršićima, inv. br. 2003",
+    "content-1": "Zvono crkve sv. Franje Asiškog u Juršićima iz 1753. godine, izliveno u bronci. U kruni zvona srednji luk i šest držača dekorirani vertikalnim užljebima. Tijelo i udarni prsten dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, na široj plohi između dva para linija, dekorativni friz sačinjen od akantusovih listova. Ispod, unutar polja između dva para linija, nadnevak izrade. Reljefni prikazi scena Raspeća s Bogorodicom i sv. Ivanom ispod Križa, sv. Franje Asiškog koji prima stigmate, Gospe od Sedam Žalosti sa srcem u desnoj ruci probodeno od sedam mačeva i sv. Josipa s atributom – rascvjetalim štapom, opasavaju središnji dio tijela. Na udarnom prstenu, između dvije linije, ploča s natpisom – atribucijom.",
+    "content-2": "Zvonoljevač: Cattae et Ana Castelli, Venecija"
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

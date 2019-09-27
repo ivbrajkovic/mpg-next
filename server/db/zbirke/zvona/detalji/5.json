@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "1990.jpg",
+  "video": "",
+  "audio": "mp3/05 Kršan.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve sv. Jakova u Kršanu, inv. br. 1990",
+    "content-1": "Zvono crkve sv. Jakova u Kršanu iz 1541. - 1542. godine, izliveno u bronci. U kruni zvona srednji luk i četiri držača. Tijelo i udarni prsten dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, unutar polja između dva para linija, dva nadnevka ispisana rimskim brojkama i glagoljskim slovima ČFKB (1542.) koji su odvojeni rozetama. Na udarnom prstenu glagoljski natpis VA VRI(me) GO(spodina) ANDRIE KRŠAIN POPA ANTONA ŠVERKA i ŽUPA(na) LUKE MARTIĆA.",
+    "content-2": "Zvonoljevač: "
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

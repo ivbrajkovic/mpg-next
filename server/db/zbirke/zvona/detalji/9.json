@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "1994.jpg",
+  "video": "",
+  "audio": "mp3/09 Loborika.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve sv. Flora u Loboriki, inv. br. 1994",
+    "content-1": "Zvono župne crkve sv. Flora u Loboriki iz 1587. godine, izliveno u bronci. U kruni zvona srednji luk i šest držača dekorirani motivom riblje kosti. Tijelo i udarni prsten dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, unutar polja između dvije linije je datacija. Reljefni prikazi scena Raspeća, kartuše s grbom i natpisom koji ukazuje na obitelj Vituri, reljefom Bogorodice s Djetetom, pločom s natpisom imena zvonoljevača te prikaz sv. Ivana Krstitelja s atributima opasavaju donji dio tijela.",
+    "content-2": "Zvonoljevač: Zuan Batista de Antonio del Ton, Venecija."
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "1997a.jpg",
+  "video": "",
+  "audio": "mp3/12 Ližnjan.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve Blažene Djevice Marije u Ližnjanu, inv. br. 1997",
+    "content-1": "Zvono crkve Blažene Djevice Marije u Ližnjanu iz 1610. godine, izliveno u bronci. U kruni zvona srednji luk i šest držača dekorirani s po tri reda bisernih nizova. Tijelo i udarni prsten dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, unutar polja između dva para linija, dekorativni friz ljiljana. Reljefni prikazi scena Raspeća, Navještenja i sv. Jurja koji ubija zmaja, odijeljeni glavama kerubina, opasavaju srednji dio tijela.",
+    "content-2": "Zvonoljevač: Jacobus de Calderaris, Venecija"
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

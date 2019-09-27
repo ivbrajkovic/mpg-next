@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "2007.jpg",
+  "video": "",
+  "audio": "mp3/22 Rijeka.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve sv. Josipa u Rijeci, inv. br. 2007",
+    "content-1": "Zvono crkve sv. Josipa u Rijeci iz 1762. godine, izliveno u bronci, prerađeno 1930. godine. U kruni zvona srednji luk i pet držača. Tijelo i udarni prsten dekorirani paralelnim horizontalnim reljefnim linijama. Na ramenima je aplicirana ploča s potvrdom donatora i nadnevkom prerade. U gornjem dijelu tijela, unutar polja između dvije linije, natpis – atribucija i nadnevak izrade, s gornje strane flankiran dekorativnim frizom, a s donje frizom festona listova i voća. Reljefni prikazi scena Raspeća s Bogorodicom i sv. Magdalenom ispod Križa te sv. Mihovilom Arkanđelom s atributima – plamtećim mačem u desnoj i vagom u lijevoj ruci, opasavaju tijelo u donjem dijelu. ",
+    "content-2": "Zvonoljevač: Zachariam Reidt, Ljubljana"
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

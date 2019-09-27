@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "1991.jpg",
+  "video": "",
+  "audio": "mp3/06 Gologorica.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono porušene kapele sv. Jelene kod Gologorice, inv. br. 1991",
+    "content-1": "Zvono porušene kapele sv. Jelene kod Gologorice iz 1554. godine, izliveno u bronci. U kruni zvona srednji luk i šest držača. Tijelo i udarni prsten zvona dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, unutar polja između linija,  dva natpisa u gotici – posveta te atribucija s datacijom, odvojeni parom reljefnih linija. U srednjem dijelu tijela reljefno izliven latinski križ dekoriran vegetabilnim renesansnim ornamentom.",
+    "content-2": "Zvonoljevač: Ioannis Albini, Venecija"
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

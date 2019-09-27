@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "1996.jpg",
+  "video": "",
+  "audio": "mp3/11 Završje.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve sv. Roka u Završju, inv. br. 1996",
+    "content-1": "Zvono crkve sv. Roka u Završju iz 1613. godine, izliveno u bronci. U kruni zvona srednji luk i šest držača dekoriranih vertikalnim užljebima. Tijelo i udarni prsten zvona dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, unutar polja između dvije linije, friz renesansnog ornamenta s nadnevkom izrade u polju ispod. Reljefni prikazi scena Raspeća, sv. Ivana Krstitelja s križem, Bogorodice s Djetetom i kartuša s imenom majstora opasavaju gornji dio tijela. ",
+    "content-2": "Zvonoljevač: Zan Batista Ton, Venecija"
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}

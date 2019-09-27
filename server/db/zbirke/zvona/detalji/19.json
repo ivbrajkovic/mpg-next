@@ -1,0 +1,19 @@
+{
+  "id": 0,
+  "page": "zvona",
+  "folder": "/static/img/odjeli/zbirke/zvona/",
+  "image": "2004.jpg",
+  "video": "",
+  "audio": "mp3/19 Sv Nedjelja.mp3",
+  "hr": {
+    "hero": "detalji zvona",
+    "title": "Zvono crkve Presvetog Trojstva u Sv. Nedelji, inv. br. 2004",
+    "content-1": "Zvono župne crkve Presvetog Trojstva u Sv. Nedelji iz 1776. godine, izliveno u bronci. U kruni zvona srednji luk i šest držača dekorirani užljebima. Tijelo i udarni prsten dekorirani paralelnim horizontalnim reljefnim linijama. U gornjem dijelu tijela, unutar polja između dvije linije, dekorativni friz sačinjen od girlanda, vrhova kopalja i prepleta lančića. Reljefni prikazi scena Raspeća, neidentificiranog svetca, detalj prikaza Bogorodice s Djetetom i grba obitelji Balbi nadvišenog biskupskim šeširom i dekorativnim uzicama opasavaju srednji dio tijela. Na udarnom prstenu, unutar polja između dvije linije ispod scene Raspeća, natpis o donatoru te na apliciranoj ploči ispod datacija. ",
+    "content-2": "Zvonoljevač: Castelli"
+  },
+  "en": {
+    "hero": "detalji zvona",
+    "title": "EN ...",
+    "content": "EN ..."
+  }
+}
