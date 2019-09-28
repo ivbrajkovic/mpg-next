@@ -1,12 +1,12 @@
-import GalleryItem from "../Gallery/GalleryItem";
+import GalleryItem from '../Gallery/GalleryItem';
 // import preloadImages from "../../../lib/preloadImages";
 
 const DELAY = 50;
 
 const Section2 = ({ lang, data }) => {
   const section2 = (data && data[lang] && data[lang].section2) || [];
-  console.log("TCL: data.gallery", data.gallery);
-  const folder = data.folder || "";
+  // console.log("TCL: data.gallery", data.gallery);
+  const folder = data.folder || '';
 
   return (
     <>
@@ -33,22 +33,22 @@ const Section2 = ({ lang, data }) => {
 
           return (
             <div
-              className="postav-page__section2"
+              className='postav-page__section2'
               key={index}
-              data-aos="fade-up"
-              data-aos-duration="1000"
+              data-aos='fade-up'
+              data-aos-duration='1000'
             >
-              <h1 className="header-2">{item.title}</h1>
-              <p className="content-1">{item.content}</p>
+              <h1 className='header-2'>{item.title}</h1>
+              <p className='content-1'>{item.content}</p>
 
-              <div className="d-grid gap-xs-20-xl-30">
+              <div className='d-grid gap-xs-20-xl-30'>
                 {gallery.map((item, index) => {
                   return (
                     <GalleryItem
                       key={index}
                       thumb={
                         folder +
-                        item.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2")
+                        item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
                       }
                       large={folder + item}
                       style={{ transitionDelay: `${index * DELAY}ms` }}

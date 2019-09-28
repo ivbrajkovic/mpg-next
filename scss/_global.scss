@@ -9,7 +9,7 @@ body {
   // font-family: 'Open Sans', sans-serif;
   // font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   // font-family: 'Open Sans', sans-serif;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   // line-height: 1.2;
 
   -webkit-font-smoothing: antialiased;
@@ -59,4 +59,15 @@ button:focus {
 
 .hide {
   opacity: 0;
+}
+
+.xs-2-col-l-3-col {
+  grid-template-columns: repeat(2, minmax(150px, 300px));
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .xs-2-col-l-3-col {
+    grid-template-columns: repeat(3, minmax(150px, 300px));
+    justify-content: left;
+  }
 }

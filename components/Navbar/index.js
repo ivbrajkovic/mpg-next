@@ -1,13 +1,14 @@
 // Navbar - index
 // import Router from 'next/router';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import json from './menu.json';
 import Menu from './Menu';
 
 const Navbar = props => {
   const [isShrinked, setIsShrinked] = useState(false);
+  const observerRef = useRef();
 
   useEffect(() => {
     const widthBreakPoint = 1200;
@@ -38,9 +39,19 @@ const Navbar = props => {
         // });
       });
     }, options);
-    console.log('TCL: observer -> new', observer);
+    observerRef.current = observer;
 
-    observer.observe(document.getElementById('hero'));
+    return () => {
+      observerRef.current.disconnect();
+      console.log('TCL: observer -> disconnect()', observerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log('TCL: observer -> new', observerRef.current);
+
+    const el = document.getElementById('hero');
+    el && observerRef.current.observe(el);
 
     // const navbar = document.get
     // document.querySelector(".hamburger").addEventListener(
@@ -51,10 +62,10 @@ const Navbar = props => {
     //   false
     // );
     return () => {
-      observer.disconnect();
-      console.log('TCL: observer -> disconnect()', observer);
+      observerRef.current.disconnect();
+      console.log('TCL: observer -> disconnect()', observerRef.current);
     };
-  }, []);
+  }, [props]);
 
   const setLanguage = value => props.onChangeLanguage(value);
   const setOdjel = (path, index) => props.onSetOdjel(path, index);

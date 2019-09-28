@@ -1,55 +1,72 @@
-import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
-import InfiniteScroll from "react-infinite-scroller";
+// Aktivnosti page
 
-import fetchDataAsync from "../lib/fetchDataAsynNew";
+import { useState, useRef, useEffect } from 'react';
+import InfiniteScroll from 'react-infinite-scroller';
 
 const srcset = [
-  "/static/img/aktivnosti/baner-aktivnosti-768px.jpg",
-  "/static/img/aktivnosti/baner-aktivnosti-1200px.jpg",
-  "/static/img/aktivnosti/baner-aktivnosti.jpg"
+  '/static/img/aktivnosti/baner-aktivnosti-768px.jpg',
+  '/static/img/aktivnosti/baner-aktivnosti-1200px.jpg',
+  '/static/img/aktivnosti/baner-aktivnosti.jpg'
 ];
 
-import Hero from "../components/Hero";
-import Section1 from "../components/Index/Section1";
-import Detalji from "../components/Aktivnosti/Detalji";
+import Hero from '../components/Hero';
+// import Section1 from "../components/Index/Section1";
+import Ukratko from '../components/Aktivnosti/Ukratko';
+import Detalji from '../components/Aktivnosti/Detalji';
+
+const urls = {
+  hr:
+    'http://e-computing.hr/eCMS/ws/wsecms.asmx/GetNovostiKategorijeTopNJSON?WebStranicaID=13&KategorijaID=13&TopN=10',
+  en:
+    'http://e-computing.hr/eCMS/ws/wsecms.asmx/GetNovostiKategorijeTopNJSON?WebStranicaID=13&KategorijaID=13&TopN=10'
+};
+
+const titles = {
+  hr: 'aktivnosti',
+  en: 'activities'
+};
+
+const MAX_AKTIVNOSTI = 2;
+const folder = '/static/img/aktivnosti/';
 
 const aktivnosti = ({ lang, data }) => {
-  const title = (data && data.hero && data.hero[lang]) || "";
-  const folder = (data && data.folder) || "";
-  const section1 = (data && data.section1) || [];
-
   const [detalji, setDetalji] = useState(false);
-  const [list, setList] = useState(section1);
+  const [list, setList] = useState([]);
   const itemRef = useRef();
 
   useEffect(() => {
-    // AOS.refreshHard();
-  }, []);
+    async function getData() {
+      const res = await fetch(urls[lang]);
+      const data = await res.json();
+      setList(data);
+      AOS.refreshHard();
+    }
+    getData();
+  }, [lang]);
 
   useEffect(() => {
     AOS.refreshHard();
   }, [detalji]);
 
-  const loadMoreContent = async () => {
-    // if (data.length > countRef.current) {
-    //   const tmp = data.slice(
-    //     countRef.current,
-    //     countRef.current + numOfItemmsToAdd
-    //   );
-    //   // console.log("TCL: loadMoreContent -> tmp", tmp);
-    //   countRef.current += numOfItemmsToAdd;
-    //   setList(list => [...list, ...tmp]);
-    // }
+  // const loadMoreContent = async () => {
+  //   // if (data.length > countRef.current) {
+  //   //   const tmp = data.slice(
+  //   //     countRef.current,
+  //   //     countRef.current + numOfItemmsToAdd
+  //   //   );
+  //   //   // console.log("TCL: loadMoreContent -> tmp", tmp);
+  //   //   countRef.current += numOfItemmsToAdd;
+  //   //   setList(list => [...list, ...tmp]);
+  //   // }
 
-    const data = await fetchDataAsync(
-      null,
-      `/api/new?page=aktivnosti&from=${list.length + 1}&to=${list.length + 2}`
-    );
-    setList(list => [...list, ...data.data.section1]);
+  //   const data = await fetchDataAsync(
+  //     null,
+  //     `/api/new?page=aktivnosti&from=${list.length + 1}&to=${list.length + 2}`
+  //   );
+  //   setList(list => [...list, ...data.data.section1]);
 
-    AOS.refreshHard();
-  };
+  //   AOS.refreshHard();
+  // };
 
   const showDetalji = item => {
     itemRef.current = item;
@@ -63,7 +80,7 @@ const aktivnosti = ({ lang, data }) => {
 
   return (
     <>
-      <Hero title={title} srcset={srcset} />
+      <Hero title={titles[lang]} srcset={srcset} />
       {(detalji && (
         <Detalji
           lang={lang}
@@ -74,8 +91,8 @@ const aktivnosti = ({ lang, data }) => {
       )) || (
         <InfiniteScroll
           pageStart={0}
-          loadMore={loadMoreContent}
-          hasMore={list.length < 4}
+          // loadMore={loadMoreContent}
+          hasMore={list.length < MAX_AKTIVNOSTI}
           // hasMore={data.length > list.length}
           // loader={loader}
           // loader={<h1>Loading ...</h1>}
@@ -84,22 +101,18 @@ const aktivnosti = ({ lang, data }) => {
           {list.map((item, index) => {
             return (
               <div
-                style={{ cursor: "pointer" }}
-                className="container"
+                style={{ cursor: 'pointer' }}
+                className='container'
                 onClick={() => showDetalji(item)}
               >
-                {/* <Link href="/aktivnosti/[id]" as={`/aktivnosti/${item.id}`}>
-                <a> */}
-                <Section1
+                <Ukratko
                   key={index}
                   lang={lang}
                   folder={folder}
                   data={item}
-                  animation="fade-up"
-                  duration="1000"
+                  animation='fade-up'
+                  duration='1000'
                 />
-                {/* </a> */}
-                {/* </Link> */}
               </div>
             );
           })}
@@ -107,15 +120,6 @@ const aktivnosti = ({ lang, data }) => {
       )}
     </>
   );
-};
-
-aktivnosti.getInitialProps = async function(context) {
-  // const data = await fetchDataAsync(context, "aktivnosti");
-  const data = await fetchDataAsync(
-    context,
-    "/api/new?page=aktivnosti&from=1&to=3"
-  );
-  return data;
 };
 
 export default aktivnosti;

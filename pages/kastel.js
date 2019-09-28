@@ -1,36 +1,60 @@
-// import React from 'react'
-import { useEffect, useLayoutEffect, useState } from 'react';
+// Povjest page
 
-import fetchDataAsync from '../lib/fetchDataAsynNew';
+import { useEffect, useState } from 'react';
 import preloadImages from '../lib/preloadImages';
-import getContentFromJson from '../lib/getContentFromJson';
-import getFilesFromGallery from '../lib/getFilesFromGallery';
-import GalleryItem from '../components/Gallery/GalleryItem';
 import Spinner from '../components/Spinner/Spinner';
 
 import Hero from '../components/Hero';
+import GalleryItem from '../components/Gallery/GalleryItem';
 
 const srcset = [
-  '/static/img/kastel/baner-kastel-768px.jpg',
-  '/static/img/kastel/baner-kastel-1200px.jpg',
-  '/static/img/kastel/baner-kastel.jpg'
+  '/static/img/kastel/baner-pazinski-kastel-768px.jpg',
+  '/static/img/kastel/baner-pazinski-kastel-1200px.jpg',
+  '/static/img/kastel/baner-pazinski-kastel.jpg'
 ];
 
+const gallery = [
+  'IMG_9777.JPG',
+  'IMG_9778.JPG',
+  'IMG_9779.JPG',
+  'kasyel jama 1.JPG',
+  'kasyel jama 2.JPG',
+  'kasyel jama 3.JPG',
+  'kasyel jama 4.JPG',
+  'kasyel jama 6.JPG',
+  'kasyel jama 7.JPG',
+  'kasyel jama 8.JPG',
+  'kasyel jama 9.JPG',
+  'kasyel jama 10.JPG',
+  'kasyel jama 11.JPG',
+  'kasyel jama 12.JPG',
+  'kasyel jama 13.JPG',
+  'kasyel jama 15.JPG',
+  'kasyel jama 17.JPG',
+  'kasyel jama 18.JPG',
+  'Pazin Kastel JD 18.jpg',
+  'Pazin Kastel ulaz JD 18.jpg'
+];
+
+const urls = {
+  hr:
+    'http://e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaJSON?WebStranicaID=13&StranicaID=102',
+  en:
+    'http://e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaJezikJSON?WebStranicaID=13&StranicaID=102&JezikID=2'
+};
+
+const DELAY = 50;
+const folder = '/static/img/kastel/';
+
 const kastel = ({ lang, data }) => {
-  console.log('TCL: kastel -> data', data);
-
-  const folder = (data && data.folder) || '';
-  const gallery = (data && data.gallery) || '';
-
-  const title = (data && data[lang] && data[lang].hero) || '';
-  const section1 = (data && data[lang] && data[lang].section1) || [];
-  const section2 = (data && data[lang] && data[lang].section2) || [];
-
-  const [thumbs, larges] = getFilesFromGallery(folder, gallery);
+  const [text, setText] = useState();
   const [loaded, setLoaded] = useState(false);
 
-  useLayoutEffect(() => {
-    preloadImages(thumbs)
+  useEffect(() => {
+    const images = gallery.map(
+      item => folder + item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
+    );
+    preloadImages(images)
       .then(() => setLoaded(true))
       .catch(err =>
         console.log('TCL: Stalni postav -> preloadImages -> err():', err)
@@ -38,37 +62,78 @@ const kastel = ({ lang, data }) => {
   }, []);
 
   useEffect(() => {
+    async function getData() {
+      const res = await fetch(urls[lang]);
+      const data = await res.json();
+      setText(data.Tekst);
+    }
+    getData();
+  }, [lang]);
+
+  useEffect(() => {
     AOS.refreshHard();
     lightbox.reload();
   }, [loaded]);
 
-  const createMarkup = () => {
-    // return { __html: 'This is a <i>test</i>, and ...' };
-    console.log('TCL: createMarkup -> data.test', data.test);
+  const createMarkup = value => {
     return {
-      __html:
-        'Muzej Grada Pazina ove se godine pridružio brojnim ustanovama i organizacijama u obilježavanju Dana europske ba\u0026scaron;tine i to organizacijom \u003cstrong\u003e\u003cem\u003efoto natječaja \u0026bdquo;Iz mog kuta\u0026hellip;\u0026ldquo; \u003c/em\u003e\u003c/strong\u003eu \u003cem\u003e\u003cstrong\u003epartnerstvu s Dru\u0026scaron;tvom likovnih stvaratelja Pazin\u003c/strong\u003e\u003c/em\u003e. Svrha je foto natječaja bila upoznati javnost s raznoliko\u0026scaron;ću i bogatstvom prirodne i kulturne ba\u0026scaron;tine sredi\u0026scaron;nje Istre zabilježenom iz drugačijih kutova no \u0026scaron;to smo navikli\u0026hellip;\u003cbr /\u003e\n\u0026nbsp;',
-      Tekst:
-        '\u003cbr /\u003e\nPo zavr\u0026scaron;etku natječaja žiri je ocijenio pristigle fotografije od kojih će one s najvi\u0026scaron;im brojem bodova \u003cem\u003e\u003cstrong\u003ebiti izložene u Likovnoj galeriji Pazin od 30. rujna do 5. listopada 2019. godine.\u003c/strong\u003e\u003c/em\u003e Autorima fotografija s najvi\u0026scaron;im brojem bodova biti će uručene simbolične nagrade.'
+      __html: value
     };
   };
-  // const createMarkup = () => {
-  //   // return { __html: 'This is a <i>test</i>, and ...' };
-  //   console.log('TCL: createMarkup -> data.test', data.test);
-  //   return { __html: data.test };
-  // };
 
   return (
-    <div>
-      <Hero title={title} srcset={srcset} />
-      <div className='container' dangerouslySetInnerHTML={createMarkup()}></div>
+    <div className='kastel-page'>
+      <Hero title='POVJEST MUZEJA GRADA PAZINA' srcset={srcset} />
+      <div className='container'>
+        <div
+          className='m-t-xs-20-xl-40'
+          data-aos='fade-up'
+          data-aos-duration='1000'
+        >
+          {text && (
+            <p
+              className='content-1'
+              dangerouslySetInnerHTML={createMarkup(text)}
+            ></p>
+          )}
+        </div>
+        {text && loaded && (
+          <div data-aos=''>
+            <div className='m-t-xs-20-xl-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
+              {gallery.map((item, index) => {
+                return (
+                  <GalleryItem
+                    key={index}
+                    thumb={
+                      folder + item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
+                    }
+                    large={folder + item}
+                    style={{ transitionDelay: `${index * DELAY}ms` }}
+                  />
+                );
+              }) || (
+                <div className='m-t-xs-20-xl-40 d-flex justify-center'>
+                  <Spinner />
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-kastel.getInitialProps = async function(context) {
-  const data = await fetchDataAsync(context, '/api/new?page=kastel');
-  return data;
-};
+// povjest.getInitialProps = async function(context) {
+// const data = await fetchDataAsync(context, '/api/new?page=kastel');
+// const res = await fetch(
+//   'http://e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaJSON?WebStranicaID=13&StranicaID=102'
+// );
+// const data = await res.text();
+// // const data = await res.json();
+// console.log('TCL: getInitialProps -> data', data);
+
+//   return 'data';
+// };
 
 export default kastel;

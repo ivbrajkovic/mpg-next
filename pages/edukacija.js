@@ -8,16 +8,32 @@ import Hero from '../components/Hero';
 import GalleryItem from '../components/Gallery/GalleryItem';
 
 const srcset = [
-  '/static/img/povjest/baner-kontakt-768px.jpg',
-  '/static/img/povjest/baner-kontakt-1200px.jpg',
-  '/static/img/povjest/baner-kontakt.jpg'
+  '/static/img/edukacija/baner-edukacija-768px.jpg',
+  '/static/img/edukacija/baner-edukacija-1200px.jpg',
+  '/static/img/edukacija/baner-edukacija.jpg'
 ];
 
 const gallery = [
-  'Informativna ploča -Narodni muzej Pazin-, 1956., inv. br. 638.jpg',
-  'Narodni muzej Pazin - otvorenje stalnog postava etnografije, 1961., inv. br. 95.jpg',
-  'Narodni muzej Pazin - otvorenje stalnog postava etnografije, 1961., inv. br. 96.jpg',
-  'Oznaka za muzej, 1980., inv. br. 5162.jpg'
+  'IMG_9777.JPG',
+  'IMG_9778.JPG',
+  'IMG_9779.JPG',
+  'kasyel jama 1.JPG',
+  'kasyel jama 2.JPG',
+  'kasyel jama 3.JPG',
+  'kasyel jama 4.JPG',
+  'kasyel jama 6.JPG',
+  'kasyel jama 7.JPG',
+  'kasyel jama 8.JPG',
+  'kasyel jama 9.JPG',
+  'kasyel jama 10.JPG',
+  'kasyel jama 11.JPG',
+  'kasyel jama 12.JPG',
+  'kasyel jama 13.JPG',
+  'kasyel jama 15.JPG',
+  'kasyel jama 17.JPG',
+  'kasyel jama 18.JPG',
+  'Pazin Kastel JD 18.jpg',
+  'Pazin Kastel ulaz JD 18.jpg'
 ];
 
 const urls = {
@@ -27,10 +43,15 @@ const urls = {
     'http://e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaJezikJSON?WebStranicaID=13&StranicaID=102&JezikID=2'
 };
 
-const DELAY = 50;
-const folder = '/static/img/povjest/';
+const titles = {
+  hr: 'edukacija',
+  en: 'Education'
+};
 
-const povjest = ({ lang, data }) => {
+const DELAY = 50;
+const folder = '/static/img/edukacija/';
+
+const edukacija = ({ lang, data }) => {
   const [text, setText] = useState();
   const [loaded, setLoaded] = useState(false);
 
@@ -66,8 +87,8 @@ const povjest = ({ lang, data }) => {
   };
 
   return (
-    <div className='povjset-page'>
-      <Hero title='POVJEST MUZEJA GRADA PAZINA' srcset={srcset} />
+    <div className='edukacija-page'>
+      <Hero title={titles[lang]} srcset={srcset} />
       <div className='container'>
         <div
           className='m-t-xs-20-xl-40'
@@ -108,16 +129,4 @@ const povjest = ({ lang, data }) => {
   );
 };
 
-// povjest.getInitialProps = async function(context) {
-// const data = await fetchDataAsync(context, '/api/new?page=kastel');
-// const res = await fetch(
-//   'http://e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaJSON?WebStranicaID=13&StranicaID=102'
-// );
-// const data = await res.text();
-// // const data = await res.json();
-// console.log('TCL: getInitialProps -> data', data);
-
-//   return 'data';
-// };
-
-export default povjest;
+export default edukacija;
