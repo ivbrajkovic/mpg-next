@@ -82,7 +82,7 @@ const Index = ({ lang, success, data }) => {
         // const slika = data[0].SlikaPath;
         if (slika) {
           preloadImages([folderNovosti + slika]).then(value => {
-            data[0].SlikaPath = folderNovosti + data.SlikaPath;
+            data[0].SlikaPath = folderNovosti + data[0].SlikaPath;
             console.log(
               'TCL: getGlavnaNovost -> data[0].SlikaPath',
               data[0].SlikaPath
