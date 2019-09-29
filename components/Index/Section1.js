@@ -16,7 +16,7 @@ const Section1 = ({ data }) => {
         <div className='w3-card-4 d-grid'>
           <div className='item-1'>
             <img
-              className='img-flex'
+              // className='img-cover'
               src={slika}
               // src={
               //   isLocalImage(data.src) ? `${folder}${data.src}` : data.src

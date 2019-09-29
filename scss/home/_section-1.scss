@@ -1,9 +1,17 @@
 .section-1 {
-    .d-grid {
-        grid-template-columns: 1fr;
-        background: $secondary-back;
-        .post-title {
-            line-height: 2.8;
-        }
+  .d-grid {
+    grid-template-columns: 1fr;
+    background: $secondary-back;
+    .item-1 {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 10%;
+      }
     }
+    .post-title {
+      line-height: 2.8;
+    }
+  }
 }

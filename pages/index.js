@@ -69,13 +69,12 @@ const Index = ({ lang, success, data }) => {
           btn.removeEventListener('mousedown', ripplet);
         });
     };
-  }, [loaded]);
+  }, []);
 
   useEffect(() => {
     async function getGlavnaNovost() {
       const res = await fetch(glavnaNovost[lang]);
       const data = await res.json();
-      console.log('TCL: getGlavnaNovost -> data', data);
 
       if (data && data[0]) {
         const slika = data[0].SlikaPath;
@@ -83,10 +82,6 @@ const Index = ({ lang, success, data }) => {
         if (slika) {
           preloadImages([folderNovosti + slika]).then(value => {
             data[0].SlikaPath = folderNovosti + data[0].SlikaPath;
-            console.log(
-              'TCL: getGlavnaNovost -> data[0].SlikaPath',
-              data[0].SlikaPath
-            );
             setSection1(data[0]);
           });
         } else {
@@ -97,38 +92,32 @@ const Index = ({ lang, success, data }) => {
     }
     getGlavnaNovost();
 
-    // async function getNovosti(url) {
-    //   const res = await fetch(url);
-    //   const data = await res.json();
+    async function getNovosti(url) {
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log('TCL: getNovosti -> data', data);
 
-    //   const slike = data && data.forEach && data.forEach(item => folderNovosti + item.SlikaPath) || [];
+      const slike = [];
+      data &&
+        data.forEach &&
+        data.forEach(item => {
+          console.log('TCL: getNovosti -> item', item);
+          item.SlikaPath = folderNovosti + item.SlikaPath;
+          slike.push(item.SlikaPath);
+        });
 
-    //   if (slike) {
-    //     preloadImages(slike).then(value => {
-    //       data[0].SlikaPath = folderNovosti + data.SlikaPath;
-    //       setSection1(data[0]);
-    //     });
-    //   } else {
-    //     data[0].SlikaPath = 'https://via.placeholder.com/555x321';
-    //     setSection1(data[0]);
-    //   }
-    // }
-    // getNovosti(glavnaNovost[lang]);
-
-    // const image =
-    //   (success && data && data.section1 && data.section1.src) || null;
-    // console.log('TCL: Index -> image', image);
-
-    // // preload post-big image
-    // image &&
-    //   preloadImages([isLocalImage ? folder + image : image]).then(value =>
-    //     // setDbData(data)
-    //     {
-    //       setLoaded(true);
-    //       console.log('TCL: Index -> preloadImages -> then()', image);
-    //     }
-    //   );
+      console.log('TCL: getNovosti -> slike', slike);
+      slike &&
+        preloadImages(slike).then(value => {
+          setSection2(data);
+        });
+    }
+    getNovosti(novosti[lang]);
   }, [lang]);
+
+  useEffect(() => {
+    AOS.refreshHard();
+  }, [section1, section2]);
 
   let i = 0;
   console.log('TCL: Index -> render: ', ++i);
