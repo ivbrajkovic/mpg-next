@@ -62,14 +62,16 @@
       "hr": {
         "title": "",
         "header": "lokacija",
-        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+        "content1": "Trg Istarskog razvoda 2</br>52000 Pazin",
+        "content2": "<a>Kontakt</a>",
+        "href": "/kontakt"
       },
       "en": {
         "title": "",
-        "header": "radno vrijeme",
-        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+        "header": "lokacija",
+        "content1": "10,00 – 18,00 sati</br>Ponedjeljkom zatvoreno.",
+        "content2": "",
+        "href": "/kontakt"
       }
     },
     {
@@ -77,14 +79,14 @@
       "hr": {
         "title": "",
         "header": "radno vrijeme",
-        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+        "content1": "10,00 – 18,00 sati",
+        "content2": "Ponedjeljkom zatvoreno."
       },
       "en": {
         "title": "",
         "header": "radno vrijeme",
-        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+        "content1": "10,00 – 18,00 sati",
+        "content2": "Ponedjeljkom zatvoreno."
       }
     },
     {
@@ -92,14 +94,14 @@
       "hr": {
         "title": "",
         "header": "ulaznice",
-        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+        "content1": "odrasli: 20,00 kn",
+        "content2": "grupe (10+), djeca, studenti,</br>umirovljenici: 10,00 kn</br>djeca do 5 godina i osobe sa invaliditetom: besplatan ulaz"
       },
       "en": {
         "title": "",
-        "header": "radno vrijeme",
-        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum",
-        "content2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae iste eligendi voluptatum"
+        "header": "ulaznice",
+        "content1": "odrasli: 20,00 kn",
+        "content2": "grupe (10+), djeca, studenti,</br>umirovljenici: 10,00 kn</br>djeca do 5 godina i osobe sa invaliditetom: besplatan ulaz"
       }
     }
   ],
@@ -107,22 +109,22 @@
     "slides": "",
     "hr": {
       "header": "zbirke",
-      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
+      "content": "Istražite naše zbirke koje su raspoređene u 3 odjela: Kulturno-povijesni, Povijesni I Galerijski."
     },
     "en": {
       "header": "zbirke",
-      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore culpa, laboriosam fugit accusamus et non."
+      "content": "Explore our collections, which are organized into 3 sections: Cultural History, History and Gallery."
     }
   },
   "section5": {
     "src": "baner-pocetna-okastelu.jpg",
     "hr": {
       "header": "o pazinskom kaštelu",
-      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
+      "content": "Pazinski Kaštel danas slovi za najočuvaniju srednjovjekovnu utvrdu središnje Istre, a najstariji sačuvani pisani trag o postojanju Kaštela nalazimo u potvrdnoj darovnici Otona II. od 7. lipnja 983. godine u kojoj nosi naziv <i>Castrum Pisinum</i>."
     },
     "en": {
       "header": "o pazinskom kaštelu",
-      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nobis, ducimus esse atque nesciunt aliquid libero nam officiis eaque consequuntur reprehenderit sapiente repellendus cumque, saepe molestiae nemo quo quos inventore amet cupiditate aperiam a repellat eius. At, autem doloremque"
+      "content": "Today, the Castle of Pazin is considered to be the most preserved medieval fortress of central Istria, and the oldest preserved written trace of the existence of the Castle is found in the endorsement of Oton II. dated June 7, 983, bearing the name <i>Castrum Pisinum</i>."
     }
   }
 }

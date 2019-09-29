@@ -1,8 +1,10 @@
 // section4.js
 
 // import Fade from "react-reveal/Fade";
-import Slide from "react-reveal/Slide";
-import makeCarousel from "react-reveal/makeCarousel";
+import Slide from 'react-reveal/Slide';
+import Link from 'next/link';
+
+import makeCarousel from 'react-reveal/makeCarousel';
 
 const Section4 = ({ lang, folder, data, slides }) => {
   const header = data[lang] && data[lang].header;
@@ -16,10 +18,10 @@ const Section4 = ({ lang, folder, data, slides }) => {
   // ];
 
   const sliderContainer = {
-    position: "relative",
-    overflow: "hidden",
-    width: "100%",
-    height: "100%"
+    position: 'relative',
+    overflow: 'hidden',
+    width: '100%',
+    height: '100%'
   };
   const CarouselUI = ({ children }) => (
     <div style={sliderContainer}>{children}</div>
@@ -28,17 +30,17 @@ const Section4 = ({ lang, folder, data, slides }) => {
 
   return (
     // <Fade fraction={0.8} ssrReveal>
-    <div data-aos="fade" data-aos-duration="1000">
-      <section className="container m-t-xs-20-xl-40 p-0 text-center section-4">
-        <div className="w3-card-4 d-grid">
-          <div className="item-1">
+    <div data-aos='fade' data-aos-duration='1000'>
+      <section className='container m-t-xs-20-xl-40 p-0 text-center section-4'>
+        <div className='w3-card-4 d-grid'>
+          <div className='item-1'>
             <Carousel defaultWait={4000} /*wait for 1000 milliseconds*/>
               {slides.map((item, index) => {
                 return (
                   <Slide right key={index}>
                     <img
                       key={index}
-                      className="img-cover"
+                      className='img-cover'
                       src={`${folder}${item}`}
                     />
                   </Slide>
@@ -46,11 +48,13 @@ const Section4 = ({ lang, folder, data, slides }) => {
               })}
             </Carousel>
           </div>
-          <div className="p-xs-20-l-30 pos-relative d-flex d-column justify-center item-2">
-            <h1 className="header-2 m-b-10">{header}</h1>
-            <p className="content-1 m-b-20">{content}</p>
-            <div className="btn-container">
-              <button className="btn btn-dark f-m-18">VIŠE</button>
+          <div className='p-xs-20-l-30 pos-relative d-flex d-column justify-center item-2'>
+            <h1 className='header-2 m-b-10'>{header}</h1>
+            <p className='content-1 m-b-20'>{content}</p>
+            <div className='btn-container'>
+              <Link href='/odjeli'>
+                <button className='btn btn-dark f-m-18'>VIŠE</button>
+              </Link>
             </div>
           </div>
         </div>
