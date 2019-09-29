@@ -1,25 +1,25 @@
 // Home page
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 // import { Transition } from 'react-transition-group';
 // import Zoom from 'react-reveal/Zoom'; // Importing Zoom effect
 
-import fetchDataAsync from "../lib/fetchDataAsync";
-import preloadImages from "../lib/preloadImages";
-import isLocalImage from "../lib/isLocalImage";
+import fetchDataAsync from '../lib/fetchDataAsync';
+import preloadImages from '../lib/preloadImages';
+import isLocalImage from '../lib/isLocalImage';
 
-import Hero from "../components/Hero";
-import Spinner from "../components/Spinner/Spinner";
-import Section1 from "../components/Index/Section1";
-import Section2 from "../components/Index/Section2";
-import Section3 from "../components/Index/Section3";
-import Section4 from "../components/Index/Section4";
-import Section5 from "../components/Index/Section5";
+import Hero from '../components/Hero';
+import Spinner from '../components/Spinner/Spinner';
+import Section1 from '../components/Index/Section1';
+import Section2 from '../components/Index/Section2';
+import Section3 from '../components/Index/Section3';
+import Section4 from '../components/Index/Section4';
+import Section5 from '../components/Index/Section5';
 
 const srcset = [
-  "/static/img/pocetna/baner-pocetna-768px.jpg",
-  "/static/img/pocetna/baner-pocetna-1200px.jpg",
-  "/static/img/pocetna/baner-pocetna.jpg"
+  '/static/img/pocetna/baner-pocetna-768px.jpg',
+  '/static/img/pocetna/baner-pocetna-1200px.jpg',
+  '/static/img/pocetna/baner-pocetna.jpg'
 ];
 
 let buttons = null;
@@ -32,7 +32,7 @@ const Index = ({ lang, success, data }) => {
   // const lang = props.lang;
   // const data = (props.success && props.data) || [];
   // const data = (dbData && dbData.success && dbData.data) || [];
-  const folder = (success && data && data.folder) || "";
+  const folder = (success && data && data.folder) || '';
   const slides = (success && data && data.slides) || [];
 
   const section1 = (success && data && data.section1) || [];
@@ -43,10 +43,10 @@ const Index = ({ lang, success, data }) => {
 
   useEffect(() => {
     // ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)";
-    buttons = document.querySelectorAll(".btn");
+    buttons = document.querySelectorAll('.btn');
     buttons &&
       buttons.forEach(btn => {
-        btn.addEventListener("mousedown", ripplet);
+        btn.addEventListener('mousedown', ripplet);
       });
 
     // console.log("TCL: Index -> buttons", buttons);
@@ -54,7 +54,7 @@ const Index = ({ lang, success, data }) => {
     return () => {
       buttons &&
         buttons.forEach(btn => {
-          btn.removeEventListener("mousedown", ripplet);
+          btn.removeEventListener('mousedown', ripplet);
         });
     };
   }, [loaded]);
@@ -68,11 +68,16 @@ const Index = ({ lang, success, data }) => {
 
     const image =
       (success && data && data.section1 && data.section1.src) || null;
+    console.log('TCL: Index -> image', image);
+
     // preload post-big image
     image &&
       preloadImages([isLocalImage ? folder + image : image]).then(value =>
         // setDbData(data)
-        setLoaded(true)
+        {
+          setLoaded(true);
+          console.log('TCL: Index -> preloadImages -> then()', image);
+        }
       );
 
     //     );
@@ -81,7 +86,7 @@ const Index = ({ lang, success, data }) => {
   }, []);
 
   let i = 0;
-  console.log("TCL: Index -> render: ", ++i);
+  console.log('TCL: Index -> render: ', ++i);
 
   return (
     // <Transition in={inProp} timeout={duration} mountOnEnter unmountOnExit>
@@ -108,7 +113,7 @@ const Index = ({ lang, success, data }) => {
             <Section5 lang={lang} folder={folder} data={section5} /> */}
         </>
       )) || (
-        <div className="m-t-120 d-flex justify-center">
+        <div className='m-t-120 d-flex justify-center'>
           <Spinner />
         </div>
       )}
@@ -118,7 +123,7 @@ const Index = ({ lang, success, data }) => {
 };
 
 Index.getInitialProps = async function(context) {
-  const data = await fetchDataAsync(context, "index");
+  const data = await fetchDataAsync(context, 'index');
   // const data = {};
   // data.data = {};
   // data.data.banners = [
