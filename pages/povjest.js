@@ -81,7 +81,7 @@ const povjest = ({ lang, data }) => {
             ></p>
           )}
         </div>
-        {text && loaded && (
+        {(text && loaded && (
           <div data-aos=''>
             <div className='m-t-xs-20-xl-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
               {gallery.map((item, index) => {
@@ -95,12 +95,12 @@ const povjest = ({ lang, data }) => {
                     style={{ transitionDelay: `${index * DELAY}ms` }}
                   />
                 );
-              }) || (
-                <div className='m-t-xs-20-xl-40 d-flex justify-center'>
-                  <Spinner />
-                </div>
-              )}
+              })}
             </div>
+          </div>
+        )) || (
+          <div className='m-t-xs-20-xl-40 d-flex justify-center'>
+            <Spinner />
           </div>
         )}
       </div>
