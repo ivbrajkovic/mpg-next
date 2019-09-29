@@ -36,7 +36,7 @@ const novosti = {
     'http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetNovostiKategorijeJezikTopNJSON?WebStranicaID=13&KategorijaID=1&JezikID=2&TopN=3'
 };
 
-const folderNovosti = '/static/img/Novosti/';
+const folderNovosti = '/static';
 
 let buttons = null;
 
@@ -96,20 +96,20 @@ const Index = ({ lang, success, data }) => {
     //   const res = await fetch(url);
     //   const data = await res.json();
 
-    //   if (data) {
-    //     const slike = data.forEach(item => folderNovosti + item.SlikaPath);
-    //     if (slike) {
-    //       preloadImages([folderNovosti + slika]).then(value => {
-    //         data[0].SlikaPath = folderNovosti + data.SlikaPath;
-    //         setSection1(data[0]);
-    //       });
-    //     } else {
-    //       data[0].SlikaPath = 'https://via.placeholder.com/555x321';
+    //   const slike = data && data.forEach && data.forEach(item => folderNovosti + item.SlikaPath) || [];
+
+    //   if (slike) {
+    //     preloadImages(slike).then(value => {
+    //       data[0].SlikaPath = folderNovosti + data.SlikaPath;
     //       setSection1(data[0]);
-    //     }
+    //     });
+    //   } else {
+    //     data[0].SlikaPath = 'https://via.placeholder.com/555x321';
+    //     setSection1(data[0]);
     //   }
     // }
     // getNovosti(glavnaNovost[lang]);
+
     // const image =
     //   (success && data && data.section1 && data.section1.src) || null;
     // console.log('TCL: Index -> image', image);
