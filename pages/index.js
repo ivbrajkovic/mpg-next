@@ -75,6 +75,7 @@ const Index = ({ lang, success, data }) => {
     async function getGlavnaNovost() {
       const res = await fetch(glavnaNovost[lang]);
       const data = await res.json();
+      console.log('TCL: getGlavnaNovost -> data', data);
 
       if (data && data[0]) {
         const slika = data[0].SlikaPath;
@@ -82,6 +83,10 @@ const Index = ({ lang, success, data }) => {
         if (slika) {
           preloadImages([folderNovosti + slika]).then(value => {
             data[0].SlikaPath = folderNovosti + data.SlikaPath;
+            console.log(
+              'TCL: getGlavnaNovost -> data[0].SlikaPath',
+              data[0].SlikaPath
+            );
             setSection1(data[0]);
           });
         } else {
