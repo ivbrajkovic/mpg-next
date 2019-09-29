@@ -77,7 +77,7 @@ const Index = ({ lang, success, data }) => {
       const data = await res.json();
 
       if (data && data[0]) {
-        const slika = data[0].SlikaPath1;
+        const slika = data[0].SlikaPath;
         // const slika = data[0].SlikaPath;
         if (slika) {
           preloadImages([folderNovosti + slika]).then(value => {
