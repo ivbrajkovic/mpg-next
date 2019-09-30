@@ -92,6 +92,12 @@
   background: $primary-back;
 }
 
+// @media (max-width: 1199.99px) {
+//   .header-3 {
+//     font-size: 28px;
+//   }
+// }
+
 @media (max-width: 1199.99px) {
   .navbar {
     font-size: 16px;
@@ -105,7 +111,8 @@
     // margin-bottom: 8px;
   }
   .header-3 {
-    font-size: 28px;
+    // font-size: 28px;
+    font-size: 26px;
 
     // line-height: 34px;
     // color: red;

@@ -41,6 +41,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     .post {
       max-width: 348px;
+      section {
+        height: 500px;
+      }
     }
   }
   .section-3 {
