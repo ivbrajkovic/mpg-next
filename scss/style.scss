@@ -1,17 +1,17 @@
 // AOS
 $aos-distance: 100px; // It has to be above import
-@import "./aos.css";
+@import './aos.css';
 
 // @import './w3';
-@import "./bootstrap-reboot";
+@import './bootstrap-reboot';
 // @import './utility';
-@import "./variables";
-@import "./mixin";
-@import "./font";
-@import "./freamwork/animation";
-@import "./freamwork/transition";
-@import "./freamwork/freamwork";
-@import "./freamwork/list";
+@import './variables';
+@import './mixin';
+@import './font';
+@import './freamwork/animation';
+@import './freamwork/transition';
+@import './freamwork/freamwork';
+@import './freamwork/list';
 
 $hamburger-padding-x: 0;
 $hamburger-padding-y: 0;
@@ -19,49 +19,52 @@ $hamburger-layer-width: 24px;
 $hamburger-layer-height: 3px;
 $hamburger-layer-spacing: 5px;
 $hamburger-layer-color: $color-1;
-@import "./hamburgers/_hamburgers.scss";
+@import './hamburgers/_hamburgers.scss';
 
-@import "./layout/navbar";
-@import "./layout/hero";
-@import "./layout/footer";
-@import "./layout/media";
+@import './layout/navbar';
+@import './layout/hero';
+@import './layout/footer';
+@import './layout/media';
 
-@import "./home/section-1";
-@import "./home/section-2";
-@import "./home/section-3";
-@import "./home/section-4";
-@import "./home/section-5";
+@import './home/section-1';
+@import './home/section-2';
+@import './home/section-3';
+@import './home/section-4';
+@import './home/section-5';
 
 // Odjeli
-@import "./odjeli/section-6";
-@import "./odjeli/section-7";
-@import "./odjeli/media";
+@import './odjeli/section-6';
+@import './odjeli/section-7';
+@import './odjeli/media';
 
 // Zbirke
-@import "./zbirke/zbirke";
-@import "./zbirke/detalji";
-@import "./zbirke/media";
+@import './zbirke/zbirke';
+@import './zbirke/detalji';
+@import './zbirke/media';
 
 // KOntakt
-@import "./contact/contact";
+@import './contact/contact';
 
 // Debug
 // @import './debug';
 
-@import "./global";
-@import "./buttons";
+@import './global';
+@import './buttons';
 
 // Media
-@import "./home/media";
+@import './home/media';
 
 // Gallery
-@import "./gallery/gallery";
+@import './gallery/gallery';
 
 // Postav
-@import "./postav/postav";
+@import './postav/postav';
 
 // izdanja
-@import "./izdanja/izdanja";
+@import './izdanja/izdanja';
 
 // usluge
-@import "./usluge/usluge";
+@import './usluge/usluge';
+
+// djelatnici
+@import './djelatnici/djelatnici';
