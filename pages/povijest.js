@@ -14,7 +14,7 @@ const srcset = [
 ];
 
 const gallery = [
-  'Informativna ploča -Narodni muzej Pazin-, 1956., inv. br. 638.jpg',
+  'Informativna ploca -Narodni muzej Pazin-, 1956., inv. br. 638.jpg',
   'Narodni muzej Pazin - otvorenje stalnog postava etnografije, 1961., inv. br. 95.jpg',
   'Narodni muzej Pazin - otvorenje stalnog postava etnografije, 1961., inv. br. 96.jpg',
   'Oznaka za muzej, 1980., inv. br. 5162.jpg'
