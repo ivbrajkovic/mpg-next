@@ -26,7 +26,7 @@ const Section3 = ({ lang, data }) => (
                 <header className='m-b-15'>
                   {/* <img src={item.src} /> */}
                   <img src={srcs[index]} />
-                  <h1 className='d-inl-blok header-4'>
+                  <h1 className='d-inl-blok header-4-light'>
                     {item[lang] && item[lang].header}
                   </h1>
                 </header>

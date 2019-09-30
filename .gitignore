@@ -22,8 +22,9 @@
 
 # module.exports.parseDocx = parseDocx;
 
-node_modules/
 .next/
+node_modules/
+Slike/
 *old*
 *copy*
 .gitignore

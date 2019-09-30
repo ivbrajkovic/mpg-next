@@ -10,11 +10,6 @@ const srcset = [
   '/static/img/djelatnici/baner-djelatnici.jpg'
 ];
 
-const title = {
-  hr: 'djelatnici',
-  en: 'staff'
-};
-
 const spinner = (
   <div className='m-t-xs-20-xl-40 d-flex justify-center'>
     <Spinner />
@@ -48,15 +43,12 @@ const djelatnici = ({ lang }) => {
           <Hero title={data.Naziv} srcset={srcset} />
           {/* // Content from CMS */}
           <div
-            className='container m-t-xs-20-xl-40'
+            className='container m-t-xs-20-xl-40 content-1'
             dangerouslySetInnerHTML={{ __html: data.Tekst }}
           ></div>
         </>
-      )) || (
-        <div className='m-t-xs-20-xl-40 d-flex justify-center'>
-          <Spinner />
-        </div>
-      )}
+      )) ||
+        spinner}
     </div>
   );
 };

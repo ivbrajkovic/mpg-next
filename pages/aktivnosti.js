@@ -12,7 +12,7 @@ const srcset = [
 
 import Hero from '../components/Hero';
 // import Section1 from "../components/Index/Section1";
-import Ukratko from '../components/Aktivnosti/Ukratko';
+// import Ukratko from '../components/Aktivnosti/Ukratko';
 // import Detalji from '../components/Aktivnosti/Detalji';
 import Detalji from '../components/Novosti/Detalji';
 

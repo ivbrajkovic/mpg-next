@@ -43,12 +43,12 @@ const Navbar = props => {
 
     return () => {
       observerRef.current.disconnect();
-      console.log('TCL: observer -> disconnect()', observerRef.current);
+      // console.log('TCL: observer -> disconnect()', observerRef.current);
     };
   }, []);
 
   useEffect(() => {
-    console.log('TCL: observer -> new', observerRef.current);
+    // console.log('TCL: observer -> new', observerRef.current);
 
     const el = document.getElementById('hero');
     el && observerRef.current.observe(el);

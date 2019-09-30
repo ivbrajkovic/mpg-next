@@ -8,45 +8,29 @@ import Hero from '../components/Hero';
 import GalleryItem from '../components/Gallery/GalleryItem';
 
 const srcset = [
-  '/static/img/kastel/baner-pazinski-kastel-768px.jpg',
-  '/static/img/kastel/baner-pazinski-kastel-1200px.jpg',
-  '/static/img/kastel/baner-pazinski-kastel.jpg'
+  '/static/img/povijest/baner-kontakt-768px.jpg',
+  '/static/img/povijest/baner-kontakt-1200px.jpg',
+  '/static/img/povijest/baner-kontakt.jpg'
 ];
 
 const gallery = [
-  'IMG_9777.JPG',
-  'IMG_9778.JPG',
-  'IMG_9779.JPG',
-  'kasyel jama 1.JPG',
-  'kasyel jama 2.JPG',
-  'kasyel jama 3.JPG',
-  'kasyel jama 4.JPG',
-  'kasyel jama 6.JPG',
-  'kasyel jama 7.JPG',
-  'kasyel jama 8.JPG',
-  'kasyel jama 9.JPG',
-  'kasyel jama 10.JPG',
-  'kasyel jama 11.JPG',
-  'kasyel jama 12.JPG',
-  'kasyel jama 13.JPG',
-  'kasyel jama 15.JPG',
-  'kasyel jama 17.JPG',
-  'kasyel jama 18.JPG',
-  'Pazin Kastel JD 18.jpg',
-  'Pazin Kastel ulaz JD 18.jpg'
+  'Informativna ploča -Narodni muzej Pazin-, 1956., inv. br. 638.jpg',
+  'Narodni muzej Pazin - otvorenje stalnog postava etnografije, 1961., inv. br. 95.jpg',
+  'Narodni muzej Pazin - otvorenje stalnog postava etnografije, 1961., inv. br. 96.jpg',
+  'Oznaka za muzej, 1980., inv. br. 5162.jpg'
 ];
 
 const urls = {
   hr:
-    'http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaWebJSON?WebStranicaID=13&StranicaID=101&JezikID=1',
+    'http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaWebJSON?WebStranicaID=13&StranicaID=102&JezikID=1',
   en:
-    'http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaWebJSON?WebStranicaID=13&StranicaID=101&JezikID=2'
+    'http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaWebJSON?WebStranicaID=13&StranicaID=102&JezikID=2'
 };
 
 const DELAY = 50;
-const folder = '/static/img/kastel/';
+const folder = '/static/img/povijest/';
 
-const kastel = ({ lang }) => {
+const povijest = ({ lang }) => {
   const [data, setData] = useState();
   const [loaded, setLoaded] = useState(false);
 
@@ -76,7 +60,7 @@ const kastel = ({ lang }) => {
   }, [loaded]);
 
   return (
-    <div className='kastel-page'>
+    <div className='povijest-page'>
       {(data && (
         <>
           {/* // Hero */}
@@ -126,4 +110,4 @@ const kastel = ({ lang }) => {
 //   return 'data';
 // };
 
-export default kastel;
+export default povijest;

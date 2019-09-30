@@ -95,18 +95,15 @@ const Index = ({ lang, success, data }) => {
     async function getNovosti(url) {
       const res = await fetch(url);
       const data = await res.json();
-      console.log('TCL: getNovosti -> data', data);
 
       const slike = [];
       data &&
         data.forEach &&
         data.forEach(item => {
-          console.log('TCL: getNovosti -> item', item);
           item.SlikaPath = folderNovosti + item.SlikaPath;
           slike.push(item.SlikaPath);
         });
 
-      console.log('TCL: getNovosti -> slike', slike);
       slike &&
         preloadImages(slike).then(value => {
           setSection2(data);

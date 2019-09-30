@@ -1,7 +1,5 @@
-import "./style.scss";
+import './style.scss';
 
-const Spinner = ({ className }) => (
-  <div className={`spinner-icon ${className}`}></div>
-);
+const Spinner = () => <div className='spinner-icon'></div>;
 
 export default Spinner;
