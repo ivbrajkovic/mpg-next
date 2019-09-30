@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import preloadImages from '../lib/preloadImages';
+import showSpinner from '../lib/showSpinner';
 
 import Hero from '../components/Hero';
 import GalleryItem from '../components/Gallery/GalleryItem';
