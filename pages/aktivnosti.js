@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
+import preloadImages from '../lib/preloadImages';
 
 const srcset = [
   '/static/img/aktivnosti/baner-aktivnosti-768px.jpg',
@@ -12,7 +13,8 @@ const srcset = [
 import Hero from '../components/Hero';
 // import Section1 from "../components/Index/Section1";
 import Ukratko from '../components/Aktivnosti/Ukratko';
-import Detalji from '../components/Aktivnosti/Detalji';
+// import Detalji from '../components/Aktivnosti/Detalji';
+import Detalji from '../components/Novosti/Detalji';
 
 const urls = {
   hr:
@@ -27,7 +29,7 @@ const titles = {
 };
 
 const MAX_AKTIVNOSTI = 2;
-const folder = '/static/img/aktivnosti/';
+const folderNovosti = '/static';
 
 const aktivnosti = ({ lang, data }) => {
   const [detalji, setDetalji] = useState(false);
@@ -35,38 +37,40 @@ const aktivnosti = ({ lang, data }) => {
   const itemRef = useRef();
 
   useEffect(() => {
-    async function getData() {
-      const res = await fetch(urls[lang]);
+    // async function getData() {
+    //   const res = await fetch(urls[lang]);
+    //   const data = await res.json();
+    //   setList(data);
+    //   AOS.refreshHard();
+    // }
+    // getData();
+
+    async function getNovosti(url) {
+      const res = await fetch(url);
       const data = await res.json();
-      setList(data);
-      AOS.refreshHard();
+      console.log('TCL: getNovosti -> data', data);
+
+      const slike = [];
+      data &&
+        data.forEach &&
+        data.forEach(item => {
+          console.log('TCL: getNovosti -> item', item);
+          item.SlikaPath = folderNovosti + item.SlikaPath;
+          slike.push(item.SlikaPath);
+        });
+
+      console.log('TCL: getNovosti -> slike', slike);
+      slike &&
+        preloadImages(slike).then(value => {
+          setList(data);
+        });
     }
-    getData();
+    getNovosti(urls[lang]);
   }, [lang]);
 
   useEffect(() => {
     AOS.refreshHard();
-  }, [detalji]);
-
-  // const loadMoreContent = async () => {
-  //   // if (data.length > countRef.current) {
-  //   //   const tmp = data.slice(
-  //   //     countRef.current,
-  //   //     countRef.current + numOfItemmsToAdd
-  //   //   );
-  //   //   // console.log("TCL: loadMoreContent -> tmp", tmp);
-  //   //   countRef.current += numOfItemmsToAdd;
-  //   //   setList(list => [...list, ...tmp]);
-  //   // }
-
-  //   const data = await fetchDataAsync(
-  //     null,
-  //     `/api/new?page=aktivnosti&from=${list.length + 1}&to=${list.length + 2}`
-  //   );
-  //   setList(list => [...list, ...data.data.section1]);
-
-  //   AOS.refreshHard();
-  // };
+  }, [list]);
 
   const showDetalji = item => {
     itemRef.current = item;
@@ -75,19 +79,13 @@ const aktivnosti = ({ lang, data }) => {
 
   const closeDetalji = () => {
     setDetalji(false);
-    // AOS.refreshHard();
   };
 
   return (
     <>
       <Hero title={titles[lang]} srcset={srcset} />
       {(detalji && (
-        <Detalji
-          lang={lang}
-          folder={folder}
-          data={itemRef.current}
-          onCloseDetalji={() => closeDetalji()}
-        />
+        <Detalji data={itemRef.current} onCloseDetalji={() => closeDetalji()} />
       )) || (
         <InfiniteScroll
           pageStart={0}
@@ -105,14 +103,31 @@ const aktivnosti = ({ lang, data }) => {
                 className='container'
                 onClick={() => showDetalji(item)}
               >
-                <Ukratko
-                  key={index}
-                  lang={lang}
-                  folder={folder}
-                  data={item}
-                  animation='fade-up'
-                  duration='1000'
-                />
+                <div data-aos='fade' data-aos-duration='1000'>
+                  <section
+                    className={`container m-t-xs-20-xl-40 text-center section-1`}
+                  >
+                    <div className='w3-card-4 d-grid'>
+                      <div className='item-1'>
+                        <img className='img-flex' src={item.SlikaPath} />
+                      </div>
+                      <article className='item-2'>
+                        <h2 className='p-0-20 post-title content-1-light1'>
+                          {item.Naslov2 || '- Datum izložbe -'}
+                        </h2>
+                        <section className='p-xs-20-l-40'>
+                          <h1 className='header-1'>{item.Naslov1}</h1>
+                          <p
+                            className='content-1'
+                            dangerouslySetInnerHTML={{
+                              __html: item.KratkiTekst1
+                            }}
+                          ></p>
+                        </section>
+                      </article>
+                    </div>
+                  </section>
+                </div>
               </div>
             );
           })}

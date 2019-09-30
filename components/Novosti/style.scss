@@ -1,0 +1,19 @@
+.detaljan-prikaz {
+  background: #efefef;
+
+  .btnClose {
+    float: right;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1200px) {
+  .detaljan-prikaz {
+    h2 {
+      line-height: 2.8;
+    }
+    .post-title {
+      font-size: 20px;
+    }
+  }
+}

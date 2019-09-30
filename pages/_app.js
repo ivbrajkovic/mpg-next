@@ -1,30 +1,32 @@
 // _app
 
-import App from "next/app";
-import Router from "next/router";
-import Head from "next/head";
-import NProgress from "nprogress";
+import App from 'next/app';
+import Router from 'next/router';
+import Head from 'next/head';
+import NProgress from 'nprogress';
 
-import Navbar from "../components/Navbar";
+import Navbar from '../components/Navbar';
 // import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+import Footer from '../components/Footer';
+import Detalji from '../components/Novosti/Detalji';
 
-import "../scss/style.scss";
+import '../scss/style.scss';
 
-Router.events.on("routeChangeStart", url => {
+Router.events.on('routeChangeStart', url => {
   console.log(`Loading: ${url}`);
   NProgress.start();
 });
-Router.events.on("routeChangeComplete", () => NProgress.done());
-Router.events.on("routeChangeError", () => NProgress.done());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 // import config from "react-reveal/globals";
 // config({ ssrReveal: true });
 
 export default class MyApp extends App {
   state = {
-    lang: "hr",
+    lang: 'hr',
     odjel: 0
+    // detalji: null
   };
 
   // static async getInitialProps({ Component, router, ctx }) {
@@ -43,7 +45,7 @@ export default class MyApp extends App {
   // };
 
   componentDidMount = () =>
-    (ripplet.defaultOptions.color = "rgba(255, 255, 255, .2)");
+    (ripplet.defaultOptions.color = 'rgba(255, 255, 255, .2)');
 
   setLanguage = lang => {
     this.setState({
@@ -52,7 +54,7 @@ export default class MyApp extends App {
   };
 
   onTest = () => {
-    console.log("TCL: MyApp -> onTest: REFRESH");
+    console.log('TCL: MyApp -> onTest: REFRESH');
     this.setState({
       lang: this.state.lang
     });
@@ -67,9 +69,33 @@ export default class MyApp extends App {
     // }
   };
 
+  // showDetalji = data => {
+  //   console.log('TCL: data', data);
+  //   this.setState({
+  //     detalji: data
+  //   });
+  // };
+
+  // closeDetalji = () => {
+  //   this.setState({
+  //     detalji: null
+  //   });
+  // };
+
+  // show = () => {
+  //   if (this.state.detalji) {
+  //     return (
+  //       <Detalji
+  //         data={this.state.detalji}
+  //         onCloseDetalji={this.closeDetalji()}
+  //       />
+  //     );
+  //   } else return null;
+  // };
+
   i = 0;
   render() {
-    console.log("TCL: MyApp -> render: ", ++this.i);
+    console.log('TCL: MyApp -> render: ', ++this.i);
     // console.log('TCL: MyApp -> render -> this.state', this.state);
     // console.log('TCL: MyApp -> render -> process.browser', process.browser);
 
@@ -113,13 +139,15 @@ export default class MyApp extends App {
           onSetOdjel={this.setOdjel}
         />
 
+        {/* {this.show()} */}
+
         <div
           style={{
             marginTop: 100,
-            display: "grid",
+            display: 'grid',
             // gridTemplateColumns: "1fr",
-            gridTemplateRows: "1fr auto",
-            minHeight: "calc(101vh - 100px)"
+            gridTemplateRows: '1fr auto',
+            minHeight: 'calc(101vh - 100px)'
           }}
         >
           <Component
@@ -127,6 +155,7 @@ export default class MyApp extends App {
             odjel={this.state.odjel}
             lang={this.state.lang}
             onSetOdjel={this.setOdjel}
+            // onShowDetalji={this.showDetalji}
           />
 
           <Footer />

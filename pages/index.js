@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 import fetchDataAsync from '../lib/fetchDataAsync';
 import preloadImages from '../lib/preloadImages';
-import isLocalImage from '../lib/isLocalImage';
+// import isLocalImage from '../lib/isLocalImage';
 
 import Hero from '../components/Hero';
 import Spinner from '../components/Spinner/Spinner';
@@ -133,8 +133,7 @@ const Index = ({ lang, success, data }) => {
     // <div style={{ minHeight: "90vh" }}>
     <div>
       <Hero move srcset={srcset} />
-      {(section1 && <Section1 lang={lang} folder={folder} data={section1} />) ||
-        showSpinner()}
+      {(section1 && <Section1 data={section1} />) || showSpinner()}
       {(section1 && section2 && (
         <Section2 lang={lang} folder={folder} data={section2} />
       )) ||
