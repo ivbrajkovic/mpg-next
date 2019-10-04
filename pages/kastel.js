@@ -13,29 +13,6 @@ const srcset = [
   '/static/img/kastel/baner-pazinski-kastel.jpg'
 ];
 
-const gallery = [
-  'IMG_9777.JPG',
-  'IMG_9778.JPG',
-  'IMG_9779.JPG',
-  'kasyel jama 1.JPG',
-  'kasyel jama 2.JPG',
-  'kasyel jama 3.JPG',
-  'kasyel jama 4.JPG',
-  'kasyel jama 6.JPG',
-  'kasyel jama 7.JPG',
-  'kasyel jama 8.JPG',
-  'kasyel jama 9.JPG',
-  'kasyel jama 10.JPG',
-  'kasyel jama 11.JPG',
-  'kasyel jama 12.JPG',
-  'kasyel jama 13.JPG',
-  'kasyel jama 15.JPG',
-  'kasyel jama 17.JPG',
-  'kasyel jama 18.JPG',
-  'Pazin Kastel JD 18.jpg',
-  'Pazin Kastel ulaz JD 18.jpg'
-];
-
 const urls = {
   hr:
     'http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaWebJSON?WebStranicaID=13&StranicaID=101&JezikID=1',
@@ -44,7 +21,7 @@ const urls = {
 };
 
 const DELAY = 50;
-const folder = '/static/img/kastel/';
+// const folder = '/static/img/kastel/';
 
 const kastel = ({ lang }) => {
   const [data, setData] = useState();
@@ -66,7 +43,11 @@ const kastel = ({ lang }) => {
       const res = await fetch(urls[lang]);
       const data = await res.json();
       // setData(data);
-      parseData(data.Tekst);
+
+      for await (let p of parseDataGenerator(data.Tekst)) {
+        setData(v => (v && [...v, p]) || p);
+        console.log('TCL: getData -> p', p);
+      }
     }
     getData();
   }, [lang]);
@@ -74,17 +55,19 @@ const kastel = ({ lang }) => {
   useEffect(() => {
     AOS.refreshHard();
     lightbox.reload();
-  }, [loaded]);
+  }, [data]);
 
-  const parseData = async data => {
-    const ret = [];
+  async function* parseDataGenerator(data) {
+    // const ret = [];
     const lv1 = data.split('**eNewline**');
 
     for (let i = 0; i < lv1.length; i++) {
+      const ret = [];
       const lv2 = lv1[i].split('**eGallery**');
 
       for (let j = 0; j < lv2.length; j++) {
         if (j == 0)
+          // Push conetnt
           ret.push(
             <div
               className='container m-t-xs-20-xl-40 content-1'
@@ -94,57 +77,40 @@ const kastel = ({ lang }) => {
             ></div>
           );
         else if (j == 1) {
-          const res = await fetch(`/api/gallery?folder=${lv2[1]}`);
-          console.log('TCL: kastel -> res', res);
+          // Get gallery from local folder
+          const path = lv2[1].substring(0, lv2[1].indexOf('**/gallery**'));
+          const res = await fetch(`/api/gallery?folder=${path}`);
           const data = await res.json();
-          console.log('TCL: kastel -> data', data);
 
-          const gallery = (
+          // Preload images
+          const preload = await preloadImages(data.data || []);
+          console.log('TCL: function*parseDataGenerator -> preload', preload);
+
+          // Push gallery
+          ret.push(
             <div data-aos=''>
               <div className='container m-t-xs-20-xl-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
-                {data.data.map((item, index) => {
-                  return (
-                    <GalleryItem
-                      key={index}
-                      thumb={item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')}
-                      large={item}
-                      style={{ transitionDelay: `${index * DELAY}ms` }}
-                    />
-                  );
-                }) || showSpinner('m-t-xs-20-xl-40 d-flex justify-center')}
+                {data.data &&
+                  data.data.map((item, index) => {
+                    return (
+                      <GalleryItem
+                        key={index}
+                        thumb={item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')}
+                        large={item}
+                        style={{ transitionDelay: `${index * DELAY}ms` }}
+                      />
+                    );
+                  })}
               </div>
             </div>
           );
-
-          ret.push(gallery);
         }
       }
+      // console.log('TCL: function* parseDataGenerator -> ret[i]', ret[i]);
+      yield ret;
     }
-
-    // .forEach(item1 => {
-    //   item1.split('**g').forEach((item2, index) => {
-    //     if (index == 0)
-    //       ret.push(
-    //         <div
-    //           className='container m-t-xs-20-xl-40 content-1'
-    //           data-aos='fade'
-    //           data-aos-duration='1000'
-    //           dangerouslySetInnerHTML={{ __html: item2 }}
-    //         ></div>
-    //       );
-    //     else {
-    //       // ret.push(item2);
-    //       const res = await fetch(urls[lang]);
-    //       const data = await res.json();
-    //       console.log("TCL: kastel -> data", data)
-
-    //     }
-    //   });
-    // });
-    console.log('TCL: kastel -> ret', ret);
-    //return ret;
-    setData(ret);
-  };
+    // setData(ret);
+  }
 
   return (
     <div className='kastel-page'>
@@ -154,13 +120,6 @@ const kastel = ({ lang }) => {
           <Hero title={data.Naziv} srcset={srcset} />
           {/* // Content from CMS */}
           {data}
-          {/* <div 
-            className='container m-t-xs-20-xl-40 content-1'
-            data-aos='fade'
-            data-aos-duration='1000'
-            dangerouslySetInnerHTML={{ __html: data.Tekst }}
-          ></div> */}
-          {/* {parseData(data.Tekst)} */}
         </>
       )) ||
         showSpinner('m-t-xs-20-xl-40 d-flex justify-center')}
