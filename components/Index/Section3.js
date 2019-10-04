@@ -23,7 +23,7 @@ const Section3 = ({ lang, data }) => (
               data-aos-delay={300 / (index + 1)}
             >
               <article className='post-info'>
-                <header className='m-b-15'>
+                <header className='m-b-5'>
                   {/* <img src={item.src} /> */}
                   <img src={srcs[index]} />
                   <h1 className='d-inl-blok header-4-light'>
@@ -32,7 +32,7 @@ const Section3 = ({ lang, data }) => (
                 </header>
 
                 <p
-                  className='m-b-10 content-3 f-xl-22'
+                  className='m-b-5 content-3 f-xl-22'
                   dangerouslySetInnerHTML={{
                     __html: (item[lang] && item[lang].content1) || ''
                   }}
@@ -44,7 +44,7 @@ const Section3 = ({ lang, data }) => (
                   <Link href={item[lang].href}>
                     <p
                       style={{ cursor: 'pointer', textDecoration: 'underline' }}
-                      className='m-b-10 content-4 f-xl-22'
+                      className='m-b-5 content-4 f-xl-22'
                       dangerouslySetInnerHTML={{
                         __html: (item[lang] && item[lang].content2) || ''
                       }}

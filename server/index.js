@@ -12,7 +12,11 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  // New API
   server.use("/api/new", require("./api/pages.js"));
+  server.use("/api/gallery", require("./api/gallery.js"));
+
+  // Old API
   server.use("/api", require("./api"));
   server.use("/api/zbirke", require("./api/zbirke.js"));
   server.use("/api/zbirke/detalji", require("./api/detalji.js"));

@@ -50,22 +50,23 @@ const kastel = ({ lang }) => {
   const [data, setData] = useState();
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    const images = gallery.map(
-      item => folder + item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
-    );
-    preloadImages(images)
-      .then(() => setLoaded(true))
-      .catch(err =>
-        console.log('TCL: Stalni postav -> preloadImages -> err():', err)
-      );
-  }, []);
+  // useEffect(() => {
+  //   const images = gallery.map(
+  //     item => folder + item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
+  //   );
+  //   preloadImages(images)
+  //     .then(() => setLoaded(true))
+  //     .catch(err =>
+  //       console.log('TCL: Stalni postav -> preloadImages -> err():', err)
+  //     );
+  // }, []);
 
   useEffect(() => {
     async function getData() {
       const res = await fetch(urls[lang]);
       const data = await res.json();
-      setData(data);
+      // setData(data);
+      parseData(data.Tekst);
     }
     getData();
   }, [lang]);
@@ -75,6 +76,76 @@ const kastel = ({ lang }) => {
     lightbox.reload();
   }, [loaded]);
 
+  const parseData = async data => {
+    const ret = [];
+    const lv1 = data.split('**eNewline**');
+
+    for (let i = 0; i < lv1.length; i++) {
+      const lv2 = lv1[i].split('**eGallery**');
+
+      for (let j = 0; j < lv2.length; j++) {
+        if (j == 0)
+          ret.push(
+            <div
+              className='container m-t-xs-20-xl-40 content-1'
+              data-aos='fade'
+              data-aos-duration='1000'
+              dangerouslySetInnerHTML={{ __html: lv2[0] }}
+            ></div>
+          );
+        else if (j == 1) {
+          const res = await fetch(`/api/gallery?folder=${lv2[1]}`);
+          console.log('TCL: kastel -> res', res);
+          const data = await res.json();
+          console.log('TCL: kastel -> data', data);
+
+          const gallery = (
+            <div data-aos=''>
+              <div className='container m-t-xs-20-xl-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
+                {data.data.map((item, index) => {
+                  return (
+                    <GalleryItem
+                      key={index}
+                      thumb={item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')}
+                      large={item}
+                      style={{ transitionDelay: `${index * DELAY}ms` }}
+                    />
+                  );
+                }) || showSpinner('m-t-xs-20-xl-40 d-flex justify-center')}
+              </div>
+            </div>
+          );
+
+          ret.push(gallery);
+        }
+      }
+    }
+
+    // .forEach(item1 => {
+    //   item1.split('**g').forEach((item2, index) => {
+    //     if (index == 0)
+    //       ret.push(
+    //         <div
+    //           className='container m-t-xs-20-xl-40 content-1'
+    //           data-aos='fade'
+    //           data-aos-duration='1000'
+    //           dangerouslySetInnerHTML={{ __html: item2 }}
+    //         ></div>
+    //       );
+    //     else {
+    //       // ret.push(item2);
+    //       const res = await fetch(urls[lang]);
+    //       const data = await res.json();
+    //       console.log("TCL: kastel -> data", data)
+
+    //     }
+    //   });
+    // });
+    console.log('TCL: kastel -> ret', ret);
+    //return ret;
+    setData(ret);
+  };
+
   return (
     <div className='kastel-page'>
       {(data && (
@@ -82,17 +153,19 @@ const kastel = ({ lang }) => {
           {/* // Hero */}
           <Hero title={data.Naziv} srcset={srcset} />
           {/* // Content from CMS */}
-          <div
+          {data}
+          {/* <div 
             className='container m-t-xs-20-xl-40 content-1'
             data-aos='fade'
             data-aos-duration='1000'
             dangerouslySetInnerHTML={{ __html: data.Tekst }}
-          ></div>
+          ></div> */}
+          {/* {parseData(data.Tekst)} */}
         </>
       )) ||
         showSpinner('m-t-xs-20-xl-40 d-flex justify-center')}
 
-      {data && loaded && (
+      {/* {data && loaded && (
         <div data-aos=''>
           <div className='container m-t-xs-20-xl-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
             {gallery.map((item, index) => {
@@ -109,7 +182,7 @@ const kastel = ({ lang }) => {
             }) || showSpinner('m-t-xs-20-xl-40 d-flex justify-center')}
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

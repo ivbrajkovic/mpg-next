@@ -4,7 +4,7 @@ const fs = require("fs");
 
 function getJsonData(res, json) {
   console.log(
-    "TCL: *********************** getJsonData ***************************"
+    "TCL: ****************** SERVER: getJsonData() **********************"
   );
 
   fs.readFile(json, (error, file) => {

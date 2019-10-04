@@ -1,6 +1,7 @@
 .section-4 {
-    .d-grid {
-        grid-template-columns: 1fr;
-        background: $secondary-back;
-    }
+  .d-grid {
+    grid-template-columns: 1fr;
+    background: $secondary-back;
+    grid-template-rows: 220px;
+  }
 }

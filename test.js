@@ -38,21 +38,38 @@
 //   console.log("TCL: rows", JSON.stringify(rows));
 // });
 
-const low = require("lowdb");
-const FileSync = require("lowdb/adapters/FileSync");
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
 
-const adapter = new FileSync("server/db/aktivnosti/aktivnosti.json");
+const adapter = new FileSync('server/db/aktivnosti/aktivnosti.json');
 const db = low(adapter);
 
-const value = db.has("section1").value();
-console.log("TCL: value: ", value);
+const value = db.has('section1').value();
+console.log('TCL: value: ', value);
 
-let data = db.get("section1").value();
+let data = db.get('section1').value();
 // console.log("TCL: data", data);
 
 data = db
-  .get("section1")
+  .get('section1')
   .filter({ id: 2 })
   .take(2)
   .value();
-console.log("TCL: data", data);
+console.log('TCL: data', data);
+
+/* <div class="kontakti">
+  <a href="mailto:suzana.beric@muzej-pazin.hr" style="color:#0563c1; text-decoration:underline">
+    <img alt="email" src="/static/img/email.svg" />
+    suzana.beric@muzej-pazin.hr
+	</a>
+
+  <a href="mailto:info@muzej-pazin.hr" style="color:#0563c1; text-decoration:underline">
+    <img alt="email" src="/static/img/email.svg" />
+    info@muzej-pazin.hr
+	</a>
+
+  <a href="tel:+38552623054">
+    <img alt="email" src="/static/img/phone.svg" />
+    052/623 054
+	</a>
+</div> */
