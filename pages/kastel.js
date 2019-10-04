@@ -61,6 +61,7 @@ const kastel = ({ lang }) => {
     // const ret = [];
     const lv1 = data.split('**eNewline**');
 
+    let key = 0;
     for (let i = 0; i < lv1.length; i++) {
       const ret = [];
       const lv2 = lv1[i].split('**eGallery**');
@@ -70,6 +71,7 @@ const kastel = ({ lang }) => {
           // Push conetnt
           ret.push(
             <div
+              key={key++}
               className='container m-t-xs-20-xl-40 content-1'
               data-aos='fade'
               data-aos-duration='1000'
@@ -82,20 +84,28 @@ const kastel = ({ lang }) => {
           const res = await fetch(`/api/gallery?folder=${path}`);
           const data = await res.json();
 
+          const thumbs =
+            (data.data &&
+              data.data.map(item =>
+                item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
+              )) ||
+            [];
+
           // Preload images
-          const preload = await preloadImages(data.data || []);
-          console.log('TCL: function*parseDataGenerator -> preload', preload);
+          const preload = await preloadImages(thumbs);
+          // console.log('TCL: function*parseDataGenerator -> preload', preload);
 
           // Push gallery
           ret.push(
-            <div data-aos=''>
+            <div key={key++} data-aos=''>
               <div className='container m-t-xs-20-xl-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
                 {data.data &&
                   data.data.map((item, index) => {
                     return (
                       <GalleryItem
                         key={index}
-                        thumb={item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')}
+                        // thumb={item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')}
+                        thumb={thumbs[index]}
                         large={item}
                         style={{ transitionDelay: `${index * DELAY}ms` }}
                       />
