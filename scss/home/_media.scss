@@ -2,57 +2,85 @@
   .banner {
     height: 360px;
   }
+
+  .section-1,
+  .section-2 {
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .content-footer {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 768px) {
   .banner {
     height: 400px;
   }
+
   .section-1 {
-    text-align: left;
+    h1 {
+      font-size: 26px;
+    }
+
     .d-grid {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 400px;
-    }
-    .item-1 {
-      // height: 100%;
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: 50% 50%;
-      }
+      grid-template-rows: 380px;
     }
   }
+
   .section-2 {
-    text-align: left;
     grid-template-columns: 1fr 1fr 1fr;
+
     .post {
-      max-width: 348px;
-      section {
-        height: 500px;
-      }
+      // max-width: 348px;
+      grid-template-rows: 170px;
+    }
+
+    h1 + p {
+      display: none;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 14px;
     }
   }
+
   .section-3 {
     text-align: left;
+
     .d-grid {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 10px;
     }
+
     .m-b-5 {
       margin-bottom: 10px;
     }
+
+    h1 {
+      font-size: 22px;
+    }
   }
+
   .section-4 {
     text-align: left;
+
     .d-grid {
       grid-template-columns: 40% 60%;
       grid-template-rows: 240px;
     }
+
     .item-1 {
       grid-column: 2 / span 1;
       grid-row: 1 / span 1;
+
       img {
         height: 100%;
         height: 100%;
@@ -61,22 +89,27 @@
         object-position: 50% 50%;
       }
     }
+
     .item-2 {
       grid-column: 1 / span 1;
       grid-row: 1 / span 1;
       padding-bottom: 40px; // Because of floating
     }
+
     .btn-container {
       position: absolute;
       bottom: 0;
       right: 0;
     }
   }
+
   .section-5 {
     text-align: left;
+
     .banner {
       max-width: 100%;
     }
+
     .item-2 {
       position: absolute;
       top: 0;
@@ -84,50 +117,92 @@
       left: 0;
       right: 0;
       opacity: 0.95;
+      height: 100%;
+      width: 100%;
     }
+
     .float-right {
       height: 100%;
       max-width: 350px;
       margin-left: auto;
       padding-bottom: 40px; // Because of floating
     }
+
     .btn-container {
       position: absolute;
       bottom: 0;
       right: 0;
     }
   }
-  // footer {
-  //   .d-grid {
-  //     text-align: left;
-  //     grid-template-columns: repeat(4, 1fr);
-  //     // grid-template-columns: repeat(3, 1fr) auto;
-  //   }
-  //   .item-1 {
-  //     grid-column: 1 / span 1;
-  //     grid-row: 1 / span 1;
-  //   }
-  //   .item-2 {
-  //     grid-column: 2 / span 1;
-  //     grid-row: 1 / span 1;
-  //   }
-  // }
 }
 
 @media (min-width: 992px) {
   .banner {
     height: 450px;
   }
+
   .section-1 {
-    h2 {
-      padding-left: 40px;
-      padding-right: 40px;
+    .d-grid {
+      grid-template-rows: 450px;
+    }
+
+    h1 {
+      font-size: 34px;
+    }
+    p {
+      font-size: 20px;
     }
   }
+
+  .section-2 {
+    h1 + p {
+      display: block;
+    }
+
+    .post {
+      // max-width: 348px;
+      grid-template-rows: 200px;
+    }
+
+    .header-2 {
+      font-size: 22px;
+    }
+
+    .content-2 {
+      font-size: 16px;
+    }
+  }
+
+  .section-3 {
+    .d-grid {
+      grid-gap: 20px;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    p + p {
+      font-size: 16px;
+    }
+  }
+
   .section-5 {
+    .header-1 {
+      margin-bottom: 20px;
+    }
+
     .float-right {
       max-width: 400px;
     }
+  }
+
+  .content-footer {
+    font-size: 16px;
   }
 }
 
@@ -135,30 +210,72 @@
   .banner {
     height: 500px;
   }
-  .section-1 {
-    .d-grid {
-      grid-template-rows: 600px;
 
-      .post-title,
-      .content-1 {
-        font-size: 20px;
+  .section-1 {
+    .post-title {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .d-grid {
+      grid-template-rows: 525px;
+
+      h1 {
+        font-size: 42px;
       }
+
+      p {
+        font-size: 21px;
+      }
+    }
+  }
+
+  .section-2 {
+    .post {
+      grid-template-rows: 250px;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+
+    p {
+      font-size: 18px;
     }
   }
 
   .section-3 {
     padding: 40 0;
+
+    h1 {
+      font-size: 34px;
+    }
+
+    p {
+      font-size: 21px;
+    }
+
+    p + p {
+      font-size: 18px;
+    }
+
     img {
       height: auto;
       width: auto;
     }
+
     .d-grid {
       grid-gap: 20px;
     }
   }
+
   .section-5 {
     .float-right {
       width: 450px;
     }
+  }
+
+  .content-footer {
+    font-size: 18px;
   }
 }

@@ -26,7 +26,7 @@ const Section2 = ({ data }) => {
       )) || (
         <section
           // ref={elementRef}
-          className='container m-t-xs-20-xl-40 gap-xs-20-xl-40 d-grid text-center section-2'
+          className='container m-t-xs-20-xl-40 gap-xs-20-xl-40 d-grid section-2'
         >
           {data &&
             data.map((item, index) => {
@@ -37,28 +37,28 @@ const Section2 = ({ data }) => {
                   data-aos-duration='1000'
                   data-aos-delay={100 * index}
                 >
-                  <article
-                    style={{ cursor: 'pointer' }}
+                  <div
                     className='w3-card-4 post'
+                    style={{ cursor: 'pointer' }}
                     onClick={() => showDetalji(item)}
                   >
-                    {/* <img className="img-flex" src={item.src} /> */}
-                    <img
-                      // className='img-flex'
-                      src={item.SlikaPath}
-                      // src={isLocalImage(item.src) ? `${folder}${item.src}` : item.src}
-                    />
-                    <h2 className='p-0-20 content-2 post-title content-1-light'>
-                      {item.Naslov2}
-                    </h2>
-                    <section className='p-20'>
-                      <h1 className='header-3'>{item.Naslov}</h1>
-                      <p
-                        className='content-2'
-                        dangerouslySetInnerHTML={{ __html: item.KratkiTekst1 }}
-                      ></p>
-                    </section>
-                  </article>
+                    <div className='item-1'>
+                      <img src={item.SlikaPath} />
+                    </div>
+                    <div className='item-2'>
+                      <p className='p-0-20 content-2 post-title'>
+                        {item.Naslov2}
+                      </p>
+                      <div className='p-20'>
+                        <h1>{item.Naslov}</h1>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: item.KratkiTekst1
+                          }}
+                        ></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               );
             })}

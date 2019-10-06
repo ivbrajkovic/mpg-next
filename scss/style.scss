@@ -21,6 +21,9 @@ $hamburger-layer-spacing: 5px;
 $hamburger-layer-color: $color-1;
 @import './hamburgers/_hamburgers.scss';
 
+@import './global';
+@import './buttons';
+
 @import './layout/navbar';
 @import './layout/hero';
 @import './layout/footer';
@@ -45,12 +48,6 @@ $hamburger-layer-color: $color-1;
 // KOntakt
 @import './contact/contact';
 
-// Debug
-// @import './debug';
-
-@import './global';
-@import './buttons';
-
 // Media
 @import './home/media';
 
@@ -71,3 +68,6 @@ $hamburger-layer-color: $color-1;
 
 // kastel
 // @import './kastel/kastel';
+
+// Debug
+// @import './debug';

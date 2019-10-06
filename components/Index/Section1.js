@@ -31,7 +31,8 @@ const Section1 = ({ data, onShowDetalji }) => {
       )) || (
         <div data-aos='fade' data-aos-duration='1000'>
           <section
-            className={`container m-t-xs-20-xl-40 text-center section-1`}
+            // className={`container m-t-xs-20-xl-40 text-center section-1`}
+            className={`container m-t-xs-20-xl-40 section-1`}
           >
             <div
               style={{ cursor: 'pointer' }}
@@ -39,21 +40,16 @@ const Section1 = ({ data, onShowDetalji }) => {
               onClick={() => showDetalji()}
             >
               <div className='item-1'>
-                <img
-                  // className='img-cover'
-                  src={slika}
-                  // src={
-                  //   isLocalImage(data.src) ? `${folder}${data.src}` : data.src
-                  // }
-                />
+                <img src={slika} />
               </div>
               <article className='item-2'>
-                <h2 className='p-0-20 post-title content-1-light'>{title}</h2>
-                <section className='p-xs-20-l-40'>
-                  <h1 className='header-1'>{header}</h1>
+                <p className='p-0-20 post-title'>{title}</p>
+                <section className='p-xs-20-xl-40'>
+                  <h1>{header}</h1>
                   <p
-                    className='content-1'
-                    dangerouslySetInnerHTML={{ __html: content }}
+                    dangerouslySetInnerHTML={{
+                      __html: content.substring(0, 590)
+                    }}
                   ></p>
                 </section>
               </article>

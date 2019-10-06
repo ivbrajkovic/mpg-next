@@ -99,6 +99,10 @@
   margin-top: 20px;
 }
 
+.m-t-xs-20-m-40 {
+  margin-top: 20px;
+}
+
 .m-t-xs-20-xl-60 {
   margin-top: 20px;
 }
@@ -114,6 +118,9 @@
 }
 
 @media (min-width: 768px) {
+  .m-t-xs-20-m-40 {
+    margin-top: 40px;
+  }
 }
 
 // @media (min-width: 992px) {

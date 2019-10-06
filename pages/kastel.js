@@ -25,6 +25,7 @@ const DELAY = 50;
 
 const kastel = ({ lang }) => {
   const [data, setData] = useState();
+  const [hero, setHero] = useState();
   const [loaded, setLoaded] = useState(false);
 
   // useEffect(() => {
@@ -44,9 +45,12 @@ const kastel = ({ lang }) => {
       const data = await res.json();
       // setData(data);
 
+      setHero(data.Naziv);
+      setData(null);
+
       for await (let p of parseDataGenerator(data.Tekst)) {
         setData(v => (v && [...v, p]) || p);
-        console.log('TCL: getData -> p', p);
+        // console.log('TCL: getData -> p', p);
       }
     }
     getData();
@@ -98,7 +102,7 @@ const kastel = ({ lang }) => {
           // Push gallery
           ret.push(
             <div key={key++} data-aos=''>
-              <div className='container m-t-xs-20-xl-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
+              <div className='container m-t-xs-20-m-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
                 {data.data &&
                   data.data.map((item, index) => {
                     return (
@@ -127,7 +131,7 @@ const kastel = ({ lang }) => {
       {(data && (
         <>
           {/* // Hero */}
-          <Hero title={data.Naziv} srcset={srcset} />
+          <Hero title={hero} srcset={srcset} />
           {/* // Content from CMS */}
           {data}
         </>

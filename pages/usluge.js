@@ -1,150 +1,176 @@
-// Izdanja page
+// Povjest page
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState, useRef } from 'react';
+import preloadImages from '../lib/preloadImages';
+import showSpinner from '../lib/showSpinner';
 
-import fetchDataAsync from "../lib/fetchDataAsynNew";
-import preloadImages from "../lib/preloadImages";
-import getContentFromJson from "../lib/getContentFromJson";
-import getFilesFromGallery from "../lib/getFilesFromGallery";
-
-import Hero from "../components/Hero";
-import GalleryItem from "../components/Gallery/GalleryItem";
-import Spinner from "../components/Spinner/Spinner";
+import Hero from '../components/Hero';
+import GalleryItem from '../components/Gallery/GalleryItem';
 
 const srcset = [
-  "/static/img/usluge/baner-usluge-768px.jpg",
-  "/static/img/usluge/baner-usluge-1200px.jpg",
-  "/static/img/usluge/baner-usluge.jpg"
+  '/static/img/usluge/baner-usluge-768px.jpg',
+  '/static/img/usluge/baner-usluge-1200px.jpg',
+  '/static/img/usluge/baner-usluge.jpg'
 ];
 
-const folder = "static/img/usluge/";
-const loader = (
-  <div className="m-t-xs-20-xl-40 d-flex justify-center">
-    <Spinner />
-  </div>
-);
-
-const text = {
-  hr: {
-    hero: "usluge",
-    info: {
-      reception: "recepcija"
-    },
-    form: {
-      name: "ime",
-      email: "email",
-      telephone: "telefon",
-      message: "poruka",
-      btn: "pošalji"
-    }
-  },
-  en: {
-    hero: "services",
-    info: {
-      reception: "reception"
-    },
-    form: {
-      name: "name",
-      email: "email",
-      telephone: "telephone",
-      message: "message",
-      btn: "send"
-    }
-  }
+const urls = {
+  hr:
+    'http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaWebJSON?WebStranicaID=13&StranicaID=105&JezikID=1',
+  en:
+    'http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaWebJSON?WebStranicaID=13&StranicaID=105&JezikID=2'
 };
 
-const izdanja = ({ lang, data }) => {
-  // console.log("TCL: izdanja -> data", data);
+const DELAY = 50;
+// const folder = '/static/img/kastel/';
 
-  const folder = (data && data.folder) || "";
-  const gallery = (data && data.gallery) || "";
+const usluge = ({ lang }) => {
+  const [data, setData] = useState();
+  const [hero, setHero] = useState();
+  // const [loaded, setLoaded] = useState(false);
 
-  const title = (data && data[lang] && data[lang].hero) || "";
-  const section1 = (data && data[lang] && data[lang].section1) || [];
-  const section2 = (data && data[lang] && data[lang].section2) || [];
-  const section3 = (data && data[lang] && data[lang].section3) || [];
+  // useEffect(() => {
+  //   const images = gallery.map(
+  //     item => folder + item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
+  //   );
+  //   preloadImages(images)
+  //     .then(() => setLoaded(true))
+  //     .catch(err =>
+  //       console.log('TCL: Stalni postav -> preloadImages -> err():', err)
+  //     );
+  // }, []);
 
-  const [thumbs, larges] = getFilesFromGallery(folder, gallery);
-  // console.log("TCL: izdanja -> thumbs", thumbs);
-  // console.log("TCL: izdanja -> large", large);
+  useEffect(() => {
+    async function getData() {
+      const res = await fetch(urls[lang]);
+      const data = await res.json();
+      console.log('TCL: getData -> data', data);
+      // setData(data);
 
-  const [loaded, setLoaded] = useState(false);
+      setHero(data.Naziv);
+      setData(null);
 
-  useLayoutEffect(() => {
-    preloadImages(thumbs)
-      .then(() => setLoaded(true))
-      .catch(err =>
-        console.log("TCL: Stalni postav -> preloadImages -> err():", err)
-      );
-  }, []);
+      for await (let p of parseDataGenerator(data.Tekst)) {
+        setData(v => (v && [...v, p]) || p);
+        // console.log('TCL: getData -> p', p);
+      }
+    }
+    getData();
+  }, [lang]);
 
   useEffect(() => {
     AOS.refreshHard();
     lightbox.reload();
-  }, [loaded]);
+  }, [data]);
+
+  async function* parseDataGenerator(data) {
+    // const ret = [];
+    const lv1 = data.split('**eNewline**');
+
+    let key = 0;
+    for (let i = 0; i < lv1.length; i++) {
+      const ret = [];
+      const lv2 = lv1[i].split('**eGallery**');
+
+      for (let j = 0; j < lv2.length; j++) {
+        if (j == 0)
+          // Push conetnt
+          ret.push(
+            <div
+              key={key++}
+              className='container m-t-xs-20-xl-40 content-1'
+              data-aos='fade'
+              data-aos-duration='1000'
+              dangerouslySetInnerHTML={{ __html: lv2[0] }}
+            ></div>
+          );
+        else if (j == 1) {
+          // Get gallery from local folder
+          const path = lv2[1].substring(0, lv2[1].indexOf('**/gallery**'));
+          const res = await fetch(`/api/gallery?folder=${path}`);
+          const data = await res.json();
+
+          const thumbs =
+            (data.data &&
+              data.data.map(item =>
+                item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
+              )) ||
+            [];
+
+          // Preload images
+          const preload = await preloadImages(thumbs);
+          // console.log('TCL: function*parseDataGenerator -> preload', preload);
+
+          // Push gallery
+          ret.push(
+            <div key={key++} data-aos=''>
+              <div className='container m-t-xs-20-m-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
+                {data.data &&
+                  data.data.map((item, index) => {
+                    return (
+                      <GalleryItem
+                        key={index}
+                        // thumb={item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')}
+                        thumb={thumbs[index]}
+                        large={item}
+                        style={{ transitionDelay: `${index * DELAY}ms` }}
+                      />
+                    );
+                  })}
+              </div>
+            </div>
+          );
+        }
+      }
+      // console.log('TCL: function* parseDataGenerator -> ret[i]', ret[i]);
+      yield ret;
+    }
+    // setData(ret);
+  }
 
   return (
-    <>
-      <Hero title={title} srcset={srcset} />
-      {(loaded && (
-        <div className="container usluge-page">
-          <div data-aos="fade-up" data-aos-duration="1000">
-            <h1 className="m-t-xs-20-xl-40 header-3">{section1.title}</h1>
-            <div className="content-1">
-              {getContentFromJson(section1.content)}
-            </div>
-            <div className="d-grid gap-xs-20-xl-30">
-              {larges
-                .filter(large =>
-                  large.toLowerCase().includes(section1.src.toLowerCase())
-                )
-                .map((item, index) => (
-                  // <img src={item} key={index} />
-                  <GalleryItem
-                    key={index}
-                    thumb={item.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2")}
-                    large={item}
-                  />
-                ))}
-            </div>
-          </div>
+    <div className='usluge-page'>
+      {(data && (
+        <>
+          {/* // Hero */}
+          <Hero title={hero} srcset={srcset} />
+          {/* // Content from CMS */}
+          {data}
+        </>
+      )) ||
+        showSpinner('m-t-xs-20-xl-40 d-flex justify-center')}
 
-          <div data-aos="fade-up" data-aos-duration="1000">
-            <div className="m-t-xs-20-xl-40 content-1">
-              {getContentFromJson(section2.content)}
-            </div>
-            <div className="d-grid gap-xs-20-xl-30">
-              {larges
-                .filter(large =>
-                  large.toLowerCase().includes(section2.src.toLowerCase())
-                )
-                .map((item, index) => (
-                  // <img src={item} key={index} />
-                  <GalleryItem
-                    key={index}
-                    thumb={item.replace(/(.*)(\.jpg|\.png)/gim, "$1-tmb$2")}
-                    large={item}
-                    // style={{ transitionDelay: `${index * DELAY}ms` }}
-                  />
-                ))}
-            </div>
-          </div>
-
-          <div data-aos="fade-up" data-aos-duration="1000">
-            <div className="m-t-xs-20-xl-40 content-1">
-              {getContentFromJson(section3.content)}
-            </div>
+      {/* {data && loaded && (
+        <div data-aos=''>
+          <div className='container m-t-xs-20-xl-40 d-grid xs-2-col-l-3-col gap-xs-20-xl-30 gallery-fade-bottom'>
+            {gallery.map((item, index) => {
+              return (
+                <GalleryItem
+                  key={index}
+                  thumb={
+                    folder + item.replace(/(.*)(\.jpg|\.png)/gim, '$1-tmb$2')
+                  }
+                  large={folder + item}
+                  style={{ transitionDelay: `${index * DELAY}ms` }}
+                />
+              );
+            }) || showSpinner('m-t-xs-20-xl-40 d-flex justify-center')}
           </div>
         </div>
-      )) ||
-        loader}
-    </>
+      )} */}
+    </div>
   );
 };
 
-izdanja.getInitialProps = async function(context) {
-  const data = await fetchDataAsync(context, "/api/new?page=usluge");
-  return data;
-};
+// povjest.getInitialProps = async function(context) {
+// const data = await fetchDataAsync(context, '/api/new?page=kastel');
+// const res = await fetch(
+//   'http://e-computing.hr/eCMS/ws/wsecms.asmx/GetStranicaJSON?WebStranicaID=13&StranicaID=102'
+// );
+// const data = await res.text();
+// // const data = await res.json();
+// console.log('TCL: getInitialProps -> data', data);
 
-export default izdanja;
+//   return 'data';
+// };
+
+export default usluge;

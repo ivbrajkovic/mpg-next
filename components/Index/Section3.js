@@ -26,13 +26,11 @@ const Section3 = ({ lang, data }) => (
                 <header className='m-b-5'>
                   {/* <img src={item.src} /> */}
                   <img src={srcs[index]} />
-                  <h1 className='d-inl-blok header-4-light'>
-                    {item[lang] && item[lang].header}
-                  </h1>
+                  <h1 className='c-light'>{item[lang] && item[lang].header}</h1>
                 </header>
 
                 <p
-                  className='m-b-5 content-3 f-xl-22'
+                  className='m-b-5 c-light'
                   dangerouslySetInnerHTML={{
                     __html: (item[lang] && item[lang].content1) || ''
                   }}
@@ -44,7 +42,7 @@ const Section3 = ({ lang, data }) => (
                   <Link href={item[lang].href}>
                     <p
                       style={{ cursor: 'pointer', textDecoration: 'underline' }}
-                      className='m-b-5 content-4 f-xl-22'
+                      className='m-b-5 c-light'
                       dangerouslySetInnerHTML={{
                         __html: (item[lang] && item[lang].content2) || ''
                       }}
@@ -52,7 +50,7 @@ const Section3 = ({ lang, data }) => (
                   </Link>
                 )) || (
                   <p
-                    className='m-b-0 content-4'
+                    className='m-b-0 c-light'
                     dangerouslySetInnerHTML={{
                       __html: (item[lang] && item[lang].content2) || ''
                     }}

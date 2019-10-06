@@ -1,19 +1,25 @@
 .section-3 {
   background: $background-5;
-  .d-grid {
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-  }
+
   h1 {
     margin: 0 0 0 10px;
     display: inline-block;
     vertical-align: middle;
+    font-weight: 300;
+    font-size: 30px;
   }
+
+  p + p {
+    font-size: 15px;
+  }
+
   img {
     height: 30px;
     width: 35px;
   }
-  span {
-    display: block;
+
+  .d-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
   }
 }
