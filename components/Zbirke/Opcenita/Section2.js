@@ -58,10 +58,10 @@ const Section2 = ({ page, meni, folder, gallery }) => {
   }, [grid]);
 
   return (
-    <div className='zbirke__section-3' data-aos=''>
+    <div className='section-2' data-aos=''>
       <div
         ref={gridRef}
-        className={`m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 gallery-fade-bottom${
+        className={`m-t-xs-20-xl-40 d-grid gap-xs-20-xl-30 xs-2-col-l-3-col gallery-fade-bottom${
           page === 'zvona' ? ' zvona' : ''
         }`}
       >

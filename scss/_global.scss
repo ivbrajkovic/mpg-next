@@ -72,6 +72,6 @@ button:focus {
 @media (min-width: 992px) {
   .xs-2-col-l-3-col {
     grid-template-columns: repeat(3, minmax(150px, 300px));
-    justify-content: left;
+    // justify-content: left;
   }
 }

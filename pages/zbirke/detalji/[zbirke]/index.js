@@ -1,19 +1,19 @@
 // Zbirke - Opcenita
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import fetchDataAsync from "../../../../lib/fetchDataAsync";
+import fetchDataAsync from '../../../../lib/fetchDataAsync';
 
-import Hero from "../../../../components/Hero";
-import Section1 from "../../../../components/Zbirke/Opcenita/Section1";
-import Section2 from "../../../../components/Zbirke/Opcenita/Section2";
+import Hero from '../../../../components/Hero';
+import Section1 from '../../../../components/Zbirke/Opcenita/Section1';
+import Section2 from '../../../../components/Zbirke/Opcenita/Section2';
 
 // const FOLDER = '/static/img/odjeli/zbirke/mini/';
 
 const Zbirke = ({ lang, data }) => {
   const meni = (data && data.meni) || false;
-  const page = (data && data.page) || "";
-  const folder = (data && data.folder) || "";
+  const page = (data && data.page) || '';
+  const folder = (data && data.folder) || '';
   const text = (data && data[lang]) || {};
   const gallery = (data && data.gallery) || {};
 
@@ -21,20 +21,20 @@ const Zbirke = ({ lang, data }) => {
     (data && data.banners && data.banners.map(item => folder + item)) || [];
 
   let i = 0;
-  console.log("TCL: Zbirke -> i", ++i);
+  console.log('TCL: Zbirke -> i', ++i);
 
   useEffect(() => {
     AOS.refreshHard();
   }, []);
 
   return (
-    <>
+    <div className='zbirke-page'>
       <Hero title={text.hero} srcset={banners} />
-      <div className="container">
+      <div className='container'>
         <Section1 data={text} />
         <Section2 page={page} meni={meni} folder={folder} gallery={gallery} />
       </div>
-    </>
+    </div>
   );
 };
 
@@ -42,7 +42,7 @@ const Zbirke = ({ lang, data }) => {
 Zbirke.getInitialProps = async context => {
   const zbirke = context.query.zbirke;
   const params = [zbirke];
-  const data = await fetchDataAsync(context, "zbirke", params);
+  const data = await fetchDataAsync(context, 'zbirke', params);
   // const page = (data && data.data && data.data.name) || '';
   // console.log('TCL: page', page);
   // const hero = (data && data.data && data.data.hero) || '';

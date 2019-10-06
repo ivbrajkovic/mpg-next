@@ -1,10 +1,10 @@
-// Section7.js
+// Odjeli - section 2
 
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
-import preloadImages from "../../lib/preloadImages.js";
-import Link from "next/link";
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import preloadImages from '../../lib/preloadImages.js';
+import Link from 'next/link';
 
-import Spinner from "../Spinner/Spinner";
+import Spinner from '../Spinner/Spinner';
 // Transition effect classes
 // import './style.scss';
 
@@ -12,9 +12,9 @@ const DELAY = 50;
 // const IDLE = 250;
 const OUT = 350;
 // const DURATION = 450;
-const FOLDER = "/static/img/odjeli/";
+const FOLDER = '/static/img/odjeli/';
 
-const Section7 = ({ lang, odjel, data }) => {
+const Section2 = ({ lang, odjel, data }) => {
   const [grid, setGrid] = useState([]);
   const firstRef = useRef(true);
   const gridRef = useRef();
@@ -30,20 +30,20 @@ const Section7 = ({ lang, odjel, data }) => {
 
     preloadImages(imgs)
       .then(() => setGrid(data[odjel]))
-      .catch(err => console.log("TCL: Section7 -> loadImages -> err():", err));
+      .catch(err => console.log('TCL: Section7 -> loadImages -> err():', err));
   }, [data]);
 
   // When grid change add transition in effect
   useEffect(() => {
     if (!firstRef.current) {
-      gridRef.current.classList.add("fade-bottom-cascade-active");
+      gridRef.current.classList.add('fade-bottom-cascade-active');
     }
   }, [grid]);
 
   // When odjel change add transition in effect
   useEffect(() => {
     if (!firstRef.current) {
-      gridRef.current.classList.remove("fade-bottom-cascade-active");
+      gridRef.current.classList.remove('fade-bottom-cascade-active');
       setTimeout(() => {
         setGrid(data[odjel]);
       }, OUT);
@@ -55,7 +55,7 @@ const Section7 = ({ lang, odjel, data }) => {
       {(grid.length > 0 && (
         <div
           ref={gridRef}
-          className={`container m-t-xs-20-xl-40 gap-xs-20-xl-30 odjeli__section-7__menu fade-bottom-cascade`}
+          className={`container m-t-xs-20-xl-40 gap-xs-20-xl-30 section-2 fade-bottom-cascade`}
         >
           {grid.map((item, index) => {
             return (
@@ -65,12 +65,12 @@ const Section7 = ({ lang, odjel, data }) => {
                 className={`w3-card-4`}
               >
                 <Link
-                  href="/zbirke/detalji/[zbirke]"
+                  href='/zbirke/detalji/[zbirke]'
                   as={`/zbirke/detalji/${item.name}`}
                 >
-                  <div className="expand-on-hover">
-                    <img className="img-cover" src={FOLDER + item.src} />
-                    <div className="header-3 m-0">{item[lang]}</div>
+                  <div className='expand-on-hover'>
+                    <img className='img-cover' src={FOLDER + item.src} />
+                    <div className='header-3 m-0'>{item[lang]}</div>
                   </div>
                 </Link>
               </div>
@@ -78,7 +78,7 @@ const Section7 = ({ lang, odjel, data }) => {
           })}
         </div>
       )) || (
-        <div className="m-t-xs-20-xl-40 d-flex justify-center">
+        <div className='m-t-xs-20-xl-40 d-flex justify-center'>
           <Spinner />
         </div>
       )}
@@ -86,4 +86,4 @@ const Section7 = ({ lang, odjel, data }) => {
   );
 };
 
-export default Section7;
+export default Section2;

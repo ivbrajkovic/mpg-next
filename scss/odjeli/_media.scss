@@ -1,37 +1,53 @@
-// @media (min-width: 576px) {
-// }
+@media (min-width: 576px) {
+  .odjeli-page {
+    .section-2 {
+      .header-3 {
+        font-size: 24px;
+      }
+    }
+  }
+}
 
 @media (min-width: 768px) {
-  .odjeli__section-7__menu {
-    justify-content: start;
-    grid-template-columns: repeat(3, minmax(200px, 350px));
-    .header-3 {
-      font-size: 22px;
+  .odjeli-page {
+    .section-2 {
+      justify-content: start;
+      grid-template-columns: repeat(3, minmax(200px, 350px));
     }
   }
 }
 
 @media (min-width: 992px) {
-  .odjeli__section-6 {
-    &__menu {
-      grid-template-columns: 1fr 1fr 1fr;
-
-      &-item {
-        display: flex;
+  .odjeli-page {
+    .section-1 {
+      .header-4 {
+        font-size: 26px;
       }
     }
-  }
-  .odjeli__section-7__menu {
-    .header-3 {
-      font-size: 28px;
+
+    .section-2 {
+      .header-3 {
+        font-size: 28px;
+      }
     }
   }
 }
 
 @media (min-width: 1200px) {
-  .odjeli__section-7__menu {
-    .header-3 {
-      font-size: 32px;
+  .odjeli-page {
+    .section-1 {
+      .header-4 {
+        font-size: 28px;
+      }
+      .menu-item {
+        height: 140px;
+      }
+    }
+
+    .section-2 {
+      .header-3 {
+        font-size: 32px;
+      }
     }
   }
 }

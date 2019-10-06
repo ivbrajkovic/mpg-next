@@ -2,15 +2,8 @@
   Header font
 */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.header-1 {
+.header {
   font-family: 'Lato', sans-serif;
-  font-size: 26px;
   font-style: normal;
   // font-weight: normal;
   font-weight: 400;
@@ -22,43 +15,56 @@ h6,
   // text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.42);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 26px;
+}
+
 .header-1 {
+  @extend .header;
   font-size: 34px;
 }
 
 .header-2 {
-  @extend .header-1;
-  font-size: 30px;
+  @extend .header;
   font-weight: 300;
+  font-size: 30px;
 }
 
 .header-3 {
-  @extend .header-2;
+  @extend .header;
+  font-weight: 300;
   font-size: 26px;
 }
 
 .header-4 {
-  @extend .header-3;
-  font-size: 24px;
-  margin-bottom: 10px;
+  @extend .header;
+  font-size: 26px;
+  font-weight: 300;
 }
 
 /*
   Content font
 */
 
-p,
-span,
-.content-1 {
+.content {
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
   letter-spacing: normal;
   text-transform: none;
+}
+
+p,
+span {
   font-size: 16px;
 }
 
 .content-2 {
-  @extend .content-1;
+  @extend .content;
 }
 
 /*
@@ -107,7 +113,7 @@ span,
   }
 
   .header-4 {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .content-1 {

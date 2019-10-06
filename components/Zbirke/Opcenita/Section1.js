@@ -8,13 +8,13 @@ const Section1 = ({ data }) => {
 
   return (
     <div
-      className='m-t-xs-20-xl-40 zbirke__section-1'
+      className='m-t-xs-20-xl-40 section-1'
       data-aos='fade'
       data-aos-duration='1000'
       data-aos-delay='1000'
     >
       <div className='float-right'>
-        <div className='header'>
+        <div>
           {getContentFromJson(data.header)}
 
           {/* {header.map((item, index) => (

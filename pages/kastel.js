@@ -26,7 +26,7 @@ const DELAY = 50;
 const kastel = ({ lang }) => {
   const [data, setData] = useState();
   const [hero, setHero] = useState();
-  const [loaded, setLoaded] = useState(false);
+  // const [loaded, setLoaded] = useState(false);
 
   // useEffect(() => {
   //   const images = gallery.map(
