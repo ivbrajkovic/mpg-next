@@ -11,8 +11,8 @@
         "href": "/kastel"
       },
       {
-        "hr": "Povijest MGP",
-        "en": "MGP History",
+        "hr": "Povijest Muzeja",
+        "en": "History of the Museum",
         "href": "/povijest"
       },
       {
@@ -45,7 +45,7 @@
     "submenu": [
       {
         "hr": "Kulturno-povijesni odjel",
-        "en": "Cultural History Department",
+        "en": "Cultural-Historical Department",
         "href": "/kulturni-odjel"
       },
       {
@@ -69,7 +69,7 @@
   },
   {
     "hr": "Stalni postav",
-    "en": "Permanent lineup",
+    "en": "Permanent display",
     "href": "/postav",
     "hasSubmenu": false,
     "submenu": []

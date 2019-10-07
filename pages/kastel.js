@@ -63,12 +63,12 @@ const kastel = ({ lang }) => {
 
   async function* parseDataGenerator(data) {
     // const ret = [];
-    const lv1 = data.split('**eNewline**');
+    const lv1 = data.split('**newline**');
 
     let key = 0;
     for (let i = 0; i < lv1.length; i++) {
       const ret = [];
-      const lv2 = lv1[i].split('**eGallery**');
+      const lv2 = lv1[i].split('**gallery**');
 
       for (let j = 0; j < lv2.length; j++) {
         if (j == 0)
