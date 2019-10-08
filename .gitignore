@@ -25,6 +25,7 @@
 .next/
 node_modules/
 Slike/
+old/
 *old*
 *copy*
 .gitignore
