@@ -53,21 +53,21 @@ export default class MyApp extends App {
     });
   };
 
-  onTest = () => {
-    console.log('TCL: MyApp -> onTest: REFRESH');
-    this.setState({
-      lang: this.state.lang
-    });
-  };
+  // onTest = () => {
+  //   console.log('TCL: MyApp -> onTest: REFRESH');
+  //   this.setState({
+  //     lang: this.state.lang
+  //   });
+  // };
 
-  setOdjel = (path, index) => {
-    // if (path === "/odjeli") {
-    if (Router.pathname !== path) Router.push(path);
-    this.setState({
-      odjel: index
-    });
-    // }
-  };
+  // setOdjel = (path, index) => {
+  //   // if (path === "/odjeli") {
+  //   if (Router.pathname !== path) Router.push(path);
+  //   this.setState({
+  //     odjel: index
+  //   });
+  //   // }
+  // };
 
   // showDetalji = data => {
   //   console.log('TCL: data', data);
@@ -135,7 +135,6 @@ export default class MyApp extends App {
         <Navbar
           lang={this.state.lang}
           onChangeLanguage={this.setLanguage}
-          onTest={this.onTest}
           onSetOdjel={this.setOdjel}
         />
 

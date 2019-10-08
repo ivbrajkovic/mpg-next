@@ -1,11 +1,12 @@
 // Odjeli
 
-import { useEffect } from 'react';
-import fetchDataAsync from '../lib/fetchDataAsync';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import fetchDataAsync from '../../lib/fetchDataAsync';
 
-import Hero from '../components/Hero';
-import Section6 from '../components/Odjeli/Section1';
-import Section7 from '../components/Odjeli/Section2';
+import Hero from '../../components/Hero';
+import Section6 from '../../components/Odjeli/Section1';
+import Section7 from '../../components/Odjeli/Section2';
 
 const srcset = [
   '/static/img/odjeli/baner-odjeli-768px.jpg',
@@ -13,7 +14,12 @@ const srcset = [
   '/static/img/odjeli/baner-odjeli.jpg'
 ];
 
-const Odjel = ({ lang, odjel, onSetOdjel, success, data }) => {
+// const Odjel = ({ lang, odjel, onSetOdjel, success, data }) => {
+const Odjel = ({ lang, success, data }) => {
+  const router = useRouter();
+  const [odjel, setOdjel] = useState(router.query.id);
+
+  // Buttons effects
   useEffect(() => {
     const buttons = document.querySelectorAll('.odjeli-page .menu-item');
     buttons &&
@@ -31,8 +37,9 @@ const Odjel = ({ lang, odjel, onSetOdjel, success, data }) => {
     };
   }, []);
 
-  const changeOdjel = value => {
-    onSetOdjel('/odjeli', value);
+  const changeOdjel = index => {
+    // onSetOdjel('/odjeli', value);
+    setOdjel(index);
   };
 
   let i = 0;

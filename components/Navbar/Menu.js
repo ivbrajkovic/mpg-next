@@ -6,131 +6,92 @@ import Language from './Language';
 import ActiveLink from './Link';
 import Link from 'next/link';
 
-const Menu = ({ lang, shrink, menu, onChangeLanguage, onTest, onSetOdjel }) => {
-  // const [isActive, setIsActive] = useState(false);
-  const navRef = useRef();
-  const dropdownRef = useRef();
-  const menuRef = useRef();
-  // const submenuRef = useRef();
+import Logo from './Logo';
+import Hamburger from './Hamburger';
 
-  useEffect(() => {
-    dropdownRef.current = navRef.current.querySelectorAll('.dropdown-small');
-    menuRef.current = navRef.current.querySelector('.menu');
-    // submenuRef.current = navRef.current.querySelectorAll('.submenu');
-  }, []);
-
-  const setOdjel = (path, index) => onSetOdjel(path, index);
+const Menu = ({ lang, shrink, menu, onChangeLanguage }) => {
   const setLanguage = value => onChangeLanguage(value);
 
-  const hamburgerClick = e => {
-    if (e.currentTarget.classList.contains('is-active')) {
-      e.currentTarget.classList.remove('is-active');
-      menuRef.current.classList.remove('is-open');
-    } else {
-      e.currentTarget.classList.add('is-active');
-      menuRef.current.classList.add('is-open');
-    }
-  };
+  const arrowsRef = useRef([]);
+  const hamburgerRef = useRef();
+
+  useEffect(() => {
+    hamburgerRef.current = document.querySelector('.hamburger');
+    arrowsRef.current = document.querySelectorAll('.dropdown-small');
+  }, []);
 
   const closeMenu = () => {
-    // isActive && setIsActive(false);
-    e.currentTarget.classList.remove('open');
-    e.currentTarget.nextSibling.classList.remove('open');
-    menuRef.current;
+    hamburgerRef.current.classList.remove('is-active');
+    console.log('TCL: closeMenu -> hamburgerRef.current', hamburgerRef.current);
+    arrowsRef.current.forEach(item => item.classList.remove('open'));
   };
 
-  const toggleDropdown = e => {
+  const hamburgerClick = () => {
+    if (hamburgerRef.current.classList.contains('is-active')) {
+      closeMenu();
+    } else hamburgerRef.current.classList.add('is-active');
+  };
+
+  const toggleSubmenu = e => {
     if (e.currentTarget.classList.contains('open')) {
       e.currentTarget.classList.remove('open');
-      e.currentTarget.nextSibling.classList.remove('open');
     } else {
-      dropdownRef.current.forEach(item => item.classList.remove('open'));
+      arrowsRef.current.forEach(item => item.classList.remove('open'));
       e.currentTarget.classList.add('open');
-      e.currentTarget.nextSibling.classList.add('open');
     }
   };
 
   return (
     <nav className='w3-card-4'>
       <div
-        ref={navRef}
         id='navbar'
-        className={`container navbar f-xl-18 ${shrink ? `navbar-shrink` : ``}`}
+        className={`container navbar ${shrink ? `navbar-shrink` : ``}`}
       >
-        <Language
-          language={lang}
-          onChangeLanguage={setLanguage}
-          onTest={onTest}
-        />
+        <Language language={lang} onChangeLanguage={setLanguage} />
 
-        <div className='logo'>
-          <Link href='/'>
-            <img src='/static/img/logo.png' alt='MGP logo' />
-          </Link>
-        </div>
+        <Logo />
 
-        <div
-          className={`hamburger hamburger--collapse`}
-          // className={`hamburger hamburger--collapse${(isActive &&
-          //   ' is-active') ||
-          //   ''}`}
-          onClick={e => {
-            hamburgerClick(e);
-            // setIsActive(isActive => !isActive);
-          }}
-        >
-          <span className='hamburger-box'>
-            <span className='hamburger-inner'></span>
-          </span>
-        </div>
+        <Hamburger onHamburgerClick={hamburgerClick} />
 
         <ul className={`menu`}>
-          {/* <ul className={`menu${(isActive && ' is-open') || ''}`}> */}
           {menu.map((menuItem, i) => {
             return (
               <li key={i}>
-                <ActiveLink activeClassName='active' href={menuItem.href}>
-                  <a>{menuItem[lang]}</a>
-                  {/* <a onClick={() => closeMenu()}>{menuItem[lang]}</a> */}
+                <ActiveLink
+                  activeClassName='active'
+                  href={menuItem.href}
+                  as={menuItem.as}
+                >
+                  <a onClick={() => closeMenu()}>{menuItem[lang]}</a>
                 </ActiveLink>
 
                 {menuItem.hasSubmenu && (
                   <>
-                    <div className='dropdown-large'></div>
+                    <div className='dropdown-large' />
+
                     <div
+                      // ref={el => arrowsRef.current.push(el)}
                       className={`dropdown-small`}
-                      onClick={e => toggleDropdown(e)}
-                    ></div>
-                    {/* <div>&#9662;</div> */}
-                    {/* <div>&#8964;</div> */}
-                    {/* <ul className={`submenu submenu-${i}`}> */}
+                      onClick={e => toggleSubmenu(e)}
+                    />
+
                     <ul className={`submenu`}>
                       {menuItem.submenu.map((submenuItem, j) => {
-                        const node =
-                          menuItem.href === '/odjeli' ? (
+                        return (
+                          <Link
+                            href={submenuItem.href}
+                            as={submenuItem.as}
+                            key={j}
+                          >
                             <li
-                              key={j}
-                              onClick={() => {
-                                setOdjel('/odjeli', j);
-                                // closeMenu();
-                              }}
                               style={{ animationDelay: 575 + 125 * j + 'ms' }}
                             >
-                              <a>{submenuItem[lang]}</a>
+                              <a onClick={() => closeMenu()}>
+                                {submenuItem[lang]}
+                              </a>
                             </li>
-                          ) : (
-                            <Link href={submenuItem.href} key={j}>
-                              <li
-                                style={{ animationDelay: 575 + 125 * j + 'ms' }}
-                              >
-                                <a>
-                                  {/* <a onClick={() => closeMenu()}> */}
-                                  {submenuItem[lang]}
-                                </a>
-                              </li>
-                            </Link>
-                          );
-                        return node;
+                          </Link>
+                        );
                       })}
                     </ul>
                   </>

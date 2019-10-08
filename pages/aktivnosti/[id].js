@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
-import preloadImages from '../lib/preloadImages';
+import preloadImages from '../../lib/preloadImages';
 
 const srcset = [
   '/static/img/aktivnosti/baner-aktivnosti-768px.jpg',
@@ -10,11 +10,11 @@ const srcset = [
   '/static/img/aktivnosti/baner-aktivnosti.jpg'
 ];
 
-import Hero from '../components/Hero';
+import Hero from '../../components/Hero';
 // import Section1 from "../components/Index/Section1";
 // import Ukratko from '../components/Aktivnosti/Ukratko';
 // import Detalji from '../components/Aktivnosti/Detalji';
-import Detalji from '../components/Novosti/Detalji';
+import Detalji from '../../components/Novosti/Detalji';
 
 const urls = {
   hr:

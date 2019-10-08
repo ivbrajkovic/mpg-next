@@ -40,32 +40,48 @@
   {
     "hr": "Odjeli i zbirke",
     "en": "Departments",
-    "href": "/odjeli",
+    "href": "/odjeli/[id].js",
+    "as": "/odjeli/0",
     "hasSubmenu": true,
     "submenu": [
       {
         "hr": "Kulturno-povijesni odjel",
         "en": "Cultural-Historical Department",
-        "href": "/kulturni-odjel"
+        "href": "/odjeli/[id].js",
+        "as": "/odjeli/0"
       },
       {
         "hr": "Povijesni odjel",
         "en": "History Department",
-        "href": "/povjesni-odjel"
+        "href": "/odjeli/[id].js",
+        "as": "/odjeli/1"
       },
       {
         "hr": "Galerijski odjel",
         "en": "Gallery department",
-        "href": "/galerijski-odjel"
+        "href": "/odjeli/[id].js",
+        "as": "/odjeli/2"
       }
     ]
   },
   {
-    "hr": "Aktivnosti",
-    "en": "Activities",
-    "href": "/aktivnosti",
-    "hasSubmenu": false,
-    "submenu": []
+    "hr": "Događanja",
+    "en": "Events",
+    "href": "/aktivnosti/[id].js",
+    "as": "/aktivnosti/0",
+    "hasSubmenu": true,
+    "submenu": [
+      {
+        "hr": "Izložbe",
+        "href": "/aktivnosti/[id].js",
+        "as": "/aktivnosti/1"
+      },
+      {
+        "hr": "Novosti",
+        "href": "/aktivnosti/[id].js",
+        "as": "/aktivnosti/2"
+      }
+    ]
   },
   {
     "hr": "Stalni postav",
