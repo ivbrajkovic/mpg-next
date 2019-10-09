@@ -1,57 +1,48 @@
 @media (min-width: 576px) {
-  .banner {
-    height: 360px;
-  }
-
-  .section-1,
-  .section-2 {
-    h1 {
-      font-size: 30px;
+  .naslovna-page {
+    .section-1,
+    .section-2 {
+      h1 {
+        font-size: 30px;
+      }
     }
-  }
-
-  .content-footer {
-    font-size: 16px;
   }
 }
 
 @media (min-width: 768px) {
-  .banner {
-    height: 400px;
-  }
+  .naslovna-page {
+    .section-1 {
+      h1 {
+        font-size: 26px;
+      }
 
-  .section-1 {
-    h1 {
-      font-size: 26px;
+      .post {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 380px;
+      }
     }
 
-    .d-grid {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 380px;
-    }
-  }
+    .section-2 {
+      grid-template-columns: 1fr 1fr 1fr;
 
-  .section-2 {
-    grid-template-columns: 1fr 1fr 1fr;
+      .post {
+        // max-width: 348px;
+        grid-template-rows: 170px;
+      }
 
-    .post {
-      // max-width: 348px;
-      grid-template-rows: 170px;
-    }
+      h1 + p {
+        display: none;
+      }
 
-    h1 + p {
-      display: none;
-    }
+      h1 {
+        font-size: 20px;
+      }
 
-    h1 {
-      font-size: 20px;
-    }
-
-    p {
-      font-size: 14px;
+      p {
+        font-size: 14px;
+      }
     }
   }
-
   .section-3 {
     text-align: left;
 
@@ -137,39 +128,37 @@
 }
 
 @media (min-width: 992px) {
-  .banner {
-    height: 450px;
-  }
+  .naslovna-page {
+    .section-1 {
+      .post {
+        grid-template-rows: 450px;
+      }
 
-  .section-1 {
-    .d-grid {
-      grid-template-rows: 450px;
+      h1 {
+        font-size: 34px;
+      }
+      p {
+        font-size: 20px;
+      }
     }
 
-    h1 {
-      font-size: 34px;
-    }
-    p {
-      font-size: 20px;
-    }
-  }
+    .section-2 {
+      h1 + p {
+        display: block;
+      }
 
-  .section-2 {
-    h1 + p {
-      display: block;
-    }
+      .post {
+        // max-width: 348px;
+        grid-template-rows: 200px;
+      }
 
-    .post {
-      // max-width: 348px;
-      grid-template-rows: 200px;
-    }
+      .header-2 {
+        font-size: 22px;
+      }
 
-    .header-2 {
-      font-size: 22px;
-    }
-
-    .content-2 {
-      font-size: 16px;
+      .content-2 {
+        font-size: 16px;
+      }
     }
   }
 
@@ -200,48 +189,42 @@
       max-width: 400px;
     }
   }
-
-  .content-footer {
-    font-size: 16px;
-  }
 }
 
 @media (min-width: 1200px) {
-  .banner {
-    height: 500px;
-  }
+  .naslovna-page {
+    .section-1 {
+      .post-title {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
 
-  .section-1 {
-    .post-title {
-      padding-left: 40px;
-      padding-right: 40px;
+      .post {
+        grid-template-rows: 525px;
+
+        h1 {
+          font-size: 42px;
+          margin-bottom: 28px;
+        }
+
+        p {
+          font-size: 21px;
+        }
+      }
     }
 
-    .d-grid {
-      grid-template-rows: 525px;
+    .section-2 {
+      .post {
+        grid-template-rows: 250px;
+      }
 
       h1 {
-        font-size: 42px;
-        margin-bottom: 28px;
+        font-size: 26px;
       }
 
       p {
-        font-size: 21px;
+        font-size: 18px;
       }
-    }
-  }
-
-  .section-2 {
-    .post {
-      grid-template-rows: 250px;
-    }
-
-    h1 {
-      font-size: 26px;
-    }
-
-    p {
-      font-size: 18px;
     }
   }
 
@@ -274,9 +257,5 @@
     .float-right {
       width: 450px;
     }
-  }
-
-  .content-footer {
-    font-size: 18px;
   }
 }

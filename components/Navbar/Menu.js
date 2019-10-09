@@ -1,45 +1,20 @@
 // Menu items
 
-import { useState, useRef, useEffect } from 'react';
+import { useContext } from 'react';
 
-import Language from './Language';
-import ActiveLink from './Link';
 import Link from 'next/link';
+import ActiveLink from './Link';
 
 import Logo from './Logo';
+import Language from './Language';
 import Hamburger from './Hamburger';
 
-const Menu = ({ lang, shrink, menu, onChangeLanguage }) => {
-  const setLanguage = value => onChangeLanguage(value);
+import { LanguageContext } from '../../context';
 
-  const arrowsRef = useRef([]);
-  const hamburgerRef = useRef();
+import json from './menu.json';
 
-  useEffect(() => {
-    hamburgerRef.current = document.querySelector('.hamburger');
-    arrowsRef.current = document.querySelectorAll('.dropdown-small');
-  }, []);
-
-  const closeMenu = () => {
-    hamburgerRef.current.classList.remove('is-active');
-    console.log('TCL: closeMenu -> hamburgerRef.current', hamburgerRef.current);
-    arrowsRef.current.forEach(item => item.classList.remove('open'));
-  };
-
-  const hamburgerClick = () => {
-    if (hamburgerRef.current.classList.contains('is-active')) {
-      closeMenu();
-    } else hamburgerRef.current.classList.add('is-active');
-  };
-
-  const toggleSubmenu = e => {
-    if (e.currentTarget.classList.contains('open')) {
-      e.currentTarget.classList.remove('open');
-    } else {
-      arrowsRef.current.forEach(item => item.classList.remove('open'));
-      e.currentTarget.classList.add('open');
-    }
-  };
+const Menu = ({ shrink, hamburgerClick, toggleSubmenu, closeMenu }) => {
+  const { lang } = useContext(LanguageContext);
 
   return (
     <nav className='w3-card-4'>
@@ -47,14 +22,14 @@ const Menu = ({ lang, shrink, menu, onChangeLanguage }) => {
         id='navbar'
         className={`container navbar ${shrink ? `navbar-shrink` : ``}`}
       >
-        <Language language={lang} onChangeLanguage={setLanguage} />
+        <Language />
 
         <Logo />
 
         <Hamburger onHamburgerClick={hamburgerClick} />
 
         <ul className={`menu`}>
-          {menu.map((menuItem, i) => {
+          {json.map((menuItem, i) => {
             return (
               <li key={i}>
                 <ActiveLink
@@ -70,7 +45,6 @@ const Menu = ({ lang, shrink, menu, onChangeLanguage }) => {
                     <div className='dropdown-large' />
 
                     <div
-                      // ref={el => arrowsRef.current.push(el)}
                       className={`dropdown-small`}
                       onClick={e => toggleSubmenu(e)}
                     />

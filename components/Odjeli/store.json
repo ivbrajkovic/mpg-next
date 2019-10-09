@@ -1,0 +1,18 @@
+{
+  "hero": {
+    "title": "",
+    "srcset": [
+      "/static/img/odjeli/baner-odjeli-768px.jpg",
+      "/static/img/odjeli/baner-odjeli-1200px.jpg",
+      "/static/img/odjeli/baner-odjeli.jpg"
+    ]
+  },
+  "section1": {
+    "hr": ["kulturno-povijesni odjel", "povijesni odjel", "galerijski odjel"],
+    "en": [
+      "Cultural-Historical Department",
+      "Historical Department",
+      "Gallery Department"
+    ]
+  }
+}

@@ -5,8 +5,6 @@ import preloadImages from '../../lib/preloadImages.js';
 import Link from 'next/link';
 
 import Spinner from '../Spinner/Spinner';
-// Transition effect classes
-// import './style.scss';
 
 const DELAY = 50;
 // const IDLE = 250;

@@ -1,6 +1,10 @@
 // Odjeli - section 1
 
-const Section1 = ({ lang, odjel, data, onChangeOdjel }) => {
+import useRipplet from '../../hooks/useRipplet';
+
+const Section1 = ({ lang, data, odjel, onChangeOdjel }) => {
+  console.log('TCL: data', data);
+  useRipplet('.menu-item');
   const changeOdjel = value => onChangeOdjel(value);
 
   return (
@@ -10,21 +14,20 @@ const Section1 = ({ lang, odjel, data, onChangeOdjel }) => {
       data-aos='fade'
       data-aos-duration='1000'
     >
-      {data[lang] &&
-        data[lang].map((title, index) => {
-          return (
-            <div key={index} className='dummy-needed-for-fade'>
-              <div
-                className={`m-0 header-4 w3-card-4 expand-on-hover menu-item${
-                  odjel == index ? ' active' : ''
-                }`}
-                onClick={() => changeOdjel(index)}
-              >
-                {title}
-              </div>
+      {data[lang].map((title, index) => {
+        return (
+          <div key={index} className='dummy-needed-for-fade'>
+            <div
+              className={`m-0 header-4 w3-card-4 expand-on-hover menu-item${
+                odjel == index ? ' active' : ''
+              }`}
+              onClick={() => changeOdjel(index)}
+            >
+              {title}
             </div>
-          );
-        })}
+          </div>
+        );
+      })}
     </section>
   );
 };

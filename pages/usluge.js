@@ -43,7 +43,6 @@ const usluge = ({ lang }) => {
     async function getData() {
       const res = await fetch(urls[lang]);
       const data = await res.json();
-      console.log('TCL: getData -> data', data);
       // setData(data);
 
       setHero(data.Naziv);

@@ -2,44 +2,38 @@
 // import Router from 'next/router';
 
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 
-import json from './menu.json';
 import Menu from './Menu';
 
-const Navbar = props => {
-  const [isShrinked, setIsShrinked] = useState(false);
+const widthBreakPoint = 1200;
+
+const options = {
+  root: null,
+  threshold: 0,
+  rootMargin: '-100px'
+};
+
+const Navbar = () => {
+  // console.log('TCL: Navbar -> render()');
+
+  const [shrink, setShrink] = useState(false);
+
+  ///////////////////////////////////////////////////////////////////////
+  // Observer related functions
+  //
   const observerRef = useRef();
+  const { pathname } = useRouter();
 
   useEffect(() => {
-    const widthBreakPoint = 1200;
-
-    const options = {
-      root: null,
-      threshold: 0,
-      rootMargin: '-100px'
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
+    console.log('TCL: Navbar -> useEffect 1', useEffect);
+    observerRef.current = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        // console.log("isIntersecting: ", entry.isIntersecting);
-
-        // if (entry.isIntersecting) {
-        //   if (window.innerWidth < widthBreakPoint) {
-        //     setIsShrinked(true);
-        //   }
-        //   setIsShrinked(false);
-        // } else setIsShrinked(false);
-
         if (window.innerWidth < widthBreakPoint) {
-          setIsShrinked(!entry.isIntersecting);
-        } else setIsShrinked(false);
-
-        // setIsShrinked(isShrinked => {
-        //   if (isShrinked) return false;
-        // });
+          setShrink(!entry.isIntersecting);
+        } else setShrink(false);
       });
     }, options);
-    observerRef.current = observer;
 
     return () => {
       observerRef.current.disconnect();
@@ -48,39 +42,61 @@ const Navbar = props => {
   }, []);
 
   useEffect(() => {
-    // console.log('TCL: observer -> new', observerRef.current);
+    // console.log("TCL: Navbar -> useEffect 2", useEffect)
+    const hero = document.getElementById('hero');
+    hero && observerRef.current.observe(hero);
 
-    const el = document.getElementById('hero');
-    el && observerRef.current.observe(el);
-
-    // const navbar = document.get
-    // document.querySelector(".hamburger").addEventListener(
-    //   "click",
-    //   function() {
-    //     this.classList.toggle("is-active");
-    //   },
-    //   false
-    // );
     return () => {
       observerRef.current.disconnect();
-      console.log('TCL: observer -> disconnect()', observerRef.current);
+      // console.log('TCL: observer -> disconnect()', observerRef.current);
     };
-  }, [props]);
+  }, [pathname]);
+  //
+  ///////////////////////////////////////////////////////////////////////
 
-  const setLanguage = value => props.onChangeLanguage(value);
-  const setOdjel = (path, index) => props.onSetOdjel(path, index);
+  ///////////////////////////////////////////////////////////////////////
+  // Dropdown related functions
+  //
+  const arrowsRef = useRef([]);
+  const hamburgerRef = useRef();
 
-  let i = 0;
-  console.log('TCL: Navbar -> render: ', ++i);
+  useEffect(() => {
+    // console.log('TCL: Navbar -> useEffect 3', useEffect);
+    hamburgerRef.current = document.querySelector('.hamburger');
+    arrowsRef.current = document.querySelectorAll('.dropdown-small');
+  }, []);
+
+  const closeMenu = () => {
+    // console.log('TCL: closeMenu -> closeMenu', closeMenu);
+    hamburgerRef.current.classList.remove('is-active');
+    arrowsRef.current.forEach(item => item.classList.remove('open'));
+  };
+
+  const hamburgerClick = () => {
+    // console.log('TCL: hamburgerClick -> hamburgerClick', hamburgerClick);
+    if (hamburgerRef.current.classList.contains('is-active')) {
+      closeMenu();
+    } else hamburgerRef.current.classList.add('is-active');
+  };
+
+  const toggleSubmenu = e => {
+    // console.log('TCL: Navbar -> toggleSubmenu', toggleSubmenu);
+    if (e.currentTarget.classList.contains('open')) {
+      e.currentTarget.classList.remove('open');
+    } else {
+      arrowsRef.current.forEach(item => item.classList.remove('open'));
+      e.currentTarget.classList.add('open');
+    }
+  };
+  //
+  ///////////////////////////////////////////////////////////////////////
 
   return (
     <Menu
-      lang={props.lang}
-      menu={json || []}
-      onChangeLanguage={setLanguage}
-      shrink={isShrinked}
-      onTest={props.onTest}
-      onSetOdjel={setOdjel}
+      shrink={shrink}
+      toggleSubmenu={toggleSubmenu}
+      hamburgerClick={hamburgerClick}
+      closeMenu={closeMenu}
     />
   );
 };

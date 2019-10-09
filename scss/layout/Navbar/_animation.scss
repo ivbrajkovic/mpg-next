@@ -1,0 +1,49 @@
+/*
+ * Navbar animation
+ */
+
+.navbar-shrink {
+  height: 70px;
+
+  .language {
+    visibility: hidden;
+    opacity: 0;
+
+    transition-delay: 0;
+    transition-duration: 200ms, 0;
+    transition-property: opacity, visibility;
+    transition-timing-function: ease-out;
+  }
+
+  .logo {
+    img {
+      transform: scale(0.7);
+    }
+  }
+
+  .hamburger {
+    margin-bottom: 18px;
+  }
+}
+
+@keyframes in {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes menu-animation {
+  from {
+    opacity: 0;
+    transform: rotateX(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}

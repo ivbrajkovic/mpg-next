@@ -1,40 +1,45 @@
 @media (min-width: 576px) {
+  .banner {
+    height: 360px;
+  }
+
+  .content-footer {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 768px) {
+  .banner {
+    height: 400px;
+  }
 }
 
 @media (min-width: 992px) {
-  .navbar {
-    .hamburger {
-      display: none;
-    }
-    .menu {
-      display: flex;
-      transform: translate(-50% -50);
-    }
+  .banner {
+    height: 450px;
   }
+
   footer {
     .container {
       grid-gap: 0;
     }
+
     .item-2 {
       justify-content: flex-end;
+    }
+
+    .content-footer {
+      font-size: 16px;
     }
   }
 }
 
 @media (min-width: 1200px) {
-  .navbar {
-    font-size: 21px;
-    .language {
-      font-size: 18px;
-    }
-    .menu > li {
-      margin-right: 22px;
-    }
-    .menu > li:last-of-type {
-      margin-right: 0px;
-    }
+  .banner {
+    height: 500px;
+  }
+
+  .content-footer {
+    font-size: 18px;
   }
 }

@@ -1,23 +1,28 @@
-export default function Lng(props) {
+// Navbar - Language
+
+import { useContext } from 'react';
+import { LanguageContext } from '../../context';
+
+const Language = () => {
+  const { lang, setLang } = useContext(LanguageContext);
+
   return (
-    <div className="language">
+    <div className='language'>
       <div
-        className={props.language === "hr" ? "active" : ""}
-        onClick={e => props.onChangeLanguage("hr")}
+        className={lang === 'hr' ? 'active' : ''}
+        onClick={() => setLang('hr')}
       >
         HR
       </div>
-      {" | "}
+      {' | '}
       <div
-        className={props.language === "en" ? "active" : ""}
-        onClick={e => props.onChangeLanguage("en")}
+        className={lang === 'en' ? 'active' : ''}
+        onClick={() => setLang('en')}
       >
         EN
       </div>
-      {/* {' | '}
-            <div className={props.language === 'it' ? 'active' : ''} onClick={() => props.onTest()}>
-                IT
-            </div> */}
     </div>
   );
-}
+};
+
+export default Language;

@@ -1,0 +1,19 @@
+{
+  "folder": "/static",
+  "hero": {
+    "title": "",
+    "srcset": [
+      "/static/img/pocetna/baner-pocetna-768px.jpg",
+      "/static/img/pocetna/baner-pocetna-1200px.jpg",
+      "/static/img/pocetna/baner-pocetna.jpg"
+    ]
+  },
+  "glavnaNovost": {
+    "hr": "http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetNovostiKategorijeJezikTopNJSON?WebStranicaID=13&KategorijaID=11&JezikID=1&TopN=1",
+    "en": "http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetNovostiKategorijeJezikTopNJSON?WebStranicaID=13&KategorijaID=11&JezikID=2&TopN=1"
+  },
+  "novosti": {
+    "hr": "http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetNovostiKategorijeJezikTopNJSON?WebStranicaID=13&KategorijaID=1&JezikID=1&TopN=3",
+    "en": "http://www.e-computing.hr/eCMS/ws/wsecms.asmx/GetNovostiKategorijeJezikTopNJSON?WebStranicaID=13&KategorijaID=1&JezikID=2&TopN=3"
+  }
+}
